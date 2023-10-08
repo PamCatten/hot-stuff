@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/icon_home"
+        android:title="Home"
+        />
+    <item
+        android:id="@+id/navigation_items"
+        android:icon="@drawable/icon_items"
+        android:title="Items"
+        />
+    <item
+        android:id="@+id/navigation_create"
+        android:icon="@drawable/icon_create"
+        android:title="Create"
+        />
+    <item
+        android:id="@+id/navigation_learn"
+        android:icon="@drawable/icon_learn"
+        android:title="Learn"
+        />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/icon_settings"
+        android:title="Settings"
+        />
+</menu>
