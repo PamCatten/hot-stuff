@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
@@ -43,19 +44,76 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvActiveBuildingValue" />
 
-
+    <!-- Copy Pasted -->
     <TextView
-        android:id="@+id/text_home"
+        android:id="@+id/idTVHead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Pie Chart"
         android:textAlignment="center"
+        android:textColor="@color/purple_200"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold" />
+
+    <!--Ui component for our pie chart-->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/idTVHead"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pieChart"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_circle"
+            android:drawableTint="@color/purple_200"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Android"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_circle"
+            android:drawableTint="@color/yellow"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Apple"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_circle"
+            android:drawableTint="@color/red"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Microsoft"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+    </LinearLayout>
+<!-- End Copy Pasted -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

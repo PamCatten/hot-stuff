@@ -10,4 +10,11 @@
     <color name="coral">#FC5D52</color>
     <color name="black">#1C1B1F</color>
     <color name="white">#FFFBFE</color>
+
+    <!-- Copy Pasted -->
+    <color name="grey">#aaa</color>
+    <color name="button_color">#1E573B</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="red">#F44336</color>
+    <!-- End Copy Pasted -->
 </resources>
