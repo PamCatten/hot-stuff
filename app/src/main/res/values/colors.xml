@@ -11,6 +11,16 @@
     <color name="black">#1C1B1F</color>
     <color name="white">#FFFBFE</color>
 
+    <!-- Chart Colors -->
+    <color name="coral_800">#FC5D52</color>
+    <color name="coral_700">#FD6E64</color>
+    <color name="coral_600">#FD7E75</color>
+    <color name="coral_500">#FD8E86</color>
+    <color name="coral_400">#FD9E98</color>
+    <color name="coral_300">#FEAEA9</color>
+    <color name="coral_200">#FEBEBA</color>
+    <color name="coral_100">#FECFCB</color>
+
     <!-- Copy Pasted -->
     <color name="grey">#aaa</color>
     <color name="button_color">#1E573B</color>

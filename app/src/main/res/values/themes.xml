@@ -18,8 +18,13 @@
         <item name="android:background">@color/white</item>
         <item name="android:iconTint">@color/black</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:outlineProvider">none</item>
     </style>
 
+    <style name="Container">
+        <item name="android:background">@color/white</item>
+        <item name="android:outlineProvider">none</item>
+    </style>
 
     <style name="tv_Title">
         <item name="android:textSize">20sp</item>
