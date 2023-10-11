@@ -6,70 +6,96 @@
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
     android:paddingBottom="?attr/actionBarSize"
-    tools:context=".ui.home.HomeFragment"
-    >
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/tvBuildingValue"
-        style="@style/tv_Title"
-        android:layout_marginStart="16dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Building Value"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/topTextLayout">
+        <TextView
+            android:id="@+id/tvBuildingValue"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/tv_Title"
+            android:text="Building Value"
+            app:layout_constraintStart_toStartOf="@id/topTextLayout"
+            />
 
-    <TextView
-        android:id="@+id/tvActiveBuildingValue"
-        style="@style/tv_Title"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:text="$6500.00"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvActiveBuildingValue"
+            style="@style/tv_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$6,500.00"
+            app:layout_constraintEnd_toEndOf="@id/topTextLayout" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvActiveBuildingName"
-        style="@style/tv_Subtitle"
-        android:layout_marginStart="16dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/middleTextLayout"
         android:layout_marginTop="4dp"
-        android:text="Sample House"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBuildingValue" />
-
-    <TextView
-        android:id="@+id/tvActiveBuildingCount"
-        style="@style/tv_Subtitle"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/coral"
-        android:text="18 items"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvActiveBuildingValue" />
-
-    <!-- Copy Pasted -->
-
-    <!--Ui component for our pie chart-->
-
-    <TextView
-        android:id="@+id/tvItemDistribution"
-        style="@style/tv_Title"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="8dp"
-        android:text="Item Distribution"
-        app:layout_constraintBottom_toTopOf="@+id/barChart"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/topTextLayout" >
+        <TextView
+            android:id="@+id/tvActiveBuildingName"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            style="@style/tv_Subtitle"
+            android:text="Sample House"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tvActiveBuildingCount"
+            style="@style/tv_Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/coral"
+            android:text="18 items" />
+    </LinearLayout>
 
     <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChart"
-        android:layout_width="246dp"
-        android:layout_height="246dp"
+        android:id="@+id/topBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/middleTextLayout"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomTextLayout"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/topBarChart"
+        app:layout_constraintBottom_toBottomOf="@id/bottomBarChart">
+        <TextView
+            android:id="@+id/tvItemDistribution"
+            style="@style/tv_Title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Item Distribution"/>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:text="Category"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bottomBarChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.example.hotstuffkotlin
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -19,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(findViewById(R.id.AppBar))
+        setSupportActionBar(findViewById(R.id.appBar))
 
         val navView: BottomNavigationView = binding.navView
 
@@ -37,5 +39,13 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+        val languages = resources.getStringArray(R.array.programming_languages)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, languages)
+        val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
+        autocompleteTV.setAdapter(arrayAdapter)
     }
+
+
 }

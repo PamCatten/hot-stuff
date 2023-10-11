@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+
+    <string-array name="programming_languages">
+        <item>Category</item>
+        <item>Brand / Manufacturer</item>
+        <item>Color</item>
+    </string-array>
+
 </resources>
