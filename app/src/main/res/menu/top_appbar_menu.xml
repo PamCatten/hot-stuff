@@ -4,20 +4,19 @@
     <item
         android:id="@+id/action_ab_search"
         android:icon="@drawable/icon_search"
-        android:title="Search"
+        android:title="@string/appbar_search_label"
         app:showAsAction="always"
         android:orderInCategory="0"/>
     <item
         android:id="@+id/action_ab_filter"
         android:icon="@drawable/icon_filter"
-        android:title="Filter"
+        android:title="@string/appbar_sort_label"
         app:showAsAction="always"
         android:orderInCategory="1"/>
     <item
         android:id="@+id/action_ab_quick_access_menu"
         android:icon="@drawable/icon_quick_access_menu"
-        android:title="Expand"
-        app:showAsAction="always"
+        android:title="@string/appbar_quick_access_label"
+        app:showAsAction="ifRoom"
         android:orderInCategory="2"/>
-
 </menu>

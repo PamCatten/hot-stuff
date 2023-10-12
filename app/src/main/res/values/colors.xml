@@ -20,11 +20,4 @@
     <color name="coral_300">#FEAEA9</color>
     <color name="coral_200">#FEBEBA</color>
     <color name="coral_100">#FECFCB</color>
-
-    <!-- Copy Pasted -->
-    <color name="grey">#aaa</color>
-    <color name="button_color">#1E573B</color>
-    <color name="yellow">#FFEB3B</color>
-    <color name="red">#F44336</color>
-    <!-- End Copy Pasted -->
 </resources>

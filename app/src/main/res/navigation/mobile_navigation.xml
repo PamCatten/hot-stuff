@@ -4,35 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
-
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.hotstuffkotlin.ui.home.HomeFragment"
-        android:label="Home"
+        android:label="@string/home_label"
         tools:layout="@layout/fragment_home" />
-
     <fragment
         android:id="@+id/navigation_items"
         android:name="com.example.hotstuffkotlin.ui.items.ItemsFragment"
-        android:label="Items"
+        android:label="@string/items_label"
         tools:layout="@layout/fragment_items" />
-
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.hotstuffkotlin.ui.create.CreateFragment"
-        android:label="Create"
+        android:label="@string/create_label"
         tools:layout="@layout/fragment_create" />
-
     <fragment
         android:id="@+id/navigation_learn"
         android:name="com.example.hotstuffkotlin.ui.learn.LearnFragment"
-        android:label="Learn"
+        android:label="@string/learn_label"
         tools:layout="@layout/fragment_learn" />
-
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.example.hotstuffkotlin.ui.settings.SettingsFragment"
-        android:label="Settings"
+        android:label="@string/settings_label"
         tools:layout="@layout/fragment_settings" />
-
 </navigation>
