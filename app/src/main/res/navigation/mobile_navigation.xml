@@ -15,7 +15,7 @@
         android:label="@string/items_label"
         tools:layout="@layout/fragment_items" />
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_create"
         android:name="com.example.hotstuffkotlin.ui.create.CreateFragment"
         android:label="@string/create_label"
         tools:layout="@layout/fragment_create" />

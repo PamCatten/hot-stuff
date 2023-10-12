@@ -12,8 +12,10 @@
     <string name="appbar_search_label">Search</string>
     <string name="appbar_sort_label">Sort</string>
     <string name="appbar_quick_access_label">More</string>
-    <string name="drawer_newItem_prompt">Create a new item</string>
-    <string name="drawer_newBuilding_prompt">Create a new building</string>
+
+    <!-- Dialog labels -->
+    <string name="dialog_newItem_prompt">Create a new item</string>
+    <string name="dialog_newBuilding_prompt">Create a new building</string>
 
 
     <string-array name="programming_languages">
