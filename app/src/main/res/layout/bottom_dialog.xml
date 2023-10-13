@@ -2,31 +2,37 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bottom_dialog_background"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp">
-    <TextView
-        android:id="@+id/dialog_title"
-        android:theme="@style/dialog_Title"
-        android:text="@string/create_label"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:paddingBottom="8dp"
+    android:padding="10dp">
+    <LinearLayout
+        android:id="@+id/dialog_layoutTitle"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/dialog_LinearLayout">
+        <TextView
+            android:text="@string/create_label"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/dialog_Title"/>
+        <ImageButton
+            android:id="@+id/dialog_button_close"
+            android:src="@drawable/icon_close"
+            android:background="@null"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/dialog_Icon"/>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/dialog_layoutNewItem"
-        app:layout_constraintTop_toBottomOf="@id/dialog_title"
+        app:layout_constraintTop_toBottomOf="@id/dialog_layoutTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/dialog_LinearLayout">
         <ImageView
-            android:id="@+id/dialog_createItem_icon"
-            android:src="@drawable/icon_items"
+            android:src="@drawable/icon_create_item"
             style="@style/dialog_Icon"/>
         <TextView
             android:text="@string/dialog_newItem_prompt"
@@ -39,7 +45,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <ImageView
-            android:id="@+id/dialog_createBuilding_icon"
             android:src="@drawable/icon_create_building"
             style="@style/dialog_Icon"/>
         <TextView

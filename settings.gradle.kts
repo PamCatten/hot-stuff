@@ -15,6 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Hot Stuff Kotlin"
+rootProject.name = "Hot Stuff"
 include(":app")
  

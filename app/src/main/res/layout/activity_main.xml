@@ -24,6 +24,19 @@
             </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- bottom dialog -->
+    <Button
+        android:id="@+id/buttonShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Bottom Dialog"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <!-- end bottom dialog -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"

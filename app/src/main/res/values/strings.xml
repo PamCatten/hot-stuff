@@ -17,6 +17,7 @@
     <string name="dialog_newItem_prompt">Create a new item</string>
     <string name="dialog_newBuilding_prompt">Create a new building</string>
 
+    <!-- Home Fragment labels -->
 
     <string-array name="programming_languages">
         <item>Category</item>
