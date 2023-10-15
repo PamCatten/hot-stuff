@@ -12,7 +12,8 @@
         android:orderInCategory="1"/>
     <item
         android:id="@+id/navigation_placeholder"
-        android:title=""
+        android:icon="@drawable/icon_create"
+        android:title="Create"
         android:orderInCategory="2"/>
     <item
         android:id="@+id/navigation_learn"

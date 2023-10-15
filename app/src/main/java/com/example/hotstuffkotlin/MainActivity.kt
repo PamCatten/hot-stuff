@@ -1,6 +1,7 @@
 package com.example.hotstuffkotlin
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
@@ -22,7 +23,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // bottom dialog
-        val buttonShow = findViewById<Button>(R.id.buttonShow)
+        val buttonShow = findViewById<ImageButton>(R.id.buttonShow)
+        val navigation_placeholder =
         buttonShow.setOnClickListener {
             val bsDialog = BottomSheetDialog(this)
             val view = layoutInflater.inflate(R.layout.bottom_dialog, null)
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navigation_home,
             R.id.navigation_items,
-            R.id.navigation_create,
+            R.id.navigation_placeholder,
             R.id.navigation_learn,
             R.id.navigation_settings))
         setupActionBarWithNavController(navController, appBarConfiguration)
