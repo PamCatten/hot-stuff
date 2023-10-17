@@ -10,7 +10,6 @@
     <color name="coral">#FC5D52</color>
     <color name="black">#1C1B1F</color>
     <color name="white">#FFFBFE</color>
-    <color name="transparent">#00000000</color>
 
     <!-- Chart Colors -->
     <color name="coral_800">#FC5D52</color>
