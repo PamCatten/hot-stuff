@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hot Stuff Kotlin</string>
+    <string name="app_name">Hot Stuff</string>
 
     <!-- Fragment / Navbar labels -->
     <string name="home_label">Home</string>
