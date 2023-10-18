@@ -62,8 +62,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // dropdown / autocomplete
-        val languages = resources.getStringArray(R.array.programming_languages)
-        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, languages)
+        val chartCategories = resources.getStringArray(R.array.home_chart_categories)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, chartCategories)
         val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
         autocompleteTV.setAdapter(arrayAdapter)
     }

@@ -19,10 +19,39 @@
 
     <!-- Home Fragment labels -->
 
-    <string-array name="programming_languages">
+    <string-array name="home_chart_categories">
         <item>Category</item>
         <item>Brand / Manufacturer</item>
         <item>Color</item>
+    </string-array>
+
+    <string-array name="settings_preferences_theme">
+        <item>System Default</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+
+    <string-array name="settings_preferences_currency_icon">
+        <item>₿ (Bitcoin)</item>
+        <item>$ (Dollar)</item>
+        <item>₫ (Dong)</item>
+        <item>€ (Euro)</item>
+        <item>₲ (Guarani)</item>
+        <item>₴ (Hryvnia)</item>
+        <item>₭ (Kip)</item>
+        <item>₾ (Lari)</item>
+        <item>₺ (Lira)</item>
+        <item>₼ (Manat)</item>
+        <item>₦ (Naira)</item>
+        <item>₱ (Peso)</item>
+        <item>₤ (Pound Sterling)</item>
+        <item>₽ (Ruble)</item>
+        <item>र (Rupee)</item>
+        <item>₪ (Shekel)</item>
+        <item>₸ (Tenge)</item>
+        <item>₮ (Tugrik)</item>
+        <item>₩ (Won)</item>
+        <item>¥ (Yen, Yuan)</item>
     </string-array>
 
 </resources>
