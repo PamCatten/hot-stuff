@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home Page Dropdowns -->
+    <string-array name="home_chart_categories">
+        <item>Category</item>
+        <item>Brand / Manufacturer</item>
+        <item>Color</item>
+    </string-array>
+
+    <!-- Settings Page Dropdowns -->
+
+    <string-array name="settings_preferences_appearance_entries">
+        <item>Use device default</item>
+        <item>Light theme</item>
+        <item>Dark theme</item>
+    </string-array>
+
+    <string-array name="settings_preferences_appearance_values">
+        <item>system</item>
+        <item>light</item>
+        <item>dark</item>
+    </string-array>
+
+    <string-array name="settings_preferences_currency">
+        <item>₿ (Bitcoin)</item>
+        <item>$ (Dollar)</item>
+        <item>₫ (Dong)</item>
+        <item>€ (Euro)</item>
+        <item>₲ (Guarani)</item>
+        <item>₴ (Hryvnia)</item>
+        <item>₭ (Kip)</item>
+        <item>₾ (Lari)</item>
+        <item>₺ (Lira)</item>
+        <item>₼ (Manat)</item>
+        <item>₦ (Naira)</item>
+        <item>₱ (Peso)</item>
+        <item>₤ (Pound Sterling)</item>
+        <item>₽ (Ruble)</item>
+        <item>र (Rupee)</item>
+        <item>₪ (Shekel)</item>
+        <item>₸ (Tenge)</item>
+        <item>₮ (Tugrik)</item>
+        <item>₩ (Won)</item>
+        <item>¥ (Yen / Yuan)</item>
+    </string-array>
+
+    <string name="bitcoin_icon">₿</string>
+    <string name="dollar_icon">$</string>
+    <string name="dong_icon">₫</string>
+    <string name="euro_icon">€</string>
+    <string name="guarani_icon">₲</string>
+    <string name="hryvnia_icon">₴</string>
+    <string name="kip_icon">₭</string>
+    <string name="lari_icon">₾</string>
+    <string name="lira_icon">₺</string>
+    <string name="manat_icon">₼</string>
+    <string name="naira_icon">₦</string>
+    <string name="peso_icon">₱</string>
+    <string name="pound_icon">₤</string>
+    <string name="ruble_icon">₽</string>
+    <string name="rupee_icon">र</string>
+    <string name="shekel_icon">₪</string>
+    <string name="tenge_icon">₸</string>
+    <string name="tugrik_icon">₮</string>
+    <string name="won_icon">₩</string>
+    <string name="yen_yuan_icon">¥</string>
+</resources>

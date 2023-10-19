@@ -1,26 +1,18 @@
 package com.example.hotstuffkotlin
 
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
+import android.preference.PreferenceManager
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import android.widget.Button
 import android.widget.ImageButton
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.hotstuffkotlin.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.navigation.NavigationBarView
-import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -45,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         // bottom dialog
-
         val createButton = navView.menu.findItem(R.id.navigation_placeholder)
         createButton.setOnMenuItemClickListener {
             val bsDialog = BottomSheetDialog(this)
@@ -66,6 +57,8 @@ class MainActivity : AppCompatActivity() {
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_item, chartCategories)
         val autocompleteTV = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
         autocompleteTV.setAdapter(arrayAdapter)
+
+
     }
 
 }

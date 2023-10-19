@@ -13,7 +13,7 @@
     <item
         android:id="@+id/navigation_placeholder"
         android:icon="@drawable/icon_create"
-        android:title="Create"
+        android:title="@string/create_label"
         android:orderInCategory="2"/>
     <item
         android:id="@+id/navigation_learn"

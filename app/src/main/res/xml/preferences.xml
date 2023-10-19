@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="General">
+        <ListPreference
+            android:defaultValue="device"
+            android:dialogTitle="Appearance"
+            android:entries="@array/settings_preferences_appearance_entries"
+            android:entryValues="@array/settings_preferences_appearance_values"
+            android:key="appearance"
+            android:summary="Choose your preference of app theme"
+            android:title="Appearance" />
+    </PreferenceCategory>
+</PreferenceScreen>

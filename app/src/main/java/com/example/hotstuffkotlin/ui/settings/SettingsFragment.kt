@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.preference.PreferenceFragmentCompat
 import com.example.hotstuffkotlin.databinding.FragmentSettingsBinding
+import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 
-class SettingsFragment : Fragment() {
-
+class SettingsFragment : PreferenceFragmentCompat() {
+    private lateinit var sharedPreferenceHelper: SharedPreferenceHelper
     private var _binding: FragmentSettingsBinding? = null
 
     // This property is only valid between onCreateView and
@@ -27,6 +28,11 @@ class SettingsFragment : Fragment() {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
 
         return binding.root
+    }
+
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.preferences, rootKey)
+        sharedPreferenceHelper = SharedPreferenceHelper.getInstance(requireContext())
     }
 
     override fun onDestroyView() {
