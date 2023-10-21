@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory android:title="General" app:fragment="com.example.hotstuffkotlin.ui.settings">
         <ListPreference
-            android:defaultValue="device"
-            android:dialogTitle="Appearance"
+            android:defaultValue="@string/settings_preference_appearance_default"
+            android:title="@string/settings_preference_appearance_title"
+            android:dialogTitle="@string/settings_preference_appearance_title"
             android:entries="@array/settings_preferences_appearance_entries"
             android:entryValues="@array/settings_preferences_appearance_values"
-            android:key="appearance"
-            android:summary="Choose your preference of app theme"
-            android:title="Appearance" />
+            android:key="@string/settings_preference_appearance_key"
+            android:summary="@string/settings_preference_appearance_summary"
+            app:iconSpaceReserved="false"/>
+        <ListPreference
+            android:defaultValue="@string/settings_preference_currency_default"
+            android:title="@string/settings_preference_currency_title"
+            android:dialogTitle="@string/settings_preference_currency_title"
+            android:entries="@array/settings_preferences_currency_entries"
+            android:entryValues="@array/settings_preferences_currency_values"
+            android:key="@string/settings_preference_currency_key"
+            android:summary="@string/settings_preference_currency_summary"
+            app:iconSpaceReserved="false"/>
+        <ListPreference
+            android:defaultValue="@string/settings_preference_textsize_default"
+            android:title="@string/settings_preference_textsize_title"
+            android:dialogTitle="@string/settings_preference_textsize_title"
+            android:entries="@array/settings_preferences_textsize_entries"
+            android:entryValues="@array/settings_preferences_textsize_values"
+            android:key="@string/settings_preference_textsize_key"
+            android:summary="@string/settings_preference_textsize_summary"
+            app:iconSpaceReserved="false"/>
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="@string/settings_preference_search_key"
+            android:summary="@string/settings_preference_search_summary"
+            android:title="@string/settings_preference_search_title"
+            app:iconSpaceReserved="false"/>
     </PreferenceCategory>
 </PreferenceScreen>

@@ -21,7 +21,7 @@
         <item>dark</item>
     </string-array>
 
-    <string-array name="settings_preferences_currency">
+    <string-array name="settings_preferences_currency_entries">
         <item>₿ (Bitcoin)</item>
         <item>$ (Dollar)</item>
         <item>₫ (Dong)</item>
@@ -44,24 +44,43 @@
         <item>¥ (Yen / Yuan)</item>
     </string-array>
 
-    <string name="bitcoin_icon">₿</string>
-    <string name="dollar_icon">$</string>
-    <string name="dong_icon">₫</string>
-    <string name="euro_icon">€</string>
-    <string name="guarani_icon">₲</string>
-    <string name="hryvnia_icon">₴</string>
-    <string name="kip_icon">₭</string>
-    <string name="lari_icon">₾</string>
-    <string name="lira_icon">₺</string>
-    <string name="manat_icon">₼</string>
-    <string name="naira_icon">₦</string>
-    <string name="peso_icon">₱</string>
-    <string name="pound_icon">₤</string>
-    <string name="ruble_icon">₽</string>
-    <string name="rupee_icon">र</string>
-    <string name="shekel_icon">₪</string>
-    <string name="tenge_icon">₸</string>
-    <string name="tugrik_icon">₮</string>
-    <string name="won_icon">₩</string>
-    <string name="yen_yuan_icon">¥</string>
+    <string-array name="settings_preferences_currency_values">
+        <item>bitcoin</item>
+        <item>dollar</item>
+        <item>dong</item>
+        <item>euro</item>
+        <item>guarani</item>
+        <item>hryvnia</item>
+        <item>kip</item>
+        <item>lari</item>
+        <item>lira</item>
+        <item>manat</item>
+        <item>naira</item>
+        <item>peso</item>
+        <item>pound</item>
+        <item>ruble</item>
+        <item>rupee</item>
+        <item>shekel</item>
+        <item>tenge</item>
+        <item>tugrik</item>
+        <item>won</item>
+        <item>yen_yuan</item>
+    </string-array>
+
+    <string-array name="settings_preferences_textsize_entries">
+        <item>Tiny</item>
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Huge</item>
+    </string-array>
+
+    <string-array name="settings_preferences_textsize_values">
+        <item>tiny</item>
+        <item>small</item>
+        <item>medium</item>
+        <item>large</item>
+        <item>huge</item>
+    </string-array>
+
 </resources>
