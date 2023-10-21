@@ -22,6 +22,6 @@
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.example.hotstuffkotlin.ui.settings.SettingsFragment"
-        android:label="@string/settings_label"
-        tools:layout="@layout/fragment_settings" />
+        android:label="@string/settings_label"/>
+        <!--tools:layout="@layout/fragment_settings"-->
 </navigation>
