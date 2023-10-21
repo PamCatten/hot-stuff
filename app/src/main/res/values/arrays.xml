@@ -83,4 +83,18 @@
         <item>huge</item>
     </string-array>
 
+    <string-array name="settings_preferences_language_entries">
+        <item>English</item>
+        <item>Francais</item>
+        <item>Español</item>
+        <item>Norsk</item>
+    </string-array>
+
+    <string-array name="settings_preferences_language_values">
+        <item>english</item>
+        <item>french</item>
+        <item>spanish</item>
+        <item>norwegian</item>
+    </string-array>
+
 </resources>
