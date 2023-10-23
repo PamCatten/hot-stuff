@@ -16,9 +16,9 @@
     </string-array>
 
     <string-array name="settings_preferences_appearance_values">
-        <item>system</item>
-        <item>light</item>
-        <item>dark</item>
+        <item>@string/appearance_system</item>
+        <item>@string/appearance_light</item>
+        <item>@string/appearance_dark</item>
     </string-array>
 
     <string-array name="settings_preferences_currency_entries">

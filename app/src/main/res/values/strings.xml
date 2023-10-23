@@ -53,6 +53,11 @@
     <string name="settings_preference_textsize_key">textsize</string>
     <string name="settings_preference_textsize_summary">Change the size of text throughout the app</string>
 
+    <!-- Settings: Appearance Preference Values Strings -->
+    <string name="appearance_light">light</string>
+    <string name="appearance_dark">dark</string>
+    <string name="appearance_system">system</string>
+
     <!-- Settings: Appearance Preference Strings -->
     <string name="settings_preference_appearance_summary">Choose your preference of app theme</string>
     <string name="settings_preference_appearance_key">appearance</string>

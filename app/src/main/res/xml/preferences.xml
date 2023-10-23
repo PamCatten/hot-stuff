@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:title="General" app:fragment="com.example.hotstuffkotlin.ui.settings">
+    // A frankly gross, hacky solution to an issue with the top actionbar hiding the category title
+    <PreferenceCategory />
+    <PreferenceCategory />
+    // end of hack, forgive me, I tried several other things I swear
+
+    <PreferenceCategory android:title="General" app:iconSpaceReserved="false">
         <ListPreference
             android:defaultValue="@string/settings_preference_appearance_default"
             android:title="@string/settings_preference_appearance_title"
@@ -28,6 +33,8 @@
             android:key="@string/settings_preference_textsize_key"
             android:summary="@string/settings_preference_textsize_summary"
             app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Optional Features (Beta)" app:iconSpaceReserved="false" app:allowDividerAbove="false">
         <SwitchPreferenceCompat
             android:defaultValue="false"
             android:key="@string/settings_preference_search_key"

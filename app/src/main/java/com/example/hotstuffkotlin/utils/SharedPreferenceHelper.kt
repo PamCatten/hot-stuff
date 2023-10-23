@@ -7,12 +7,7 @@ import androidx.preference.PreferenceManager
 class SharedPreferenceHelper {
 
     companion object {
-
-        private const val WEATHER_PREF_TIME = "Weather pref time"
-        private const val WEATHER_FORECAST_PREF_TIME = "Forecast pref time"
-        private const val CITY_ID = "City ID"
         private var prefs: SharedPreferences? = null
-        private const val LOCATION = "LOCATION"
 
         @Volatile
         private var instance: SharedPreferenceHelper? = null
