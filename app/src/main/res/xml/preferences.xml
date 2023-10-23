@@ -34,14 +34,14 @@
             android:summary="@string/settings_preference_search_summary"
             android:title="@string/settings_preference_search_title"
             app:iconSpaceReserved="false"/>
-        <!-- <ListPreference
-            android:defaultValue="english"
-            android:title="Language"
-            android:dialogTitle="Language"
+        <!--<ListPreference
+            android:defaultValue="@string/settings_preference_language_default"
+            android:title="@string/settings_preference_language_title"
+            android:dialogTitle="@string/settings_preference_language_title"
             android:entries="@array/settings_preferences_language_entries"
             android:entryValues="@array/settings_preferences_language_values"
-            android:key="language"
-            android:summary="Choose the language you want to use for text within the app"
+            android:key="@string/settings_preference_language_key"
+            android:summary="@string/settings_preference_language_summary"
             app:iconSpaceReserved="false"/> -->
     </PreferenceCategory>
 </PreferenceScreen>

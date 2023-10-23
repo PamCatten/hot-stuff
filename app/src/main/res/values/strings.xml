@@ -61,6 +61,10 @@
     <string name="settings_preference_search_key">search</string>
     <string name="settings_preference_search_summary">Search for specific created items</string>
     <string name="settings_preference_search_title">Search</string>
+    <string name="settings_preference_language_title">Language</string>
+    <string name="settings_preference_language_default">english</string>
+    <string name="settings_preference_language_summary">Choose the language you want to use for text within the app</string>
+    <string name="settings_preference_language_key">language</string>
 
     <!-- Settings: Search Preference Strings -->
 
