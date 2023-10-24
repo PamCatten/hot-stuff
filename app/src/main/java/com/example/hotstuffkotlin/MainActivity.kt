@@ -1,7 +1,6 @@
 package com.example.hotstuffkotlin
 
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.ImageButton
@@ -10,17 +9,20 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.databinding.ActivityMainBinding
-import com.example.hotstuffkotlin.model.State
+import com.example.hotstuffkotlin.utils.ThemeManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initTheme()
 
         // appbar
         setSupportActionBar(findViewById(R.id.appBar))
@@ -60,6 +62,11 @@ class MainActivity : AppCompatActivity() {
         autocompleteTV.setAdapter(arrayAdapter)
 
 
+    }
+
+    private fun initTheme() {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        ThemeManager.applyTheme(requireNotNull(preferences.getString("appearance", "system")))
     }
 
 }

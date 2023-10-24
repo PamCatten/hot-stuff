@@ -23,6 +23,6 @@ class SharedPreferenceHelper {
             }
         }
     }
-    fun getSelectedThemePref() = prefs?.getString("theme_key", "")
+    fun getSelectedThemePref() = prefs?.getString("appearance", "")
 
 }

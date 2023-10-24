@@ -11,6 +11,10 @@ import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var sharedPreferenceHelper: SharedPreferenceHelper
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        setPreferencesFromResource(R.xml.preferences, rootKey)
+        sharedPreferenceHelper = SharedPreferenceHelper.getInstance(requireContext())
+    }
 
     override fun onResume() {
         super.onResume()
@@ -21,24 +25,18 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         super.onPause()
         preferenceManager.sharedPreferences?.unregisterOnSharedPreferenceChangeListener(this)
     }
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.preferences, rootKey)
-        sharedPreferenceHelper = SharedPreferenceHelper.getInstance(requireContext())
-    }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
-        val themePreferenceKey = "appearance"
-        if (key == themePreferenceKey) {
-            val themePreference = findPreference<Preference>(themePreferenceKey)
-            val selectedOption = sharedPreferenceHelper.getSelectedThemePref()
-            themePreference?.summary = selectedOption
-
-            when (selectedOption) {
+        if (key == "appearance") {
+            when (sharedPreferenceHelper.getSelectedThemePref()) {
                 getString(R.string.appearance_light) -> setTheme(AppCompatDelegate.MODE_NIGHT_NO)
                 getString(R.string.appearance_dark) -> setTheme(AppCompatDelegate.MODE_NIGHT_YES)
                 getString(R.string.appearance_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }
         }
+
+
+
     }
 
     private fun setTheme(mode: Int) {
