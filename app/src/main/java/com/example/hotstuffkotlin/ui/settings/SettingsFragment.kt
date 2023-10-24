@@ -34,7 +34,9 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
                 getString(R.string.appearance_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }
         }
+        if (key == "currency") {
 
+        }
 
 
     }
