@@ -30,7 +30,6 @@
             style="@style/tv_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$6,500.00"
             app:layout_constraintEnd_toEndOf="@id/topTextLayout" />
     </LinearLayout>
 
@@ -45,15 +44,13 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             style="@style/tv_Subtitle"
-            android:text="Sample House"
             app:layout_constraintStart_toStartOf="parent" />
         <TextView
             android:id="@+id/tvActiveBuildingCount"
             style="@style/tv_Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/coral"
-            android:text="18 items" />
+            android:textColor="@color/coral"/>
     </LinearLayout>
 
     <com.github.mikephil.charting.charts.BarChart

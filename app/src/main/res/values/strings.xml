@@ -19,7 +19,7 @@
 
     <!-- Home Fragment labels -->
 
-    <!-- Currency Icon Labels -->
+    <!-- Settings: Currency Icons -->
     <string name="bitcoin_icon">₿</string>
     <string name="dollar_icon">$</string>
     <string name="dong_icon">₫</string>
@@ -40,6 +40,7 @@
     <string name="tugrik_icon">₮</string>
     <string name="won_icon">₩</string>
     <string name="yen_yuan_icon">¥</string>
+
 
     <!-- Settings: Currency Preference Strings -->
     <string name="settings_preference_currency_default">dollar</string>

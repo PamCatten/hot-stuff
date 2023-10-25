@@ -3,10 +3,8 @@ package com.example.hotstuffkotlin.ui.settings
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.example.hotstuffkotlin.R
-import com.example.hotstuffkotlin.model.State
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -34,9 +32,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
                 getString(R.string.appearance_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }
         }
-        if (key == "currency") {
-
-        }
+        if (key == "currency") {}
 
 
     }

@@ -24,6 +24,6 @@ class SharedPreferenceHelper {
         }
     }
     fun getSelectedThemePref() = prefs?.getString("appearance", "")
-    fun getSelectedTemperatureUnit() = prefs?.getString("currency", "")
+    fun getCurrency() = prefs?.getString("currency", "")
 
 }

@@ -1,9 +1,8 @@
 package com.example.hotstuffkotlin
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,12 +10,14 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.databinding.ActivityMainBinding
+import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.example.hotstuffkotlin.utils.ThemeManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var sharedPreferenceHelper: SharedPreferenceHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
@@ -55,6 +56,20 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        // derived info
+        val tvActiveBuildingValue = findViewById<TextView>(R.id.tvActiveBuildingValue)
+        val derivedTotal = "6,500.00"
+        //var currencyIcon = sharedPreferenceHelper.getCurrency().toString() + "_icon"
+        //val currency = resources.getIdentifier(currencyIcon, "string", "hotstuffkotlin")
+        tvActiveBuildingValue?.text = "$derivedTotal"
+
+        val tvActiveBuildingCount = findViewById<TextView>(R.id.tvActiveBuildingCount)
+        val derivedCount = 18
+        tvActiveBuildingCount?.text = "$derivedCount items"
+
+        val tvActiveBuildingName = findViewById<TextView>(R.id.tvActiveBuildingName)
+        val derivedName = "Sample House"
+        tvActiveBuildingName?.text = derivedName
 
     }
 
