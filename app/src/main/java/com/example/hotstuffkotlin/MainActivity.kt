@@ -59,9 +59,10 @@ class MainActivity : AppCompatActivity() {
         // derived info
         val tvActiveBuildingValue = findViewById<TextView>(R.id.tvActiveBuildingValue)
         val derivedTotal = "6,500.00"
+        val currencyIcon = "$"
         //var currencyIcon = sharedPreferenceHelper.getCurrency().toString() + "_icon"
         //val currency = resources.getIdentifier(currencyIcon, "string", "hotstuffkotlin")
-        tvActiveBuildingValue?.text = "$derivedTotal"
+        tvActiveBuildingValue?.text = "$currencyIcon$derivedTotal"
 
         val tvActiveBuildingCount = findViewById<TextView>(R.id.tvActiveBuildingCount)
         val derivedCount = 18
