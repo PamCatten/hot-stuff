@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemsBinding
+import com.example.hotstuffkotlin.utils.Adapter
 
 class ItemsFragment : Fragment() {
 
@@ -21,12 +24,18 @@ class ItemsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val itemsViewModel =
-            ViewModelProvider(this)[ItemsViewModel::class.java]
-
         _binding = FragmentItemsBinding.inflate(inflater, container, false)
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_items, container, false)
+        val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
+        val data = ArrayList<CardViewModel>()
+        recyclerItems.layoutManager = LinearLayoutManager(context)
+        for (i in 1..20) {
+            data.add(CardViewModel(R.drawable.icon_items, "Item $i"))
+        }
+        recyclerItems.adapter = Adapter(data)
 
-        return binding.root
+        return view
     }
 
     override fun onDestroyView() {
