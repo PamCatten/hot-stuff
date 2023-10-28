@@ -31,7 +31,7 @@ class ItemsFragment : Fragment() {
         val data = ArrayList<CardViewModel>()
         recyclerItems.layoutManager = LinearLayoutManager(context)
         for (i in 1..20) {
-            data.add(CardViewModel(R.drawable.icon_items, "Item $i"))
+            data.add(CardViewModel(R.drawable.icon_items, "Item Name #$i"))
         }
         recyclerItems.adapter = Adapter(data)
 

@@ -3,26 +3,56 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_margin="10dp"
-    app:cardElevation="6dp">
-    <LinearLayout
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardMaxElevation="12dp"
+    app:cardCornerRadius="3dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardBackgroundColor="?attr/colorAccent"
+    app:cardElevation="10dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp">
+        android:background="@color/coral"
+        android:layout_marginBottom="5dp"
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/imageview"
+            android:background="@null"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            app:tint="?attr/colorOnPrimary"
+            android:layout_height="match_parent"
+            app:layout_constraintRight_toRightOf="@id/itemCard"/>
         <TextView
             android:id="@+id/textView"
+            android:background="@null"
+            android:textColor="?attr/colorOnPrimary"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="15dp"
-            android:text="Item"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="@id/itemCard"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/textViewSubtitle"
+            android:background="@null"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="@id/itemCard"
+            app:layout_constraintTop_toBottomOf="@id/textView"
+            android:text="Brand/Manufacturer"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:background="@null"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/itemCard"
+            app:layout_constraintTop_toBottomOf="@id/textViewSubtitle"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore."
+            android:textSize="16sp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
