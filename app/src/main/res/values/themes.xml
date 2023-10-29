@@ -87,6 +87,7 @@
     <style name="ShapeAppearance.HotStuffKotlin.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>
+        <item name="android:background">?attr/colorPrimaryVariant</item>
     </style>
 
 </resources>

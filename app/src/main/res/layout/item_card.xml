@@ -4,18 +4,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardUseCompatPadding="true"
-    app:cardMaxElevation="12dp"
-    app:cardCornerRadius="3dp"
+    android:layout_margin="5dp"
+    app:cardElevation="8dp"
+    app:cardMaxElevation="10dp"
+    app:cardCornerRadius="10dp"
     app:cardPreventCornerOverlap="true"
-    app:cardBackgroundColor="?attr/colorAccent"
-    app:cardElevation="10dp">
+    app:cardBackgroundColor="?attr/colorPrimaryVariant">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/itemCard"
         android:layout_width="match_parent"
-        android:background="@color/coral"
-        android:layout_marginBottom="5dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
         <ImageView
             android:id="@+id/imageview"
             android:background="@null"
@@ -35,7 +34,6 @@
             android:textSize="20sp"/>
         <TextView
             android:id="@+id/textViewSubtitle"
-            android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

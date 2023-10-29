@@ -6,12 +6,12 @@
         android:layout_height="match_parent"
         android:paddingTop="?attr/actionBarSize"
         android:paddingBottom="?attr/actionBarSize"
-        android:theme="@style/Container"
         tools:context=".ui.items.ItemsFragment"
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/itemsRecyclerView"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
