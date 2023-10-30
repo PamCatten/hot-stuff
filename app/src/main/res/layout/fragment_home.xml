@@ -20,14 +20,14 @@
             android:id="@+id/tvBuildingValue"
             android:layout_width="0dp"
             android:layout_weight="1"
-            style="@style/tv_Title"
+            style="@style/home_Title"
             android:text="Building Value"
             app:layout_constraintStart_toStartOf="@id/topTextLayout"
             />
 
         <TextView
             android:id="@+id/tvActiveBuildingValue"
-            style="@style/tv_Title"
+            style="@style/home_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/topTextLayout" />
@@ -43,11 +43,11 @@
             android:id="@+id/tvActiveBuildingName"
             android:layout_width="0dp"
             android:layout_weight="1"
-            style="@style/tv_Subtitle"
+            style="@style/home_Subtitle"
             app:layout_constraintStart_toStartOf="parent" />
         <TextView
             android:id="@+id/tvActiveBuildingCount"
-            style="@style/tv_Subtitle"
+            style="@style/home_Subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/coral"/>
@@ -70,7 +70,7 @@
         app:layout_constraintBottom_toBottomOf="@id/bottomBarChart">
         <TextView
             android:id="@+id/tvItemDistribution"
-            style="@style/tv_Title"
+            style="@style/home_Title"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Item Distribution"/>

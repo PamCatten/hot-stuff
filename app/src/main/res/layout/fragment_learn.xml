@@ -5,6 +5,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingBottom="?attr/actionBarSize"
     tools:context=".ui.learn.LearnFragment">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/learn_walkthrough_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/items_Card">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/learn_walkthrough_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp">
+            <TextView
+                android:id="@+id/learn_walkthrough_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="Walkthroughs"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="@id/learn_walkthrough_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+            <TextView
+                android:id="@+id/learn_walkthrough_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="Quick guides to help you get started"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_title"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+                app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_subtitle"
+                app:dividerColor="?attr/colorOnPrimary"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
