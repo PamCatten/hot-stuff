@@ -94,6 +94,13 @@
         <item name="cardBackgroundColor">?attr/colorPrimaryVariant</item>
     </style>
 
+    <style name="items_CardConstraintLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+        <item name="android:layout_marginVertical">10dp</item>
+    </style>
+
     <style name="ShapeAppearance.HotStuffKotlin.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>

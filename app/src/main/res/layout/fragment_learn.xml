@@ -12,14 +12,12 @@
         android:id="@+id/learn_walkthrough_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/items_Card">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/learn_walkthrough_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="10dp">
+            style="@style/items_CardConstraintLayout">
             <TextView
                 android:id="@+id/learn_walkthrough_title"
                 android:layout_width="wrap_content"
@@ -36,16 +34,175 @@
                 android:layout_height="wrap_content"
                 android:textColor="?attr/colorOnPrimary"
                 android:text="Quick guides to help you get started"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_title"
                 app:layout_constraintLeft_toLeftOf="parent"/>
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginVertical="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
                 app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_subtitle"
                 app:dividerColor="?attr/colorOnPrimary"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/learn_resources_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_card"
+        style="@style/items_Card">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/learn_resources_layout"
+            style="@style/items_CardConstraintLayout">
+            <TextView
+                android:id="@+id/learn_resources_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="Resources"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="@id/learn_resources_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+            <TextView
+                android:id="@+id/learn_resources_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="Additional perspectives"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/learn_resources_title"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintTop_toBottomOf="@id/learn_resources_subtitle"
+                app:dividerColor="?attr/colorOnPrimary"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/learn_about_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintTop_toBottomOf="@id/learn_resources_card"
+        style="@style/items_Card">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/learn_about_layout"
+            style="@style/items_CardConstraintLayout">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/learn_about_header"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toTopOf="@id/learn_about_layout"
+                app:layout_constraintLeft_toLeftOf="parent">
+                <TextView
+                    android:id="@+id/learn_about_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:text="About Hot Stuff"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    />
+                <TextView
+                    android:id="@+id/learn_about_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:text="General app information and actions"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/learn_about_title"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+                <ImageView
+                    android:id="@+id/learn_about_dropdown_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="20dp"
+                    android:src="@drawable/icon_dropdown"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/learn_about_divider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="15dp"
+                app:layout_constraintTop_toBottomOf="@id/learn_about_header"
+                app:dividerColor="?attr/colorOnPrimary"/>
+            <TextView
+                android:id="@+id/learn_about_sourceCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:paddingVertical="10dp"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="View source code"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/learn_about_divider"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:id="@+id/learn_about_acknowledgements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:paddingVertical="10dp"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="Acknowledgements"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/learn_about_sourceCode"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:id="@+id/learn_about_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:paddingVertical="10dp"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="Terms and Conditions"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/learn_about_acknowledgements"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:id="@+id/learn_about_shareApp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:paddingVertical="10dp"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="Share app"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/learn_about_terms"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:id="@+id/learn_about_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:paddingVertical="10dp"
+                android:textColor="?attr/colorOnPrimary"
+                android:text="Rate on Google Play"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/learn_about_shareApp"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/learn_about_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="learn_about_divider,
+                learn_about_sourceCode,
+                learn_about_acknowledgements,
+                learn_about_terms,
+                learn_about_shareApp,
+                learn_about_rate"
+                tools:visibility="gone" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
