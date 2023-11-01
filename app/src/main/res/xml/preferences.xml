@@ -3,7 +3,7 @@
     // A frankly gross, hacky solution to an issue with the top actionbar hiding the category title
     <PreferenceCategory />
     <PreferenceCategory />
-    // end of hack, forgive me, I tried several other things I swear
+    // end of hack
 
     <PreferenceCategory android:title="General" app:iconSpaceReserved="false">
         <ListPreference
