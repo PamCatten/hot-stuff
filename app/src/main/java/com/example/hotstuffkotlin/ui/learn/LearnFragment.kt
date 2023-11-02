@@ -37,7 +37,6 @@ class LearnFragment : Fragment() {
 
         dropdownWalkthrough?.setOnClickListener{
             if(groupWalkthrough?.visibility == View.VISIBLE && cardViewWalkthrough != null) {
-                TransitionManager.beginDelayedTransition(cardViewWalkthrough, AutoTransition())
                 groupWalkthrough.visibility = View.GONE
                 dropdownIconWalkthrough?.setImageResource(R.drawable.icon_dropdown)
             }
@@ -56,7 +55,6 @@ class LearnFragment : Fragment() {
 
         dropdownResources?.setOnClickListener{
             if(groupResources?.visibility == View.VISIBLE && cardViewResources != null) {
-                TransitionManager.beginDelayedTransition(cardViewResources, AutoTransition())
                 groupResources.visibility = View.GONE
                 dropdownIconResources?.setImageResource(R.drawable.icon_dropdown)
             }
@@ -75,7 +73,6 @@ class LearnFragment : Fragment() {
 
         dropdownAbout?.setOnClickListener{
             if(groupAbout?.visibility == View.VISIBLE && cardViewAbout != null) {
-                TransitionManager.beginDelayedTransition(cardViewAbout, AutoTransition())
                 groupAbout.visibility = View.GONE
                 dropdownIconAbout?.setImageResource(R.drawable.icon_dropdown)
             }
