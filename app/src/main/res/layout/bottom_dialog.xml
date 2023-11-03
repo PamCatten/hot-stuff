@@ -13,10 +13,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/dialog_LinearLayout">
         <TextView
+            style="@style/dialog_Title"
             android:text="@string/create_label"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            style="@style/dialog_Title"/>
+            app:layout_constraintStart_toStartOf="parent"/>
         <ImageButton
             android:id="@+id/dialog_button_close"
             android:src="@drawable/icon_close"

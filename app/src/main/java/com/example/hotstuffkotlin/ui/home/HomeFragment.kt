@@ -33,15 +33,15 @@ class HomeFragment : Fragment() {
         val currencyIcon = "$"
         //var currencyIcon = sharedPreferenceHelper.getCurrency().toString() + "_icon"
         //val currency = resources.getIdentifier(currencyIcon, "string", "hotstuffkotlin")
-        tvActiveBuildingValue?.text = "$currencyIcon$derivedTotal"
-
-        val tvActiveBuildingCount = view?.findViewById<TextView>(R.id.tvActiveBuildingCount)
-        val derivedCount = 18
-        tvActiveBuildingCount?.text = "$derivedCount items"
-
-        val tvActiveBuildingName = view?.findViewById<TextView>(R.id.tvActiveBuildingName)
-        val derivedName = "Sample House"
-        tvActiveBuildingName?.text = derivedName
+//        tvActiveBuildingValue?.text = "$currencyIcon$derivedTotal"
+//
+//        val tvActiveBuildingCount = view?.findViewById<TextView>(R.id.tvActiveBuildingCount)
+//        val derivedCount = 18
+//        tvActiveBuildingCount?.text = "$derivedCount items"
+//
+//        val tvActiveBuildingName = view?.findViewById<TextView>(R.id.tvActiveBuildingName)
+//        val derivedName = "Sample House"
+//        tvActiveBuildingName?.text = derivedName
 
         return binding.root
     }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,45 +12,46 @@
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
+        android:id="@+id/topTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/topTextLayout">
+        app:layout_constraintTop_toTopOf="parent">
         <TextView
             android:id="@+id/tvBuildingValue"
+            style="@style/text_Subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
-            style="@style/home_Title"
             android:text="Building Value"
             app:layout_constraintStart_toStartOf="@id/topTextLayout"
             />
 
         <TextView
             android:id="@+id/tvActiveBuildingValue"
-            style="@style/home_Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/text_Subtitle"
+            android:textStyle="bold"
+            android:text="$6,573.24"
             app:layout_constraintEnd_toEndOf="@id/topTextLayout" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/middleTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/middleTextLayout"
         android:layout_marginTop="4dp"
         app:layout_constraintTop_toBottomOf="@+id/topTextLayout" >
         <TextView
             android:id="@+id/tvActiveBuildingName"
+            style="@style/text_Subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
-            style="@style/home_Subtitle"
+            android:text="Sample House"
             app:layout_constraintStart_toStartOf="parent" />
         <TextView
             android:id="@+id/tvActiveBuildingCount"
-            style="@style/home_Subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/text_Subtitle"
+            android:textStyle="bold"
+            android:text="58 items"
             android:textColor="@color/coral"/>
     </LinearLayout>
 
@@ -62,30 +64,18 @@
         app:layout_constraintTop_toBottomOf="@id/middleTextLayout"/>
 
     <LinearLayout
+        android:id="@+id/bottomTextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bottomTextLayout"
         android:layout_marginTop="4dp"
         app:layout_constraintTop_toBottomOf="@+id/topBarChart"
         app:layout_constraintBottom_toBottomOf="@id/bottomBarChart">
         <TextView
             android:id="@+id/tvItemDistribution"
-            style="@style/home_Title"
+            style="@style/text_Subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Item Distribution"/>
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="none"
-                android:text="Category"
-                app:layout_constraintEnd_toEndOf="parent" />
-        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <com.github.mikephil.charting.charts.BarChart

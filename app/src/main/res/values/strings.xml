@@ -17,6 +17,11 @@
     <string name="dialog_newItem_prompt">Create a new item</string>
     <string name="dialog_newBuilding_prompt">Create a new building</string>
 
+    <!-- Text -->
+    <string name="text_title">20dp</string>
+    <string name="text_subtitle">16dp</string>
+    <string name="text_body">14dp</string>
+
     <!-- Home Fragment labels -->
 
     <!-- Settings: Currency Icons -->

@@ -9,6 +9,14 @@
         <!-- Status bar color. -->
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Dialog -->
+        <item name="shapeAppearanceLargeComponent">@style/dialogBackground</item>
+    </style>
+
+    <style name="dialogBackground" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
     </style>
 
 </resources>
