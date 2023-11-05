@@ -14,7 +14,7 @@
         <item name="shapeAppearanceLargeComponent">@style/dialog_Background</item>
     </style>
 
-    <style name="appBar">
+    <style name="appbar">
         <item name="android:background">?attr/colorPrimaryVariant</item>
         <item name="android:iconTint">?attr/colorOnPrimary</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>

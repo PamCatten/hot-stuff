@@ -15,8 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/appBar"
-                android:theme="@style/appBar"
+                android:id="@+id/appbar"
+                android:theme="@style/appbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="?attr/actionBarSize"

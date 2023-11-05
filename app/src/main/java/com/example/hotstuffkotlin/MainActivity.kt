@@ -3,6 +3,7 @@ package com.example.hotstuffkotlin
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -23,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         initTheme()
 
         // appbar
-        setSupportActionBar(findViewById(R.id.appBar))
+        val appbar = findViewById<Toolbar>(R.id.appbar)
+        setSupportActionBar(appbar)
 
         // navbar
         val navView: BottomNavigationView = binding.navView

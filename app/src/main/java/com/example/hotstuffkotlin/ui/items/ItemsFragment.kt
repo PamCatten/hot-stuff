@@ -26,6 +26,7 @@ class ItemsFragment : Fragment() {
     ): View {
         _binding = FragmentItemsBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
+        // MenuProvider
         val view = inflater.inflate(R.layout.fragment_items, container, false)
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
         val data = ArrayList<CardViewModel>()
