@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,15 +29,25 @@ class ItemsFragment : Fragment() {
         // Inflate the layout for this fragment
         // MenuProvider
         val view = inflater.inflate(R.layout.fragment_items, container, false)
+        getData(view)
+
+        return view
+    }
+
+    private fun getData(view : View) {
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
         val data = ArrayList<CardViewModel>()
         recyclerItems.layoutManager = LinearLayoutManager(context)
         for (i in 1..20) {
             data.add(CardViewModel(R.drawable.icon_items, "Item Name #$i"))
         }
-        recyclerItems.adapter = Adapter(data)
-
-        return view
+        val adapter = Adapter(data)
+        recyclerItems.adapter = adapter
+        adapter.setOnItemClickListener(object : Adapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                Toast.makeText(activity, "You clicked on item $position", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     override fun onDestroyView() {

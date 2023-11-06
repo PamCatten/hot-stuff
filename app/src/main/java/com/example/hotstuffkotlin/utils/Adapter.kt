@@ -11,13 +11,21 @@ import com.example.hotstuffkotlin.ui.items.CardViewModel
 
 class Adapter(private val mList: List<CardViewModel>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
+    private lateinit var mListener : onItemClickListener
+    interface onItemClickListener{
+        fun onItemClick(position : Int)
+    }
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view that is used to hold list item
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_card, parent, false)
 
-        return ViewHolder(view)
+        return ViewHolder(view, mListener)
     }
 
     // binds the list items to a view
@@ -39,8 +47,14 @@ class Adapter(private val mList: List<CardViewModel>) : RecyclerView.Adapter<Ada
     }
 
     // Holds the views for adding it to image and text
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageview)
         val textView: TextView = itemView.findViewById(R.id.textView)
+
+        init {
+            itemView.setOnClickListener{
+                listener.onItemClick(bindingAdapterPosition)
+            }
+        }
     }
 }
