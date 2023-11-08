@@ -1,7 +1,9 @@
 package com.example.hotstuffkotlin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
@@ -49,6 +51,13 @@ class MainActivity : AppCompatActivity() {
             buttonClose.setOnClickListener {
                 bsDialog.dismiss()
             }
+
+            val newItem = view.findViewById<LinearLayout>(R.id.dialog_layoutNewItem)
+            newItem.setOnClickListener{
+                val intent = Intent(this, NewItemActivity::class.java)
+                startActivity(intent)
+            }
+
             bsDialog.setCancelable(true)
             bsDialog.setContentView(view)
             bsDialog.show()
