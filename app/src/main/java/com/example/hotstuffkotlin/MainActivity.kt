@@ -47,14 +47,20 @@ class MainActivity : AppCompatActivity() {
             val bsDialog = BottomSheetDialog(this)
             val view = layoutInflater.inflate(R.layout.bottom_dialog, null)
             val buttonClose = view.findViewById<ImageButton>(R.id.dialog_button_close)
+            val buttonNewItem = view.findViewById<LinearLayout>(R.id.dialog_layoutNewItem)
+            val buttonNewBuilding = view.findViewById<LinearLayout>(R.id.dialog_layoutNewBuilding)
 
             buttonClose.setOnClickListener {
                 bsDialog.dismiss()
             }
 
-            val newItem = view.findViewById<LinearLayout>(R.id.dialog_layoutNewItem)
-            newItem.setOnClickListener{
+            buttonNewItem.setOnClickListener{
                 val intent = Intent(this, NewItemActivity::class.java)
+                startActivity(intent)
+            }
+
+            buttonNewBuilding.setOnClickListener{
+                val intent = Intent(this, NewBuildingActivity::class.java)
                 startActivity(intent)
             }
 

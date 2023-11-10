@@ -51,7 +51,7 @@
     <string name="settings_preference_currency_default">dollar</string>
     <string name="settings_preference_currency_title">Currency Icon</string>
     <string name="settings_preference_currency_key">currency</string>
-    <string name="settings_preference_currency_summary">Choose your preference of currency icon. Note: changing your preferred currency does not update previously entered values.</string>
+    <string name="settings_preference_currency_summary">Choose your preference of currency icon. Warning: changing your preferred currency will not convert previously entered values.</string>
 
     <!-- Settings: Text Size Preference Strings -->
     <string name="settings_preference_textsize_default">medium</string>
