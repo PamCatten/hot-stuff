@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!--<item
-        android:id="@+id/action_ab_search"
+    <item
+        android:id="@+id/appbar_search"
         android:icon="@drawable/icon_search"
         android:title="@string/appbar_search_label"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:orderInCategory="0"/>
     <item
-        android:id="@+id/action_ab_filter"
+        android:id="@+id/appbar_filter"
         android:icon="@drawable/icon_filter"
         android:title="@string/appbar_sort_label"
-        app:showAsAction="always"
-        android:orderInCategory="1"/>
-    <item
-        android:id="@+id/action_ab_quick_access_menu"
-        android:icon="@drawable/icon_quick_access_menu"
-        android:title="@string/appbar_quick_access_label"
         app:showAsAction="ifRoom"
-        android:orderInCategory="2"/>-->
+        android:orderInCategory="1"/>
 </menu>
