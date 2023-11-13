@@ -91,6 +91,7 @@
     <string name="learn_resources_subtitle">Additional perspectives</string>
     <string name="learn_walkthrough_title">Walkthroughs</string>
     <string name="learn_walkthrough_subtitle">Quick user guides to help you get started</string>
+    <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>
 
     <!-- Settings: Search Preference Strings -->
 
