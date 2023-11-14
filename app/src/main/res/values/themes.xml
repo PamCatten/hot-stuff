@@ -18,6 +18,7 @@
         <item name="android:background">?attr/colorPrimaryVariant</item>
         <item name="android:iconTint">?attr/colorOnPrimary</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:elevation">4dp</item>
         <item name="android:outlineProvider">none</item>
     </style>
 

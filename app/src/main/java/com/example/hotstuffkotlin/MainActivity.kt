@@ -2,6 +2,7 @@ package com.example.hotstuffkotlin
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var appbar: Toolbar
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
@@ -26,8 +28,10 @@ class MainActivity : AppCompatActivity() {
         initTheme()
 
         // appbar
-        val appbar = findViewById<Toolbar>(R.id.appbar)
+        appbar = findViewById(R.id.appbar)
+        //val appbar = findViewById<Toolbar>(R.id.appbar)
         setSupportActionBar(appbar)
+
 
         // navbar
         val navView: BottomNavigationView = binding.navView
@@ -69,6 +73,13 @@ class MainActivity : AppCompatActivity() {
             bsDialog.show()
             true
         }
+
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.appbar_menu, menu)
+        return true
     }
 
     private fun initTheme() {

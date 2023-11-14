@@ -2,6 +2,8 @@ package com.example.hotstuffkotlin.ui.items
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -31,7 +33,12 @@ class ItemsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_items, container, false)
         getData(view)
 
+
         return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.appbar_menu, menu)
     }
 
     private fun getData(view : View) {
