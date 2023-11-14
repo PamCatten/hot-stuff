@@ -34,14 +34,14 @@
             android:summary="@string/settings_preference_textsize_summary"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>
-    <PreferenceCategory app:title="Optional Features (Beta)" app:iconSpaceReserved="false" app:allowDividerAbove="false">
+    <!--<PreferenceCategory app:title="Optional Features (Beta)" app:iconSpaceReserved="false" app:allowDividerAbove="false">
         <SwitchPreferenceCompat
             android:defaultValue="false"
             android:key="@string/settings_preference_search_key"
             android:summary="@string/settings_preference_search_summary"
             android:title="@string/settings_preference_search_title"
             app:iconSpaceReserved="false"/>
-        <!--<ListPreference
+        <ListPreference
             android:defaultValue="@string/settings_preference_language_default"
             android:title="@string/settings_preference_language_title"
             android:dialogTitle="@string/settings_preference_language_title"
@@ -49,6 +49,6 @@
             android:entryValues="@array/settings_preferences_language_values"
             android:key="@string/settings_preference_language_key"
             android:summary="@string/settings_preference_language_summary"
-            app:iconSpaceReserved="false"/> -->
-    </PreferenceCategory>
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>-->
 </PreferenceScreen>

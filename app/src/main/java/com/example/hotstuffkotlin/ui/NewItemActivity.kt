@@ -1,8 +1,9 @@
-package com.example.hotstuffkotlin
+package com.example.hotstuffkotlin.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.example.hotstuffkotlin.R
 
 class NewItemActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

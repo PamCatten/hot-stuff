@@ -1,4 +1,4 @@
-package com.example.hotstuffkotlin
+package com.example.hotstuffkotlin.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
+import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.ActivityMainBinding
 import com.example.hotstuffkotlin.utils.ThemeManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -29,9 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         // appbar
         appbar = findViewById(R.id.appbar)
-        //val appbar = findViewById<Toolbar>(R.id.appbar)
         setSupportActionBar(appbar)
-
 
         // navbar
         val navView: BottomNavigationView = binding.navView
@@ -41,7 +40,8 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_items,
             R.id.navigation_placeholder,
             R.id.navigation_learn,
-            R.id.navigation_settings))
+            R.id.navigation_settings
+        ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
@@ -73,9 +73,16 @@ class MainActivity : AppCompatActivity() {
             bsDialog.show()
             true
         }
-
-
     }
+
+//    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+//        super.onPrepareOptionsMenu(menu.apply {
+//            findItem(R.id.appbar_search)?.let {
+//                it.isVisible = SharedPreferenceHelper.allowSearch() == true
+//            }
+//        })
+//        return true
+//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.appbar_menu, menu)

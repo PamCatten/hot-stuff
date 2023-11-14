@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Container"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <include
         layout="@layout/appbar"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
+        android:background="?attr/colorPrimaryVariant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

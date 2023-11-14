@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Container"
-    tools:context=".NewItemActivity">
+    tools:context=".ui.NewItemActivity">
 
     <include
         android:id="@+id/appbar_new_item"
@@ -66,10 +66,10 @@
         android:id="@+id/createItemButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:text="Create Item"
+        android:layout_marginHorizontal="16dp"
+        android:text="Create"
         android:textColor="?attr/colorOnPrimary"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemValueContainer" />

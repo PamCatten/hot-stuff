@@ -9,9 +9,18 @@
         app:showAsAction="ifRoom"
         android:orderInCategory="0"/>
     <item
-        android:id="@+id/appbar_filter"
-        android:icon="@drawable/icon_filter"
-        android:title="@string/appbar_sort_label"
-        app:showAsAction="ifRoom"
+        android:id="@+id/appbar_share"
+        android:title="Share"
+        app:showAsAction="never"
         android:orderInCategory="1"/>
+    <item
+        android:id="@+id/appbar_report"
+        android:title="Report Bug"
+        app:showAsAction="never"
+        android:orderInCategory="2"/>
+    <item
+        android:id="@+id/appbar_rate"
+        android:title="Rate"
+        app:showAsAction="never"
+        android:orderInCategory="3"/>
 </menu>

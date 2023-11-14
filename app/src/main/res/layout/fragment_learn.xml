@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingBottom="?attr/actionBarSize">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -155,13 +156,6 @@
                     android:text="Example Proof of Loss Form"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_adjusters"
                     app:layout_constraintLeft_toLeftOf="parent"/>
-                <TextView
-                    android:id="@+id/learn_resources_contact"
-                    style="@style/item_CardSubtitle"
-                    android:paddingVertical="16dp"
-                    android:text="Report Bug / Contact Developer"
-                    app:layout_constraintTop_toBottomOf="@id/learn_resources_exampleForm"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_resources_group"
                     style="@style/item_CardGroup"
@@ -169,8 +163,7 @@
                     learn_resources_attentionToDetail,
                     learn_resources_likeKind,
                     learn_resources_adjusters,
-                    learn_resources_exampleForm,
-                    learn_resources_contact"
+                    learn_resources_exampleForm"
                     tools:visibility="gone"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -238,29 +231,13 @@
                     android:text="@string/learn_about_title_terms"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_acknowledgements"
                     app:layout_constraintLeft_toLeftOf="parent"/>
-                <TextView
-                    android:id="@+id/learn_about_shareApp"
-                    style="@style/item_CardSubtitle"
-                    android:paddingVertical="16dp"
-                    android:text="@string/learn_about_title_share"
-                    app:layout_constraintTop_toBottomOf="@id/learn_about_terms"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
-                <TextView
-                    android:id="@+id/learn_about_rate"
-                    style="@style/item_CardSubtitle"
-                    android:paddingVertical="16dp"
-                    android:text="@string/learn_about_title_rate"
-                    app:layout_constraintTop_toBottomOf="@id/learn_about_shareApp"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_about_group"
                     style="@style/item_CardGroup"
                     app:constraint_referenced_ids="learn_about_divider,
                     learn_about_sourceCode,
                     learn_about_acknowledgements,
-                    learn_about_terms,
-                    learn_about_shareApp,
-                    learn_about_rate"
+                    learn_about_terms"
                     tools:visibility="gone"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

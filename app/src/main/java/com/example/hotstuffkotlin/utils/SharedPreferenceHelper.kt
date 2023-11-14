@@ -22,8 +22,8 @@ class SharedPreferenceHelper {
                 return SharedPreferenceHelper()
             }
         }
+        fun getCurrency() = prefs?.getString("currency", "")
+//        fun allowSearch() = prefs?.getBoolean("search", false)
     }
     fun getSelectedThemePref() = prefs?.getString("appearance", "")
-    fun getCurrency() = prefs?.getString("currency", "")
-
 }
