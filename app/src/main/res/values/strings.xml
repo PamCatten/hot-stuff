@@ -78,7 +78,7 @@
     <string name="settings_preference_language_key">language</string>
 
     <string name="learn_about_card_title">About Hot Stuff</string>
-    <string name="learn_about_card_subtitle">General app information and actions</string>
+    <string name="learn_about_card_subtitle">General app information</string>
     <string name="learn_about_title_acknowledgements">Acknowledgements</string>
     <string name="learn_about_title_terms">Terms and Conditions</string>
     <string name="learn_about_title_share">Share app</string>
@@ -88,9 +88,9 @@
     <string name="learn_dropdown_icon_content_description">Expand items icon</string>
 
     <string name="learn_resources_title">Resources</string>
-    <string name="learn_resources_subtitle">Additional perspectives</string>
+    <string name="learn_resources_subtitle">Additional notes and perspectives</string>
     <string name="learn_walkthrough_title">Walkthroughs</string>
-    <string name="learn_walkthrough_subtitle">Quick user guides to help you get started</string>
+    <string name="learn_walkthrough_subtitle">Short user guides to help you get started</string>
     <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>
 
     <!-- Settings: Search Preference Strings -->
