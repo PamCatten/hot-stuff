@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.ActivityNewItemBinding
+import com.example.hotstuffkotlin.utils.DatabaseHelper
 
 class NewItemActivity : AppCompatActivity() {
     private lateinit var binding : ActivityNewItemBinding
@@ -14,15 +15,17 @@ class NewItemActivity : AppCompatActivity() {
         binding = ActivityNewItemBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // TODO: violates DRY, clean this up
-        nameListener()
-        quantityListener()
-
-        binding.itemCreateButton.setOnClickListener{ submitForm() }
-
         // appbar
         val appbar = findViewById<Toolbar>(R.id.appbar_new_item)
         setSupportActionBar(appbar)
+
+        // form validation
+        nameListener()
+        quantityListener()
+        binding.itemCreateButton.setOnClickListener{ submitForm() }
+
+
+
     }
 
     private fun submitForm() {
@@ -32,16 +35,17 @@ class NewItemActivity : AppCompatActivity() {
         val quantityNullCheck2 = binding.itemQuantityText.text.toString() == ""
         val quantityValueCheck = binding.itemQuantityText.text.toString().toInt() == 0
 
-        // TODO: violates DRY, but I don't have the time right now to clean this up and make the logic bulletproof
-        if (binding.itemNameText.text.toString() == "")
-            binding.itemNameContainer.helperText = "Your item must be named"
-        if (binding.itemQuantityText.text.toString() == "")
-            binding.itemQuantityContainer.helperText = "Your item must have a quantity"
-        else if (binding.itemQuantityText.text.toString().toInt() == 0)
-            binding.itemQuantityContainer.helperText = "Your item quantity cannot be less than one"
+        // TODO: violates DRY, don't have time to make this logic bulletproof right now
+//        if (binding.itemNameText.text.toString() == "")
+//            binding.itemNameContainer.helperText = "Your item must be named"
+//        if (binding.itemQuantityText.text.toString() == "")
+//            binding.itemQuantityContainer.helperText = "Your item must have a quantity"
+//        else if (binding.itemQuantityText.text.toString().toInt() == 0)
+//            binding.itemQuantityContainer.helperText = "Your item quantity cannot be less than one"
+//        nameListener()
+//        quantityListener()
+        // end violation
 
-        nameListener()
-        quantityListener()
         if (nameNullCheck || nameValueCheck || quantityNullCheck1 || quantityNullCheck2 || quantityValueCheck)
             invalidForm()
         else
@@ -57,35 +61,34 @@ class NewItemActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Invalid Form")
             .setMessage(message)
-            .setPositiveButton("Okay") {_, _ ->
+            .setPositiveButton("OK") {_, _ ->
                 // do nothing
             }.show()
     }
 
     private fun resetForm() {
-        var message = "Name: " + binding.itemNameText.text
-            message += "\nQuantity: " + binding.itemQuantityText.text
-            message += "\nValue: " + binding.itemValueText.text
-            message += "\nCategory: " + binding.itemCategoryText.text
-            message += "\nRoom: " + binding.itemRoomText.text
-            message += "\nMake: " + binding.itemMakeText.text
-            message += "\nDescription: " + binding.itemDescriptionText.text
-        AlertDialog.Builder(this)
-            .setTitle("Form submitted")
-            .setMessage(message)
-            .setPositiveButton("OK") {_, _ ->
-                binding.itemNameText.text = null
-                binding.itemQuantityText.text = null
-                binding.itemValueText.text = null
-                binding.itemCategoryText.text = null
-                binding.itemRoomText.text = null
-                binding.itemMakeText.text = null
-                binding.itemDescriptionText.text = null
+        val inputName : String = binding.itemNameText.text.toString().trim()
+        val inputQuantity: Int = binding.itemQuantityText.text.toString().toInt()
+        val inputValue : Double? = binding.itemValueText.text?.toString()?.toDoubleOrNull()
+        val inputCategory : String? = binding.itemCategoryText.text?.toString()?.trim()
+        val inputRoom : String? = binding.itemRoomText.text?.toString()?.trim()
+        val inputMake : String? = binding.itemMakeText.text?.toString()?.trim()
+        val imagePath : String? = "Example path"
+        val inputDescription : String? = binding.itemDescriptionText.text?.toString()?.trim()
 
-                binding.itemNameContainer.helperText = "Required"
-                binding.itemQuantityContainer.helperText = "Required"
+        binding.itemNameText.text = null
+        binding.itemQuantityText.text = null
+        binding.itemValueText.text = null
+        binding.itemCategoryText.text = null
+        binding.itemRoomText.text = null
+        binding.itemMakeText.text = null
+        binding.itemDescriptionText.text = null
+        binding.itemNameContainer.helperText = "Required"
+        binding.itemQuantityContainer.helperText = "Required"
 
-            }.show()
+        val db = DatabaseHelper(this, null)
+        db.addItem(inputName, inputQuantity, inputCategory, inputValue,
+            inputRoom, inputMake, imagePath, inputDescription)
     }
 
     private fun nameListener() {
