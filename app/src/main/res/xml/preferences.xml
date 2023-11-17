@@ -2,7 +2,8 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    // A frankly gross, hacky solution to an issue with the top actionbar hiding the category title
+
+    // TODO: Need another solution to top/bottom padding, fix lines that come with empty categories
     <PreferenceCategory />
     <PreferenceCategory />
     // end of hack
