@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     // A frankly gross, hacky solution to an issue with the top actionbar hiding the category title
     <PreferenceCategory />
     <PreferenceCategory />
@@ -51,4 +53,10 @@
             android:summary="@string/settings_preference_language_summary"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>-->
+
+    // more nastiness
+    <PreferenceCategory />
+    <PreferenceCategory />
+    // end of nastiness
+
 </PreferenceScreen>
