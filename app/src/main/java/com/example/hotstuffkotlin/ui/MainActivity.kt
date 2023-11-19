@@ -1,10 +1,12 @@
 package com.example.hotstuffkotlin.ui
 
 import android.content.Intent
+import android.database.Cursor
 import android.os.Bundle
 import android.view.Menu
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
@@ -14,6 +16,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.ActivityMainBinding
+import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.ThemeManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -21,6 +24,20 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var appbar: Toolbar
+
+    // db stopgap
+    lateinit var db : DatabaseHelper
+    lateinit var item_id : ArrayList<Int>
+    lateinit var building_id : ArrayList<Int>
+    lateinit var item_name : ArrayList<String>
+    lateinit var item_quantity : ArrayList<Int>
+    lateinit var item_category : ArrayList<String>
+    lateinit var item_value : ArrayList<Double>
+    lateinit var item_room : ArrayList<String>
+    lateinit var item_make : ArrayList<String>
+    lateinit var item_imagePath : ArrayList<String>
+    lateinit var item_description : ArrayList<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
@@ -72,6 +89,40 @@ class MainActivity : AppCompatActivity() {
             bsDialog.setContentView(view)
             bsDialog.show()
             true
+        }
+
+        // db
+        val db = DatabaseHelper(this, null)
+        item_id = ArrayList()
+        building_id = ArrayList()
+        item_name = ArrayList()
+        item_quantity = ArrayList()
+        item_category = ArrayList()
+        item_value = ArrayList()
+        item_room = ArrayList()
+        item_make = ArrayList()
+        item_imagePath = ArrayList()
+        item_description = ArrayList()
+
+        storeDataInArrays()
+    }
+    fun storeDataInArrays() {
+        val cursor : Cursor? = db.readData()
+        if (cursor == null || cursor.count == 0) {
+            Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show()
+        } else {
+            while (cursor.moveToNext()) {
+                item_id.add(cursor.getInt(0))
+                building_id.add(cursor.getInt(1))
+                item_name.add(cursor.getString(2))
+                item_quantity.add(cursor.getInt(3))
+                item_category.add(cursor.getString(4))
+                item_value.add(cursor.getDouble(5))
+                item_room.add(cursor.getString(6))
+                item_make.add(cursor.getString(7))
+                item_imagePath.add(cursor.getString(8))
+                item_description.add(cursor.getString(9))
+            }
         }
     }
 

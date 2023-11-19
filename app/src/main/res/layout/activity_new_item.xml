@@ -48,27 +48,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/itemValueContainer"
+        android:id="@+id/itemCategoryContainer"
         style="@style/create_textInputLayout"
+        app:helperText="Required"
         app:helperTextTextColor="?attr/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemQuantityContainer">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/itemValueText"
-            style="@style/create_textInputField"
-            android:inputType="numberDecimal"
-            android:hint="Value"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/itemCategoryContainer"
-        style="@style/create_textInputLayout"
-        app:helperTextTextColor="?attr/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemValueContainer">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/itemCategoryText"
@@ -80,6 +66,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/itemRoomContainer"
         style="@style/create_textInputLayout"
+        app:helperText="Required"
         app:helperTextTextColor="?attr/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -108,12 +95,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/itemValueContainer"
+        style="@style/create_textInputLayout"
+        app:helperTextTextColor="?attr/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemMakeContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/itemValueText"
+            style="@style/create_textInputField"
+            android:inputType="numberDecimal"
+            android:hint="Value"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/itemDescriptionContainer"
         style="@style/create_textInputLayout"
         app:helperTextTextColor="?attr/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/itemMakeContainer">
+        app:layout_constraintTop_toBottomOf="@id/itemValueContainer">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/itemDescriptionText"
