@@ -27,16 +27,6 @@ class MainActivity : AppCompatActivity() {
 
     // db stopgap
     lateinit var db : DatabaseHelper
-    lateinit var item_id : ArrayList<Int>
-    lateinit var building_id : ArrayList<Int>
-    lateinit var item_name : ArrayList<String>
-    lateinit var item_quantity : ArrayList<Int>
-    lateinit var item_category : ArrayList<String>
-    lateinit var item_value : ArrayList<Double>
-    lateinit var item_room : ArrayList<String>
-    lateinit var item_make : ArrayList<String>
-    lateinit var item_imagePath : ArrayList<String>
-    lateinit var item_description : ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -91,22 +81,21 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        // db
-        val db = DatabaseHelper(this, null)
-        item_id = ArrayList()
-        building_id = ArrayList()
-        item_name = ArrayList()
-        item_quantity = ArrayList()
-        item_category = ArrayList()
-        item_value = ArrayList()
-        item_room = ArrayList()
-        item_make = ArrayList()
-        item_imagePath = ArrayList()
-        item_description = ArrayList()
-
         storeDataInArrays()
     }
     fun storeDataInArrays() {
+        val db = DatabaseHelper(this, null)
+        var item_id = ArrayList<Int>()
+        var building_id = ArrayList<Int>()
+        var item_name = ArrayList<String>()
+        var item_quantity = ArrayList<Int>()
+        var item_category = ArrayList<String>()
+        var item_value = ArrayList<Double>()
+        var item_room = ArrayList<String>()
+        var item_make = ArrayList<String>()
+        var item_imagePath = ArrayList<String>()
+        var item_description = ArrayList<String>()
+
         val cursor : Cursor? = db.readData()
         if (cursor == null || cursor.count == 0) {
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show()

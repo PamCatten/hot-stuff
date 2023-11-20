@@ -43,10 +43,16 @@ class ItemsFragment : Fragment() {
 
     private fun getData(view : View) {
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
-        val data = ArrayList<CardViewModel>()
+        val data = ArrayList<ItemCardViewModel>()
         recyclerItems.layoutManager = LinearLayoutManager(context)
         for (i in 1..20) {
-            data.add(CardViewModel(R.drawable.icon_items, "Item Name #$i"))
+            data.add(
+                ItemCardViewModel(
+                "Roku 55' 4K Smart TV",
+                "Electronics",
+                "Living Room",
+                "$i items")
+            )
         }
         val adapter = Adapter(data)
         recyclerItems.adapter = adapter

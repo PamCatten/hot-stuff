@@ -22,10 +22,9 @@ class NewItemActivity : AppCompatActivity() {
         // form validation
         nameListener()
         quantityListener()
+        categoryListener()
+        roomListener()
         binding.itemCreateButton.setOnClickListener{ submitForm() }
-
-
-
     }
 
     private fun submitForm() {

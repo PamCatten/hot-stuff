@@ -39,11 +39,12 @@
             android:text="@string/filler_text"/>-->
         <TextView
             android:id="@+id/itemName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="20sp"
+            android:textStyle="bold"
             android:text="Roku 55' 4K Smart TV"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -54,10 +55,12 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
-            android:textSize="20sp"
+            android:textSize="14sp"
             android:text="Electronics"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itemName"
             />
         <TextView
             android:id="@+id/itemRoom"
@@ -65,7 +68,7 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:text="Living Room"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/itemName"
@@ -77,10 +80,10 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
-            android:text="1"
+            android:textSize="14sp"
+            android:text="1 item"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/itemCategory"
+            app:layout_constraintTop_toBottomOf="@id/itemName"
             app:layout_constraintBottom_toBottomOf="parent"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>

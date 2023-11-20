@@ -42,9 +42,6 @@ class Adapter(private val mList: List<ItemCardViewModel>) : RecyclerView.Adapter
 
         // sets the text to the textview from our itemHolder class
 //        holder.textView.text = itemCardViewModel.text
-
-
-
     }
 
     // return the number of the items in the list
