@@ -8,6 +8,7 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.ActivityNewItemBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 
+
 class NewItemActivity : AppCompatActivity() {
     private lateinit var binding : ActivityNewItemBinding
     override fun onCreate(savedInstanceState: Bundle?) {

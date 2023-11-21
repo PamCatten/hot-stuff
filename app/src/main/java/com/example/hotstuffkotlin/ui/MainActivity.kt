@@ -64,12 +64,10 @@ class MainActivity : AppCompatActivity() {
             buttonClose.setOnClickListener {
                 bsDialog.dismiss()
             }
-
             buttonNewItem.setOnClickListener{
                 val intent = Intent(this, NewItemActivity::class.java)
                 startActivity(intent)
             }
-
             buttonNewBuilding.setOnClickListener{
                 val intent = Intent(this, NewBuildingActivity::class.java)
                 startActivity(intent)

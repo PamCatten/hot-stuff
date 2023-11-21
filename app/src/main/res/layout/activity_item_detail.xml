@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Container"
-    tools:context=".ui.NewBuildingActivity">
+    tools:context=".ui.ItemDetailActivity">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/appbar_new_building"
+        android:id="@+id/appbar_item_detail"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:itemRippleColor="@null"
@@ -19,5 +19,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+    />
 </androidx.constraintlayout.widget.ConstraintLayout>

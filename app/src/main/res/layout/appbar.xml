@@ -6,6 +6,8 @@
     style="@style/Appbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
+    android:backgroundTint="@android:color/transparent"
     app:menu="@menu/appbar_menu"
     app:itemRippleColor="@null"
+    app:itemBackground="@android:color/transparent"
 />

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:theme="@style/Container"
-    tools:context=".ui.NewItemActivity">
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:theme="@style/Container"
+tools:context=".ui.ModifyItemActivity">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/appbar_new_item"
+        android:id="@+id/appbar_item_modify"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:itemRippleColor="@null"
@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-    />
+        />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/itemNameContainer"
         style="@style/create_textInputLayout"
@@ -27,7 +27,7 @@
         app:helperTextTextColor="?attr/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbar_new_item">
+        app:layout_constraintTop_toBottomOf="@id/appbar_item_modify">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/itemNameText"
@@ -135,7 +135,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:text="Create"
+        android:text="Update"
         android:textColor="?attr/colorOnPrimary"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
