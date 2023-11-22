@@ -13,7 +13,8 @@ class ItemDetailActivity : AppCompatActivity() {
         binding = ActivityItemDetailBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_item_detail)
 
-        if (intent.hasExtra("name")) title = intent.getStringExtra("name")
+//        if (intent.hasExtra("name")) title = intent.getStringExtra("name")
+        if (intent.hasExtra("name")) title = ""
 
         // appbar
         val appbar = findViewById<Toolbar>(R.id.appbar_item_detail)

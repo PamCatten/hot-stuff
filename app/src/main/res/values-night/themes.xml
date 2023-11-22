@@ -4,6 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/coral</item>
         <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorSecondary">@color/grey</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorAccent">@color/coral</item>
         <item name="colorControlNormal">?attr/colorOnPrimary</item>
