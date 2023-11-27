@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.widget.Toast
 import com.example.hotstuffkotlin.models.Item
 
-class DatabaseHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?) :
-    SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
+class DatabaseHelper(context: Context?) :
+    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     val context = context
 
@@ -25,17 +25,6 @@ class DatabaseHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?) 
                 "$COLUMN_VALUE MONEY, " +
                 "$COLUMN_IMAGE_PATH TEXT, " +
                 "$COLUMN_DESCRIPTION TEXT);"
-//        val query = ("CREATE TABLE $TABLE_NAME" + " ( " +
-//                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-//                COLUMN_BUILDING_ID + " INTEGER, " +
-//                COLUMN_NAME + " TEXT, " +
-//                COLUMN_QUANTITY + " INTEGER, " +
-//                COLUMN_CATEGORY + " TEXT, " +
-//                COLUMN_ROOM + " TEXT, " +
-//                COLUMN_MAKE + " TEXT, " +
-//                COLUMN_VALUE + " MONEY, " +
-//                COLUMN_IMAGE_PATH + " TEXT, " +
-//                COLUMN_DESCRIPTION + " TEXT);")
         db?.execSQL(query)
     }
 

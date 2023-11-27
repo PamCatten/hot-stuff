@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         storeDataInArrays()
     }
     fun storeDataInArrays() {
-        val db = DatabaseHelper(this, null)
+        val db = DatabaseHelper(this)
         var item_id = ArrayList<Int>()
         var building_id = ArrayList<Int>()
         var item_name = ArrayList<String>()

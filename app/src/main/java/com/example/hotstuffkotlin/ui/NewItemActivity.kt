@@ -98,7 +98,7 @@ class NewItemActivity : AppCompatActivity() {
         binding.itemCategoryContainer.helperText = "Required"
         binding.itemRoomContainer.helperText = "Required"
 
-        val db = DatabaseHelper(this, null)
+        val db = DatabaseHelper(this)
         db.addItem(inputName, inputQuantity, inputCategory, inputValue,
             inputRoom, inputMake, imagePath, inputDescription)
     }
