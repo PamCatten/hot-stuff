@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotstuffkotlin.R
-import com.example.hotstuffkotlin.ui.items.ItemCardViewModel
+import com.example.hotstuffkotlin.models.Item
 
 //class Adapter(private val mList: List<CardViewModel>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
-class Adapter(private val mList: List<ItemCardViewModel>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+//class Adapter(private val mList: List<ItemCardViewModel>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(private var items : List<Item>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     private lateinit var mListener : onItemClickListener
     interface onItemClickListener{
@@ -31,22 +32,29 @@ class Adapter(private val mList: List<ItemCardViewModel>) : RecyclerView.Adapter
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val itemCardViewModel = mList[position]
+//        val itemCardViewModel = mList[position]
+        val item = items[position]
 
 //        // sets the image to the imageview from our itemHolder class
 //        holder.imageView.setImageResource(itemCardViewModel.image)
-            holder.itemName.text = itemCardViewModel.textName
-            holder.itemCategory.text = itemCardViewModel.textCategory
-            holder.itemRoom.text = itemCardViewModel.textRoom
-            holder.itemQuantity.text = itemCardViewModel.textQuantity
+//            holder.itemName.text = itemCardViewModel.textName
+//            holder.itemCategory.text = itemCardViewModel.textCategory
+//            holder.itemRoom.text = itemCardViewModel.textRoom
+//            holder.itemQuantity.text = itemCardViewModel.textQuantity
 
-        // sets the text to the textview from our itemHolder class
-//        holder.textView.text = itemCardViewModel.text
+        val quantityNumeral = item.quantity
+        val quantityString = if (quantityNumeral > 1) "$quantityNumeral items" else "$quantityNumeral item"
+
+        holder.itemName.text = item.name
+        holder.itemCategory.text = item.category
+        holder.itemRoom.text = item.room
+        holder.itemQuantity.text = quantityString
     }
 
     // return the number of the items in the list
     override fun getItemCount(): Int {
-        return mList.size
+//        return mList.size
+        return items.size
     }
 
     // Holds the views for adding it to image and text

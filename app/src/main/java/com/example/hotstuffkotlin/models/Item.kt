@@ -1,6 +1,8 @@
 package com.example.hotstuffkotlin.models
 
-class Item(
+data class Item(
+
+//    var itemsArrayList : ArrayList<Item>,
     var itemId: Int = 1, //getItemId(),
     var buildingId : Int = 1, //getBuildingId(),
     var name : String = "",
