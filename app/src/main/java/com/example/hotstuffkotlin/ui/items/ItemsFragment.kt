@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotstuffkotlin.R
@@ -15,98 +16,69 @@ import com.example.hotstuffkotlin.models.Item
 import com.example.hotstuffkotlin.utils.Adapter
 
 class ItemsFragment : Fragment() {
-
-    private var _binding: FragmentItemsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentItemsBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
-        // MenuProvider
+    private var binding: FragmentItemsBinding? = null
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+//        binding = FragmentItemsBinding.inflate(layoutInflater)
         val view = inflater.inflate(R.layout.fragment_items, container, false)
-        getData(view)
+//        getData(view)
 
-
-        return view
-    }
-
-    // deprecated warning?
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.appbar_menu, menu)
-    }
-
-    private fun getData(view : View) {
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
-        val items = ArrayList<Item>()
         recyclerItems.layoutManager = LinearLayoutManager(context)
+
+        val items = ArrayList<Item>()
         for (i in 1..20) {
             items.add(
-                Item(
-                1,
-                1,
-                """ROKU 65 Inch 4K Smart TV, V-Series UHD LED HDR Television #$i""",
-                1,
-                """Electronics""",
-                """Living Room""",
-                """Roku""",
-                999.99,
-                """examplePath""",
-                """It is a long established fact that a reader will be distracted by the readable content of a page when looking at it's layout.""")
+                Item (
+                    itemId = 1, buildingId = 1, name = """65" 4K Smart TV, V-Series UHD LED #$i""",
+                    quantity = 1, value = 999.99, category = """Electronics""",
+                    room = """Living Room""", make ="""Roku""", imagePath ="""examplePath""",
+                    description ="""It is a long established fact that a reader will be distracted by the readable content of a page when looking at it's layout."""
+                )
             )
         }
-//        val adapter = Adapter(data)
         val adapter = Adapter(items)
         recyclerItems.adapter = adapter
 
         adapter.setOnItemClickListener(object : Adapter.onItemClickListener {
             override fun onItemClick(position: Int) {
                 val itemDetailFragment = ItemDetailFragment()
-                val detailBundle = Bundle()
+                val bundle = Bundle()
 
-//                val intent = Intent(context, ItemDetailActivity::class.java)
-//                intent.putExtra("name", items[position].name)
-//                intent.putExtra("category", items[position].category)
-//                intent.putExtra("room", items[position].room)
-//                intent.putExtra("make", items[position].make)
-//                intent.putExtra("value", items[position].value)
-//                intent.putExtra("description", items[position].description)
-//                intent.putExtra("image", items[position].imagePath)
-//                val quantityNumeral = items[position].quantity
-//                val quantityString = if (quantityNumeral > 1) "$quantityNumeral items" else "$quantityNumeral item"
-//                intent.putExtra("quantity", quantityString)
-                detailBundle.putString("name", items[position].name)
-                detailBundle.putString("category", items[position].category)
-                detailBundle.putString("room", items[position].room)
-                detailBundle.putString("make", items[position].make)
-                detailBundle.putString("description", items[position].description)
-                detailBundle.putString("image", items[position].imagePath)
+                bundle.putString("name", items[position].name)
+                bundle.putString("category", items[position].category)
+                bundle.putString("room", items[position].room)
+                bundle.putString("make", items[position].make)
+                bundle.putString("description", items[position].description)
+                bundle.putString("image", items[position].imagePath)
 
-                // TODO: This can be improved
+                // TODO: I think this can be improved, fix when time
                 val valueNumeral = if (items[position].value != null) items[position].value else 0.00
-                if (valueNumeral != null) detailBundle.putDouble("value", valueNumeral)
+                if (valueNumeral != null) bundle.putDouble("value", valueNumeral)
 
                 val quantityNumeral = items[position].quantity
-                val quantityString = if (quantityNumeral > 1) "$quantityNumeral items" else "$quantityNumeral item"
-                detailBundle.putString("quantity", quantityString)
+                if (quantityNumeral > 1) bundle.putString("quantity","$quantityNumeral items")
+                else bundle.putString("quantity", "$quantityNumeral item")
 
-                //startActivity(intent)
-                itemDetailFragment.arguments = detailBundle
-                parentFragmentManager.beginTransaction().replace(R.id.navigation_items, itemDetailFragment).commit()
-
-                //Toast.makeText(activity, "You clicked on item $position", Toast.LENGTH_SHORT).show()
+                itemDetailFragment.arguments = bundle
+//                childFragmentManager.beginTransaction().replace(R.id.layout_items, itemDetailFragment).commit()
+                val fm : FragmentManager = requireActivity().supportFragmentManager
+                fm.beginTransaction().replace(R.id.layout_items, itemDetailFragment).addToBackStack(null).commit()
+//                Toast.makeText(activity, "You clicked on item $position", Toast.LENGTH_SHORT).show()
             }
         })
+
+        return view
     }
+
+    // TODO: Deprecation warning, fix when time
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.appbar_menu, menu)
+    }
+
+    private fun getData(view : View) {}
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        binding = null
     }
 }

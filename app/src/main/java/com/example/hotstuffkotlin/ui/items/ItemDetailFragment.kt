@@ -11,18 +11,9 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
 
 class ItemDetailFragment : Fragment() {
-
     private var _binding: FragmentItemDetailBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater.inflate(R.layout.fragment_item_detail, container, false)
 
         val name = view.findViewById<TextView>(R.id.item_detail_name_text)
