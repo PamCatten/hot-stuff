@@ -19,8 +19,7 @@
             android:parentActivityName=".ui.ItemDetailActivity"
             android:label="Modify Item"/>
         <activity
-            android:name=".ui.ItemDetailActivity"
-            android:parentActivityName=".ui.MainActivity"/>
+            android:name=".ui.ItemDetailActivity"/>
         <activity
             android:name=".ui.NewItemActivity"
             android:label="New Item"

@@ -93,6 +93,8 @@
     <string name="learn_walkthrough_subtitle">Short user guides to help you get started</string>
     <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>
 
+    <string name="unspecified_value_filler">Unspecified</string>
+
     <!-- Settings: Search Preference Strings -->
 
 

@@ -1,12 +1,10 @@
 package com.example.hotstuffkotlin.ui
 
 import android.content.Intent
-import android.database.Cursor
 import android.os.Bundle
 import android.view.Menu
 import android.widget.ImageButton
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
@@ -79,39 +77,39 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        storeDataInArrays()
+//        storeDataInArrays()
     }
-    fun storeDataInArrays() {
-        val db = DatabaseHelper(this)
-        var item_id = ArrayList<Int>()
-        var building_id = ArrayList<Int>()
-        var item_name = ArrayList<String>()
-        var item_quantity = ArrayList<Int>()
-        var item_category = ArrayList<String>()
-        var item_value = ArrayList<Double>()
-        var item_room = ArrayList<String>()
-        var item_make = ArrayList<String>()
-        var item_imagePath = ArrayList<String>()
-        var item_description = ArrayList<String>()
-
-        val cursor : Cursor? = db.readData()
-        if (cursor == null || cursor.count == 0) {
-            Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show()
-        } else {
-            while (cursor.moveToNext()) {
-                item_id.add(cursor.getInt(0))
-                building_id.add(cursor.getInt(1))
-                item_name.add(cursor.getString(2))
-                item_quantity.add(cursor.getInt(3))
-                item_category.add(cursor.getString(4))
-                item_value.add(cursor.getDouble(5))
-                item_room.add(cursor.getString(6))
-                item_make.add(cursor.getString(7))
-                item_imagePath.add(cursor.getString(8))
-                item_description.add(cursor.getString(9))
-            }
-        }
-    }
+//    fun storeDataInArrays() {
+//        val db = DatabaseHelper(this)
+//        var item_id = ArrayList<Int>()
+//        var building_id = ArrayList<Int>()
+//        var item_name = ArrayList<String>()
+//        var item_quantity = ArrayList<Int>()
+//        var item_category = ArrayList<String>()
+//        var item_value = ArrayList<Double>()
+//        var item_room = ArrayList<String>()
+//        var item_make = ArrayList<String>()
+//        var item_imagePath = ArrayList<String>()
+//        var item_description = ArrayList<String>()
+//
+//        val cursor : Cursor? = db.readData()
+//        if (cursor == null || cursor.count == 0) {
+//            Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show()
+//        } else {
+//            while (cursor.moveToNext()) {
+//                item_id.add(cursor.getInt(0))
+//                building_id.add(cursor.getInt(1))
+//                item_name.add(cursor.getString(2))
+//                item_quantity.add(cursor.getInt(3))
+//                item_category.add(cursor.getString(4))
+//                item_value.add(cursor.getDouble(5))
+//                item_room.add(cursor.getString(6))
+//                item_make.add(cursor.getString(7))
+//                item_imagePath.add(cursor.getString(8))
+//                item_description.add(cursor.getString(9))
+//            }
+//        }
+//    }
 
 //    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
 //        super.onPrepareOptionsMenu(menu.apply {

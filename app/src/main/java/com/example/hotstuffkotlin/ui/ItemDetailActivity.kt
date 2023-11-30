@@ -1,18 +1,20 @@
 package com.example.hotstuffkotlin.ui
 
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
 import com.example.hotstuffkotlin.R
-import com.example.hotstuffkotlin.databinding.ActivityItemDetailBinding
+import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
 
 class ItemDetailActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityItemDetailBinding
+    private lateinit var binding : FragmentItemDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityItemDetailBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_item_detail)
+        binding = FragmentItemDetailBinding.inflate(layoutInflater)
+        setContentView(R.layout.fragment_item_detail)
 
         val name = findViewById<TextView>(R.id.item_detail_name_text)
         val category = findViewById<TextView>(R.id.item_detail_category_text)
@@ -45,5 +47,15 @@ class ItemDetailActivity : AppCompatActivity() {
         // appbar
         val appbar = findViewById<Toolbar>(R.id.appbar_item_detail)
         setSupportActionBar(appbar)
+
+        val navIcon = findViewById<ImageButton>(R.id.item_detail_appbar_navIcon)
+        navIcon.setOnClickListener{
+//            val itemsFragment = supportFragmentManager.findFragmentById(R.id.navigation_items)
+            val navController = findNavController(R.id.nav_host_fragment_activity_main)
+
+            if (!navController.popBackStack(R.id.navigation_items, true))
+                finish()
+        }
+
     }
 }

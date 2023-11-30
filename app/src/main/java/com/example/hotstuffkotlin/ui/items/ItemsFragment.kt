@@ -1,6 +1,5 @@
 package com.example.hotstuffkotlin.ui.items
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemsBinding
 import com.example.hotstuffkotlin.models.Item
-import com.example.hotstuffkotlin.ui.ItemDetailActivity
 import com.example.hotstuffkotlin.utils.Adapter
 
 class ItemsFragment : Fragment() {
@@ -39,24 +37,15 @@ class ItemsFragment : Fragment() {
         return view
     }
 
+    // deprecated warning?
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.appbar_menu, menu)
     }
 
     private fun getData(view : View) {
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
-//        val data = ArrayList<ItemCardViewModel>()
         val items = ArrayList<Item>()
         recyclerItems.layoutManager = LinearLayoutManager(context)
-//        for (i in 1..20) {
-//            data.add(
-//                ItemCardViewModel(
-//                "Roku 55' 4K Smart TV",
-//                "Electronics",
-//                "Living Room",
-//                "$i items")
-//            )
-//        }
         for (i in 1..20) {
             items.add(
                 Item(
@@ -78,24 +67,38 @@ class ItemsFragment : Fragment() {
 
         adapter.setOnItemClickListener(object : Adapter.onItemClickListener {
             override fun onItemClick(position: Int) {
-                val intent = Intent(context, ItemDetailActivity::class.java)
-//                intent.putExtra("name", data[position].textName)
-//                intent.putExtra("category", data[position].textCategory)
-//                intent.putExtra("room", data[position].textRoom)
-//                intent.putExtra("quantity", data[position].textQuantity)
+                val itemDetailFragment = ItemDetailFragment()
+                val detailBundle = Bundle()
 
-//                intent.putExtra("item", items[position] as Parcelable)
-                intent.putExtra("name", items[position].name)
-                intent.putExtra("category", items[position].category)
-                intent.putExtra("room", items[position].room)
-                intent.putExtra("make", items[position].make)
-                intent.putExtra("value", items[position].value)
-                intent.putExtra("description", items[position].description)
-                intent.putExtra("image", items[position].imagePath)
+//                val intent = Intent(context, ItemDetailActivity::class.java)
+//                intent.putExtra("name", items[position].name)
+//                intent.putExtra("category", items[position].category)
+//                intent.putExtra("room", items[position].room)
+//                intent.putExtra("make", items[position].make)
+//                intent.putExtra("value", items[position].value)
+//                intent.putExtra("description", items[position].description)
+//                intent.putExtra("image", items[position].imagePath)
+//                val quantityNumeral = items[position].quantity
+//                val quantityString = if (quantityNumeral > 1) "$quantityNumeral items" else "$quantityNumeral item"
+//                intent.putExtra("quantity", quantityString)
+                detailBundle.putString("name", items[position].name)
+                detailBundle.putString("category", items[position].category)
+                detailBundle.putString("room", items[position].room)
+                detailBundle.putString("make", items[position].make)
+                detailBundle.putString("description", items[position].description)
+                detailBundle.putString("image", items[position].imagePath)
+
+                // TODO: This can be improved
+                val valueNumeral = if (items[position].value != null) items[position].value else 0.00
+                if (valueNumeral != null) detailBundle.putDouble("value", valueNumeral)
+
                 val quantityNumeral = items[position].quantity
                 val quantityString = if (quantityNumeral > 1) "$quantityNumeral items" else "$quantityNumeral item"
-                intent.putExtra("quantity", quantityString)
-                startActivity(intent)
+                detailBundle.putString("quantity", quantityString)
+
+                //startActivity(intent)
+                itemDetailFragment.arguments = detailBundle
+                parentFragmentManager.beginTransaction().replace(R.id.navigation_items, itemDetailFragment).commit()
 
                 //Toast.makeText(activity, "You clicked on item $position", Toast.LENGTH_SHORT).show()
             }
