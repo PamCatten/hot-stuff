@@ -63,7 +63,6 @@ class ItemsFragment : Fragment() {
 //                childFragmentManager.beginTransaction().replace(R.id.layout_items, itemDetailFragment).commit()
                 val fm : FragmentManager = requireActivity().supportFragmentManager
                 fm.beginTransaction().replace(R.id.layout_items, itemDetailFragment).addToBackStack(null).commit()
-//                Toast.makeText(activity, "You clicked on item $position", Toast.LENGTH_SHORT).show()
             }
         })
 
