@@ -24,8 +24,6 @@ class ItemDetailFragment : Fragment() {
         val value = view.findViewById<TextView>(R.id.item_detail_value_text)
         val quantity = view.findViewById<TextView>(R.id.item_detail_quantity_text)
 
-        val navIcon = view.findViewById<ImageButton>(R.id.item_detail_appbar_navIcon)
-
         val bundle = this.arguments
         val valueNumeral = bundle?.getDouble("value", 0.00).toString()
         val valueCurrency = "$" // get from stored preference value
@@ -46,24 +44,12 @@ class ItemDetailFragment : Fragment() {
 
         // TODO: include image path
 
-//        val valueNumeral = intent.getDoubleExtra("value", 0.00).toString()
-//        val valueCurrency = "$" // get from stored preference value
+        val navIcon = view.findViewById<ImageButton>(R.id.item_detail_appbar_navIcon)
+        navIcon.setOnClickListener{
 
-//        name.text = intent.getStringExtra("name")
-//        category.text = intent.getStringExtra("category")
-//        room.text = intent.getStringExtra("room")
-//        quantity.text = intent.getStringExtra("quantity")
-//        if (intent.hasExtra("value")) value.text = "$valueCurrency$valueNumeral"
-//        else value.text = "Unspecified"
-//        if (intent.hasExtra("make")) make.text = intent.getStringExtra("make")
-//        else make.text = "Unspecified"
-//        if (intent.hasExtra("description")) description.text = intent.getStringExtra("description")
-//        else description.text = "Unspecified"
-
-        navIcon.setOnClickListener{}
+        }
         return view
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

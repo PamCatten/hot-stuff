@@ -7,7 +7,7 @@ import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotstuffkotlin.R
@@ -41,7 +41,6 @@ class ItemsFragment : Fragment() {
 
         adapter.setOnItemClickListener(object : Adapter.onItemClickListener {
             override fun onItemClick(position: Int) {
-                val itemDetailFragment = ItemDetailFragment()
                 val bundle = Bundle()
 
                 bundle.putString("name", items[position].name)
@@ -59,10 +58,9 @@ class ItemsFragment : Fragment() {
                 if (quantityNumeral > 1) bundle.putString("quantity","$quantityNumeral items")
                 else bundle.putString("quantity", "$quantityNumeral item")
 
-                itemDetailFragment.arguments = bundle
-//                childFragmentManager.beginTransaction().replace(R.id.layout_items, itemDetailFragment).commit()
-                val fm : FragmentManager = requireActivity().supportFragmentManager
-                fm.beginTransaction().replace(R.id.layout_items, itemDetailFragment).addToBackStack(null).commit()
+                val navController = findNavController()
+//                childFragmentManager.beginTransaction().addToBackStack(null).commit()
+                navController.navigate(R.id.action_items_to_item_detail, bundle)
             }
         })
 

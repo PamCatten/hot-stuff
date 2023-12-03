@@ -14,7 +14,11 @@
         android:id="@+id/navigation_items"
         android:name="com.example.hotstuffkotlin.ui.items.ItemsFragment"
         android:label="@string/items_label"
-        tools:layout="@layout/fragment_items" />
+        tools:layout="@layout/fragment_items" >
+        <action
+            android:id="@+id/action_items_to_item_detail"
+            app:destination="@id/navigation_item_detail"/>
+    </fragment>
     <fragment
         android:id="@+id/navigation_learn"
         android:name="com.example.hotstuffkotlin.ui.learn.LearnFragment"
@@ -24,4 +28,13 @@
         android:id="@+id/navigation_settings"
         android:name="com.example.hotstuffkotlin.ui.settings.SettingsFragment"
         android:label="@string/settings_label"/>
+    <fragment
+        android:id="@+id/navigation_item_detail"
+        android:name="com.example.hotstuffkotlin.ui.items.ItemDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_item_detail" >
+        <action
+            android:id="@+id/action_item_detail_to_items"
+            app:destination="@id/navigation_items" />
+    </fragment>
 </navigation>

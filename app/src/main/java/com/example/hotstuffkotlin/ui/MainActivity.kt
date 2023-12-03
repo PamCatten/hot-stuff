@@ -3,6 +3,7 @@ package com.example.hotstuffkotlin.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -49,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        navController.addOnDestinationChangedListener{_, destination, _ ->
+            if (destination.id == R.id.navigation_item_detail) navView.visibility = View.GONE
+            else navView.visibility = View.VISIBLE
+        }
 
         // bottom dialog
         val createButton = navView.menu.findItem(R.id.navigation_placeholder)
