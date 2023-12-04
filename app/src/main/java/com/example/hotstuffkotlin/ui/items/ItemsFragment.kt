@@ -59,7 +59,7 @@ class ItemsFragment : Fragment() {
                 else bundle.putString("quantity", "$quantityNumeral item")
 
                 val navController = findNavController()
-//                childFragmentManager.beginTransaction().addToBackStack(null).commit()
+                childFragmentManager.beginTransaction().addToBackStack(null).commit()
                 navController.navigate(R.id.action_items_to_item_detail, bundle)
             }
         })

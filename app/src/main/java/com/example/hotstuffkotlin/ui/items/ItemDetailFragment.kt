@@ -1,12 +1,14 @@
 package com.example.hotstuffkotlin.ui.items
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
 
@@ -46,7 +48,8 @@ class ItemDetailFragment : Fragment() {
 
         val navIcon = view.findViewById<ImageButton>(R.id.item_detail_appbar_navIcon)
         navIcon.setOnClickListener{
-
+            Log.e("MainActivity", "popping backstack")
+            findNavController().navigate(R.id.navigation_items)
         }
         return view
     }
