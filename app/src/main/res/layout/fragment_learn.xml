@@ -16,30 +16,30 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/learn_walkthrough_card"
             app:layout_constraintTop_toTopOf="parent"
-            style="@style/item_Card">
+            style="@style/items_card">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/learn_walkthrough_layout"
-                style="@style/item_CardConstraintLayout">
+                style="@style/items_cardConstraintLayout">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/learn_walkthrough_header"
-                    style="@style/item_CardHeaderLayout"
+                    style="@style/items_cardHeaderLayout"
                     app:layout_constraintTop_toTopOf="@id/learn_walkthrough_layout"
                     app:layout_constraintLeft_toLeftOf="parent">
                     <TextView
                         android:id="@+id/learn_walkthrough_title"
-                        style="@style/item_CardTitle"
+                        style="@style/items_cardTitle"
                         android:text="@string/learn_walkthrough_title"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <TextView
                         android:id="@+id/learn_walkthrough_subtitle"
-                        style="@style/item_CardSubtitle"
+                        style="@style/items_cardSubtitle"
                         android:text="@string/learn_walkthrough_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_title"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <ImageView
                         android:id="@+id/learn_walkthrough_dropdown_icon"
-                        style="@style/item_CardIcon"
+                        style="@style/items_cardIcon"
                         android:contentDescription="@string/learn_dropdown_icon_content_description"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
@@ -57,28 +57,28 @@
                     app:dividerColor="?attr/colorOnPrimary"/>
                 <TextView
                     android:id="@+id/learn_walkthrough_whyCare"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="Why should I care?"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_divider"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_walkthrough_gettingStarted"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="Getting started"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_whyCare"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_walkthrough_export"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="Exporting records"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_gettingStarted"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_walkthrough_group"
-                    style="@style/item_CardGroup"
+                    style="@style/items_cardGroup"
                     app:constraint_referenced_ids="learn_walkthrough_divider,
                     learn_walkthrough_whyCare,
                     learn_walkthrough_gettingStarted,
@@ -90,30 +90,30 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/learn_resources_card"
             app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_card"
-            style="@style/item_Card">
+            style="@style/items_card">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/learn_resources_layout"
-                style="@style/item_CardConstraintLayout">
+                style="@style/items_cardConstraintLayout">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/learn_resources_header"
-                    style="@style/item_CardHeaderLayout"
+                    style="@style/items_cardHeaderLayout"
                     app:layout_constraintTop_toTopOf="@id/learn_resources_layout"
                     app:layout_constraintLeft_toLeftOf="parent">
                     <TextView
                         android:id="@+id/learn_resources_title"
-                        style="@style/item_CardTitle"
+                        style="@style/items_cardTitle"
                         android:text="@string/learn_resources_title"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <TextView
                         android:id="@+id/learn_resources_subtitle"
-                        style="@style/item_CardSubtitle"
+                        style="@style/items_cardSubtitle"
                         android:text="@string/learn_resources_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_resources_title"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <ImageView
                         android:id="@+id/learn_resources_dropdown_icon"
-                        style="@style/item_CardIcon"
+                        style="@style/items_cardIcon"
                         android:contentDescription="@string/learn_dropdown_icon_content_description"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
@@ -130,35 +130,35 @@
                     app:dividerColor="?attr/colorOnPrimary"/>
                 <TextView
                     android:id="@+id/learn_resources_attentionToDetail"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="Attention to Detail"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_divider"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_likeKind"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="Like Kind and Quality"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_attentionToDetail"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_adjusters"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="Loss Adjusters"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_likeKind"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_exampleForm"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="Example Proof of Loss Form"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_adjusters"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_resources_group"
-                    style="@style/item_CardGroup"
+                    style="@style/items_cardGroup"
                     app:constraint_referenced_ids="learn_resources_divider,
                     learn_resources_attentionToDetail,
                     learn_resources_likeKind,
@@ -171,31 +171,31 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/learn_about_card"
             app:layout_constraintTop_toBottomOf="@id/learn_resources_card"
-            style="@style/item_Card">
+            style="@style/items_card">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/learn_about_layout"
-                style="@style/item_CardConstraintLayout">
+                style="@style/items_cardConstraintLayout">
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/learn_about_header"
-                    style="@style/item_CardHeaderLayout"
+                    style="@style/items_cardHeaderLayout"
                     app:layout_constraintTop_toTopOf="@id/learn_about_layout"
                     app:layout_constraintLeft_toLeftOf="parent">
                     <TextView
                         android:id="@+id/learn_about_title"
-                        style="@style/item_CardTitle"
+                        style="@style/items_cardTitle"
                         android:text="@string/learn_about_card_title"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         />
                     <TextView
                         android:id="@+id/learn_about_subtitle"
-                        style="@style/item_CardSubtitle"
+                        style="@style/items_cardSubtitle"
                         android:text="@string/learn_about_card_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_about_title"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <ImageView
                         android:id="@+id/learn_about_dropdown_icon"
-                        style="@style/item_CardIcon"
+                        style="@style/items_cardIcon"
                         android:contentDescription="@string/learn_dropdown_icon_content_description"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
@@ -212,28 +212,28 @@
                     app:dividerColor="?attr/colorOnPrimary"/>
                 <TextView
                     android:id="@+id/learn_about_sourceCode"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/learn_about_title_sourceCode"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_divider"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_about_acknowledgements"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/learn_about_title_acknowledgements"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_sourceCode"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_about_terms"
-                    style="@style/item_CardSubtitle"
+                    style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/learn_about_title_terms"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_acknowledgements"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_about_group"
-                    style="@style/item_CardGroup"
+                    style="@style/items_cardGroup"
                     app:constraint_referenced_ids="learn_about_divider,
                     learn_about_sourceCode,
                     learn_about_acknowledgements,

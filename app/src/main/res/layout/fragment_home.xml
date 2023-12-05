@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
         <TextView
             android:id="@+id/tvBuildingValue"
-            style="@style/text_Subtitle"
+            style="@style/text_subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Building Value"
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/tvActiveBuildingValue"
-            style="@style/text_Subtitle"
+            style="@style/text_subtitle"
             android:textStyle="bold"
             android:text="$6,573.24"
             app:layout_constraintEnd_toEndOf="@id/topTextLayout" />
@@ -42,14 +42,14 @@
         app:layout_constraintTop_toBottomOf="@+id/topTextLayout" >
         <TextView
             android:id="@+id/tvActiveBuildingName"
-            style="@style/text_Subtitle"
+            style="@style/text_subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Sample House"
             app:layout_constraintStart_toStartOf="parent" />
         <TextView
             android:id="@+id/tvActiveBuildingCount"
-            style="@style/text_Subtitle"
+            style="@style/text_subtitle"
             android:textStyle="bold"
             android:text="58 items"
             android:textColor="@color/coral"/>
@@ -72,7 +72,7 @@
         app:layout_constraintBottom_toBottomOf="@id/bottomBarChart">
         <TextView
             android:id="@+id/tvItemDistribution"
-            style="@style/text_Subtitle"
+            style="@style/text_subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Item Distribution"/>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="none"
-    android:theme="@style/Container"
+    android:theme="@style/container"
     android:id="@+id/layout_item_detail"
     tools:context=".ui.items.ItemDetailFragment">
     <androidx.constraintlayout.widget.ConstraintLayout

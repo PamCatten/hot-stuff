@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/appbar"
-    style="@style/Appbar"
+    style="@style/main_appbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:backgroundTint="@android:color/transparent"
