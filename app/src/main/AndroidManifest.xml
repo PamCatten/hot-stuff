@@ -15,25 +15,14 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".ui.ModifyItemActivity"
-            android:parentActivityName=".ui.ItemDetailActivity"
-            android:label="Modify Item"/>
-        <activity
-            android:name=".ui.ItemDetailActivity"/>
-        <activity
             android:name=".ui.NewItemActivity"
             android:label="New Item"
-            android:parentActivityName=".ui.MainActivity" />
-        <activity
-            android:name=".ui.NewBuildingActivity"
-            android:label="New Building"
             android:parentActivityName=".ui.MainActivity" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

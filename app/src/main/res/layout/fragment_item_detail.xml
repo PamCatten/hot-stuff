@@ -14,24 +14,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/appbar_item_detail"
+            android:id="@+id/item_detail_appbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/transparent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:navigationIcon="?attr/homeAsUpIndicator"
             app:contentInsetStart="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <ImageButton
-                android:id="@+id/item_detail_appbar_navIcon"
-                android:layout_width="48dp"
-                android:layout_height="match_parent"
-                android:src="?attr/homeAsUpIndicator"
-                android:background="?attr/colorPrimaryVariant"
-                android:contentDescription="Back navigation button"
-                app:tint="?attr/colorOnPrimary"
-            />
-        </androidx.appcompat.widget.Toolbar>
+            app:layout_constraintTop_toTopOf="parent"/>
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/item_detail_image"
             android:layout_width="match_parent"
@@ -42,9 +33,21 @@
             android:layout_marginBottom="16dp"
             android:elevation="8dp"
             app:shapeAppearanceOverlay="@style/roundedImageView"
-            app:layout_constraintTop_toBottomOf="@id/appbar_item_detail"
-            app:srcCompat="@drawable/default_image"
-        />
+            app:layout_constraintTop_toBottomOf="@id/item_detail_appbar"
+            app:srcCompat="@drawable/default_image"/>
+<!--        <com.google.android.material.imageview.ShapeableImageView-->
+<!--            android:id="@+id/item_detail_image"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:scaleType="fitXY"-->
+<!--            android:cropToPadding="true"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:elevation="8dp"-->
+<!--            app:shapeAppearanceOverlay="@style/roundedImageView"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/item_detail_appbar"-->
+<!--            app:srcCompat="@drawable/default_image"-->
+<!--            />-->
         <TextView
             android:id="@+id/item_detail_name_title"
             android:layout_width="match_parent"

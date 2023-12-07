@@ -69,7 +69,7 @@ class ItemsFragment : Fragment() {
 
     // TODO: Deprecation warning, fix when time
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.appbar_menu, menu)
+        inflater.inflate(R.menu.appbar_main_menu, menu)
     }
 
     private fun getData(view : View) {}

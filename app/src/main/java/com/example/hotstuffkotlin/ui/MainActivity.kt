@@ -1,11 +1,8 @@
 package com.example.hotstuffkotlin.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
-import android.widget.ImageButton
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
@@ -18,7 +15,6 @@ import com.example.hotstuffkotlin.databinding.ActivityMainBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.ThemeManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -35,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         initTheme()
 
         // appbar
-        appbar = findViewById(R.id.appbar)
+        appbar = findViewById(R.id.appbar_main)
         setSupportActionBar(appbar)
 
         // navbar
@@ -44,43 +40,57 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navigation_home,
             R.id.navigation_items,
-            R.id.navigation_placeholder,
+            R.id.navigation_create,
             R.id.navigation_learn,
             R.id.navigation_settings
         ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-        navController.addOnDestinationChangedListener{_, destination, _ ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.navigation_item_detail) navView.visibility = View.GONE
             else navView.visibility = View.VISIBLE
+
+//            val transfer = appbar.menu.findItem(R.id.appbar_main_transfer)
+//            when (destination.id) {
+//                R.id.navigation_item_detail -> transfer.isVisible = true
+//                else -> transfer.isVisible = false
+//            }
         }
 
         // bottom dialog
-        val createButton = navView.menu.findItem(R.id.navigation_placeholder)
-        createButton.setOnMenuItemClickListener {
-            val bsDialog = BottomSheetDialog(this)
-            val view = layoutInflater.inflate(R.layout.bottom_dialog, null)
-            val buttonClose = view.findViewById<ImageButton>(R.id.dialog_button_close)
-            val buttonNewItem = view.findViewById<LinearLayout>(R.id.dialog_layoutNewItem)
-            val buttonNewBuilding = view.findViewById<LinearLayout>(R.id.dialog_layoutNewBuilding)
+//        val createButton = navView.menu.findItem(R.id.navigation_placeholder)
+//        createButton.setOnMenuItemClickListener {
+//            val intent = Intent(this, NewItemActivity::class.java)
+//            startActivity(intent)
+//            navController.navigate(R.id.navigation_new_item)
+//            true
+//        }
 
-            buttonClose.setOnClickListener {
-                bsDialog.dismiss()
-            }
-            buttonNewItem.setOnClickListener{
-                val intent = Intent(this, NewItemActivity::class.java)
-                startActivity(intent)
-            }
-            buttonNewBuilding.setOnClickListener{
-                val intent = Intent(this, NewBuildingActivity::class.java)
-                startActivity(intent)
-            }
+//        createButton.setOnMenuItemClickListener {
+//            val bsDialog = BottomSheetDialog(this)
+//            val view = layoutInflater.inflate(R.layout.bottom_dialog, null)
+//            val buttonClose = view.findViewById<ImageButton>(R.id.dialog_button_close)
+//            val buttonNewItem = view.findViewById<LinearLayout>(R.id.dialog_layoutNewItem)
+//            val buttonNewBuilding = view.findViewById<LinearLayout>(R.id.dialog_layoutNewBuilding)
 
-            bsDialog.setCancelable(true)
-            bsDialog.setContentView(view)
-            bsDialog.show()
-            true
-        }
+//            buttonClose.setOnClickListener {
+//                bsDialog.dismiss()
+//            }
+
+//            buttonNewItem.setOnClickListener{
+//                val intent = Intent(this, NewItemActivity::class.java)
+//                startActivity(intent)
+//            }
+//            buttonNewBuilding.setOnClickListener{
+//                val intent = Intent(this, NewBuildingActivity::class.java)
+//                startActivity(intent)
+//            }
+
+//            bsDialog.setCancelable(true)
+//            bsDialog.setContentView(view)
+//            bsDialog.show()
+//            true
+//        }
     }
 
 //    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
@@ -93,7 +103,7 @@ class MainActivity : AppCompatActivity() {
 //    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.appbar_menu, menu)
+        menuInflater.inflate(R.menu.appbar_main_menu, menu)
         return true
     }
 

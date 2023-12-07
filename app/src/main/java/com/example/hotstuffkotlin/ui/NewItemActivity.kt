@@ -40,15 +40,6 @@ class NewItemActivity : AppCompatActivity() {
         val quantityValueCheck = binding.itemQuantityText.text.toString().toInt() == 0
 
         // TODO: violates DRY, don't have time to make this logic bulletproof right now
-//        if (binding.itemNameText.text.toString() == "")
-//            binding.itemNameContainer.helperText = "Your item must be named"
-//        if (binding.itemQuantityText.text.toString() == "")
-//            binding.itemQuantityContainer.helperText = "Your item must have a quantity"
-//        else if (binding.itemQuantityText.text.toString().toInt() == 0)
-//            binding.itemQuantityContainer.helperText = "Your item quantity cannot be less than one"
-//        nameListener()
-//        quantityListener()
-        // end violation
 
         if (nameNullCheck || nameValueCheck || categoryNullCheck ||
             categoryValueCheck || roomNullCheck || roomValueCheck ||
@@ -105,26 +96,22 @@ class NewItemActivity : AppCompatActivity() {
 
     private fun nameListener() {
         binding.itemNameText.setOnFocusChangeListener{ _, focused ->
-            if (!focused)
-                binding.itemNameContainer.helperText = validName()
+            if (!focused) binding.itemNameContainer.helperText = validName()
         }
     }
     private fun categoryListener() {
         binding.itemCategoryText.setOnFocusChangeListener{ _, focused ->
-            if (!focused)
-                binding.itemCategoryContainer.helperText = validCategory()
+            if (!focused) binding.itemCategoryContainer.helperText = validCategory()
         }
     }
     private fun roomListener() {
         binding.itemRoomText.setOnFocusChangeListener{ _, focused ->
-            if (!focused)
-                binding.itemRoomContainer.helperText = validRoom()
+            if (!focused) binding.itemRoomContainer.helperText = validRoom()
         }
     }
     private fun quantityListener() {
         binding.itemQuantityText.setOnFocusChangeListener{ _, focused ->
-            if (!focused)
-                binding.itemQuantityContainer.helperText = validQuantity()
+            if (!focused) binding.itemQuantityContainer.helperText = validQuantity()
         }
     }
 
@@ -145,10 +132,8 @@ class NewItemActivity : AppCompatActivity() {
     }
     private fun validQuantity(): String? {
         val quantityText = binding.itemQuantityText.text.toString()
-        if (quantityText == "")
-            return "Your item must have a quantity"
-        else if (quantityText.toInt() == 0)
-            return "Your item quantity cannot be less than one"
+        if (quantityText == "") return "Your item must have a quantity"
+        else if (quantityText.toInt() == 0) return "Your item quantity cannot be less than one"
         return null
     }
 }
