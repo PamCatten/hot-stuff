@@ -12,16 +12,12 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.ActivityMainBinding
-import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.ThemeManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var appbar: Toolbar
-
-    // db stopgap
-    lateinit var db : DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
