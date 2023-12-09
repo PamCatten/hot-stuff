@@ -29,7 +29,7 @@ class ItemsFragment : Fragment() {
         for (i in 1..20) {
             items.add(
                 Item (
-                    itemId = 1, buildingId = 1, name = """65" 4K Smart TV, V-Series UHD LED #$i""",
+                    itemId = i, buildingId = i, name = """65" 4K Smart TV, V-Series UHD LED #$i""",
                     quantity = 1, value = 999.99, category = """Electronics""",
                     room = """Living Room""", make ="""Roku""", imagePath ="""examplePath""",
                     description ="""It is a long established fact that a reader will be distracted by the readable content of a page when looking at it's layout."""
@@ -43,6 +43,9 @@ class ItemsFragment : Fragment() {
             override fun onItemClick(position: Int) {
                 val bundle = Bundle()
 
+                bundle.putInt("id", items[position].itemId)
+                bundle.putInt("buildingId", items[position].buildingId)
+                bundle.putInt("quantity", items[position].quantity)
                 bundle.putString("name", items[position].name)
                 bundle.putString("category", items[position].category)
                 bundle.putString("room", items[position].room)
@@ -54,13 +57,8 @@ class ItemsFragment : Fragment() {
                 val valueNumeral = if (items[position].value != null) items[position].value else 0.00
                 if (valueNumeral != null) bundle.putDouble("value", valueNumeral)
 
-                val quantityNumeral = items[position].quantity
-                if (quantityNumeral > 1) bundle.putString("quantity","$quantityNumeral items")
-                else bundle.putString("quantity", "$quantityNumeral item")
-
-                val navController = findNavController()
                 childFragmentManager.beginTransaction().addToBackStack(null).commit()
-                navController.navigate(R.id.action_items_to_item_detail, bundle)
+                findNavController().navigate(R.id.action_items_to_item_detail, bundle)
             }
         })
 

@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
+import com.google.android.material.button.MaterialButton
 
 class ItemDetailFragment : Fragment() {
     private var _binding: FragmentItemDetailBinding? = null
@@ -23,22 +25,24 @@ class ItemDetailFragment : Fragment() {
         val value = view.findViewById<TextView>(R.id.item_detail_value_text)
         val quantity = view.findViewById<TextView>(R.id.item_detail_quantity_text)
 
-        val bundle = this.arguments
-        val valueNumeral = bundle?.getDouble("value", 0.00).toString()
-        val valueCurrency = "$" // get from stored preference value
+        val bundle = this.requireArguments()
+        val valueNumeral = bundle.getDouble("value").toString()
+        val valueCurrency = "$" // TODO: get from stored preference value
 
-        name.text = bundle?.getString("name")
-        category.text = bundle?.getString("category")
-        room.text = bundle?.getString("room")
-        quantity.text = bundle?.getString("quantity")
+        name.text = bundle.getString("name")
+        category.text = bundle.getString("category")
+        room.text = bundle.getString("room")
 
-        if (bundle?.getDouble("value") != null) value.text = "$valueCurrency $valueNumeral"
-        else value.text = R.string.unspecified_value_filler.toString()
+        val quantityNumeral = bundle.getInt("quantity")
+        if (quantityNumeral == 1) quantity.text = "$quantityNumeral item"
+        else quantity.text = "$quantityNumeral items"
 
-        if (bundle?.getString("make") != null) make.text = bundle.getString("make")
+        value.text = "$valueCurrency $valueNumeral"
+
+        if (bundle.getString("make") != null) make.text = bundle.getString("make")
         else make.text = R.string.unspecified_value_filler.toString()
 
-        if (bundle?.getString("description") != null) description.text = bundle.getString("description")
+        if (bundle.getString("description") != null) description.text = bundle.getString("description")
         else description.text = R.string.unspecified_value_filler.toString()
 
         // TODO: include image path
@@ -53,6 +57,12 @@ class ItemDetailFragment : Fragment() {
 
 //        val appbar = view.findViewById<Toolbar>(R.id.item_detail_appbar)
 //        appbar.menu.findItem()
+
+        val editButton = view.findViewById<MaterialButton>(R.id.item_detail_edit_button)
+        editButton.setOnClickListener{
+            childFragmentManager.beginTransaction().addToBackStack(null).commit()
+            findNavController().navigate(R.id.action_item_detail_to_edit_item, bundle)
+        }
 
         return view
     }

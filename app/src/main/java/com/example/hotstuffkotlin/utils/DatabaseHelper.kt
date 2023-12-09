@@ -33,14 +33,8 @@ class DatabaseHelper(context: Context?) :
         onCreate(db)
     }
 
-    fun addItem(name : String,
-       quantity : Int,
-       category : String?,
-       value : Double?,
-       room : String?,
-       make : String?,
-       image : String?,
-       description : String?) {
+    fun addItem(name: String, quantity: Int, category: String, room: String,
+        make: String?, value: Double?, image: String?, description: String?) {
         val db : SQLiteDatabase = this.writableDatabase
         val cv = ContentValues()
 
@@ -52,57 +46,57 @@ class DatabaseHelper(context: Context?) :
         cv.put(COLUMN_VALUE, value)
         cv.put(COLUMN_IMAGE_PATH, image)
         cv.put(COLUMN_DESCRIPTION, description)
-        val result : Long =  db.insert(TABLE_NAME, null, cv)
-        if (result == (-1).toLong()) {
-            Toast.makeText(this.context, "Database insertion failed.", Toast.LENGTH_SHORT).show()
-        } else
-            Toast.makeText(this.context, "Database insertion successful!.", Toast.LENGTH_SHORT).show()
+
+        val result: Long =  db.insert(TABLE_NAME, null, cv)
+        if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Database insertion failed.", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(this.context, "Database insertion successful!.", Toast.LENGTH_SHORT).show()
         db.close()
     }
-//    fun addItem(i : Item) : Long {
-//        val db : SQLiteDatabase = this.writableDatabase
-//        val cv = ContentValues()
-//        cv.put(COLUMN_BUILDING_ID, i.buildingId)
-//        cv.put(COLUMN_NAME, i.name)
-//        cv.put(COLUMN_QUANTITY, i.quantity)
-//        cv.put(COLUMN_CATEGORY, i.category)
-//        cv.put(COLUMN_ROOM, i.room)
-//        cv.put(COLUMN_MAKE, i.make)
-//        cv.put(COLUMN_VALUE, i.value)
-//        cv.put(COLUMN_IMAGE_PATH, i.imagePath)
-//        cv.put(COLUMN_DESCRIPTION, i.description)
-//        val result : Long =  db.insert(TABLE_NAME, null, cv)
-//        if (result == (-1).toLong()) {
-//            Toast.makeText(this.context, "Database insertion failed.", Toast.LENGTH_SHORT).show()
-//        } else
-//            Toast.makeText(this.context, "Database insertion successful!.", Toast.LENGTH_SHORT).show()
-//        db.close()
-//        return result
-//    }
+
+    fun updateItem(id: Int, name: String, quantity: Int, category: String, room: String,
+       make: String?, value: Double?, image: String?, description: String?) {
+        val db : SQLiteDatabase = this.writableDatabase
+        val cv = ContentValues()
+
+        cv.put(COLUMN_NAME, name)
+        cv.put(COLUMN_QUANTITY, quantity)
+        cv.put(COLUMN_CATEGORY, category)
+        cv.put(COLUMN_ROOM, room)
+        cv.put(COLUMN_MAKE, make)
+        cv.put(COLUMN_VALUE, value)
+        cv.put(COLUMN_IMAGE_PATH, image)
+        cv.put(COLUMN_DESCRIPTION, description)
+
+        val result =  db.update(TABLE_NAME, cv, "item_id=?", arrayOf(id.toString()))
+        if (result == (-1)) Toast.makeText(context, "Oh no! Update failed.", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(context, "Update successful!", Toast.LENGTH_SHORT).show()
+    }
+
     fun getItems(): ArrayList<Item> {
-        val itemList : ArrayList<Item> = ArrayList()
+        val itemList: ArrayList<Item> = ArrayList()
         val selectQuery = "SELECT * FROM $TABLE_NAME"
-        val db : SQLiteDatabase = this.readableDatabase
-        var cursor : Cursor? = null
+        val db: SQLiteDatabase = this.readableDatabase
+        var cursor: Cursor? = null
 
         try {
             cursor = db.rawQuery(selectQuery, null)
+            cursor.close()
         } catch (e: Exception) {
             e.printStackTrace()
             db.execSQL(selectQuery)
             return ArrayList()
         }
 
-        var itemId : Int
-        var buildingId : Int
-        var name : String
-        var quantity : Int
-        var category : String?
-        var room : String?
-        var make : String?
-        var value : Double?
-        var imagePath : String?
-        var description : String?
+        var itemId: Int
+        var buildingId: Int
+        var name: String
+        var quantity: Int
+        var category: String
+        var room: String?
+        var make: String?
+        var value: Double?
+        var imagePath: String?
+        var description: String?
 
         if (cursor.moveToFirst()) {
             do {

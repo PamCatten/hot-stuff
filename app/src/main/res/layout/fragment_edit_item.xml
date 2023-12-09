@@ -114,11 +114,11 @@
             android:hint="Description"/>
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/itemCreateButton"
+        android:id="@+id/itemSaveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:text="Create"
+        android:text="Save"
         android:textColor="?attr/colorOnPrimary"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"

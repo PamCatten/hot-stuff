@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/nav_graph"
     app:startDestination="@+id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
@@ -20,7 +20,7 @@
             app:destination="@id/navigation_item_detail"/>
     </fragment>
     <fragment
-        android:id="@+id/navigation_create"
+        android:id="@+id/navigation_create_item"
         android:name="com.example.hotstuffkotlin.ui.create.CreateItemFragment"
         android:label="Create"
         tools:layout="@layout/fragment_create_item"/>
@@ -39,7 +39,12 @@
         android:label=""
         tools:layout="@layout/fragment_item_detail">
         <action
-            android:id="@+id/action_item_detail_to_items"
-            app:destination="@id/navigation_items"/>
+            android:id="@+id/action_item_detail_to_edit_item"
+            app:destination="@id/navigation_edit_item" />
     </fragment>
+    <fragment
+        android:id="@+id/navigation_edit_item"
+        android:name="com.example.hotstuffkotlin.ui.create.EditItemFragment"
+        android:label="Edit item"
+        tools:layout="@layout/fragment_edit_item"/>
 </navigation>

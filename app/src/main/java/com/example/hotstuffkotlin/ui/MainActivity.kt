@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         // appbar
         appbar = findViewById(R.id.appbar_main)
+//        val search = appbar.menu.findItem(R.id.item)
         setSupportActionBar(appbar)
 
         // navbar
@@ -36,15 +37,17 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(setOf(
             R.id.navigation_home,
             R.id.navigation_items,
-            R.id.navigation_create,
+            R.id.navigation_create_item,
             R.id.navigation_learn,
             R.id.navigation_settings
         ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.navigation_item_detail) navView.visibility = View.GONE
-            else navView.visibility = View.VISIBLE
+            when (destination.id) {
+                R.id.navigation_item_detail, R.id.navigation_edit_item -> navView.visibility = View.GONE
+                else -> navView.visibility = View.VISIBLE
+            }
 
 //            val transfer = appbar.menu.findItem(R.id.appbar_main_transfer)
 //            when (destination.id) {

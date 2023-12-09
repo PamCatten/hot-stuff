@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentCreateItemBinding
@@ -17,7 +16,6 @@ class CreateItemFragment : Fragment() {
 
     private var _binding: FragmentCreateItemBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -101,10 +99,9 @@ class CreateItemFragment : Fragment() {
                 roomContainer.helperText = "Required"
 
                 DatabaseHelper(requireContext()).addItem(
-                    inputName, inputQuantity, inputCategory, inputValue,
-                    inputRoom, inputMake, imagePath, inputDescription
+                    name=inputName, quantity=inputQuantity, category=inputCategory, room=inputRoom,
+                    value=inputValue,make=inputMake, image=imagePath, description=inputDescription
                 )
-                Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show()
             }
 
             fun checkForm() {
