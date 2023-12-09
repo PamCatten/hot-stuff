@@ -17,7 +17,7 @@ class NewItemActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // appbar
-        val appbar = findViewById<Toolbar>(R.id.appbar_new_item)
+        val appbar = findViewById<Toolbar>(R.id.appbar_edit_item)
         setSupportActionBar(appbar)
 
         // form validation

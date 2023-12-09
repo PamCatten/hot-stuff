@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentEditItemBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
@@ -133,7 +135,13 @@ class EditItemFragment : Fragment() {
                 if (nameCheck || categoryCheck || roomCheck || quantityNullCheck || quantityValueCheck) return
                 else resetForm()
             }
+            fun navigateBack() {
+                findNavController().navigate(R.id.action_edit_item_to_item_detail, bundle)
+            }
             checkForm()
+            navigateBack()
+
+            val appbar = view.findViewById<Toolbar>(R.id.appbar_edit_item)
         }
         return view
     }

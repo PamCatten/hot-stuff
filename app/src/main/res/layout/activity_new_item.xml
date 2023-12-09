@@ -8,7 +8,7 @@
     android:theme="@style/container"
     tools:context=".ui.NewItemActivity">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/appbar_new_item"
+        android:id="@+id/appbar_edit_item"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:itemRippleColor="@null"
@@ -27,7 +27,7 @@
         app:helperTextTextColor="?attr/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbar_new_item">
+        app:layout_constraintTop_toBottomOf="@id/appbar_edit_item">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/itemNameText"

@@ -41,10 +41,17 @@
         <action
             android:id="@+id/action_item_detail_to_edit_item"
             app:destination="@id/navigation_edit_item" />
+        <action
+            android:id="@+id/action_item_detail_to_items"
+            app:destination="@id/navigation_items" />
     </fragment>
     <fragment
         android:id="@+id/navigation_edit_item"
         android:name="com.example.hotstuffkotlin.ui.create.EditItemFragment"
         android:label="Edit item"
-        tools:layout="@layout/fragment_edit_item"/>
+        tools:layout="@layout/fragment_edit_item">
+        <action
+            android:id="@+id/action_edit_item_to_item_detail"
+            app:destination="@id/navigation_item_detail" />
+    </fragment>
 </navigation>
