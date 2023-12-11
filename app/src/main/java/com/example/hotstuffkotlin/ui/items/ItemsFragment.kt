@@ -52,10 +52,7 @@ class ItemsFragment : Fragment() {
                 bundle.putString("make", items[position].make)
                 bundle.putString("description", items[position].description)
                 bundle.putString("image", items[position].imagePath)
-
-                // TODO: I think this can be improved, fix when time
-                val valueNumeral = if (items[position].value != null) items[position].value else 0.00
-                if (valueNumeral != null) bundle.putDouble("value", valueNumeral)
+                bundle.putDouble("value", items[position].value ?: 0.00)
 
                 childFragmentManager.beginTransaction().addToBackStack(null).commit()
                 findNavController().navigate(R.id.action_items_to_item_detail, bundle)

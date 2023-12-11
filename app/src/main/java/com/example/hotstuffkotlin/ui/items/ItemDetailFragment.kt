@@ -39,24 +39,10 @@ class ItemDetailFragment : Fragment() {
 
         value.text = "$valueCurrency $valueNumeral"
 
-        if (bundle.getString("make") != null) make.text = bundle.getString("make")
-        else make.text = R.string.unspecified_value_filler.toString()
-
-        if (bundle.getString("description") != null) description.text = bundle.getString("description")
-        else description.text = R.string.unspecified_value_filler.toString()
+        make.text = bundle.getString("make") ?: R.string.unspecified_value_filler.toString()
+        description.text = bundle.getString("description") ?: R.string.unspecified_value_filler.toString()
 
         // TODO: include image path
-
-//        val navIcon = view.findViewById<ImageButton>(R.id.item_detail_appbar_navIcon)
-//        val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-//            findNavController().navigate(R.id.navigation_items)
-//        }
-//        navIcon.setOnClickListener{
-//            Log.e("Back Button", "Does this work?")
-//        }
-
-//        val appbar = view.findViewById<Toolbar>(R.id.item_detail_appbar)
-//        appbar.menu.findItem()
 
         val editButton = view.findViewById<MaterialButton>(R.id.item_detail_edit_button)
         editButton.setOnClickListener{

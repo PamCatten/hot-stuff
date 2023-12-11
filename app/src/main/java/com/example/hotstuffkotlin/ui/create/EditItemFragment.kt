@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
@@ -90,6 +89,10 @@ class EditItemFragment : Fragment() {
         }
 
         saveButton?.setOnClickListener {
+            fun navigateBack() {
+                findNavController().navigate(R.id.action_edit_item_to_item_detail, bundle)
+//                findNavController().navigateUp()
+            }
             fun resetForm() {
                 val inputName: String = name.text.toString().trim()
                 val inputQuantity: Int = quantity.text.toString().toInt()
@@ -113,10 +116,23 @@ class EditItemFragment : Fragment() {
                 categoryContainer.helperText = "Required"
                 roomContainer.helperText = "Required"
 
+                bundle.putInt("id", id)
+//                bundle.putInt("buildingId", buildingId)
+                bundle.putInt("quantity", inputQuantity)
+                bundle.putString("name", inputName)
+                bundle.putString("category", inputCategory)
+                bundle.putString("room", inputRoom)
+                bundle.putString("make", inputMake)
+                bundle.putString("description", inputDescription)
+                bundle.putString("image", imagePath)
+                bundle.putDouble("value", inputValue ?: 0.00)
+
                 DatabaseHelper(requireContext()).updateItem( id=id,
                     name=inputName, quantity=inputQuantity, category=inputCategory, room=inputRoom,
                     value=inputValue,make=inputMake, image=imagePath, description=inputDescription
                 )
+
+                navigateBack()
             }
 
             fun checkForm() {
@@ -135,13 +151,17 @@ class EditItemFragment : Fragment() {
                 if (nameCheck || categoryCheck || roomCheck || quantityNullCheck || quantityValueCheck) return
                 else resetForm()
             }
-            fun navigateBack() {
-                findNavController().navigate(R.id.action_edit_item_to_item_detail, bundle)
-            }
             checkForm()
-            navigateBack()
 
-            val appbar = view.findViewById<Toolbar>(R.id.appbar_edit_item)
+
+//            val callback = object : OnBackPressedCallback(
+//        true // default to enabled
+//            ) {
+//                override fun handleOnBackPressed() {
+//                    navigateBack()
+//                }
+//            }
+//            requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
         }
         return view
     }

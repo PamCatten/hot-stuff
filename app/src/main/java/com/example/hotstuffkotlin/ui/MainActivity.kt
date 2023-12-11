@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         appbar = findViewById(R.id.appbar_main)
 //        val search = appbar.menu.findItem(R.id.item)
         setSupportActionBar(appbar)
+
 
         // navbar
         val navView: BottomNavigationView = binding.navView
@@ -55,6 +57,9 @@ class MainActivity : AppCompatActivity() {
 //                else -> transfer.isVisible = false
 //            }
         }
+
+        appbar.setNavigationOnClickListener { _ ->
+            NavigationUI.navigateUp(navController, appBarConfiguration) }
 
         // bottom dialog
 //        val createButton = navView.menu.findItem(R.id.navigation_placeholder)

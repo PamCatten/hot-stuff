@@ -15,10 +15,6 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".ui.NewItemActivity"
-            android:label="New Item"
-            android:parentActivityName=".ui.MainActivity" />
-        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
