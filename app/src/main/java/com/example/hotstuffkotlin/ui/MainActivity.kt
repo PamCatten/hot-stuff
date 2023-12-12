@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 //        val search = appbar.menu.findItem(R.id.item)
         setSupportActionBar(appbar)
 
-
         // navbar
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)

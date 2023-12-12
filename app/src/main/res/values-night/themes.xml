@@ -12,6 +12,11 @@
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
+        <!-- Splash screen -->
+        <item name="android:windowSplashScreenBackground">@color/coral</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/coral</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo_splashscreen</item>
+
         <!-- Dialog -->
         <item name="shapeAppearanceLargeComponent">@style/dialogBackground</item>
     </style>
