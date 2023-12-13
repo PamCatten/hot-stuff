@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.preference.PreferenceManager
@@ -29,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         // appbar
         appbar = findViewById(R.id.appbar_main)
-//        val search = appbar.menu.findItem(R.id.item)
         setSupportActionBar(appbar)
 
         // navbar
@@ -46,7 +44,8 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.navigation_item_detail, R.id.navigation_edit_item -> navView.visibility = View.GONE
+                R.id.navigation_item_detail, R.id.navigation_edit_item, R.id.navigation_search
+                -> navView.visibility = View.GONE
                 else -> navView.visibility = View.VISIBLE
             }
 
@@ -57,8 +56,14 @@ class MainActivity : AppCompatActivity() {
 //            }
         }
 
-        appbar.setNavigationOnClickListener { _ ->
-            NavigationUI.navigateUp(navController, appBarConfiguration) }
+        appbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.appbar_main_search -> {
+                    navController.navigate(R.id.navigation_search)
+                }
+            }
+            true
+        }
 
         // bottom dialog
 //        val createButton = navView.menu.findItem(R.id.navigation_placeholder)
@@ -95,15 +100,6 @@ class MainActivity : AppCompatActivity() {
 //            true
 //        }
     }
-
-//    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-//        super.onPrepareOptionsMenu(menu.apply {
-//            findItem(R.id.appbar_search)?.let {
-//                it.isVisible = SharedPreferenceHelper.allowSearch() == true
-//            }
-//        })
-//        return true
-//    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.appbar_main_menu, menu)

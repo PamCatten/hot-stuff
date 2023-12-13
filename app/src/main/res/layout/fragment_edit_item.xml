@@ -8,23 +8,11 @@
     android:fillViewport="true"
     android:scrollbars="none"
     android:theme="@style/container"
-    android:id="@+id/layout_edit_item"
     tools:context=".ui.create.EditItemFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/appbar_edit_item"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:itemRippleColor="@null"
-            app:itemBackground="@android:color/transparent"
-            android:backgroundTint="@android:color/transparent"
-            android:background="@android:color/transparent"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="wrap_content"
+        android:paddingTop="?attr/actionBarSize">
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemNameContainer"
             style="@style/create_textInputLayout"
@@ -32,7 +20,7 @@
             app:helperTextTextColor="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/appbar_edit_item">
+            app:layout_constraintTop_toTopOf="parent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemNameText"
                 style="@style/create_textInputField"
