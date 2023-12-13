@@ -1,101 +1,105 @@
 <resources>
     <string name="app_name">Hot Stuff</string>
+    <!-- Main: Navbar / Fragment labels -->
+    <string name="label_home_fragment">Home</string>
+    <string name="label_items_fragment">Items</string>
+    <string name="label_create_fragment">Create</string>
+    <string name="label_learn_fragment">Learn</string>
+    <string name="label_settings_fragment">Settings</string>
+    <!-- Main: Toolbar Labels -->
+    <string name="label_search">Search</string>
+    <string name="label_filter">Sort</string>
+    <string name="label_expand_menu">More</string>
+    <string name="label_rate">Rate</string>
+    <string name="label_report">Report Bug</string>
+    <!-- Main: Create Dialog Labels -->
+    <string name="label_create_item">Create a new item</string>
+    <string name="label_create_building">Create a new building</string>
+    <!-- Home: Placeholder Labels -->
+    <string name="label_building_value">Building Value</string>
+    <string name="label_building_value_placeholder">$6,573.24</string>
+    <string name="label_building_name_placeholder">Sample House</string>
+    <string name="label_building_quantity_placeholder">58 items</string>
+    <string name="label_chart_type_placeholder">Item Distribution</string>
+    <!-- CreateItem / EditItem / ItemDetail: InputText Hints, Button Labels -->
+    <string name="label_name">Name</string>
+    <string name="label_quantity">Quantity</string>
+    <string name="label_category">Category</string>
+    <string name="label_room">Room</string>
+    <string name="label_make">Brand / Manufacturer</string>
+    <string name="label_value">Value (per unit)</string>
+    <string name="label_description">Description</string>
+    <string name="label_create">Create</string>
+    <string name="label_save">Save</string>
+    <string name="label_edit">Edit</string>
+    <!-- Settings: Currency Icons -->
+    <string name="icon_bitcoin">₿</string>
+    <string name="icon_dollar">$</string>
+    <string name="icon_dong">₫</string>
+    <string name="icon_euro">€</string>
+    <string name="icon_guarani">₲</string>
+    <string name="icon_hryvnia">₴</string>
+    <string name="icon_kip">₭</string>
+    <string name="icon_lari">₾</string>
+    <string name="icon_lira">₺</string>
+    <string name="icon_manat">₼</string>
+    <string name="icon_naira">₦</string>
+    <string name="icon_peso">₱</string>
+    <string name="icon_pound">₤</string>
+    <string name="icon_ruble">₽</string>
+    <string name="icon_rupee">र</string>
+    <string name="icon_shekel">₪</string>
+    <string name="icon_tenge">₸</string>
+    <string name="icon_tugrik">₮</string>
+    <string name="icon_won">₩</string>
+    <string name="icon_yen_yuan">¥</string>
+    <!-- Settings: Preference Category / Summary Labels -->
+    <string name="label_currency">Currency Icon</string>
+    <string name="label_theme">Theme</string>
+    <string name="label_scale">Text Size</string>
+    <string name="label_language">Language</string>
+    <string name="label_currency_summary">Choose your preference of currency icon. Warning: changing your preferred currency will not convert previously entered values.</string>
+    <string name="label_scale_summary">Change the size of text throughout the app</string>
+    <string name="label_theme_summary">Choose your preference of app theme</string>
+    <string name="label_language_summary">Choose the language you want to use for text within the app</string>
+    <string name="label_light">light</string>
+    <string name="label_dark">dark</string>
+    <string name="label_system">system</string>
+    <!-- Settings: Preference Defaults -->
+    <string name="default_currency">dollar</string>
+    <string name="default_scale">medium</string>
+    <string name="default_theme">device</string>
+    <string name="default_language">english</string>
+    <!-- Settings: Preference Keys -->
+    <string name="key_currency">currency</string>
+    <string name="key_scale">textsize</string>
+    <string name="key_theme">theme</string>
+    <string name="key_language">language</string>
+    <!-- Learn: Card Titles and Subtitles -->
+    <string name="label_walkthroughs">Walkthroughs</string>
+    <string name="label_resources">Resources</string>
+    <string name="label_about">About Hot Stuff</string>
+    <string name="label_walkthroughs_subtitle">Short user guides to help you get started</string>
+    <string name="label_resources_subtitle">Additional notes and perspectives</string>
+    <string name="label_about_subtitle">General app information</string>
+    <!-- Learn: Destination Labels -->
+    <string name="label_why_care">Why should I care?</string>
+    <string name="label_get_started">Getting started</string>
+    <string name="label_export">Exporting records</string>
+    <string name="label_detail">Attention to detail</string>
+    <string name="label_like_kind">"Like kind and quality"</string>
+    <string name="label_adjusters">Loss adjusters</string>
+    <string name="label_example_form">Example Proof of Loss form</string>
+    <string name="label_acknowledgements">Acknowledgements</string>
+    <string name="label_sourcecode">View source code</string>
+    <string name="label_terms">Terms and Conditions</string>
 
-    <!-- Fragment / Navbar labels -->
-    <string name="home_label">Home</string>
-    <string name="items_label">Items</string>
-    <string name="create_label">Create</string>
-    <string name="learn_label">Learn</string>
-    <string name="settings_label">Settings</string>
 
-    <!-- Appbar labels -->
-    <string name="appbar_search_label">Search</string>
-    <string name="appbar_sort_label">Sort</string>
-    <string name="appbar_quick_access_label">More</string>
+    <string name="learn_dropdown_icon_content_description">Expand items icon</string>
+    <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>
+    <string name="unspecified_value_filler">Unspecified</string>
 
-    <!-- Dialog labels -->
-    <string name="dialog_newItem_prompt">Create a new item</string>
-    <string name="dialog_newBuilding_prompt">Create a new building</string>
-
-    <!-- Text -->
     <string name="text_title">20dp</string>
     <string name="text_subtitle">16dp</string>
     <string name="text_body">14dp</string>
-
-    <!-- Home Fragment labels -->
-
-    <!-- Settings: Currency Icons -->
-    <string name="bitcoin_icon">₿</string>
-    <string name="dollar_icon">$</string>
-    <string name="dong_icon">₫</string>
-    <string name="euro_icon">€</string>
-    <string name="guarani_icon">₲</string>
-    <string name="hryvnia_icon">₴</string>
-    <string name="kip_icon">₭</string>
-    <string name="lari_icon">₾</string>
-    <string name="lira_icon">₺</string>
-    <string name="manat_icon">₼</string>
-    <string name="naira_icon">₦</string>
-    <string name="peso_icon">₱</string>
-    <string name="pound_icon">₤</string>
-    <string name="ruble_icon">₽</string>
-    <string name="rupee_icon">र</string>
-    <string name="shekel_icon">₪</string>
-    <string name="tenge_icon">₸</string>
-    <string name="tugrik_icon">₮</string>
-    <string name="won_icon">₩</string>
-    <string name="yen_yuan_icon">¥</string>
-
-
-    <!-- Settings: Currency Preference Strings -->
-    <string name="settings_preference_currency_default">dollar</string>
-    <string name="settings_preference_currency_title">Currency Icon</string>
-    <string name="settings_preference_currency_key">currency</string>
-    <string name="settings_preference_currency_summary">Choose your preference of currency icon. Warning: changing your preferred currency will not convert previously entered values.</string>
-
-    <!-- Settings: Text Size Preference Strings -->
-    <string name="settings_preference_textsize_default">medium</string>
-    <string name="settings_preference_textsize_title">Text Size</string>
-    <string name="settings_preference_textsize_key">textsize</string>
-    <string name="settings_preference_textsize_summary">Change the size of text throughout the app</string>
-
-    <!-- Settings: Appearance Preference Values Strings -->
-    <string name="appearance_light">light</string>
-    <string name="appearance_dark">dark</string>
-    <string name="appearance_system">system</string>
-
-    <!-- Settings: Appearance Preference Strings -->
-    <string name="settings_preference_appearance_summary">Choose your preference of app theme</string>
-    <string name="settings_preference_appearance_key">appearance</string>
-    <string name="settings_preference_appearance_title">Appearance</string>
-    <string name="settings_preference_appearance_default">device</string>
-    <string name="settings_preference_search_key">search</string>
-    <string name="settings_preference_search_summary">Search for specific created items</string>
-    <string name="settings_preference_search_title">Search</string>
-    <string name="settings_preference_language_title">Language</string>
-    <string name="settings_preference_language_default">english</string>
-    <string name="settings_preference_language_summary">Choose the language you want to use for text within the app</string>
-    <string name="settings_preference_language_key">language</string>
-
-    <string name="learn_about_card_title">About Hot Stuff</string>
-    <string name="learn_about_card_subtitle">General app information</string>
-    <string name="learn_about_title_acknowledgements">Acknowledgements</string>
-    <string name="learn_about_title_terms">Terms and Conditions</string>
-    <string name="learn_about_title_share">Share app</string>
-    <string name="learn_about_title_rate">Rate on Google Play</string>
-    <string name="learn_about_title_sourceCode">View source code</string>
-
-    <string name="learn_dropdown_icon_content_description">Expand items icon</string>
-
-    <string name="learn_resources_title">Resources</string>
-    <string name="learn_resources_subtitle">Additional notes and perspectives</string>
-    <string name="learn_walkthrough_title">Walkthroughs</string>
-    <string name="learn_walkthrough_subtitle">Short user guides to help you get started</string>
-    <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>
-
-    <string name="unspecified_value_filler">Unspecified</string>
-
-    <!-- Settings: Search Preference Strings -->
-
-
 </resources>

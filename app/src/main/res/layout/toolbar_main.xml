@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:backgroundTint="?attr/colorPrimaryVariant"
-    app:menu="@menu/appbar_main_menu"
+    app:menu="@menu/menu_toolbar_main"
     app:itemRippleColor="@null"
     app:itemBackground="?attr/colorPrimaryVariant"
 />

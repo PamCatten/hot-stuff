@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Home Page Dropdowns -->
-    <string-array name="home_chart_categories">
+    <!-- Home -->
+    <string-array name="dropdown_chart_type">
         <item>Category</item>
         <item>Brand / Manufacturer</item>
         <item>Color</item>
     </string-array>
-
-    <!-- Settings Page Dropdowns -->
-
-    <string-array name="settings_preferences_appearance_entries">
+    <!-- Settings -->
+    <string-array name="dropdown_theme">
         <item>Use device default</item>
         <item>Light theme</item>
         <item>Dark theme</item>
     </string-array>
-
-    <string-array name="settings_preferences_appearance_values">
-        <item>@string/appearance_system</item>
-        <item>@string/appearance_light</item>
-        <item>@string/appearance_dark</item>
+    <string-array name="dropdown_theme_values">
+        <item>@string/label_system</item>
+        <item>@string/label_light</item>
+        <item>@string/label_dark</item>
     </string-array>
-
-    <string-array name="settings_preferences_currency_entries">
+    <string-array name="dropdown_currency">
         <item>₿ (Bitcoin)</item>
         <item>$ (Dollar)</item>
         <item>₫ (Dong)</item>
@@ -43,8 +39,7 @@
         <item>₩ (Won)</item>
         <item>¥ (Yen / Yuan)</item>
     </string-array>
-
-    <string-array name="settings_preferences_currency_values">
+    <string-array name="dropdown_currency_values">
         <item>bitcoin</item>
         <item>dollar</item>
         <item>dong</item>
@@ -66,35 +61,30 @@
         <item>won</item>
         <item>yen_yuan</item>
     </string-array>
-
-    <string-array name="settings_preferences_textsize_entries">
+    <string-array name="dropdown_scale">
         <item>Tiny</item>
         <item>Small</item>
         <item>Medium</item>
         <item>Large</item>
         <item>Huge</item>
     </string-array>
-
-    <string-array name="settings_preferences_textsize_values">
+    <string-array name="dropdown_scale_values">
         <item>tiny</item>
         <item>small</item>
         <item>medium</item>
         <item>large</item>
         <item>huge</item>
     </string-array>
-
-    <string-array name="settings_preferences_language_entries">
+    <string-array name="dropdown_language">
         <item>English</item>
         <item>Francais</item>
         <item>Español</item>
         <item>Norsk</item>
     </string-array>
-
-    <string-array name="settings_preferences_language_values">
+    <string-array name="dropdown_language_values">
         <item>english</item>
         <item>french</item>
         <item>spanish</item>
         <item>norwegian</item>
     </string-array>
-
 </resources>

@@ -27,9 +27,9 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
         if (key == "appearance") {
             when (sharedPreferenceHelper.getSelectedThemePref()) {
-                getString(R.string.appearance_light) -> setTheme(AppCompatDelegate.MODE_NIGHT_NO)
-                getString(R.string.appearance_dark) -> setTheme(AppCompatDelegate.MODE_NIGHT_YES)
-                getString(R.string.appearance_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                getString(R.string.label_light) -> setTheme(AppCompatDelegate.MODE_NIGHT_NO)
+                getString(R.string.label_dark) -> setTheme(AppCompatDelegate.MODE_NIGHT_YES)
+                getString(R.string.label_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             }
         }
         if (key == "currency") {}

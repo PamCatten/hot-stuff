@@ -28,13 +28,13 @@
                     <TextView
                         android:id="@+id/learn_walkthrough_title"
                         style="@style/items_cardTitle"
-                        android:text="@string/learn_walkthrough_title"
+                        android:text="@string/label_walkthroughs"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <TextView
                         android:id="@+id/learn_walkthrough_subtitle"
                         style="@style/items_cardSubtitle"
-                        android:text="@string/learn_walkthrough_subtitle"
+                        android:text="@string/label_walkthroughs_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_title"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <ImageView
@@ -47,7 +47,6 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
                 <com.google.android.material.divider.MaterialDivider
                     android:id="@+id/learn_walkthrough_divider"
                     android:layout_width="match_parent"
@@ -59,34 +58,34 @@
                     android:id="@+id/learn_walkthrough_whyCare"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="Why should I care?"
+                    android:text="@string/label_why_care"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_divider"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_walkthrough_gettingStarted"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="Getting started"
+                    android:text="@string/label_get_started"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_whyCare"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_walkthrough_export"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="Exporting records"
+                    android:text="@string/label_export"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_gettingStarted"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_walkthrough_group"
                     style="@style/items_cardGroup"
-                    app:constraint_referenced_ids="learn_walkthrough_divider,
-                    learn_walkthrough_whyCare,
-                    learn_walkthrough_gettingStarted,
-                    learn_walkthrough_export"
+                    app:constraint_referenced_ids="
+                        learn_walkthrough_divider,
+                        learn_walkthrough_whyCare,
+                        learn_walkthrough_gettingStarted,
+                        learn_walkthrough_export"
                     tools:visibility="gone"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
-
         <androidx.cardview.widget.CardView
             android:id="@+id/learn_resources_card"
             app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_card"
@@ -102,13 +101,13 @@
                     <TextView
                         android:id="@+id/learn_resources_title"
                         style="@style/items_cardTitle"
-                        android:text="@string/learn_resources_title"
+                        android:text="@string/label_resources"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <TextView
                         android:id="@+id/learn_resources_subtitle"
                         style="@style/items_cardSubtitle"
-                        android:text="@string/learn_resources_subtitle"
+                        android:text="@string/label_resources_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_resources_title"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <ImageView
@@ -132,38 +131,39 @@
                     android:id="@+id/learn_resources_attentionToDetail"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="Attention to Detail"
+                    android:text="@string/label_detail"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_divider"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_likeKind"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="Like Kind and Quality"
+                    android:text="@string/label_like_kind"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_attentionToDetail"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_adjusters"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="Loss Adjusters"
+                    android:text="@string/label_adjusters"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_likeKind"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_exampleForm"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="Example Proof of Loss Form"
+                    android:text="@string/label_example_form"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_adjusters"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_resources_group"
                     style="@style/items_cardGroup"
-                    app:constraint_referenced_ids="learn_resources_divider,
-                    learn_resources_attentionToDetail,
-                    learn_resources_likeKind,
-                    learn_resources_adjusters,
-                    learn_resources_exampleForm"
+                    app:constraint_referenced_ids="
+                        learn_resources_divider,
+                        learn_resources_attentionToDetail,
+                        learn_resources_likeKind,
+                        learn_resources_adjusters,
+                        learn_resources_exampleForm"
                     tools:visibility="gone"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -183,14 +183,14 @@
                     <TextView
                         android:id="@+id/learn_about_title"
                         style="@style/items_cardTitle"
-                        android:text="@string/learn_about_card_title"
+                        android:text="@string/label_about"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         />
                     <TextView
                         android:id="@+id/learn_about_subtitle"
                         style="@style/items_cardSubtitle"
-                        android:text="@string/learn_about_card_subtitle"
+                        android:text="@string/label_about_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_about_title"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <ImageView
@@ -214,30 +214,31 @@
                     android:id="@+id/learn_about_sourceCode"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="@string/learn_about_title_sourceCode"
+                    android:text="@string/label_sourcecode"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_divider"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_about_acknowledgements"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="@string/learn_about_title_acknowledgements"
+                    android:text="@string/label_acknowledgements"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_sourceCode"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_about_terms"
                     style="@style/items_cardSubtitle"
                     android:paddingVertical="16dp"
-                    android:text="@string/learn_about_title_terms"
+                    android:text="@string/label_terms"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_acknowledgements"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_about_group"
                     style="@style/items_cardGroup"
-                    app:constraint_referenced_ids="learn_about_divider,
-                    learn_about_sourceCode,
-                    learn_about_acknowledgements,
-                    learn_about_terms"
+                    app:constraint_referenced_ids="
+                        learn_about_divider,
+                        learn_about_sourceCode,
+                        learn_about_acknowledgements,
+                        learn_about_terms"
                     tools:visibility="gone"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

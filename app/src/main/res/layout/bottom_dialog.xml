@@ -14,7 +14,7 @@
         style="@style/main_dialog_linearLayout">
         <TextView
             style="@style/main_dialogTitle"
-            android:text="@string/create_label"
+            android:text="@string/label_create_fragment"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
         <ImageButton
@@ -35,7 +35,7 @@
             android:src="@drawable/icon_create_item"
             style="@style/main_dialog_icon"/>
         <TextView
-            android:text="@string/dialog_newItem_prompt"
+            android:text="@string/label_create_item"
             style="@style/main_dialog_subtitle"/>
     </LinearLayout>
     <LinearLayout
@@ -48,7 +48,7 @@
             android:src="@drawable/icon_create_building"
             style="@style/main_dialog_icon"/>
         <TextView
-            android:text="@string/dialog_newBuilding_prompt"
+            android:text="@string/label_create_building"
             style="@style/main_dialog_subtitle"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

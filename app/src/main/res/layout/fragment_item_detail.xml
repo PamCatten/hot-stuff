@@ -26,19 +26,6 @@
             app:shapeAppearanceOverlay="@style/roundedImageView"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/default_image"/>
-<!--        <com.google.android.material.imageview.ShapeableImageView-->
-<!--            android:id="@+id/item_detail_image"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="300dp"-->
-<!--            android:scaleType="fitXY"-->
-<!--            android:cropToPadding="true"-->
-<!--            android:layout_marginHorizontal="16dp"-->
-<!--            android:layout_marginBottom="16dp"-->
-<!--            android:elevation="8dp"-->
-<!--            app:shapeAppearanceOverlay="@style/roundedImageView"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/item_detail_appbar"-->
-<!--            app:srcCompat="@drawable/default_image"-->
-<!--            />-->
         <TextView
             android:id="@+id/item_detail_name_title"
             android:layout_width="match_parent"
@@ -47,7 +34,7 @@
             android:background="@null"
             android:textColor="?attr/colorSecondary"
             android:textSize="14sp"
-            android:text="Name"
+            android:text="@string/label_name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_image"
         />
@@ -59,7 +46,6 @@
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="18sp"
-            android:text="Name placeholder text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_name_title"
         />
@@ -71,7 +57,7 @@
             android:background="@null"
             android:textColor="?attr/colorSecondary"
             android:textSize="14sp"
-            android:text="Value"
+            android:text="@string/label_value"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_name_text"
         />
@@ -83,7 +69,6 @@
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
-            android:text="Value placeholder text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_value_title"
         />
@@ -95,7 +80,7 @@
             android:background="@null"
             android:textColor="?attr/colorSecondary"
             android:textSize="14sp"
-            android:text="Quantity"
+            android:text="@string/label_quantity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_name_text"
         />
@@ -107,7 +92,6 @@
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
-            android:text="Quantity placeholder text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_quantity_title"
         />
@@ -119,7 +103,7 @@
             android:background="@null"
             android:textColor="?attr/colorSecondary"
             android:textSize="14sp"
-            android:text="Description"
+            android:text="@string/label_description"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_quantity_text"
         />
@@ -132,7 +116,6 @@
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
             android:lineHeight="24dp"
-            android:text="Description placeholder text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_description_title"
         />
@@ -144,7 +127,7 @@
             android:background="@null"
             android:textColor="?attr/colorSecondary"
             android:textSize="14sp"
-            android:text="Category"
+            android:text="@string/label_category"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_description_text"
         />
@@ -156,7 +139,6 @@
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
-            android:text="Category placeholder text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_category_title"
         />
@@ -168,7 +150,7 @@
             android:background="@null"
             android:textColor="?attr/colorSecondary"
             android:textSize="14sp"
-            android:text="Room"
+            android:text="@string/label_room"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_category_text"
         />
@@ -180,7 +162,6 @@
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
-            android:text="Room placeholder text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_room_title"
         />
@@ -192,7 +173,7 @@
             android:background="@null"
             android:textColor="?attr/colorSecondary"
             android:textSize="14sp"
-            android:text="Brand / Manufacturer"
+            android:text="@string/label_make"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_room_text"
         />
@@ -205,7 +186,6 @@
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
-            android:text="Make placeholder text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_make_title"
         />
@@ -236,15 +216,14 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="8dp"
                 android:minWidth="100dp"
-                android:text="Edit"
+                android:text="@string/label_edit"
                 android:textStyle="bold"
                 android:backgroundTint="?attr/colorOnPrimary"
                 android:textColor="?attr/colorPrimaryVariant"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:cornerRadius="20dp"
-            />
+                app:cornerRadius="20dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

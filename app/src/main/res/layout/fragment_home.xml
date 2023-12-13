@@ -22,7 +22,7 @@
             style="@style/text_subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Building Value"
+            android:text="@string/label_building_value"
             app:layout_constraintStart_toStartOf="@id/topTextLayout"
             />
 
@@ -30,7 +30,7 @@
             android:id="@+id/tvActiveBuildingValue"
             style="@style/text_subtitle"
             android:textStyle="bold"
-            android:text="$6,573.24"
+            android:text="@string/label_building_value_placeholder"
             app:layout_constraintEnd_toEndOf="@id/topTextLayout" />
     </LinearLayout>
 
@@ -45,13 +45,13 @@
             style="@style/text_subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Sample House"
+            android:text="@string/label_building_name_placeholder"
             app:layout_constraintStart_toStartOf="parent" />
         <TextView
             android:id="@+id/tvActiveBuildingCount"
             style="@style/text_subtitle"
             android:textStyle="bold"
-            android:text="58 items"
+            android:text="@string/label_building_quantity_placeholder"
             android:textColor="@color/coral"/>
     </LinearLayout>
 
@@ -75,7 +75,7 @@
             style="@style/text_subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="Item Distribution"/>
+            android:text="@string/label_chart_type_placeholder"/>
     </LinearLayout>
 
     <com.github.mikephil.charting.charts.BarChart

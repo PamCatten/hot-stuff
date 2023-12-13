@@ -24,7 +24,7 @@ class Adapter(private var items : List<Item>) : RecyclerView.Adapter<Adapter.Vie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view that is used to hold list item
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_card, parent, false)
+            .inflate(R.layout.cardview_item, parent, false)
 
         return ViewHolder(view, mListener)
     }

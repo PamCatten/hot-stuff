@@ -25,7 +25,7 @@
                 android:id="@+id/itemNameText"
                 style="@style/create_textInputField"
                 android:inputType="textCapWords"
-                android:hint="Name"/>
+                android:hint="@string/label_name"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemQuantityContainer"
@@ -39,7 +39,7 @@
                 android:id="@+id/itemQuantityText"
                 style="@style/create_textInputField"
                 android:inputType="number"
-                android:hint="Quantity"/>
+                android:hint="@string/label_quantity"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemCategoryContainer"
@@ -53,7 +53,7 @@
                 android:id="@+id/itemCategoryText"
                 style="@style/create_textInputField"
                 android:inputType="textAutoCorrect"
-                android:hint="Category"/>
+                android:hint="@string/label_category"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemRoomContainer"
@@ -67,7 +67,7 @@
                 android:id="@+id/itemRoomText"
                 style="@style/create_textInputField"
                 android:inputType="textAutoCorrect"
-                android:hint="Room"/>
+                android:hint="@string/label_room"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemMakeContainer"
@@ -80,7 +80,7 @@
                 android:id="@+id/itemMakeText"
                 style="@style/create_textInputField"
                 android:inputType="textAutoCorrect"
-                android:hint="Brand / Manufacturer"/>
+                android:hint="@string/label_make"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemValueContainer"
@@ -93,7 +93,7 @@
                 android:id="@+id/itemValueText"
                 style="@style/create_textInputField"
                 android:inputType="numberDecimal"
-                android:hint="Value (per unit)"/>
+                android:hint="@string/label_value"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemDescriptionContainer"
@@ -107,14 +107,14 @@
                 style="@style/create_textInputField"
                 android:inputType="textCapSentences"
                 android:maxLength="200"
-                android:hint="Description"/>
+                android:hint="@string/label_description"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/itemSaveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:text="Save"
+            android:text="@string/label_save"
             android:textColor="?attr/colorOnPrimary"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"

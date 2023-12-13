@@ -7,34 +7,33 @@
     <PreferenceCategory />
     <PreferenceCategory />
     // end of hack
-
     <PreferenceCategory android:title="General" app:iconSpaceReserved="false">
         <ListPreference
-            android:defaultValue="@string/settings_preference_appearance_default"
-            android:title="@string/settings_preference_appearance_title"
-            android:dialogTitle="@string/settings_preference_appearance_title"
-            android:entries="@array/settings_preferences_appearance_entries"
-            android:entryValues="@array/settings_preferences_appearance_values"
-            android:key="@string/settings_preference_appearance_key"
-            android:summary="@string/settings_preference_appearance_summary"
+            android:defaultValue="@string/default_theme"
+            android:title="@string/label_theme"
+            android:dialogTitle="@string/label_theme"
+            android:entries="@array/dropdown_theme"
+            android:entryValues="@array/dropdown_theme_values"
+            android:key="@string/key_theme"
+            android:summary="@string/label_theme_summary"
             app:iconSpaceReserved="false"/>
         <ListPreference
-            android:defaultValue="@string/settings_preference_currency_default"
-            android:title="@string/settings_preference_currency_title"
-            android:dialogTitle="@string/settings_preference_currency_title"
-            android:entries="@array/settings_preferences_currency_entries"
-            android:entryValues="@array/settings_preferences_currency_values"
-            android:key="@string/settings_preference_currency_key"
-            android:summary="@string/settings_preference_currency_summary"
+            android:defaultValue="@string/default_currency"
+            android:title="@string/label_currency"
+            android:dialogTitle="@string/label_currency"
+            android:entries="@array/dropdown_currency"
+            android:entryValues="@array/dropdown_currency_values"
+            android:key="@string/key_currency"
+            android:summary="@string/label_currency_summary"
             app:iconSpaceReserved="false"/>
         <ListPreference
-            android:defaultValue="@string/settings_preference_textsize_default"
-            android:title="@string/settings_preference_textsize_title"
-            android:dialogTitle="@string/settings_preference_textsize_title"
-            android:entries="@array/settings_preferences_textsize_entries"
-            android:entryValues="@array/settings_preferences_textsize_values"
-            android:key="@string/settings_preference_textsize_key"
-            android:summary="@string/settings_preference_textsize_summary"
+            android:defaultValue="@string/default_scale"
+            android:title="@string/label_scale"
+            android:dialogTitle="@string/label_scale"
+            android:entries="@array/dropdown_scale"
+            android:entryValues="@array/dropdown_scale_values"
+            android:key="@string/key_scale"
+            android:summary="@string/label_scale_summary"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>
     <!--<PreferenceCategory app:title="Optional Features (Beta)" app:iconSpaceReserved="false" app:allowDividerAbove="false">
