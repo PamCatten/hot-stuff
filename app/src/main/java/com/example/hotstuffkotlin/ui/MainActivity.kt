@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initTheme() {
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-        ThemeManager.applyTheme(requireNotNull(preferences.getString("appearance", "system")))
+        ThemeManager.applyTheme(requireNotNull(preferences.getString("theme", "system")))
     }
 
 }
