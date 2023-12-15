@@ -11,9 +11,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/main_dialog_linearLayout">
+        style="@style/dialog_linear">
         <TextView
-            style="@style/main_dialogTitle"
+            style="@style/dialog_title"
             android:text="@string/label_create_fragment"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -23,32 +23,32 @@
             android:background="@null"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            style="@style/main_dialog_icon"/>
+            style="@style/dialog_icon"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/dialog_layoutNewItem"
         app:layout_constraintTop_toBottomOf="@id/dialog_layoutTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/main_dialog_linearLayout">
+        style="@style/dialog_linear">
         <ImageView
-            android:src="@drawable/icon_create_item"
-            style="@style/main_dialog_icon"/>
+            android:src="@drawable/icon_edit"
+            style="@style/dialog_icon"/>
         <TextView
             android:text="@string/label_create_item"
-            style="@style/main_dialog_subtitle"/>
+            style="@style/dialog_subtitle"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/dialog_layoutNewBuilding"
-        style="@style/main_dialog_linearLayout"
+        style="@style/dialog_linear"
         app:layout_constraintTop_toBottomOf="@id/dialog_layoutNewItem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <ImageView
             android:src="@drawable/icon_create_building"
-            style="@style/main_dialog_icon"/>
+            style="@style/dialog_icon"/>
         <TextView
             android:text="@string/label_create_building"
-            style="@style/main_dialog_subtitle"/>
+            style="@style/dialog_subtitle"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

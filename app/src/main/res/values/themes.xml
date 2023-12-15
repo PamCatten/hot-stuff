@@ -18,16 +18,16 @@
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo_splashscreen</item>
 
         <!-- Dialog -->
-        <item name="shapeAppearanceLargeComponent">@style/main_dialog_background</item>
+        <item name="shapeAppearanceLargeComponent">@style/dialog_background</item>
     </style>
-    <style name="main_appbar">
+    <style name="toolbar_main">
         <item name="android:iconTint">?attr/colorOnPrimary</item>
         <item name="android:background">?attr/colorPrimaryVariant</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:elevation">4dp</item>
         <item name="android:outlineProvider">none</item>
     </style>
-    <style name="container">
+    <style name="container_fragment">
         <item name="android:background">?attr/colorPrimaryVariant</item>
         <item name="android:outlineProvider">none</item>
     </style>
@@ -52,7 +52,14 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-    <style name="main_dialogTitle">
+    <style name="dialog_alert" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
+        <item name="android:colorBackground">?attr/colorPrimaryVariant</item>
+        <item name="android:colorAccent">?attr/colorPrimary</item>
+        <item name="android:dialogCornerRadius">20dp</item>
+    </style>
+    <style name="dialog_title">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textStyle">bold</item>
@@ -62,7 +69,7 @@
         <item name="android:width">0dp</item>
         <item name="android:layout_weight">1</item>
     </style>
-    <style name="main_dialog_subtitle">
+    <style name="dialog_subtitle">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textAlignment">viewStart</item>
@@ -72,7 +79,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:paddingLeft">20dp</item>
     </style>
-    <style name="main_dialog_icon">
+    <style name="dialog_icon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:tint">?attr/colorOnPrimary</item>
@@ -80,30 +87,30 @@
         <item name="android:maxWidth">24dp</item>
         <item name="android:maxHeight">24dp</item>
     </style>
-    <style name="main_dialog_linearLayout">
+    <style name="dialog_linear">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">10dp</item>
         <item name="android:orientation">horizontal</item>
     </style>
-    <style name="main_dialog_background" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+    <style name="dialog_background" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>
     </style>
-    <style name="create_textInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+    <style name="text_input_layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="android:layout_marginHorizontal">16dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginVertical">10dp</item>
     </style>
-    <style name="create_textInputField">
+    <style name="text_input_field">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColorHint">?attr/colorOnPrimary</item>
         <item name="android:lines">1</item>
         <item name="android:inputType">text</item>
     </style>
-    <style name="items_card">
+    <style name="card">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">8dp</item>
@@ -113,37 +120,37 @@
         <item name="cardPreventCornerOverlap">true</item>
         <item name="cardBackgroundColor">?attr/colorPrimaryVariant</item>
     </style>
-    <style name="items_cardConstraintLayout">
+    <style name="card_constraint">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">16dp</item>
     </style>
-    <style name="items_cardHeaderLayout">
+    <style name="card_header">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-    <style name="items_cardTitle">
+    <style name="card_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textSize">16sp</item>
     </style>
-    <style name="items_cardSubtitle">
+    <style name="card_subtitle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textSize">14sp</item>
     </style>
-    <style name="items_cardIcon">
+    <style name="card_icon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
     </style>
-    <style name="items_cardGroup">
+    <style name="card_group">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:visibility">gone</item>
     </style>
-    <style name="roundedImageView">
+    <style name="image_rounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10dp</item>
     </style>

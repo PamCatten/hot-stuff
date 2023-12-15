@@ -48,12 +48,6 @@ class MainActivity : AppCompatActivity() {
                 -> navView.visibility = View.GONE
                 else -> navView.visibility = View.VISIBLE
             }
-
-//            val transfer = appbar.menu.findItem(R.id.appbar_main_transfer)
-//            when (destination.id) {
-//                R.id.navigation_item_detail -> transfer.isVisible = true
-//                else -> transfer.isVisible = false
-//            }
         }
 
         appbar.setOnMenuItemClickListener {
@@ -81,17 +75,13 @@ class MainActivity : AppCompatActivity() {
 //            val buttonNewItem = view.findViewById<LinearLayout>(R.id.dialog_layoutNewItem)
 //            val buttonNewBuilding = view.findViewById<LinearLayout>(R.id.dialog_layoutNewBuilding)
 
-//            buttonClose.setOnClickListener {
-//                bsDialog.dismiss()
-//            }
+//            buttonClose.setOnClickListener { bsDialog.dismiss() }
 
-//            buttonNewItem.setOnClickListener{
-//                val intent = Intent(this, NewItemActivity::class.java)
-//                startActivity(intent)
+//            buttonNewItem.setOnClickListener {
+//                startActivity(Intent(this, NewItemActivity::class.java))
 //            }
-//            buttonNewBuilding.setOnClickListener{
-//                val intent = Intent(this, NewBuildingActivity::class.java)
-//                startActivity(intent)
+//            buttonNewBuilding.setOnClickListener {
+//                startActivity(Intent(this, NewBuildingActivity::class.java))
 //            }
 
 //            bsDialog.setCancelable(true)

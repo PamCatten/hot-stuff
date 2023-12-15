@@ -1,5 +1,6 @@
 package com.example.hotstuffkotlin.ui.items
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -48,6 +49,21 @@ class ItemDetailFragment : Fragment() {
         editButton.setOnClickListener{
             childFragmentManager.beginTransaction().addToBackStack(null).commit()
             findNavController().navigate(R.id.action_item_detail_to_edit_item, bundle)
+        }
+        val deleteButton = view.findViewById<MaterialButton>(R.id.item_detail_delete_button)
+        deleteButton.setOnClickListener{
+            val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.dialog_alert)
+            alertDialogBuilder.setTitle("Delete item?")
+            alertDialogBuilder.setMessage("${name.text} will be permanently removed from your device.")
+            alertDialogBuilder.setPositiveButton("Delete") { dialog, _ ->
+                findNavController().navigateUp()
+                dialog.dismiss()
+            }
+            alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+            val alertDialog = alertDialogBuilder.create()
+            alertDialog.show()
         }
 
         return view

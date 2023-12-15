@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="none"
-    android:theme="@style/container"
+    android:theme="@style/container_fragment"
     android:id="@+id/layout_item_detail"
     tools:context=".ui.items.ItemDetailFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +23,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="16dp"
             android:elevation="8dp"
-            app:shapeAppearanceOverlay="@style/roundedImageView"
+            app:shapeAppearanceOverlay="@style/image_rounded"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/default_image"/>
         <TextView
@@ -193,22 +193,7 @@
             android:id="@+id/item_detail_bottom_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_make_text">
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/item_detail_delete_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="16dp"
-                android:src="@drawable/icon_delete"
-                android:backgroundTint="?attr/colorPrimaryVariant"
-                android:tint="?attr/colorOnPrimary"
-                android:elevation="10dp"
-                android:contentDescription="Delete Item Button"
-                app:layout_constraintEnd_toStartOf="@+id/item_detail_edit_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintBottom_toBottomOf="parent">
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/item_detail_edit_button"
                 android:layout_width="wrap_content"
@@ -216,10 +201,30 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="8dp"
                 android:minWidth="100dp"
+                app:icon="@drawable/icon_edit"
+                app:iconTint="?attr/colorPrimaryVariant"
                 android:text="@string/label_edit"
                 android:textStyle="bold"
                 android:backgroundTint="?attr/colorOnPrimary"
                 android:textColor="?attr/colorPrimaryVariant"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/item_detail_delete_button"
+                app:cornerRadius="20dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/item_detail_delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:minWidth="100dp"
+                app:icon="@drawable/icon_delete"
+                app:iconTint="?attr/colorPrimaryVariant"
+                android:text="Delete"
+                android:textStyle="bold"
+                android:backgroundTint="?attr/colorPrimary"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:contentDescription="Delete Item Button"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="none"
-    android:theme="@style/container"
+    android:theme="@style/container_fragment"
     tools:context=".ui.create.EditItemFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:paddingTop="?attr/actionBarSize">
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemNameContainer"
-            style="@style/create_textInputLayout"
+            style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,13 +23,13 @@
             app:layout_constraintTop_toTopOf="parent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemNameText"
-                style="@style/create_textInputField"
+                style="@style/text_input_field"
                 android:inputType="textCapWords"
                 android:hint="@string/label_name"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemQuantityContainer"
-            style="@style/create_textInputLayout"
+            style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,13 +37,13 @@
             app:layout_constraintTop_toBottomOf="@+id/itemNameContainer">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemQuantityText"
-                style="@style/create_textInputField"
+                style="@style/text_input_field"
                 android:inputType="number"
                 android:hint="@string/label_quantity"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemCategoryContainer"
-            style="@style/create_textInputLayout"
+            style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,13 +51,13 @@
             app:layout_constraintTop_toBottomOf="@+id/itemQuantityContainer">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemCategoryText"
-                style="@style/create_textInputField"
+                style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_category"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemRoomContainer"
-            style="@style/create_textInputLayout"
+            style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,46 +65,46 @@
             app:layout_constraintTop_toBottomOf="@+id/itemCategoryContainer">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemRoomText"
-                style="@style/create_textInputField"
+                style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_room"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemMakeContainer"
-            style="@style/create_textInputLayout"
+            style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/itemRoomContainer">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemMakeText"
-                style="@style/create_textInputField"
+                style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_make"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemValueContainer"
-            style="@style/create_textInputLayout"
+            style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/itemMakeContainer">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemValueText"
-                style="@style/create_textInputField"
+                style="@style/text_input_field"
                 android:inputType="numberDecimal"
                 android:hint="@string/label_value"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemDescriptionContainer"
-            style="@style/create_textInputLayout"
+            style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/itemValueContainer">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemDescriptionText"
-                style="@style/create_textInputField"
+                style="@style/text_input_field"
                 android:inputType="textCapSentences"
                 android:maxLength="200"
                 android:hint="@string/label_description"/>

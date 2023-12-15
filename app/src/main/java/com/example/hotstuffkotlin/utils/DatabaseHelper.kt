@@ -72,6 +72,13 @@ class DatabaseHelper(context: Context?) :
         else Toast.makeText(context, "Update successful!", Toast.LENGTH_SHORT).show()
     }
 
+    fun deleteItem(id: Int) {
+        val db : SQLiteDatabase = this.writableDatabase
+        val result = db.delete(TABLE_NAME, "item_id=?", arrayOf(id.toString()))
+        if (result == (-1)) Toast.makeText(context, "Deletion failed.", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(context, "Delete successful!", Toast.LENGTH_SHORT).show()
+    }
+
     fun getItems(): ArrayList<Item> {
         val itemList: ArrayList<Item> = ArrayList()
         val selectQuery = "SELECT * FROM $TABLE_NAME"
