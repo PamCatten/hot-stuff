@@ -59,40 +59,40 @@
         <item name="android:colorAccent">?attr/colorPrimary</item>
         <item name="android:dialogCornerRadius">20dp</item>
     </style>
-    <style name="dialog_title">
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">?attr/colorOnPrimary</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textAlignment">viewStart</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:width">0dp</item>
-        <item name="android:layout_weight">1</item>
-    </style>
-    <style name="dialog_subtitle">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">?attr/colorOnPrimary</item>
-        <item name="android:textAlignment">viewStart</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:width">0dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:paddingLeft">20dp</item>
-    </style>
-    <style name="dialog_icon">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:tint">?attr/colorOnPrimary</item>
-        <item name="android:background">@null</item>
-        <item name="android:maxWidth">24dp</item>
-        <item name="android:maxHeight">24dp</item>
-    </style>
-    <style name="dialog_linear">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:orientation">horizontal</item>
-    </style>
+<!--    <style name="dialog_title">-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--        <item name="android:textColor">?attr/colorOnPrimary</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--        <item name="android:textAlignment">viewStart</item>-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:width">0dp</item>-->
+<!--        <item name="android:layout_weight">1</item>-->
+<!--    </style>-->
+<!--    <style name="dialog_subtitle">-->
+<!--        <item name="android:textSize">18sp</item>-->
+<!--        <item name="android:textColor">?attr/colorOnPrimary</item>-->
+<!--        <item name="android:textAlignment">viewStart</item>-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:width">0dp</item>-->
+<!--        <item name="android:layout_weight">1</item>-->
+<!--        <item name="android:paddingLeft">20dp</item>-->
+<!--    </style>-->
+<!--    <style name="dialog_icon">-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:tint">?attr/colorOnPrimary</item>-->
+<!--        <item name="android:background">@null</item>-->
+<!--        <item name="android:maxWidth">24dp</item>-->
+<!--        <item name="android:maxHeight">24dp</item>-->
+<!--    </style>-->
+<!--    <style name="dialog_linear">-->
+<!--        <item name="android:layout_width">match_parent</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:padding">10dp</item>-->
+<!--        <item name="android:orientation">horizontal</item>-->
+<!--    </style>-->
     <style name="dialog_background" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>
