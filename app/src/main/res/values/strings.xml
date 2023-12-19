@@ -94,8 +94,9 @@
     <string name="label_sourcecode">View source code</string>
     <string name="label_terms">Terms and Conditions</string>
 
-    <!-- Learn: Pathing -->
+    <!-- Web Links -->
     <string name="learn_repo_link">https://github.com/PamCatten/hot-stuff-kotlin</string>
+    <string name="toolbar_issue_link">https://github.com/PamCatten/hot-stuff-kotlin/issues/new</string>
 
     <string name="learn_dropdown_icon_content_description">Expand items icon</string>
     <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>

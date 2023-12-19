@@ -1,5 +1,7 @@
 package com.example.hotstuffkotlin.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
@@ -17,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var appbar: Toolbar
+    private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -26,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initTheme()
 
-        // appbar
-        appbar = findViewById(R.id.appbar_main)
-        setSupportActionBar(appbar)
+        // toolbar
+        toolbar = findViewById(R.id.toolbar_main)
+        setSupportActionBar(toolbar)
 
         // navbar
         val navView: BottomNavigationView = binding.navView
@@ -50,11 +52,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        appbar.setOnMenuItemClickListener {
+        toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.appbar_main_search -> {
+                R.id.toolbar_main_search -> {
                     navController.navigate(R.id.navigation_search)
                 }
+                R.id.toolbar_main_report -> {
+                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
+                }
+                R.id.toolbar_main_rate -> {}
             }
             true
         }

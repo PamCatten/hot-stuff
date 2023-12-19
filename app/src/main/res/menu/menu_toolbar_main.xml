@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/appbar_main_search"
+        android:id="@+id/toolbar_main_search"
         android:icon="@drawable/icon_search"
         android:title="@string/label_search"
         app:showAsAction="ifRoom"
         android:orderInCategory="0" />
     <item
-        android:id="@+id/appbar_main_rate"
-        android:title="@string/label_rate"
+        android:id="@+id/toolbar_main_report"
+        android:title="@string/label_report"
         app:showAsAction="never"
         android:orderInCategory="1" />
     <item
-        android:id="@+id/appbar_main_report"
-        android:title="@string/label_report"
+        android:id="@+id/toolbar_main_rate"
+        android:title="@string/label_rate"
         app:showAsAction="never"
         android:orderInCategory="2" />
 </menu>
