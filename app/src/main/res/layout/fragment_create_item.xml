@@ -123,6 +123,17 @@
                 android:hint="@string/label_description"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/itemPhotoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="Select Photo"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemDescriptionContainer" />
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/itemCreateButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -132,6 +143,20 @@
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemDescriptionContainer" />
+            app:layout_constraintTop_toBottomOf="@+id/itemPhotoButton" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/item_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:cropToPadding="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="16dp"
+            android:elevation="8dp"
+            app:shapeAppearanceOverlay="@style/image_rounded"
+            app:layout_constraintTop_toBottomOf="@+id/itemCreateButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/default_image"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

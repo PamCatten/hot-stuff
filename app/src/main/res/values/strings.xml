@@ -94,6 +94,8 @@
     <string name="label_sourcecode">View source code</string>
     <string name="label_terms">Terms and Conditions</string>
 
+    <!-- Learn: Pathing -->
+    <string name="learn_repo_link">https://github.com/PamCatten/hot-stuff-kotlin</string>
 
     <string name="learn_dropdown_icon_content_description">Expand items icon</string>
     <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>
@@ -102,4 +104,6 @@
     <string name="text_title">20dp</string>
     <string name="text_subtitle">16dp</string>
     <string name="text_body">14dp</string>
+
+
 </resources>

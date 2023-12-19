@@ -194,7 +194,6 @@
             android:id="@+id/item_detail_bottom_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintGuide_end=""
             app:layout_constraintBottom_toBottomOf="parent">
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/item_detail_edit_button"

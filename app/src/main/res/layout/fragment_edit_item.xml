@@ -110,6 +110,17 @@
                 android:hint="@string/label_description"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/itemPhotoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="Select Photo"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemDescriptionContainer" />
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/itemSaveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -119,6 +130,6 @@
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemDescriptionContainer" />
+            app:layout_constraintTop_toBottomOf="@+id/itemPhotoButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

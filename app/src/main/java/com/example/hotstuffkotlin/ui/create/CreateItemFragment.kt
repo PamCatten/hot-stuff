@@ -35,6 +35,7 @@ class CreateItemFragment : Fragment() {
         val valueText = view.findViewById<TextInputEditText>(R.id.itemValueText)
         val makeText = view.findViewById<TextInputEditText>(R.id.itemMakeText)
         val descriptionText = view.findViewById<TextInputEditText>(R.id.itemDescriptionText)
+        val photoButton = view.findViewById<MaterialButton>(R.id.itemPhotoButton)
         val createButton = view.findViewById<MaterialButton>(R.id.itemCreateButton)
 
         nameText.setOnFocusChangeListener { _, focused ->
@@ -73,6 +74,8 @@ class CreateItemFragment : Fragment() {
             }
             if (!focused) roomContainer.helperText = validRoom()
         }
+
+        photoButton?.setOnClickListener {}
 
         createButton?.setOnClickListener {
             fun resetForm() {
