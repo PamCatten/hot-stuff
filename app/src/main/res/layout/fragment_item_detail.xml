@@ -50,6 +50,52 @@
             app:layout_constraintTop_toBottomOf="@id/item_detail_name_title"
         />
         <TextView
+            android:id="@+id/item_detail_category_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@null"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="14sp"
+            android:text="@string/label_category"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_name_text"
+            />
+        <TextView
+            android:id="@+id/item_detail_category_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:background="@null"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_category_title"
+            />
+        <TextView
+            android:id="@+id/item_detail_room_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@null"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="14sp"
+            android:text="@string/label_room"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_name_text"
+            />
+        <TextView
+            android:id="@+id/item_detail_room_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:background="@null"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_room_title"
+            />
+        <TextView
             android:id="@+id/item_detail_value_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +105,7 @@
             android:textSize="14sp"
             android:text="@string/label_value"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_name_text"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_category_text"
         />
         <TextView
             android:id="@+id/item_detail_value_text"
@@ -82,7 +128,7 @@
             android:textSize="14sp"
             android:text="@string/label_quantity"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_name_text"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_room_text"
         />
         <TextView
             android:id="@+id/item_detail_quantity_text"
@@ -96,76 +142,6 @@
             app:layout_constraintTop_toBottomOf="@id/item_detail_quantity_title"
         />
         <TextView
-            android:id="@+id/item_detail_description_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@null"
-            android:textColor="?attr/colorSecondary"
-            android:textSize="14sp"
-            android:text="@string/label_description"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_quantity_text"
-        />
-        <TextView
-            android:id="@+id/item_detail_description_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:background="@null"
-            android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
-            android:lineHeight="24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_description_title"
-        />
-        <TextView
-            android:id="@+id/item_detail_category_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@null"
-            android:textColor="?attr/colorSecondary"
-            android:textSize="14sp"
-            android:text="@string/label_category"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_description_text"
-        />
-        <TextView
-            android:id="@+id/item_detail_category_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:background="@null"
-            android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_category_title"
-        />
-        <TextView
-            android:id="@+id/item_detail_room_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@null"
-            android:textColor="?attr/colorSecondary"
-            android:textSize="14sp"
-            android:text="@string/label_room"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_category_text"
-        />
-        <TextView
-            android:id="@+id/item_detail_room_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:background="@null"
-            android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_room_title"
-        />
-        <TextView
             android:id="@+id/item_detail_make_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -175,7 +151,7 @@
             android:textSize="14sp"
             android:text="@string/label_make"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_detail_room_text"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_value_text"
         />
         <TextView
             android:id="@+id/item_detail_make_text"
@@ -189,10 +165,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_detail_make_title"
         />
+        <TextView
+            android:id="@+id/item_detail_description_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@null"
+            android:textColor="?attr/colorSecondary"
+            android:textSize="14sp"
+            android:text="@string/label_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_make_text"
+            />
+        <TextView
+            android:id="@+id/item_detail_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:paddingBottom="?attr/actionBarSize"
+            android:background="@null"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="16sp"
+            android:lineHeight="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_detail_description_title"
+            />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/item_detail_bottom_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_constraintGuide_end=""
             app:layout_constraintBottom_toBottomOf="parent">
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/item_detail_edit_button"
