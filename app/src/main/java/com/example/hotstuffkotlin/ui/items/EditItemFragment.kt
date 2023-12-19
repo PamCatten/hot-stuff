@@ -1,4 +1,4 @@
-package com.example.hotstuffkotlin.ui.create
+package com.example.hotstuffkotlin.ui.items
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -89,10 +89,6 @@ class EditItemFragment : Fragment() {
         }
 
         saveButton?.setOnClickListener {
-            fun navigateBack() {
-                findNavController().navigate(R.id.action_edit_item_to_item_detail, bundle)
-//                findNavController().navigateUp()
-            }
             fun resetForm() {
                 val inputName: String = name.text.toString().trim()
                 val inputQuantity: Int = quantity.text.toString().toInt()
@@ -132,7 +128,7 @@ class EditItemFragment : Fragment() {
                     value=inputValue,make=inputMake, image=imagePath, description=inputDescription
                 )
 
-                navigateBack()
+                findNavController().navigate(R.id.action_edit_item_to_item_detail, bundle)
             }
 
             fun checkForm() {

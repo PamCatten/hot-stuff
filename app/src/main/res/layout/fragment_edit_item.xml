@@ -8,7 +8,7 @@
     android:fillViewport="true"
     android:scrollbars="none"
     android:theme="@style/container_fragment"
-    tools:context=".ui.create.EditItemFragment">
+    tools:context=".ui.items.EditItemFragment">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

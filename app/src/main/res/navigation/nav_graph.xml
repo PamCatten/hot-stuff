@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_edit_item"
-        android:name="com.example.hotstuffkotlin.ui.create.EditItemFragment"
+        android:name="com.example.hotstuffkotlin.ui.items.EditItemFragment"
         android:label="Edit item"
         tools:layout="@layout/fragment_edit_item">
         <action

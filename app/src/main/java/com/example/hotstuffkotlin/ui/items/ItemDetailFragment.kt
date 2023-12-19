@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
+import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
 
 class ItemDetailFragment : Fragment() {
@@ -50,13 +51,18 @@ class ItemDetailFragment : Fragment() {
             childFragmentManager.beginTransaction().addToBackStack(null).commit()
             findNavController().navigate(R.id.action_item_detail_to_edit_item, bundle)
         }
+
         val deleteButton = view.findViewById<MaterialButton>(R.id.item_detail_delete_button)
         deleteButton.setOnClickListener{
-            val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.dialog_alert)
+
+//            val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.dialog_alert)
+            val alertDialogBuilder = AlertDialog.Builder(requireContext())
             alertDialogBuilder.setTitle("Delete item?")
             alertDialogBuilder.setMessage("${name.text} will be permanently removed from your device.")
             alertDialogBuilder.setPositiveButton("Delete") { dialog, _ ->
-                findNavController().navigateUp()
+                DatabaseHelper(requireContext()).deleteItem(bundle.getInt("id"))
+                bundle.putInt("delete", bundle.getInt("position"))
+                findNavController().navigate(R.id.action_item_detail_to_items, bundle)
                 dialog.dismiss()
             }
             alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->

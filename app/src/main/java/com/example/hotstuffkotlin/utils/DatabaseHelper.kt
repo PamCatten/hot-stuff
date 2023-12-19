@@ -49,7 +49,7 @@ class DatabaseHelper(context: Context?) :
 
         val result: Long =  db.insert(TABLE_NAME, null, cv)
         if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Database insertion failed.", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(this.context, "Database insertion successful!.", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(this.context, "Database insertion successful!", Toast.LENGTH_SHORT).show()
         db.close()
     }
 
@@ -87,7 +87,7 @@ class DatabaseHelper(context: Context?) :
 
         try {
             cursor = db.rawQuery(selectQuery, null)
-            cursor.close()
+//            cursor.close()
         } catch (e: Exception) {
             e.printStackTrace()
             db.execSQL(selectQuery)
@@ -123,7 +123,7 @@ class DatabaseHelper(context: Context?) :
                 itemList.add(i)
             } while (cursor.moveToNext())
         }
-
+        cursor.close()
         return itemList
     }
 
