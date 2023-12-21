@@ -80,7 +80,7 @@ class DatabaseHelper(context: Context?) :
     }
 
     fun tallyItems() : String {
-        val db : SQLiteDatabase = this.writableDatabase
+        val db = this.writableDatabase
         val query = "SELECT SUM($COLUMN_QUANTITY) as TOTAL FROM $TABLE_NAME"
         val cursor = db.rawQuery(query, null)
         var total = 0
@@ -88,6 +88,17 @@ class DatabaseHelper(context: Context?) :
             total = cursor.getInt(cursor.getColumnIndexOrThrow("TOTAL"))
         cursor.close()
         return if (total == 1) "1 item" else "$total items"
+    }
+
+    fun calculateTotal() : String {
+        val db = this.writableDatabase
+        val query = "SELECT SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME"
+        val cursor = db.rawQuery(query, null)
+        var total = 0.00
+        if (cursor.moveToFirst())
+            total = cursor.getDouble(cursor.getColumnIndexOrThrow("TOTAL"))
+        cursor.close()
+        return String.format("%.2f", total)
     }
 
     fun getItems(): ArrayList<Item> {

@@ -21,10 +21,10 @@ class HomeFragment : Fragment() {
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
         val buildingName = view.findViewById<TextView>(R.id.label_building_name)
 
-        val derivedTotal = "1,000.00"
-        val currencyIcon = "$"
+        val currencyIcon = "$" // TODO: Get from preferences
+        val derivedTotal = DatabaseHelper(requireContext()).calculateTotal()
 
-        totalValue.text = "$currencyIcon$derivedTotal"
+        totalValue.text = "$currencyIcon $derivedTotal" // TODO: Placeholders w/ string resource
         totalItems.text = DatabaseHelper(requireContext()).tallyItems()
 
         //var currencyIcon = sharedPreferenceHelper.getCurrency().toString() + "_icon"
