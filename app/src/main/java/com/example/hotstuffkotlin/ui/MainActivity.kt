@@ -67,9 +67,10 @@ class MainActivity : AppCompatActivity() {
 //                    intent.addCategory(Intent.CATEGORY_APP_EMAIL)
 //                    startActivity(intent)
                     val intent = Intent(Intent.ACTION_VIEW)
-                    intent.data = Uri.parse("mailto:${R.string.feedback_email}" +
-                        "?subject=${R.string.feedback_subject}" +
-                        "&body=${R.string.feedback_info_body} \n\n ${R.string.feedback_info_closing} \n${R.string.feedback_info_identity}")
+
+                    intent.data = Uri.parse("mailto:campatten.dev@outlook.com" +
+                        "?subject=FEEDBACK: (Your Suggestion)" +
+                        "&body=Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it! \n\n Much love, \nCam")
                     startActivity(intent)
                 }
             }

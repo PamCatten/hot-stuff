@@ -101,7 +101,7 @@
 
     <string name="feedback_email">campatten.dev@outlook.com</string>
     <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>
-    <string name="feedback_info_body">Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it!</string>
+    <string name="feedback_info_body">Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure \'feedback\' is somewhere in the subject of your suggestion so it ends up where I can see it!</string>
     <string name="feedback_info_closing">Much love,</string>
     <string name="feedback_info_identity">Cam</string>
 
