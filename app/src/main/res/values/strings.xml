@@ -12,6 +12,7 @@
     <string name="label_expand_menu">More</string>
     <string name="label_rate">Rate</string>
     <string name="label_report">Report Bug</string>
+    <string name="label_feedback">Send Feedback</string>
     <!-- Main: Create Dialog Labels -->
     <string name="label_create_item">Create a new item</string>
     <string name="label_create_building">Create a new building</string>
@@ -97,6 +98,12 @@
     <!-- Web Links -->
     <string name="learn_repo_link">https://github.com/PamCatten/hot-stuff-kotlin</string>
     <string name="toolbar_issue_link">https://github.com/PamCatten/hot-stuff-kotlin/issues/new</string>
+
+    <string name="feedback_email">campatten.dev@outlook.com</string>
+    <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>
+    <string name="feedback_info_body">Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it!</string>
+    <string name="feedback_info_closing">Much love,</string>
+    <string name="feedback_info_identity">Cam</string>
 
     <string name="learn_dropdown_icon_content_description">Expand items icon</string>
     <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>

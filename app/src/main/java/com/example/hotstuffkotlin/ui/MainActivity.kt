@@ -61,6 +61,17 @@ class MainActivity : AppCompatActivity() {
                     startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
                 }
                 R.id.toolbar_main_rate -> {}
+                R.id.toolbar_main_feedback -> {
+//                    val intent = Intent(Intent.ACTION_MAIN)
+//                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                    intent.addCategory(Intent.CATEGORY_APP_EMAIL)
+//                    startActivity(intent)
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = Uri.parse("mailto:${R.string.feedback_email}" +
+                        "?subject=${R.string.feedback_subject}" +
+                        "&body=${R.string.feedback_info_body} \n\n ${R.string.feedback_info_closing} \n${R.string.feedback_info_identity}")
+                    startActivity(intent)
+                }
             }
             true
         }

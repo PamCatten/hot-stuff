@@ -96,7 +96,7 @@ class EditItemFragment : Fragment() {
                 val inputRoom: String = room.text.toString().trim()
                 val inputMake: String? = make.text?.toString()?.trim()
                 val inputValue: Double? = value.text?.toString()?.toDoubleOrNull()
-                val imagePath: String? = "Example path" // TODO: Fix placeholder, Add take/select image support
+                val imagePath: String = "Example path" // TODO: Fix placeholder, Add take/select image support
                 val inputDescription: String? = description.text?.toString()?.trim()
 
                 name.text = null

@@ -17,4 +17,9 @@
         android:title="@string/label_rate"
         app:showAsAction="never"
         android:orderInCategory="2" />
+    <item
+        android:id="@+id/toolbar_main_feedback"
+        android:title="@string/label_feedback"
+        app:showAsAction="never"
+        android:orderInCategory="3" />
 </menu>

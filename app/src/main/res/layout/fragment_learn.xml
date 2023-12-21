@@ -217,6 +217,7 @@
                     android:id="@+id/learn_about_sourceCode"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
+                    android:onClick="onClick"
                     android:text="@string/label_sourcecode"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_divider"
                     app:layout_constraintLeft_toLeftOf="parent"/>

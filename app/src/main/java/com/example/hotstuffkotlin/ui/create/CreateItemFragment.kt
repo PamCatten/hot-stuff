@@ -12,6 +12,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
+
 class CreateItemFragment : Fragment() {
 
     private var _binding: FragmentCreateItemBinding? = null
@@ -75,7 +76,13 @@ class CreateItemFragment : Fragment() {
             if (!focused) roomContainer.helperText = validRoom()
         }
 
-        photoButton?.setOnClickListener {}
+//        val photo = view.findViewById<ShapeableImageView>(R.id.create_image)
+//        photoButton?.setOnClickListener {
+//            registerForActivityResult(ActivityResultContracts.TakePicture()) { isSuccess ->
+//                if (isSuccess) { photo.setImageURI()
+//                }
+//            }
+//        }
 
         createButton?.setOnClickListener {
             fun resetForm() {
@@ -85,7 +92,7 @@ class CreateItemFragment : Fragment() {
                 val inputRoom: String = roomText.text.toString().trim()
                 val inputMake: String? = makeText.text?.toString()?.trim()
                 val inputValue: Double? = valueText.text?.toString()?.toDoubleOrNull()
-                val imagePath: String? = "Example path" // TODO: Fix placeholder, Add take/select image support
+                val imagePath: String = "Example path" // TODO: Fix placeholder, Add take/select image support
                 val inputDescription: String? = descriptionText.text?.toString()?.trim()
 
                 nameText.text = null

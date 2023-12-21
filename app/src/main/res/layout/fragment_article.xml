@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:theme="@style/container_fragment"
+    android:id="@+id/layout_item_detail"
+    tools:context=".ui.items.ItemDetailFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="?attr/actionBarSize">
+        <TextView
+            android:id="@+id/article_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@null"
+            android:text="@string/label_name"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="388dp" />
+        <TextView
+            android:id="@+id/article_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@null"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="16sp"
+            android:text="@string/label_name"
+            android:paddingBottom="?attr/actionBarSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/article_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
