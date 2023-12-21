@@ -79,6 +79,17 @@ class DatabaseHelper(context: Context?) :
         else Toast.makeText(context, "Delete successful!", Toast.LENGTH_SHORT).show()
     }
 
+    fun tallyItems() : String {
+        val db : SQLiteDatabase = this.writableDatabase
+        val query = "SELECT SUM($COLUMN_QUANTITY) as TOTAL FROM $TABLE_NAME"
+        val cursor = db.rawQuery(query, null)
+        var total = 0
+        if (cursor.moveToFirst())
+            total = cursor.getInt(cursor.getColumnIndexOrThrow("TOTAL"))
+        cursor.close()
+        return if (total == 1) "1 item" else "$total items"
+    }
+
     fun getItems(): ArrayList<Item> {
         val itemList: ArrayList<Item> = ArrayList()
         val selectQuery = "SELECT * FROM $TABLE_NAME"
@@ -127,16 +138,16 @@ class DatabaseHelper(context: Context?) :
         return itemList
     }
 
-    fun readData() : Cursor? {
-        val query = "SELECT * FROM $TABLE_NAME"
-        val db : SQLiteDatabase = this.readableDatabase
-        var cursor : Cursor? = null
-
-        if (db != null) {
-            cursor = db.rawQuery(query, null)
-        }
-        return cursor
-    }
+//    fun readData() : Cursor? {
+//        val query = "SELECT * FROM $TABLE_NAME"
+//        val db : SQLiteDatabase = this.readableDatabase
+//        var cursor : Cursor? = null
+//
+//        if (db != null) {
+//            cursor = db.rawQuery(query, null)
+//        }
+//        return cursor
+//    }
 
     companion object{
         // here we have defined variables for our database

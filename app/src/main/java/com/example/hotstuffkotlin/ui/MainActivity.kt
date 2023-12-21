@@ -62,12 +62,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.toolbar_main_rate -> {}
                 R.id.toolbar_main_feedback -> {
-//                    val intent = Intent(Intent.ACTION_MAIN)
-//                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-//                    intent.addCategory(Intent.CATEGORY_APP_EMAIL)
-//                    startActivity(intent)
                     val intent = Intent(Intent.ACTION_VIEW)
 
+                    // TODO: Find an alternative way to extract these
                     intent.data = Uri.parse("mailto:campatten.dev@outlook.com" +
                         "?subject=FEEDBACK: (Your Suggestion)" +
                         "&body=Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it! \n\n Much love, \nCam")

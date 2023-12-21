@@ -19,7 +19,8 @@ class EditItemFragment : Fragment() {
     private val binding get() = _binding!!
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentEditItemBinding.inflate(inflater, container, false)
-        val view = inflater.inflate(R.layout.fragment_edit_item, container, false)
+        val view = binding.root
+
         val bundle = this.requireArguments()
 
         val name = view.findViewById<TextInputEditText>(R.id.itemNameText)

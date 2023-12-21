@@ -12,17 +12,11 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentLearnBinding
 
 class LearnFragment : Fragment() {
-
     private var _binding: FragmentLearnBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentLearnBinding.inflate(inflater, container, false)
-        val view = inflater.inflate(R.layout.fragment_learn, container, false)
+        val view = binding.root
 
         // walkthrough card
         val cardViewWalkthrough = view.findViewById<ViewGroup>(R.id.learn_walkthrough_card)

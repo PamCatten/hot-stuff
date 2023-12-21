@@ -8,29 +8,25 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
-import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
+import com.example.hotstuffkotlin.utils.DatabaseHelper
 
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
-
-    lateinit var prefs: SharedPreferenceHelper
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
 
-        // derived info
-        val tvActiveBuildingValue = view?.findViewById<TextView>(R.id.tvActiveBuildingValue)
-        val derivedTotal = "6,500.00"
+        val totalItems = view.findViewById<TextView>(R.id.label_building_quantity)
+        val totalValue = view.findViewById<TextView>(R.id.label_value_total)
+        val buildingName = view.findViewById<TextView>(R.id.label_building_name)
+
+        val derivedTotal = "1,000.00"
         val currencyIcon = "$"
+
+        totalValue.text = "$currencyIcon$derivedTotal"
+        totalItems.text = DatabaseHelper(requireContext()).tallyItems()
+
         //var currencyIcon = sharedPreferenceHelper.getCurrency().toString() + "_icon"
         //val currency = resources.getIdentifier(currencyIcon, "string", "hotstuffkotlin")
 //        tvActiveBuildingValue?.text = "$currencyIcon$derivedTotal"

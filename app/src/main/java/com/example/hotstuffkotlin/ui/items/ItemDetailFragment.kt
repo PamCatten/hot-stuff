@@ -15,9 +15,11 @@ import com.google.android.material.button.MaterialButton
 
 class ItemDetailFragment : Fragment() {
     private var _binding: FragmentItemDetailBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val view = inflater.inflate(R.layout.fragment_item_detail, container, false)
+        _binding = FragmentItemDetailBinding.inflate(inflater, container, false)
+        val view = binding.root
 
         val name = view.findViewById<TextView>(R.id.item_detail_name_text)
         val category = view.findViewById<TextView>(R.id.item_detail_category_text)

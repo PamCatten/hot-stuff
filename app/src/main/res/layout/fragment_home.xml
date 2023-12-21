@@ -18,7 +18,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
-            android:id="@+id/tvBuildingValue"
+            android:id="@+id/label_building_value"
             style="@style/text_subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -27,7 +27,7 @@
             />
 
         <TextView
-            android:id="@+id/tvActiveBuildingValue"
+            android:id="@+id/label_value_total"
             style="@style/text_subtitle"
             android:textStyle="bold"
             android:text="@string/label_building_value_placeholder"
@@ -41,14 +41,14 @@
         android:layout_marginTop="4dp"
         app:layout_constraintTop_toBottomOf="@+id/topTextLayout" >
         <TextView
-            android:id="@+id/tvActiveBuildingName"
+            android:id="@+id/label_building_name"
             style="@style/text_subtitle"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="@string/label_building_name_placeholder"
             app:layout_constraintStart_toStartOf="parent" />
         <TextView
-            android:id="@+id/tvActiveBuildingCount"
+            android:id="@+id/label_building_quantity"
             style="@style/text_subtitle"
             android:textStyle="bold"
             android:text="@string/label_building_quantity_placeholder"

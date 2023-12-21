@@ -17,13 +17,9 @@ class CreateItemFragment : Fragment() {
 
     private var _binding: FragmentCreateItemBinding? = null
     private val binding get() = _binding!!
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentCreateItemBinding.inflate(inflater, container, false)
-        val view = inflater.inflate(R.layout.fragment_create_item, container, false)
+        val view = binding.root
 
         val nameText = view.findViewById<TextInputEditText>(R.id.itemNameText)
         val nameContainer = view.findViewById<TextInputLayout>(R.id.itemNameContainer)

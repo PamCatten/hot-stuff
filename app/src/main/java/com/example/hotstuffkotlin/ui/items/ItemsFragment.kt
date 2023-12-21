@@ -16,10 +16,11 @@ import com.example.hotstuffkotlin.utils.Adapter
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 
 class ItemsFragment : Fragment() {
-    private var binding: FragmentItemsBinding? = null
+    private var _binding: FragmentItemsBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-//        binding = FragmentItemsBinding.inflate(layoutInflater)
-        val view = inflater.inflate(R.layout.fragment_items, container, false)
+        _binding = FragmentItemsBinding.inflate(inflater, container, false)
+        val view = binding.root
 //        getData(view)
 //        val items = ArrayList<Item>()
         val items = DatabaseHelper(requireContext()).getItems()
@@ -78,6 +79,6 @@ class ItemsFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding = null
+        _binding = null
     }
 }
