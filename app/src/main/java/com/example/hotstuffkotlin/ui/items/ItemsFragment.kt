@@ -21,27 +21,15 @@ class ItemsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentItemsBinding.inflate(inflater, container, false)
         val view = binding.root
-//        getData(view)
-//        val items = ArrayList<Item>()
         val items = DatabaseHelper(requireContext()).getItems()
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
         recyclerItems.layoutManager = LinearLayoutManager(context)
-//        for (i in 1..5) {
-//            items.add(
-//                Item (
-//                    itemId = i, buildingId = i, name = """65" 4K Smart TV, V-Series UHD LED #$i""",
-//                    quantity = 1, value = 999.99, category = """Electronics""",
-//                    room = """Living Room""", make ="""Roku""", imagePath ="""examplePath""",
-//                    description ="""It is a long established fact that a reader will be distracted by the readable content of a page when looking at it's layout."""
-//                )
-//            )
-//        }
 
         val adapter = Adapter(items)
         recyclerItems.adapter = adapter
 
         val bundle = Bundle()
-        adapter.setOnItemClickListener(object : Adapter.onItemClickListener {
+        adapter.setOnItemClickListener(object : Adapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 bundle.putInt("id", items[position].itemId)
                 bundle.putInt("buildingId", items[position].buildingId)

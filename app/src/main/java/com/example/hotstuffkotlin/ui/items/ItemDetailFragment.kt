@@ -12,6 +12,7 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
+import java.text.DecimalFormat
 
 class ItemDetailFragment : Fragment() {
     private var _binding: FragmentItemDetailBinding? = null
@@ -30,7 +31,13 @@ class ItemDetailFragment : Fragment() {
         val quantity = view.findViewById<TextView>(R.id.item_detail_quantity_text)
 
         val bundle = this.requireArguments()
-        val valueNumeral = bundle.getDouble("value").toString()
+
+        fun formatValue(number: Double): String? {
+            val df = DecimalFormat("#,###,###.##")
+            return df.format(number)
+        }
+
+        val valueNumeral = formatValue(bundle.getDouble("value")).toString()
         val valueCurrency = "$" // TODO: get from stored preference value
 
         name.text = bundle.getString("name")
