@@ -2,6 +2,7 @@ package com.example.hotstuffkotlin.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.R
 
@@ -25,10 +26,16 @@ class SharedPreferenceHelper {
         }
     }
     fun getThemePref() = prefs?.getString("theme", "system")
+    fun applyThemePref(themePreference: String?) {
+        when (themePreference) {
+            "light" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            "dark" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            "system" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        }
+    }
+
     fun getCurrencyPref(context : Context): String {
-        val test = context.getString(R.string.label_bitcoin)
-        val test2 = R.string.label_bitcoin
-        val test3 = R.string.label_bitcoin.toString()
         val icon = when (prefs?.getString("currency", "dollar")) {
             context.getString(R.string.label_bitcoin) -> R.string.icon_bitcoin
             context.getString(R.string.label_dollar) -> R.string.icon_dollar

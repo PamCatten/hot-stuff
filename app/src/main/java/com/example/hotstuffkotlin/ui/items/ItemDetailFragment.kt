@@ -39,7 +39,6 @@ class ItemDetailFragment : Fragment() {
         }
 
         val valueNumeral = formatValue(bundle.getDouble("value")).toString()
-//        val valueCurrency = "$" // TODO: get from stored preference value
         val valueCurrency = SharedPreferenceHelper.getInstance(requireContext()).getCurrencyPref(requireContext())
 
         name.text = bundle.getString("name")

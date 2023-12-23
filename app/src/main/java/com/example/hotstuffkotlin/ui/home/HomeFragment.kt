@@ -24,7 +24,6 @@ class HomeFragment : Fragment() {
 
         val context = requireContext()
 
-//        val currencyIcon = "$" // TODO: Get from preferences
         val currencyIcon = SharedPreferenceHelper.getInstance(context).getCurrencyPref(context)
         val derivedTotal = DatabaseHelper(context).calculateTotal()
 

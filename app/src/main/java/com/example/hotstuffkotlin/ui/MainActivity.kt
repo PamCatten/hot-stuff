@@ -11,10 +11,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.ActivityMainBinding
-import com.example.hotstuffkotlin.utils.ThemeManager
+import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -112,8 +111,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initTheme() {
-        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-        ThemeManager.applyTheme(requireNotNull(preferences.getString("theme", "system")))
+//        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val theme = SharedPreferenceHelper.getInstance(this).getThemePref()
+        SharedPreferenceHelper.getInstance(this).applyThemePref(theme)
+//        ThemeManager.applyTheme(requireNotNull(preferences.getString("theme", "system")))
     }
 
 }
