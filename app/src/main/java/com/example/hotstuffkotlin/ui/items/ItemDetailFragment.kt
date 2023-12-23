@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
+import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.google.android.material.button.MaterialButton
 import java.text.DecimalFormat
 
@@ -38,7 +39,8 @@ class ItemDetailFragment : Fragment() {
         }
 
         val valueNumeral = formatValue(bundle.getDouble("value")).toString()
-        val valueCurrency = "$" // TODO: get from stored preference value
+//        val valueCurrency = "$" // TODO: get from stored preference value
+        val valueCurrency = SharedPreferenceHelper.getInstance(requireContext()).getCurrencyPref(requireContext())
 
         name.text = bundle.getString("name")
         category.text = bundle.getString("category")

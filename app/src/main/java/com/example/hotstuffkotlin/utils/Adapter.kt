@@ -36,7 +36,6 @@ class Adapter(private var items : List<Item>) : RecyclerView.Adapter<Adapter.Vie
         holder.itemQuantity.text = quantityString
     }
 
-    // return the number of the items in the list
     override fun getItemCount(): Int {
 //        return mList.size
         return items.size

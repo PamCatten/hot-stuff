@@ -66,6 +66,26 @@
     <string name="label_light">light</string>
     <string name="label_dark">dark</string>
     <string name="label_system">system</string>
+    <string name="label_bitcoin">bitcoin</string>
+    <string name="label_dollar">dollar</string>
+    <string name="label_dong">dong</string>
+    <string name="label_euro">euro</string>
+    <string name="label_guarani">guarani</string>
+    <string name="label_hryvnia">hryvnia</string>
+    <string name="label_kip">kip</string>
+    <string name="label_lari">lari</string>
+    <string name="label_lira">lira</string>
+    <string name="label_manat">manat</string>
+    <string name="label_naira">naira</string>
+    <string name="label_peso">peso</string>
+    <string name="label_pound">pound</string>
+    <string name="label_ruble">ruble</string>
+    <string name="label_rupee">rupee</string>
+    <string name="label_shekel">shekel</string>
+    <string name="label_tenge">tenge</string>
+    <string name="label_tugrik">tugrik</string>
+    <string name="label_won">won</string>
+    <string name="label_yen_yuan">yen_yuan</string>
     <!-- Settings: Preference Defaults -->
     <string name="default_currency">dollar</string>
     <string name="default_scale">medium</string>

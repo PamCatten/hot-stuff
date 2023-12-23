@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
+import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -21,19 +22,15 @@ class HomeFragment : Fragment() {
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
         val buildingName = view.findViewById<TextView>(R.id.label_building_name)
 
-        val currencyIcon = "$" // TODO: Get from preferences
-        val derivedTotal = DatabaseHelper(requireContext()).calculateTotal()
+        val context = requireContext()
+
+//        val currencyIcon = "$" // TODO: Get from preferences
+        val currencyIcon = SharedPreferenceHelper.getInstance(context).getCurrencyPref(context)
+        val derivedTotal = DatabaseHelper(context).calculateTotal()
 
         totalValue.text = "$currencyIcon $derivedTotal" // TODO: Placeholders w/ string resource
-        totalItems.text = DatabaseHelper(requireContext()).tallyItems()
+        totalItems.text = DatabaseHelper(context).tallyItems()
 
-        //var currencyIcon = sharedPreferenceHelper.getCurrency().toString() + "_icon"
-        //val currency = resources.getIdentifier(currencyIcon, "string", "hotstuffkotlin")
-//        tvActiveBuildingValue?.text = "$currencyIcon$derivedTotal"
-//
-//        val tvActiveBuildingCount = view?.findViewById<TextView>(R.id.tvActiveBuildingCount)
-//        val derivedCount = 18
-//        tvActiveBuildingCount?.text = "$derivedCount items"
 //
 //        val tvActiveBuildingName = view?.findViewById<TextView>(R.id.tvActiveBuildingName)
 //        val derivedName = "Sample House"

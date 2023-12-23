@@ -3,8 +3,7 @@
     <!-- Home -->
     <string-array name="dropdown_chart_type">
         <item>Category</item>
-        <item>Brand / Manufacturer</item>
-        <item>Color</item>
+        <item>Make</item>
     </string-array>
     <!-- Settings -->
     <string-array name="dropdown_theme">
@@ -40,26 +39,26 @@
         <item>¥ (Yen / Yuan)</item>
     </string-array>
     <string-array name="dropdown_currency_values">
-        <item>bitcoin</item>
-        <item>dollar</item>
-        <item>dong</item>
-        <item>euro</item>
-        <item>guarani</item>
-        <item>hryvnia</item>
-        <item>kip</item>
-        <item>lari</item>
-        <item>lira</item>
-        <item>manat</item>
-        <item>naira</item>
-        <item>peso</item>
-        <item>pound</item>
-        <item>ruble</item>
-        <item>rupee</item>
-        <item>shekel</item>
-        <item>tenge</item>
-        <item>tugrik</item>
-        <item>won</item>
-        <item>yen_yuan</item>
+        <item>@string/label_bitcoin</item>
+        <item>@string/label_dollar</item>
+        <item>@string/label_dong</item>
+        <item>@string/label_euro</item>
+        <item>@string/label_guarani</item>
+        <item>@string/label_hryvnia</item>
+        <item>@string/label_kip</item>
+        <item>@string/label_lari</item>
+        <item>@string/label_lira</item>
+        <item>@string/label_manat</item>
+        <item>@string/label_naira</item>
+        <item>@string/label_peso</item>
+        <item>@string/label_pound</item>
+        <item>@string/label_ruble</item>
+        <item>@string/label_rupee</item>
+        <item>@string/label_shekel</item>
+        <item>@string/label_tenge</item>
+        <item>@string/label_tugrik</item>
+        <item>@string/label_won</item>
+        <item>@string/label_yen_yuan</item>
     </string-array>
     <string-array name="dropdown_scale">
         <item>Tiny</item>

@@ -8,10 +8,10 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
-    private lateinit var sharedPreferenceHelper: SharedPreferenceHelper
+    private lateinit var preferenceHelper: SharedPreferenceHelper
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
-        sharedPreferenceHelper = SharedPreferenceHelper.getInstance(requireContext())
+        preferenceHelper = SharedPreferenceHelper.getInstance(requireContext())
     }
 
     override fun onResume() {
@@ -25,20 +25,21 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
-        if (key == "theme") {
-            when (sharedPreferenceHelper.getSelectedThemePref()) {
-                getString(R.string.label_light) -> setTheme(AppCompatDelegate.MODE_NIGHT_NO)
-                getString(R.string.label_dark) -> setTheme(AppCompatDelegate.MODE_NIGHT_YES)
-                getString(R.string.label_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        when (key) {
+            "theme" -> {
+                when (preferenceHelper.getThemePref()) {
+                    getString(R.string.label_light) -> setTheme(AppCompatDelegate.MODE_NIGHT_NO)
+                    getString(R.string.label_dark) -> setTheme(AppCompatDelegate.MODE_NIGHT_YES)
+                    getString(R.string.label_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                }
+            }
+            "currency" -> {
+                // do nothing for now
             }
         }
-//        if (key == "currency") {}
-
-
     }
 
     private fun setTheme(mode: Int) {
         AppCompatDelegate.setDefaultNightMode(mode)
     }
-
 }
