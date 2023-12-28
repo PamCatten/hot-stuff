@@ -79,7 +79,7 @@ class DatabaseHelper(context: Context?) :
         else Toast.makeText(context, "Delete successful!", Toast.LENGTH_SHORT).show()
     }
 
-    fun tallyItems() : String {
+    fun retrieveTotalQuantity() : String {
         val db = this.writableDatabase
         val query = "SELECT SUM($COLUMN_QUANTITY) as TOTAL FROM $TABLE_NAME"
         val cursor = db.rawQuery(query, null)
@@ -90,7 +90,7 @@ class DatabaseHelper(context: Context?) :
         return if (total == 1) "1 item" else "$total items"
     }
 
-    fun calculateTotal() : String {
+    fun retrieveTotalValue() : String {
         val db = this.writableDatabase
         val query = "SELECT SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME"
         val cursor = db.rawQuery(query, null)
@@ -99,6 +99,24 @@ class DatabaseHelper(context: Context?) :
             total = cursor.getDouble(cursor.getColumnIndexOrThrow("TOTAL"))
         cursor.close()
         return String.format("%.2f", total)
+    }
+
+    fun retrieveRoomValues(): Pair<ArrayList<String>, ArrayList<Float>> {
+        val db = this.writableDatabase
+        val query = "SELECT $COLUMN_ROOM, SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME GROUP BY $COLUMN_ROOM ORDER BY TOTAL DESC"
+        val cursor = db.rawQuery(query, null)
+        val roomLabels = ArrayList<String>()
+        val roomValueFloats = ArrayList<Float>()
+        if (cursor.moveToFirst()) {
+            val roomColumn = cursor.getColumnIndexOrThrow("$COLUMN_ROOM")
+            val totalColumn = cursor.getColumnIndexOrThrow("TOTAL")
+            do {
+                roomLabels.add(cursor.getString(roomColumn))
+                roomValueFloats.add(cursor.getFloat(totalColumn))
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return Pair(roomLabels, roomValueFloats)
     }
 
     fun getItems(): ArrayList<Item> {

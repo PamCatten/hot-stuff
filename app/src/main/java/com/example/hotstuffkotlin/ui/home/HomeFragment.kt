@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
+import com.example.hotstuffkotlin.utils.LabelFormatter
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.HorizontalBarChart
@@ -32,10 +33,10 @@ class HomeFragment : Fragment() {
         val context = requireContext()
 
         val currencyIcon = SharedPreferenceHelper.getInstance(context).getCurrencyPref(context)
-        val derivedTotal = DatabaseHelper(context).calculateTotal()
+        val derivedTotal = DatabaseHelper(context).retrieveTotalValue()
 
         totalValue.text = "$currencyIcon $derivedTotal" // TODO: Placeholders w/ string resource
-        totalItems.text = DatabaseHelper(context).tallyItems()
+        totalItems.text = DatabaseHelper(context).retrieveTotalQuantity()
 
 //
 //        val tvActiveBuildingName = view?.findViewById<TextView>(R.id.tvActiveBuildingName)
@@ -55,28 +56,25 @@ class HomeFragment : Fragment() {
         val barData = BarData(barDataSet)
         distroChart.setFitBars(true)
         distroChart.data = barData
+        distroChart.description.text = ""
 //        distroChart.description.text="Item Distribution by Category"
         distroChart.axisRight.setDrawGridLines(false)
         distroChart.axisLeft.setDrawGridLines(false)
         distroChart.xAxis.setDrawGridLines(false)
 
+
+
         val valueChart = view.findViewById<HorizontalBarChart>(R.id.bottomBarChart)
         val valueList : ArrayList<BarEntry> = ArrayList()
-        valueList.add(BarEntry(1f, 106f))
-        valueList.add(BarEntry(2f, 101f))
-        valueList.add(BarEntry(3f, 104f))
-        valueList.add(BarEntry(4f, 103f))
-        valueList.add(BarEntry(5f, 105f))
-        valueList.add(BarEntry(6f, 102f))
-        valueList.add(BarEntry(7f, 106f))
-        valueList.add(BarEntry(8f, 107f))
-        valueList.add(BarEntry(9f, 102f))
-        valueList.add(BarEntry(10f, 104f))
-        valueList.add(BarEntry(11f, 103f))
+        valueList.add(BarEntry(0f, 106f))
+        valueList.add(BarEntry(1f, 101f))
+        valueList.add(BarEntry(2f, 104f))
+        valueList.add(BarEntry(3f, 103f))
+        valueList.add(BarEntry(4f, 105f))
+        valueList.add(BarEntry(5f, 102f))
+        valueList.add(BarEntry(6f, 106f))
 
-        val valueAxisLabels : ArrayList<String> = ArrayList()
-        valueAxisLabels.add("")
-        valueChart.xAxis.valueFormatter.
+//        val valueAxisLabels : ArrayList<String> = ArrayList()
 
         val valueBarDataSet = BarDataSet(valueList, "Room by Total Item Value")
         valueBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
@@ -89,6 +87,9 @@ class HomeFragment : Fragment() {
         valueChart.axisRight.setDrawGridLines(false)
         valueChart.axisLeft.setDrawGridLines(false)
         valueChart.xAxis.setDrawGridLines(false)
+//        valueChart.xAxis.valueFormatter = IndexAxisValueFormatter(valueAxisLabels)
+        valueChart.xAxis.valueFormatter = LabelFormatter()
+        valueChart.axisLeft.valueFormatter = LabelFormatter()
 
         return binding.root
     }
@@ -97,4 +98,5 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
