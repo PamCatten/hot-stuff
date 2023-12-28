@@ -17,7 +17,7 @@
     <string name="label_create_item">Create a new item</string>
     <string name="label_create_building">Create a new building</string>
     <!-- Home: Placeholder Labels -->
-    <string name="label_building_value">Building Value</string>
+    <string name="label_building_value">Total Building Value</string>
     <string name="label_building_value_placeholder">$ 0.00</string>
     <string name="label_building_name_placeholder">Sample House</string>
     <string name="label_building_quantity_placeholder">0 items</string>

@@ -9,14 +9,6 @@
         tools:context=".ui.items.ItemsFragment"
         android:id="@+id/layout_items"
         android:orientation="vertical">
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/appbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"-->
-<!--        android:elevation="4dp"-->
-<!--        android:background="@color/coral"-->
-<!--        app:menu="@menu/appbar_menu"-->
-<!--        />-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/itemsRecyclerView"
             android:clickable="true"
