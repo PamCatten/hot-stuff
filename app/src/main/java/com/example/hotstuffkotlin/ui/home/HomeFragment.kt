@@ -10,13 +10,13 @@ import androidx.fragment.app.Fragment
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
-import com.example.hotstuffkotlin.utils.LabelFormatter
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.HorizontalBarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 
 class HomeFragment : Fragment() {
@@ -66,15 +66,25 @@ class HomeFragment : Fragment() {
 
         val valueChart = view.findViewById<HorizontalBarChart>(R.id.bottomBarChart)
         val valueList : ArrayList<BarEntry> = ArrayList()
-        valueList.add(BarEntry(0f, 106f))
-        valueList.add(BarEntry(1f, 101f))
-        valueList.add(BarEntry(2f, 104f))
-        valueList.add(BarEntry(3f, 103f))
-        valueList.add(BarEntry(4f, 105f))
-        valueList.add(BarEntry(5f, 102f))
-        valueList.add(BarEntry(6f, 106f))
+        valueList.add(BarEntry(0f, 16f))
+//        valueList.add(BarEntry(1f, 11f))
+//        valueList.add(BarEntry(2f, 14f))
+//        valueList.add(BarEntry(3f, 13f))
+//        valueList.add(BarEntry(4f, 15f))
+//        valueList.add(BarEntry(5f, 12f))
+//        valueList.add(BarEntry(6f, 16f))
+        val roomLabels = DatabaseHelper(context).retrieveRoomValues().first
+//        valueList.add(BarEntry(0f, roomLabels[0]))
+//        valueList.add(BarEntry(1f, roomLabels[1]))
+//        valueList.add(BarEntry(2f, roomLabels[2]))
 
-//        val valueAxisLabels : ArrayList<String> = ArrayList()
+//        for (i in 0..roomLabels.size) {
+//            valueList.add(BarEntry(i.toFloat(), roomLabels[i]))
+//        }
+
+        val valueAxisLabels : ArrayList<String> = ArrayList()
+        valueAxisLabels.add(roomLabels[0])
+//        valueAxisLabels.add(roomLabels[1])
 
         val valueBarDataSet = BarDataSet(valueList, "Room by Total Item Value")
         valueBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
@@ -87,9 +97,10 @@ class HomeFragment : Fragment() {
         valueChart.axisRight.setDrawGridLines(false)
         valueChart.axisLeft.setDrawGridLines(false)
         valueChart.xAxis.setDrawGridLines(false)
-//        valueChart.xAxis.valueFormatter = IndexAxisValueFormatter(valueAxisLabels)
-        valueChart.xAxis.valueFormatter = LabelFormatter()
-        valueChart.axisLeft.valueFormatter = LabelFormatter()
+        valueChart.xAxis.valueFormatter = IndexAxisValueFormatter(valueAxisLabels)
+
+//        valueChart.xAxis.valueFormatter = LabelFormatter()
+//        valueChart.axisLeft.valueFormatter = LabelFormatter()
 
         return binding.root
     }
