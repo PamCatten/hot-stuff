@@ -1,6 +1,5 @@
 package com.example.hotstuffkotlin.ui.home
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +27,7 @@ class HomeFragment : Fragment() {
 
         val totalItems = view.findViewById<TextView>(R.id.label_building_quantity)
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
-        val buildingName = view.findViewById<TextView>(R.id.label_building_name)
+//        val buildingName = view.findViewById<TextView>(R.id.label_building_name)
 
         val context = requireContext()
 
@@ -38,69 +37,66 @@ class HomeFragment : Fragment() {
         totalValue.text = "$currencyIcon $derivedTotal" // TODO: Placeholders w/ string resource
         totalItems.text = DatabaseHelper(context).retrieveTotalQuantity()
 
-//
-//        val tvActiveBuildingName = view?.findViewById<TextView>(R.id.tvActiveBuildingName)
 //        val derivedName = "Sample House"
-//        tvActiveBuildingName?.text = derivedName
+//        buildingName.text = derivedName
 
-        val distroChart = view.findViewById<BarChart>(R.id.topBarChart)
-        val list : ArrayList<BarEntry> = ArrayList()
-        list.add(BarEntry(1f, 100f))
-        list.add(BarEntry(2f, 101f))
-        list.add(BarEntry(3f, 103f))
-        list.add(BarEntry(4f, 105f))
-        list.add(BarEntry(5f, 104f))
-        list.add(BarEntry(6f, 102f))
-        val barDataSet = BarDataSet(list, "Category by Quantity")
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
-        val barData = BarData(barDataSet)
-        distroChart.setFitBars(true)
-        distroChart.data = barData
-        distroChart.description.text = ""
-//        distroChart.description.text="Item Distribution by Category"
-        distroChart.axisRight.setDrawGridLines(false)
-        distroChart.axisLeft.setDrawGridLines(false)
-        distroChart.xAxis.setDrawGridLines(false)
+        val catChart = view.findViewById<BarChart>(R.id.topBarChart)
+        val catDatabaseLabels = DatabaseHelper(context).getCategoryQuantity().first
+        val catDatabaseTotals = DatabaseHelper(context).getCategoryQuantity().second
 
+        val catEntries: ArrayList<BarEntry> = ArrayList()
+        val catAxisLabels: ArrayList<String> = ArrayList()
+//        catEntries.add(BarEntry(1f, 100f))
 
+        for (i in 0 until catDatabaseTotals.size) {
+            catEntries.add(BarEntry(i.toFloat(), catDatabaseTotals[i]))
+        }
 
-        val valueChart = view.findViewById<HorizontalBarChart>(R.id.bottomBarChart)
-        val valueList : ArrayList<BarEntry> = ArrayList()
-        valueList.add(BarEntry(0f, 16f))
-//        valueList.add(BarEntry(1f, 11f))
-//        valueList.add(BarEntry(2f, 14f))
-//        valueList.add(BarEntry(3f, 13f))
-//        valueList.add(BarEntry(4f, 15f))
-//        valueList.add(BarEntry(5f, 12f))
-//        valueList.add(BarEntry(6f, 16f))
-        val roomLabels = DatabaseHelper(context).retrieveRoomValues().first
-//        valueList.add(BarEntry(0f, roomLabels[0]))
-//        valueList.add(BarEntry(1f, roomLabels[1]))
-//        valueList.add(BarEntry(2f, roomLabels[2]))
+        for (i in 0 until catDatabaseLabels.size) {
+            catAxisLabels.add(catDatabaseLabels[i])
+        }
 
-//        for (i in 0..roomLabels.size) {
-//            valueList.add(BarEntry(i.toFloat(), roomLabels[i]))
-//        }
+        val catBarDataSet = BarDataSet(catEntries, "Category by Total Item Quantity (in $currencyIcon)")
+        catChart.data = BarData(catBarDataSet)
 
-        val valueAxisLabels : ArrayList<String> = ArrayList()
-        valueAxisLabels.add(roomLabels[0])
-//        valueAxisLabels.add(roomLabels[1])
+        catBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
+        catChart.setFitBars(true)
+        catChart.description.text = ""
+        catChart.axisRight.setDrawGridLines(false)
+        catChart.axisLeft.setDrawGridLines(false)
+        catChart.xAxis.setDrawGridLines(false)
+        catChart.xAxis.valueFormatter = IndexAxisValueFormatter(catAxisLabels)
 
-        val valueBarDataSet = BarDataSet(valueList, "Room by Total Item Value")
-        valueBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
-        valueBarDataSet.valueTextColor = Color.RED
-        val valueBarData = BarData(valueBarDataSet)
-        valueChart.setFitBars(true)
-        valueChart.data = valueBarData
-        valueChart.description.text = ""
-//        valueChart.description.text="Value by Room"
-        valueChart.axisRight.setDrawGridLines(false)
-        valueChart.axisLeft.setDrawGridLines(false)
-        valueChart.xAxis.setDrawGridLines(false)
-        valueChart.xAxis.valueFormatter = IndexAxisValueFormatter(valueAxisLabels)
+        val roomChart = view.findViewById<HorizontalBarChart>(R.id.bottomBarChart)
+        val roomDatabaseLabels = DatabaseHelper(context).getRoomValue().first
+        val roomDatabaseTotals = DatabaseHelper(context).getRoomValue().second
 
-//        valueChart.xAxis.valueFormatter = LabelFormatter()
-//        valueChart.axisLeft.valueFormatter = LabelFormatter()
+        val roomEntries: ArrayList<BarEntry> = ArrayList()
+        val roomAxisLabels: ArrayList<String> = ArrayList()
+//        roomEntries.add(BarEntry(0f, 16f))
+
+        for (i in 0 until roomDatabaseTotals.size) {
+            roomEntries.add(BarEntry(i.toFloat(), roomDatabaseTotals[i]))
+        }
+
+        for (i in 0 until roomDatabaseLabels.size) {
+            roomAxisLabels.add(roomDatabaseLabels[i])
+        }
+
+        val roomBarDataSet = BarDataSet(roomEntries, "Room by Total Item Value (in $currencyIcon)")
+        roomChart.data = BarData(roomBarDataSet)
+
+        roomBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
+        roomBarDataSet.valueTextColor = R.color.grey
+        roomChart.setFitBars(true)
+        roomChart.description.text = ""
+        roomChart.axisRight.setDrawGridLines(false)
+        roomChart.axisLeft.setDrawGridLines(false)
+        roomChart.xAxis.setDrawGridLines(false)
+        roomChart.xAxis.valueFormatter = IndexAxisValueFormatter(roomAxisLabels)
+
+//        roomChart.xAxis.valueFormatter = LabelFormatter()
+//        roomChart.axisLeft.valueFormatter = LabelFormatter()
 
         return binding.root
     }

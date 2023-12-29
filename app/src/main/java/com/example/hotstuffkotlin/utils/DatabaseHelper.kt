@@ -101,9 +101,27 @@ class DatabaseHelper(context: Context?) :
         return String.format("%.2f", total)
     }
 
-    fun retrieveRoomValues(): Pair<ArrayList<String>, ArrayList<Float>> {
+    fun getCategoryQuantity(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
-        val query = "SELECT $COLUMN_ROOM, SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME GROUP BY $COLUMN_ROOM ORDER BY TOTAL DESC"
+        val query = "SELECT $COLUMN_CATEGORY, SUM($COLUMN_QUANTITY) AS TOTAL FROM $TABLE_NAME GROUP BY $COLUMN_CATEGORY"
+        val cursor = db.rawQuery(query, null)
+        val categoryLabels = ArrayList<String>()
+        val categoryQuantityFloats = ArrayList<Float>()
+        if (cursor.moveToFirst()) {
+            val categoryColumn = cursor.getColumnIndexOrThrow("$COLUMN_CATEGORY")
+            val totalColumn = cursor.getColumnIndexOrThrow("TOTAL")
+            do {
+                categoryLabels.add(cursor.getString(categoryColumn))
+                categoryQuantityFloats.add(cursor.getFloat(totalColumn))
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return Pair(categoryLabels, categoryQuantityFloats)
+    }
+
+    fun getRoomValue(): Pair<ArrayList<String>, ArrayList<Float>> {
+        val db = this.writableDatabase
+        val query = "SELECT $COLUMN_ROOM, SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME GROUP BY $COLUMN_ROOM ORDER BY TOTAL ASC"
         val cursor = db.rawQuery(query, null)
         val roomLabels = ArrayList<String>()
         val roomValueFloats = ArrayList<Float>()
