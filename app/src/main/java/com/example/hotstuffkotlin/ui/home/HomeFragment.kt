@@ -12,11 +12,11 @@ import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.HorizontalBarChart
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
-import com.github.mikephil.charting.utils.ColorTemplate
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -58,14 +58,16 @@ class HomeFragment : Fragment() {
 
         val catBarDataSet = BarDataSet(catEntries, "Category by Total Item Quantity (in $currencyIcon)")
         catChart.data = BarData(catBarDataSet)
-
-        catBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
+//        catBarDataSet.setColors(ColorTemplate.LIBERTY_COLORS, 255)
+        catBarDataSet.setColors(com.example.hotstuffkotlin.utils.ColorTemplate.CHART_THEME, 255)
         catChart.setFitBars(true)
         catChart.description.text = ""
         catChart.axisRight.setDrawGridLines(false)
         catChart.axisLeft.setDrawGridLines(false)
         catChart.xAxis.setDrawGridLines(false)
+        catChart.xAxis.labelCount = if (catAxisLabels.size > 25) 25 else catAxisLabels.size
         catChart.xAxis.valueFormatter = IndexAxisValueFormatter(catAxisLabels)
+        catChart.legend.form = Legend.LegendForm.CIRCLE
 
         val roomChart = view.findViewById<HorizontalBarChart>(R.id.bottomBarChart)
         val roomDatabaseLabels = DatabaseHelper(context).getRoomValue().first
@@ -86,13 +88,15 @@ class HomeFragment : Fragment() {
         val roomBarDataSet = BarDataSet(roomEntries, "Room by Total Item Value (in $currencyIcon)")
         roomChart.data = BarData(roomBarDataSet)
 
-        roomBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
+//        roomBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
+        roomBarDataSet.setColors(com.example.hotstuffkotlin.utils.ColorTemplate.CHART_THEME, 255)
         roomBarDataSet.valueTextColor = R.color.grey
         roomChart.setFitBars(true)
         roomChart.description.text = ""
         roomChart.axisRight.setDrawGridLines(false)
         roomChart.axisLeft.setDrawGridLines(false)
         roomChart.xAxis.setDrawGridLines(false)
+        roomChart.xAxis.labelCount = if (roomAxisLabels.size > 25) 25 else roomAxisLabels.size
         roomChart.xAxis.valueFormatter = IndexAxisValueFormatter(roomAxisLabels)
 
 //        roomChart.xAxis.valueFormatter = LabelFormatter()
