@@ -132,6 +132,8 @@
     <string name="text_title">20dp</string>
     <string name="text_subtitle">16dp</string>
     <string name="text_body">14dp</string>
+    <string name="label_category_summary">Category Summary:</string>
+    <string name="label_room_summary">Room Summary:</string>
 
 
 </resources>

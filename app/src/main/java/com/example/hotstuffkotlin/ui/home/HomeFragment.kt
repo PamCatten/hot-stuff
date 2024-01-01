@@ -1,5 +1,6 @@
 package com.example.hotstuffkotlin.ui.home
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,15 +9,17 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
+import com.example.hotstuffkotlin.utils.ChartMarker
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.HorizontalBarChart
-import com.github.mikephil.charting.components.Legend
+import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.google.android.material.color.MaterialColors
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -30,6 +33,7 @@ class HomeFragment : Fragment() {
 //        val buildingName = view.findViewById<TextView>(R.id.label_building_name)
 
         val context = requireContext()
+        val colorOnPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.RED)
 
         val currencyIcon = SharedPreferenceHelper.getInstance(context).getCurrencyPref(context)
         val derivedTotal = DatabaseHelper(context).retrieveTotalValue()
@@ -65,9 +69,20 @@ class HomeFragment : Fragment() {
         catChart.axisRight.setDrawGridLines(false)
         catChart.axisLeft.setDrawGridLines(false)
         catChart.xAxis.setDrawGridLines(false)
-        catChart.xAxis.labelCount = if (catAxisLabels.size > 25) 25 else catAxisLabels.size
+//        catChart.xAxis.labelCount = if (catAxisLabels.size > 25) 25 else catAxisLabels.size
+        catChart.xAxis.labelCount = if (catAxisLabels.size > 3) 3 else catAxisLabels.size
         catChart.xAxis.valueFormatter = IndexAxisValueFormatter(catAxisLabels)
-        catChart.legend.form = Legend.LegendForm.CIRCLE
+        catChart.legend.isEnabled = false
+        catBarDataSet.valueTextColor = colorOnPrimary
+        catChart.xAxis.textColor = colorOnPrimary
+        catChart.setBorderColor(colorOnPrimary)
+        catChart.axisLeft.textColor = colorOnPrimary
+        catChart.axisRight.textColor = colorOnPrimary
+        catChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        catChart.axisRight.isEnabled = false
+        catChart.isScaleXEnabled = false
+
+        catChart.marker = ChartMarker(context, R.layout.dialog_chart, catAxisLabels)
 
         val roomChart = view.findViewById<HorizontalBarChart>(R.id.bottomBarChart)
         val roomDatabaseLabels = DatabaseHelper(context).getRoomValue().first
@@ -75,7 +90,6 @@ class HomeFragment : Fragment() {
 
         val roomEntries: ArrayList<BarEntry> = ArrayList()
         val roomAxisLabels: ArrayList<String> = ArrayList()
-//        roomEntries.add(BarEntry(0f, 16f))
 
         for (i in 0 until roomDatabaseTotals.size) {
             roomEntries.add(BarEntry(i.toFloat(), roomDatabaseTotals[i]))
@@ -90,7 +104,6 @@ class HomeFragment : Fragment() {
 
 //        roomBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
         roomBarDataSet.setColors(com.example.hotstuffkotlin.utils.ColorTemplate.CHART_THEME, 255)
-        roomBarDataSet.valueTextColor = R.color.grey
         roomChart.setFitBars(true)
         roomChart.description.text = ""
         roomChart.axisRight.setDrawGridLines(false)
@@ -98,6 +111,17 @@ class HomeFragment : Fragment() {
         roomChart.xAxis.setDrawGridLines(false)
         roomChart.xAxis.labelCount = if (roomAxisLabels.size > 25) 25 else roomAxisLabels.size
         roomChart.xAxis.valueFormatter = IndexAxisValueFormatter(roomAxisLabels)
+        roomChart.legend.isEnabled = false
+        roomBarDataSet.valueTextColor = colorOnPrimary
+        roomChart.xAxis.textColor = colorOnPrimary
+        roomChart.setBorderColor(colorOnPrimary)
+        roomChart.axisLeft.textColor = colorOnPrimary // top axis
+        roomChart.axisRight.textColor = colorOnPrimary // bottom axis
+        roomChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        roomChart.axisLeft.isEnabled = false
+        roomChart.isScaleYEnabled = false
+
+        roomChart.marker = ChartMarker(context, R.layout.dialog_chart, roomAxisLabels)
 
 //        roomChart.xAxis.valueFormatter = LabelFormatter()
 //        roomChart.axisLeft.valueFormatter = LabelFormatter()

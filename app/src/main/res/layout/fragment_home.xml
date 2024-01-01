@@ -57,15 +57,26 @@
                     app:layout_constraintTop_toBottomOf="@id/label_building_value" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
-        <TextView
-            android:id="@+id/label_item_distro"
-            style="@style/text_subtitle"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:text="Category Distribution"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_summary"/>
+            android:layout_marginBottom="0dp">
+            <TextView
+                android:id="@+id/label_category_summary"
+                style="@style/text_subtitle"
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/label_category_summary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/button_home_category"
+                style="@style/text_subtitle"
+                android:layout_marginHorizontal="8dp"
+                android:text="Total Item Value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.cardview.widget.CardView
             android:id="@+id/card_1"
             android:layout_marginHorizontal="16dp"
@@ -73,7 +84,7 @@
             android:layout_marginTop="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_item_distro"
+            app:layout_constraintTop_toBottomOf="@id/label_category_summary"
             style="@style/card">
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/topBarChart"
@@ -82,15 +93,26 @@
                 android:minHeight="200dp"
                 android:layout_margin="8dp"/>
         </androidx.cardview.widget.CardView>
-        <TextView
-            android:id="@+id/label_category"
-            style="@style/text_subtitle"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="0dp"
-            android:layout_marginHorizontal="8dp"
-            android:text="Room Value"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_1"/>
+            android:layout_marginBottom="0dp">
+            <TextView
+                android:id="@+id/label_room_summary"
+                style="@style/text_subtitle"
+                android:layout_marginHorizontal="8dp"
+                android:text="@string/label_room_summary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/button_home_room"
+                style="@style/text_subtitle"
+                android:layout_marginHorizontal="8dp"
+                android:text="Total Item Value"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.cardview.widget.CardView
             android:id="@+id/card_2"
             android:layout_marginTop="0dp"
@@ -98,7 +120,7 @@
             android:layout_marginHorizontal="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_category"
+            app:layout_constraintTop_toBottomOf="@id/label_room_summary"
             style="@style/card">
             <com.github.mikephil.charting.charts.HorizontalBarChart
                 android:id="@+id/bottomBarChart"
