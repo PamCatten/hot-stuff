@@ -12,20 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginHorizontal="8dp"
+        android:layout_marginHorizontal="16dp"
         tools:context=".ui.home.HomeFragment">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_summary"
-            style="@style/card"
-            android:layout_marginVertical="0dp"
-            android:layout_marginHorizontal="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card_summary"-->
+<!--            style="@style/card"-->
+<!--            android:layout_marginVertical="0dp"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp">
+                android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/label_building_value"
                     style="@style/text_subtitle"
@@ -56,79 +55,71 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/label_building_value" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="36dp"
             android:layout_marginBottom="0dp">
             <TextView
                 android:id="@+id/label_category_summary"
                 style="@style/text_subtitle"
-                android:layout_marginHorizontal="8dp"
+                android:layout_marginHorizontal="0dp"
                 android:text="@string/label_category_summary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
             <TextView
                 android:id="@+id/button_home_category"
                 style="@style/text_subtitle"
-                android:layout_marginHorizontal="8dp"
+                android:layout_marginHorizontal="0dp"
                 android:text="Total Item Value"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_1"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="0dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_category_summary"
-            style="@style/card">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card_1"-->
+<!--            android:layout_margin="0dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/label_category_summary"-->
+<!--            style="@style/card">-->
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/topBarChart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="200dp"
-                android:layout_margin="8dp"/>
-        </androidx.cardview.widget.CardView>
+                android:minHeight="200dp" />
+<!--        </androidx.cardview.widget.CardView>-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="36dp"
             android:layout_marginBottom="0dp">
             <TextView
                 android:id="@+id/label_room_summary"
                 style="@style/text_subtitle"
-                android:layout_marginHorizontal="8dp"
                 android:text="@string/label_room_summary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
             <TextView
                 android:id="@+id/button_home_room"
                 style="@style/text_subtitle"
-                android:layout_marginHorizontal="8dp"
                 android:text="Total Item Value"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_2"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="32dp"
-            android:layout_marginHorizontal="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_room_summary"
-            style="@style/card">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/card_2"-->
+<!--            android:layout_margin="0dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/label_room_summary"-->
+<!--            style="@style/card">-->
             <com.github.mikephil.charting.charts.HorizontalBarChart
                 android:id="@+id/bottomBarChart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="200dp"
-                android:layout_margin="8dp"/>
-        </androidx.cardview.widget.CardView>
+                android:minHeight="200dp"/>
+<!--        </androidx.cardview.widget.CardView>-->
     </LinearLayout>
 <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 </ScrollView>
