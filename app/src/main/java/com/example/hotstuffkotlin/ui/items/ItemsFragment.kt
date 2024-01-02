@@ -18,15 +18,36 @@ import com.example.hotstuffkotlin.utils.DatabaseHelper
 class ItemsFragment : Fragment() {
     private var _binding: FragmentItemsBinding? = null
     private val binding get() = _binding!!
+    private var loading = false
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentItemsBinding.inflate(inflater, container, false)
         val view = binding.root
-        val items = DatabaseHelper(requireContext()).getItems()
+//        val items = DatabaseHelper(requireContext()).getItems()
+        val items = DatabaseHelper(requireContext()).getDataRange()
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
         recyclerItems.layoutManager = LinearLayoutManager(context)
 
         val adapter = Adapter(items)
         recyclerItems.adapter = adapter
+
+        recyclerItems.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                val layoutManager = recyclerItems.layoutManager as LinearLayoutManager
+                if (dy > 0) {
+                    val visibleItemCount = layoutManager.childCount
+                    val pastVisibleItems = layoutManager.findFirstVisibleItemPosition()
+                    val totalItemCount = layoutManager.itemCount
+
+                    if (!loading && visibleItemCount + pastVisibleItems >= totalItemCount) {
+                        loading = true
+                        val moreItems = DatabaseHelper(requireContext()).getDataRange(totalItemCount)
+                        for (i in moreItems) items.add(i)
+                        adapter.notifyItemRangeInserted(totalItemCount, layoutManager.itemCount)
+                        loading = false
+                    }
+                }
+            }
+        })
 
         val bundle = Bundle()
         adapter.setOnItemClickListener(object : Adapter.OnItemClickListener {

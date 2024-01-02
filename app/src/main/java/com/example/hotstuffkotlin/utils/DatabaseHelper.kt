@@ -141,11 +141,10 @@ class DatabaseHelper(context: Context?) :
         val itemList: ArrayList<Item> = ArrayList()
         val selectQuery = "SELECT * FROM $TABLE_NAME"
         val db: SQLiteDatabase = this.readableDatabase
-        var cursor: Cursor? = null
+        val cursor: Cursor?
 
         try {
             cursor = db.rawQuery(selectQuery, null)
-//            cursor.close()
         } catch (e: Exception) {
             e.printStackTrace()
             db.execSQL(selectQuery)
@@ -185,25 +184,82 @@ class DatabaseHelper(context: Context?) :
         return itemList
     }
 
-//    fun readData() : Cursor? {
-//        val query = "SELECT * FROM $TABLE_NAME"
-//        val db : SQLiteDatabase = this.readableDatabase
-//        var cursor : Cursor? = null
-//
-//        if (db != null) {
-//            cursor = db.rawQuery(query, null)
-//        }
-//        return cursor
-//    }
+    fun getItemsCount(): Int {
+        var itemCount = 0
+        val selectQuery = "SELECT COUNT(*) AS TOTAL FROM $TABLE_NAME"
+        val db: SQLiteDatabase = this.readableDatabase
+        val cursor: Cursor?
+
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            db.execSQL(selectQuery)
+            return itemCount
+        }
+
+        if (cursor.moveToFirst()) {
+            val totalColumn = cursor.getColumnIndexOrThrow("TOTAL")
+            itemCount = cursor.getInt(totalColumn)
+        }
+
+        cursor.close()
+        return itemCount
+    }
+    fun getDataRange(offset: Int = 0) : ArrayList<Item> {
+        val itemList: ArrayList<Item> = ArrayList()
+        val selectQuery = "SELECT * FROM $TABLE_NAME LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
+        val db: SQLiteDatabase = this.readableDatabase
+        val cursor: Cursor?
+
+        try {
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            db.execSQL(selectQuery)
+            return ArrayList()
+        }
+
+        var itemId: Int
+        var buildingId: Int
+        var name: String
+        var quantity: Int
+        var category: String
+        var room: String?
+        var make: String?
+        var value: Double?
+        var imagePath: String?
+        var description: String?
+
+        if (cursor.moveToFirst()) {
+            do {
+                itemId = cursor.getInt(cursor.getColumnIndexOrThrow("item_id"))
+                buildingId = cursor.getInt(cursor.getColumnIndexOrThrow("item_building_id"))
+                name = cursor.getString(cursor.getColumnIndexOrThrow("item_name"))
+                quantity = cursor.getInt(cursor.getColumnIndexOrThrow("item_quantity"))
+                category = cursor.getString(cursor.getColumnIndexOrThrow("item_category"))
+                room = cursor.getString(cursor.getColumnIndexOrThrow("item_room"))
+                make = cursor.getString(cursor.getColumnIndexOrThrow("item_make"))
+                value = cursor.getDouble(cursor.getColumnIndexOrThrow("item_value"))
+                imagePath = cursor.getString(cursor.getColumnIndexOrThrow("item_image"))
+                description = cursor.getString(cursor.getColumnIndexOrThrow("item_description"))
+                val i = Item(itemId = itemId, buildingId = buildingId, name = name,
+                    quantity = quantity, category = category, room = room, make = make,
+                    value = value, imagePath = imagePath, description = description)
+                itemList.add(i)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return itemList
+    }
 
     companion object{
-        // here we have defined variables for our database
         private const val DATABASE_NAME : String = "ItemManifest.db"
         private const val DATABASE_VERSION : Int = 1
         private const val TABLE_NAME : String = "item_manifest"
         private const val COLUMN_ID : String = "item_id" // int? primary key item_manifest table
         private const val COLUMN_BUILDING_ID : String = "item_building_id" // int? foreign key building_manifest table
-        private const val COLUMN_NAME : String = "item_name" // make required
+        private const val COLUMN_NAME : String = "item_name" // string, required
         private const val COLUMN_QUANTITY : String = "item_quantity" // int? make required
         private const val COLUMN_CATEGORY : String = "item_category"
         private const val COLUMN_ROOM : String = "item_room" // nullable
@@ -211,6 +267,6 @@ class DatabaseHelper(context: Context?) :
         private const val COLUMN_VALUE : String = "item_value" // double?
         private const val COLUMN_IMAGE_PATH : String = "item_image" // nullable
         private const val COLUMN_DESCRIPTION : String = "item_description" // nullable
-
+        private const val PAGINATION_DATA_LIMIT : Int = 20
     }
 }

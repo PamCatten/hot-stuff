@@ -37,9 +37,14 @@ class Adapter(private var items : List<Item>) : RecyclerView.Adapter<Adapter.Vie
     }
 
     override fun getItemCount(): Int {
-//        return mList.size
         return items.size
     }
+
+//    fun addData(itemsArg: ArrayList<Item>) {
+//        val size = itemCount
+//        val newSize = itemsArg.size
+//        notifyItemRangeInserted(size, newSize)
+//    }
 
     class ViewHolder(itemView: View, listener: OnItemClickListener) : RecyclerView.ViewHolder(itemView) {
         val itemName : TextView = itemView.findViewById(R.id.itemName)

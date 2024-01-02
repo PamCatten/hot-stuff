@@ -12,7 +12,6 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/itemsRecyclerView"
             android:clickable="true"
-            android:layout_marginHorizontal="8dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>
