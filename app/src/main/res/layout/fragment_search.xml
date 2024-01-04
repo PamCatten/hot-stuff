@@ -15,7 +15,6 @@
             android:id="@+id/search_search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             app:queryHint="Search Hot Stuff"
             app:searchIcon="@null"
             app:queryBackground="@android:color/transparent"
@@ -24,5 +23,5 @@
             android:id="@+id/search_recycler_view"
             android:clickable="true"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"/>
     </LinearLayout>

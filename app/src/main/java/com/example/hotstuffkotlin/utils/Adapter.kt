@@ -19,32 +19,28 @@ class Adapter(private var items : List<Item>) : RecyclerView.Adapter<Adapter.Vie
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.cardview_item, parent, false)
-
         return ViewHolder(view, mListener)
     }
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val item = items[position]
         val quantityNumeral = item.quantity
         val quantityString = if (quantityNumeral > 1) "$quantityNumeral items" else "$quantityNumeral item"
-
         holder.itemName.text = item.name
         holder.itemCategory.text = item.category
         holder.itemRoom.text = item.room
         holder.itemQuantity.text = quantityString
     }
 
+    fun update(searchItems:ArrayList<Item>) {
+        items = searchItems
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
         return items.size
     }
-
-//    fun addData(itemsArg: ArrayList<Item>) {
-//        val size = itemCount
-//        val newSize = itemsArg.size
-//        notifyItemRangeInserted(size, newSize)
-//    }
 
     class ViewHolder(itemView: View, listener: OnItemClickListener) : RecyclerView.ViewHolder(itemView) {
         val itemName : TextView = itemView.findViewById(R.id.itemName)
