@@ -10,7 +10,6 @@ import com.example.hotstuffkotlin.models.Item
 
 class DatabaseHelper(context: Context?) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-
     val context = context
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -27,12 +26,10 @@ class DatabaseHelper(context: Context?) :
                 "$COLUMN_DESCRIPTION TEXT);"
         db?.execSQL(query)
     }
-
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
     }
-
     fun addItem(name: String, quantity: Int, category: String, room: String,
         make: String?, value: Double?, image: String?, description: String?) {
         val db : SQLiteDatabase = this.writableDatabase
@@ -52,12 +49,10 @@ class DatabaseHelper(context: Context?) :
         else Toast.makeText(this.context, "Database insertion successful!", Toast.LENGTH_SHORT).show()
         db.close()
     }
-
     fun updateItem(id: Int, name: String, quantity: Int, category: String, room: String,
        make: String?, value: Double?, image: String?, description: String?) {
         val db : SQLiteDatabase = this.writableDatabase
         val cv = ContentValues()
-
         cv.put(COLUMN_NAME, name)
         cv.put(COLUMN_QUANTITY, quantity)
         cv.put(COLUMN_CATEGORY, category)
@@ -66,20 +61,17 @@ class DatabaseHelper(context: Context?) :
         cv.put(COLUMN_VALUE, value)
         cv.put(COLUMN_IMAGE_PATH, image)
         cv.put(COLUMN_DESCRIPTION, description)
-
         val result =  db.update(TABLE_NAME, cv, "item_id=?", arrayOf(id.toString()))
         if (result == (-1)) Toast.makeText(context, "Oh no! Update failed.", Toast.LENGTH_SHORT).show()
         else Toast.makeText(context, "Update successful!", Toast.LENGTH_SHORT).show()
     }
-
     fun deleteItem(id: Int) {
         val db : SQLiteDatabase = this.writableDatabase
         val result = db.delete(TABLE_NAME, "item_id=?", arrayOf(id.toString()))
         if (result == (-1)) Toast.makeText(context, "Deletion failed.", Toast.LENGTH_SHORT).show()
         else Toast.makeText(context, "Delete successful!", Toast.LENGTH_SHORT).show()
     }
-
-    fun retrieveTotalQuantity() : String {
+    fun getTotalQuantity() : String {
         val db = this.writableDatabase
         val query = "SELECT SUM($COLUMN_QUANTITY) as TOTAL FROM $TABLE_NAME"
         val cursor = db.rawQuery(query, null)
@@ -89,8 +81,7 @@ class DatabaseHelper(context: Context?) :
         cursor.close()
         return if (total == 1) "1 item" else "$total items"
     }
-
-    fun retrieveTotalValue() : String {
+    fun getTotalValue() : String {
         val db = this.writableDatabase
         val query = "SELECT SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME"
         val cursor = db.rawQuery(query, null)
@@ -100,7 +91,6 @@ class DatabaseHelper(context: Context?) :
         cursor.close()
         return String.format("%.2f", total)
     }
-
     fun getCategoryQuantity(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
         val query = "SELECT $COLUMN_CATEGORY, SUM($COLUMN_QUANTITY) AS TOTAL FROM $TABLE_NAME GROUP BY $COLUMN_CATEGORY"
@@ -118,7 +108,6 @@ class DatabaseHelper(context: Context?) :
         cursor.close()
         return Pair(categoryLabels, categoryQuantityFloats)
     }
-
     fun getRoomValue(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
         val query = "SELECT $COLUMN_ROOM, SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME GROUP BY $COLUMN_ROOM ORDER BY TOTAL ASC"
@@ -136,7 +125,43 @@ class DatabaseHelper(context: Context?) :
         cursor.close()
         return Pair(roomLabels, roomValueFloats)
     }
-
+//    fun searchData(searchQuery: String): Flow<ArrayList<Item>> {
+    fun searchData(searchQuery: String): ArrayList<Item> {
+        val db = this.writableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_NAME LIKE $searchQuery OR $COLUMN_ROOM LIKE $searchQuery OR $COLUMN_CATEGORY LIKE $searchQuery OR $COLUMN_MAKE LIKE $searchQuery"
+        val cursor = db.rawQuery(query, null)
+        val searchItems = ArrayList<Item>()
+        if (cursor.moveToFirst()) {
+            var itemId: Int
+            var buildingId: Int
+            var name: String
+            var quantity: Int
+            var category: String
+            var room: String?
+            var make: String?
+            var value: Double?
+            var imagePath: String?
+            var description: String?
+            do {
+                itemId = cursor.getInt(cursor.getColumnIndexOrThrow("item_id"))
+                buildingId = cursor.getInt(cursor.getColumnIndexOrThrow("item_building_id"))
+                name = cursor.getString(cursor.getColumnIndexOrThrow("item_name"))
+                quantity = cursor.getInt(cursor.getColumnIndexOrThrow("item_quantity"))
+                category = cursor.getString(cursor.getColumnIndexOrThrow("item_category"))
+                room = cursor.getString(cursor.getColumnIndexOrThrow("item_room"))
+                make = cursor.getString(cursor.getColumnIndexOrThrow("item_make"))
+                value = cursor.getDouble(cursor.getColumnIndexOrThrow("item_value"))
+                imagePath = cursor.getString(cursor.getColumnIndexOrThrow("item_image"))
+                description = cursor.getString(cursor.getColumnIndexOrThrow("item_description"))
+                val i = Item(itemId = itemId, buildingId = buildingId, name = name,
+                    quantity = quantity, category = category, room = room, make = make,
+                    value = value, imagePath = imagePath, description = description)
+                searchItems.add(i)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return searchItems
+    }
     fun getItems(): ArrayList<Item> {
         val itemList: ArrayList<Item> = ArrayList()
         val selectQuery = "SELECT * FROM $TABLE_NAME"
@@ -183,7 +208,6 @@ class DatabaseHelper(context: Context?) :
         cursor.close()
         return itemList
     }
-
     fun getItemsCount(): Int {
         var itemCount = 0
         val selectQuery = "SELECT COUNT(*) AS TOTAL FROM $TABLE_NAME"

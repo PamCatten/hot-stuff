@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:scrollbars="none"
-    android:theme="@style/container_fragment"
-    tools:context=".ui.items.SearchFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="?attr/actionBarSize">
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingBottom="?attr/actionBarSize"
+    android:layout_marginHorizontal="8dp"
+    tools:context=".ui.items.SearchFragment"
+    android:id="@+id/layout_search"
+    android:orientation="vertical">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:queryHint="Search Hot Stuff"
+            app:searchIcon="@null"
+            app:queryBackground="@android:color/transparent"
+            app:iconifiedByDefault="false"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_recycler_view"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>

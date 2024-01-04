@@ -2,8 +2,6 @@ package com.example.hotstuffkotlin.ui.items
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -72,19 +70,6 @@ class ItemsFragment : Fragment() {
 
         return view
     }
-
-    // TODO: Deprecation warning, fix when time
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_toolbar_main, menu)
-    }
-
-    private fun getData(view : View) {}
-
-//    override fun onResume() {
-//        super.onResume()
-//        val item = bundle.getInt("delete")
-//        if (item != -1) items.remove(items[bundle.getInt("position")])
-//    }
 
     override fun onDestroyView() {
         super.onDestroyView()

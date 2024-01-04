@@ -36,10 +36,10 @@ class HomeFragment : Fragment() {
         val colorOnPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.RED)
 
         val currencyIcon = SharedPreferenceHelper.getInstance(context).getCurrencyPref(context)
-        val derivedTotal = DatabaseHelper(context).retrieveTotalValue()
+        val derivedTotal = DatabaseHelper(context).getTotalValue()
 
         totalValue.text = "$currencyIcon $derivedTotal" // TODO: Placeholders w/ string resource
-        totalItems.text = DatabaseHelper(context).retrieveTotalQuantity()
+        totalItems.text = DatabaseHelper(context).getTotalQuantity()
 
 //        val derivedName = "Sample House"
 //        buildingName.text = derivedName
@@ -50,7 +50,6 @@ class HomeFragment : Fragment() {
 
         val catEntries: ArrayList<BarEntry> = ArrayList()
         val catAxisLabels: ArrayList<String> = ArrayList()
-//        catEntries.add(BarEntry(1f, 100f))
 
         for (i in 0 until catDatabaseTotals.size) {
             catEntries.add(BarEntry(i.toFloat(), catDatabaseTotals[i]))
@@ -62,14 +61,12 @@ class HomeFragment : Fragment() {
 
         val catBarDataSet = BarDataSet(catEntries, "Category by Total Item Quantity (in $currencyIcon)")
         catChart.data = BarData(catBarDataSet)
-//        catBarDataSet.setColors(ColorTemplate.LIBERTY_COLORS, 255)
         catBarDataSet.setColors(com.example.hotstuffkotlin.utils.ColorTemplate.CHART_THEME, 255)
         catChart.setFitBars(true)
         catChart.description.text = ""
         catChart.axisRight.setDrawGridLines(false)
         catChart.axisLeft.setDrawGridLines(false)
         catChart.xAxis.setDrawGridLines(false)
-//        catChart.xAxis.labelCount = if (catAxisLabels.size > 25) 25 else catAxisLabels.size
         catChart.xAxis.labelCount = if (catAxisLabels.size > 3) 3 else catAxisLabels.size
         catChart.xAxis.valueFormatter = IndexAxisValueFormatter(catAxisLabels)
         catChart.legend.isEnabled = false
@@ -102,7 +99,6 @@ class HomeFragment : Fragment() {
         val roomBarDataSet = BarDataSet(roomEntries, "Room by Total Item Value (in $currencyIcon)")
         roomChart.data = BarData(roomBarDataSet)
 
-//        roomBarDataSet.setColors(ColorTemplate.MATERIAL_COLORS, 255)
         roomBarDataSet.setColors(com.example.hotstuffkotlin.utils.ColorTemplate.CHART_THEME, 255)
         roomChart.setFitBars(true)
         roomChart.description.text = ""
@@ -122,9 +118,6 @@ class HomeFragment : Fragment() {
         roomChart.isScaleYEnabled = false
 
         roomChart.marker = ChartMarker(context, R.layout.dialog_chart, roomAxisLabels)
-
-//        roomChart.xAxis.valueFormatter = LabelFormatter()
-//        roomChart.axisLeft.valueFormatter = LabelFormatter()
 
         return binding.root
     }

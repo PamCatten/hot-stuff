@@ -111,10 +111,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initTheme() {
-//        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
         val theme = SharedPreferenceHelper.getInstance(this).getThemePref()
         SharedPreferenceHelper.getInstance(this).applyThemePref(theme)
-//        ThemeManager.applyTheme(requireNotNull(preferences.getString("theme", "system")))
     }
 
 }

@@ -29,6 +29,7 @@
                         android:id="@+id/learn_walkthrough_title"
                         style="@style/card_title"
                         android:text="@string/label_walkthroughs"
+                        android:textSize="18sp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"/>
                     <TextView
@@ -104,6 +105,7 @@
                     <TextView
                         android:id="@+id/learn_resources_title"
                         style="@style/card_title"
+                        android:textSize="18sp"
                         android:text="@string/label_resources"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -189,6 +191,7 @@
                         android:id="@+id/learn_about_title"
                         style="@style/card_title"
                         android:text="@string/label_about"
+                        android:textSize="18sp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
                         />
