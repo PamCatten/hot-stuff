@@ -67,7 +67,7 @@ class SearchFragment : Fragment() {
                 bundle.putInt("delete", -1)
 
                 childFragmentManager.beginTransaction().addToBackStack(null).commit()
-                findNavController().navigate(R.id.action_items_to_item_detail, bundle)
+                findNavController().navigate(R.id.action_search_to_item_detail, bundle)
             }
         })
 
@@ -91,31 +91,7 @@ class SearchFragment : Fragment() {
                 }
                 return false
             }
-
         })
-
-
-//        fun SearchView.getQueryTextChangeStateFlow(): StateFlow<String> {
-//            val query = MutableStateFlow("Query")
-//            searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
-//                override fun onQueryTextSubmit(query: String?): Boolean {
-//                    return true
-//                }
-//
-//                override fun onQueryTextChange(newText: String): Boolean {
-//                    query.value = newText
-//                    return true
-//                }
-//            })
-//            return query
-//        }
-//        // Fake network transaction
-//        fun someDataFetch(query: String): Flow<String> {
-//            return flow {
-//                delay(1500)
-//                emit(query)
-//            }
-//        }
 
         return view
     }

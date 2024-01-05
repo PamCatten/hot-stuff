@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize"
-    android:paddingBottom="?attr/actionBarSize"
     android:layout_marginHorizontal="8dp"
     tools:context=".ui.items.SearchFragment"
     android:id="@+id/layout_search"

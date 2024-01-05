@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
+<com.google.android.material.appbar.MaterialToolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar_main"
-    style="@style/toolbar_main"
+    android:outlineProvider="none"
+    android:elevation="4dp"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:backgroundTint="?attr/colorPrimaryVariant"
     app:menu="@menu/menu_toolbar_main"
     app:itemRippleColor="@null"
-    app:itemBackground="?attr/colorPrimaryVariant"
+    app:popupTheme="@style/AppTheme.PopupMenuStyle"
 />

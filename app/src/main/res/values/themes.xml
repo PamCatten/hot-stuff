@@ -11,21 +11,12 @@
         <!-- Status bar -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="android:windowLightStatusBar">true</item>
-
         <!-- Splash screen -->
         <item name="android:windowSplashScreenBackground">@color/coral</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/coral</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo_splashscreen</item>
-
-        <!-- Dialog -->
-        <item name="shapeAppearanceLargeComponent">@style/dialog_background</item>
-    </style>
-    <style name="toolbar_main">
-        <item name="android:iconTint">?attr/colorOnPrimary</item>
-        <item name="android:background">?attr/colorPrimaryVariant</item>
-        <item name="android:textColor">?attr/colorOnPrimary</item>
-        <item name="android:elevation">4dp</item>
-        <item name="android:outlineProvider">none</item>
+        <!-- Toolbar -->
+        <item name="android:itemBackground">?attr/colorOnPrimary</item>
     </style>
     <style name="container_fragment">
         <item name="android:background">?attr/colorPrimaryVariant</item>
@@ -154,5 +145,15 @@
     <style name="image_rounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="AppTheme.PopupMenuStyle">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="actionOverflowMenuStyle">@style/dialog_popup_menu.overflow</item>
+    </style>
+
+    <style name="dialog_popup" parent="@style/Widget.MaterialComponents.PopupMenu"/>
+    <style name="dialog_popup_menu.overflow" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/dialog_overflow_bg</item>
     </style>
 </resources>
