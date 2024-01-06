@@ -3,9 +3,13 @@ package com.example.hotstuffkotlin.ui.home
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
@@ -118,6 +122,17 @@ class HomeFragment : Fragment() {
         roomChart.isScaleYEnabled = false
 
         roomChart.marker = ChartMarker(context, R.layout.dialog_chart, roomAxisLabels)
+
+        requireActivity().addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
+            override fun onPrepareMenu(menu: Menu) {
+                menu.findItem(R.id.toolbar_main_search).setVisible(false)
+                menu.findItem(R.id.toolbar_main_report).setVisible(true)
+                menu.findItem(R.id.toolbar_main_rate).setVisible(true)
+                menu.findItem(R.id.toolbar_main_feedback).setVisible(true)
+            }
+        })
 
         return binding.root
     }

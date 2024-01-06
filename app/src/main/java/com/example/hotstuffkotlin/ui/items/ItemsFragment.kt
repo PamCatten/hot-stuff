@@ -2,8 +2,12 @@ package com.example.hotstuffkotlin.ui.items
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +24,6 @@ class ItemsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentItemsBinding.inflate(inflater, container, false)
         val view = binding.root
-//        val items = DatabaseHelper(requireContext()).getItems()
         val items = DatabaseHelper(requireContext()).getDataRange()
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
         recyclerItems.layoutManager = LinearLayoutManager(context)
@@ -65,6 +68,17 @@ class ItemsFragment : Fragment() {
 
                 childFragmentManager.beginTransaction().addToBackStack(null).commit()
                 findNavController().navigate(R.id.action_items_to_item_detail, bundle)
+            }
+        })
+
+        requireActivity().addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
+            override fun onPrepareMenu(menu: Menu) {
+               menu.findItem(R.id.toolbar_main_search).setVisible(true)
+               menu.findItem(R.id.toolbar_main_report).setVisible(true)
+               menu.findItem(R.id.toolbar_main_rate).setVisible(true)
+               menu.findItem(R.id.toolbar_main_feedback).setVisible(true)
             }
         })
 

@@ -4,12 +4,16 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Group
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentLearnBinding
@@ -77,6 +81,16 @@ class LearnFragment : Fragment() {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.learn_repo_link))))
         }
 
+        requireActivity().addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
+            override fun onPrepareMenu(menu: Menu) {
+                menu.findItem(R.id.toolbar_main_search).setVisible(false)
+                menu.findItem(R.id.toolbar_main_report).setVisible(true)
+                menu.findItem(R.id.toolbar_main_rate).setVisible(true)
+                menu.findItem(R.id.toolbar_main_feedback).setVisible(true)
+            }
+        })
 
         return view
     }

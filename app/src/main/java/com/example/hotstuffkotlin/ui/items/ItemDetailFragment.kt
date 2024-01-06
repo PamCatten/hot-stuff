@@ -3,9 +3,13 @@ package com.example.hotstuffkotlin.ui.items
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
@@ -18,7 +22,6 @@ import java.text.DecimalFormat
 class ItemDetailFragment : Fragment() {
     private var _binding: FragmentItemDetailBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentItemDetailBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -81,6 +84,17 @@ class ItemDetailFragment : Fragment() {
             val alertDialog = alertDialogBuilder.create()
             alertDialog.show()
         }
+
+        requireActivity().addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
+            override fun onPrepareMenu(menu: Menu) {
+                menu.findItem(R.id.toolbar_main_search).setVisible(false)
+                menu.findItem(R.id.toolbar_main_report).setVisible(false)
+                menu.findItem(R.id.toolbar_main_rate).setVisible(false)
+                menu.findItem(R.id.toolbar_main_feedback).setVisible(false)
+            }
+        })
 
         return view
     }

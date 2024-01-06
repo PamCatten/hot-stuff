@@ -3,26 +3,21 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/icon_home"
-        android:title="@string/label_home_fragment"
-        android:orderInCategory="0"/>
+        android:title="@string/label_home_fragment"/>
     <item
         android:id="@+id/navigation_items"
         android:icon="@drawable/icon_items"
-        android:title="@string/label_items_fragment"
-        android:orderInCategory="1"/>
+        android:title="@string/label_items_fragment" />
     <item
         android:id="@+id/navigation_create_item"
         android:icon="@drawable/icon_create"
-        android:title="@string/label_create_fragment"
-        android:orderInCategory="2"/>
+        android:title="@string/label_create_fragment"/>
     <item
         android:id="@+id/navigation_learn"
         android:icon="@drawable/icon_learn"
-        android:title="@string/label_learn_fragment"
-        android:orderInCategory="3"/>
+        android:title="@string/label_learn_fragment"/>
     <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/icon_settings"
-        android:title="@string/label_settings_fragment"
-        android:orderInCategory="4"/>
+        android:title="@string/label_settings_fragment"/>
 </menu>

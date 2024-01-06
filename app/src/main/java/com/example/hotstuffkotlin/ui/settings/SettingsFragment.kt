@@ -2,13 +2,30 @@ package com.example.hotstuffkotlin.ui.settings
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.view.MenuProvider
 import androidx.preference.PreferenceFragmentCompat
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var preferenceHelper: SharedPreferenceHelper
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requireActivity().addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
+            override fun onPrepareMenu(menu: Menu) {
+                menu.findItem(R.id.toolbar_main_search).setVisible(false)
+                menu.findItem(R.id.toolbar_main_report).setVisible(true)
+                menu.findItem(R.id.toolbar_main_rate).setVisible(true)
+                menu.findItem(R.id.toolbar_main_feedback).setVisible(true)
+            }
+        })
+    }
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
         preferenceHelper = SharedPreferenceHelper.getInstance(requireContext())

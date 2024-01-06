@@ -2,8 +2,12 @@ package com.example.hotstuffkotlin.ui.items
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
@@ -160,6 +164,16 @@ class EditItemFragment : Fragment() {
 //            }
 //            requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
         }
+        requireActivity().addMenuProvider(object: MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
+            override fun onPrepareMenu(menu: Menu) {
+                menu.findItem(R.id.toolbar_main_search).setVisible(false)
+                menu.findItem(R.id.toolbar_main_report).setVisible(false)
+                menu.findItem(R.id.toolbar_main_rate).setVisible(false)
+                menu.findItem(R.id.toolbar_main_feedback).setVisible(false)
+            }
+        })
         return view
     }
 
