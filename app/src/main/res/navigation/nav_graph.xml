@@ -31,8 +31,9 @@
         tools:layout="@layout/fragment_learn"/>
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.hotstuffkotlin.ui.settings.SettingsFragment"
-        android:label="@string/label_settings_fragment"/>
+        android:name="com.example.hotstuffkotlin.ui.settings.SettingsContainerFragment"
+        android:label="@string/label_settings_fragment"
+        tools:layout="@layout/fragment_settings_container"/>
     <fragment
         android:id="@+id/navigation_item_detail"
         android:name="com.example.hotstuffkotlin.ui.items.ItemDetailFragment"

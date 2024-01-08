@@ -2,11 +2,6 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    // TODO: Need another solution to top/bottom padding, fix lines that come with empty categories
-    <PreferenceCategory />
-    <PreferenceCategory />
-    // end of hack
     <PreferenceCategory android:title="General" app:iconSpaceReserved="false">
         <ListPreference
             android:defaultValue="@string/default_theme"
@@ -53,10 +48,5 @@
             android:summary="@string/settings_preference_language_summary"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>-->
-
-    // more nastiness
-    <PreferenceCategory />
-    <PreferenceCategory />
-    // end of nastiness
 
 </PreferenceScreen>
