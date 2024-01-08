@@ -1,15 +1,9 @@
 package com.example.hotstuffkotlin.ui
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.MenuProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -54,33 +48,30 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        addMenuProvider(object: MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                if (!menu.hasVisibleItems()) menuInflater.inflate(R.menu.menu_toolbar_main, menu)
-            }
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                when (menuItem.itemId) {
-                    R.id.toolbar_main_search -> {
-                        navController.navigate(R.id.navigation_search)
-                    }
-                    R.id.toolbar_main_report -> {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
-                    }
-                    R.id.toolbar_main_rate -> {}
-                    R.id.toolbar_main_feedback -> {
-                        val intent = Intent(Intent.ACTION_VIEW)
-
-                        // TODO: Find an alternative way to extract these
-                        intent.data = Uri.parse("mailto:campatten.dev@outlook.com" +
-                                "?subject=FEEDBACK: (Your Suggestion)" +
-                                "&body=Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it! \n\n Much love, \nCam")
-                        startActivity(intent)
-                    }
-                }
-                return true
-            }
-            override fun onPrepareMenu(menu: Menu) {}
-        })
+//        addMenuProvider(object: MenuProvider {
+//            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+//                if (!menu.hasVisibleItems()) menuInflater.inflate(R.menu.menu_toolbar_main, menu)
+//            }
+//            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+//                when (menuItem.itemId) {
+//                    R.id.toolbar_main_search -> { navController.navigate(R.id.navigation_search) }
+//                    R.id.toolbar_main_report -> {
+//                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
+//                    }
+//                    R.id.toolbar_main_rate -> {}
+//                    R.id.toolbar_main_feedback -> {
+//                        val intent = Intent(Intent.ACTION_VIEW)
+//                        // TODO: Find an alternative way to extract these
+//                        intent.data = Uri.parse("mailto:campatten.dev@outlook.com" +
+//                                "?subject=FEEDBACK: (Your Suggestion)" +
+//                                "&body=Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it! \n\n Much love, \nCam")
+//                        startActivity(intent)
+//                    }
+//                }
+//                return false
+//            }
+//            override fun onPrepareMenu(menu: Menu) {}
+//        })
 
 
 //        toolbar.setOnMenuItemClickListener {

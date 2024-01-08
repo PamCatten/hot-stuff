@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentEditItemBinding
@@ -164,8 +165,11 @@ class EditItemFragment : Fragment() {
 //            }
 //            requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
         }
+        // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
         requireActivity().addMenuProvider(object: MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                if (!menu.hasVisibleItems()) menuInflater.inflate(R.menu.menu_toolbar_main, menu)
+            }
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
             override fun onPrepareMenu(menu: Menu) {
                 menu.findItem(R.id.toolbar_main_search).setVisible(false)
@@ -173,7 +177,7 @@ class EditItemFragment : Fragment() {
                 menu.findItem(R.id.toolbar_main_rate).setVisible(false)
                 menu.findItem(R.id.toolbar_main_feedback).setVisible(false)
             }
-        })
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
         return view
     }
 
