@@ -142,10 +142,10 @@
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_divider"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
-                    android:id="@+id/learn_resources_likeKind"
+                    android:id="@+id/learn_resources_jargonGlossary"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
-                    android:text="@string/label_like_kind"
+                    android:text="@string/label_jargon_glossary"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_attentionToDetail"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
@@ -153,7 +153,7 @@
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_adjusters"
-                    app:layout_constraintTop_toBottomOf="@id/learn_resources_likeKind"
+                    app:layout_constraintTop_toBottomOf="@id/learn_resources_jargonGlossary"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_exampleForm"
@@ -168,7 +168,7 @@
                     app:constraint_referenced_ids="
                         learn_resources_divider,
                         learn_resources_attentionToDetail,
-                        learn_resources_likeKind,
+                        learn_resources_jargonGlossary,
                         learn_resources_adjusters,
                         learn_resources_exampleForm"
                     tools:visibility="gone"/>
