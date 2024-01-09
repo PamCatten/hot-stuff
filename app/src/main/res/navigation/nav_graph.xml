@@ -55,13 +55,4 @@
             android:id="@+id/action_edit_item_to_item_detail"
             app:destination="@id/navigation_item_detail" />
     </fragment>
-    <fragment
-        android:id="@+id/navigation_search"
-        android:name="com.example.hotstuffkotlin.ui.items.SearchFragment"
-        android:label="Search"
-        tools:layout="@layout/fragment_search">
-        <action
-            android:id="@+id/action_search_to_item_detail"
-            app:destination="@id/navigation_item_detail" />
-    </fragment>
 </navigation>

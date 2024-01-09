@@ -9,5 +9,4 @@
     android:layout_height="?attr/actionBarSize"
     app:menu="@menu/menu_toolbar_main"
     app:itemRippleColor="@null"
-    app:popupTheme="@style/AppTheme.PopupMenuStyle"
-/>
+    app:popupTheme="@style/AppTheme.PopupMenuStyle"/>

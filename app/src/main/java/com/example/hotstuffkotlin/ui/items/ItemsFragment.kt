@@ -9,6 +9,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -24,12 +25,14 @@ class ItemsFragment : Fragment() {
     private var _binding: FragmentItemsBinding? = null
     private val binding get() = _binding!!
     private var loading = false
+    private var query: String? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentItemsBinding.inflate(inflater, container, false)
         val view = binding.root
         val items = DatabaseHelper(requireContext()).getDataRange()
         val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
         recyclerItems.layoutManager = LinearLayoutManager(context)
+        recyclerItems.itemAnimator = null
 
         val adapter = Adapter(items)
         recyclerItems.adapter = adapter
@@ -42,9 +45,16 @@ class ItemsFragment : Fragment() {
                     val pastVisibleItems = layoutManager.findFirstVisibleItemPosition()
                     val totalItemCount = layoutManager.itemCount
 
-                    if (!loading && visibleItemCount + pastVisibleItems >= totalItemCount) {
+                    if (!loading && visibleItemCount + pastVisibleItems >= totalItemCount && query == null) {
                         loading = true
                         val moreItems = DatabaseHelper(requireContext()).getDataRange(totalItemCount)
+                        for (i in moreItems) items.add(i)
+                        adapter.notifyItemRangeInserted(totalItemCount, layoutManager.itemCount)
+                        loading = false
+                    }
+                    else if (!loading && visibleItemCount + pastVisibleItems >= totalItemCount && query != null) {
+                        loading = true
+                        val moreItems = DatabaseHelper(requireContext()).getDataRange(totalItemCount, "SEARCH", query)
                         for (i in moreItems) items.add(i)
                         adapter.notifyItemRangeInserted(totalItemCount, layoutManager.itemCount)
                         loading = false
@@ -82,7 +92,36 @@ class ItemsFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 when (menuItem.itemId) {
                     R.id.toolbar_main_search -> {
-                        findNavController().navigate(R.id.navigation_search)
+//                        findNavController().navigate(R.id.navigation_search)
+                        val searchView = menuItem.actionView as SearchView
+                        // TODO: Find a way to remove auto-generated Search Icon in the query
+                        searchView.isIconified = false
+                        searchView.queryHint = "Search Hot Stuff"
+
+                        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+                            override fun onQueryTextSubmit(query: String?): Boolean {
+                                searchView.clearFocus()
+                                return false
+                            }
+
+                            override fun onQueryTextChange(newText: String): Boolean {
+                                if (newText.isEmpty()) {
+                                    items.clear()
+                                    adapter.searchClear(items)
+                                    query = null
+                                    for (i in DatabaseHelper(requireContext()).getDataRange()) items.add(i)
+                                } else {
+                                    items.clear()
+                                    query = "'%$newText%'"
+                                    val retrievedItems = DatabaseHelper(requireContext()).getDataRange(items.size, "SEARCH", query)
+                                    for (i in retrievedItems) {
+                                        items.add(i)
+                                        adapter.searchInsert(retrievedItems.indexOf(i), retrievedItems)
+                                    }
+                                }
+                                return false
+                            }
+                        })
                         return true
                     }
                     R.id.toolbar_main_report -> {

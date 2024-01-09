@@ -33,9 +33,14 @@ class Adapter(private var items : List<Item>) : RecyclerView.Adapter<Adapter.Vie
         holder.itemQuantity.text = quantityString
     }
 
-    fun update(searchItems:ArrayList<Item>) {
-        items = searchItems
-        notifyDataSetChanged()
+    fun searchClear(updatedItemsArray: ArrayList<Item>) {
+        items = updatedItemsArray
+        notifyItemRangeRemoved(0, itemCount)
+    }
+    fun searchInsert(insertPosition: Int, updatedItemsArray: ArrayList<Item>) {
+        items = updatedItemsArray
+        notifyItemInserted(insertPosition)
+//        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {

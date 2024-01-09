@@ -125,114 +125,13 @@ class DatabaseHelper(context: Context?) :
         cursor.close()
         return Pair(roomLabels, roomValueFloats)
     }
-//    fun searchData(searchQuery: String): Flow<ArrayList<Item>> {
-    fun searchData(searchQuery: String): ArrayList<Item> {
-        val db = this.writableDatabase
-        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_NAME LIKE $searchQuery OR $COLUMN_ROOM LIKE $searchQuery OR $COLUMN_CATEGORY LIKE $searchQuery OR $COLUMN_MAKE LIKE $searchQuery"
-        val cursor = db.rawQuery(query, null)
-        val searchItems = ArrayList<Item>()
-        if (cursor.moveToFirst()) {
-            var itemId: Int
-            var buildingId: Int
-            var name: String
-            var quantity: Int
-            var category: String
-            var room: String?
-            var make: String?
-            var value: Double?
-            var imagePath: String?
-            var description: String?
-            do {
-                itemId = cursor.getInt(cursor.getColumnIndexOrThrow("item_id"))
-                buildingId = cursor.getInt(cursor.getColumnIndexOrThrow("item_building_id"))
-                name = cursor.getString(cursor.getColumnIndexOrThrow("item_name"))
-                quantity = cursor.getInt(cursor.getColumnIndexOrThrow("item_quantity"))
-                category = cursor.getString(cursor.getColumnIndexOrThrow("item_category"))
-                room = cursor.getString(cursor.getColumnIndexOrThrow("item_room"))
-                make = cursor.getString(cursor.getColumnIndexOrThrow("item_make"))
-                value = cursor.getDouble(cursor.getColumnIndexOrThrow("item_value"))
-                imagePath = cursor.getString(cursor.getColumnIndexOrThrow("item_image"))
-                description = cursor.getString(cursor.getColumnIndexOrThrow("item_description"))
-                val i = Item(itemId = itemId, buildingId = buildingId, name = name,
-                    quantity = quantity, category = category, room = room, make = make,
-                    value = value, imagePath = imagePath, description = description)
-                searchItems.add(i)
-            } while (cursor.moveToNext())
-        }
-        cursor.close()
-        return searchItems
-    }
-    fun getItems(): ArrayList<Item> {
+    fun getDataRange(offset: Int = 0, queryType: String = "ALL", searchQuery: String? = null): ArrayList<Item> {
         val itemList: ArrayList<Item> = ArrayList()
-        val selectQuery = "SELECT * FROM $TABLE_NAME"
-        val db: SQLiteDatabase = this.readableDatabase
-        val cursor: Cursor?
-
-        try {
-            cursor = db.rawQuery(selectQuery, null)
-        } catch (e: Exception) {
-            e.printStackTrace()
-            db.execSQL(selectQuery)
-            return ArrayList()
+        val selectQuery: String = if (queryType == "SEARCH" && searchQuery != null) {
+            "SELECT * FROM $TABLE_NAME WHERE ($COLUMN_NAME LIKE $searchQuery OR $COLUMN_ROOM LIKE $searchQuery OR $COLUMN_CATEGORY LIKE $searchQuery OR $COLUMN_MAKE LIKE $searchQuery) LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
+        } else {
+            "SELECT * FROM $TABLE_NAME LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
         }
-
-        var itemId: Int
-        var buildingId: Int
-        var name: String
-        var quantity: Int
-        var category: String
-        var room: String?
-        var make: String?
-        var value: Double?
-        var imagePath: String?
-        var description: String?
-
-        if (cursor.moveToFirst()) {
-            do {
-                itemId = cursor.getInt(cursor.getColumnIndexOrThrow("item_id"))
-                buildingId = cursor.getInt(cursor.getColumnIndexOrThrow("item_building_id"))
-                name = cursor.getString(cursor.getColumnIndexOrThrow("item_name"))
-                quantity = cursor.getInt(cursor.getColumnIndexOrThrow("item_quantity"))
-                category = cursor.getString(cursor.getColumnIndexOrThrow("item_category"))
-                room = cursor.getString(cursor.getColumnIndexOrThrow("item_room"))
-                make = cursor.getString(cursor.getColumnIndexOrThrow("item_make"))
-                value = cursor.getDouble(cursor.getColumnIndexOrThrow("item_value"))
-                imagePath = cursor.getString(cursor.getColumnIndexOrThrow("item_image"))
-                description = cursor.getString(cursor.getColumnIndexOrThrow("item_description"))
-                val i = Item(itemId = itemId, buildingId = buildingId, name = name,
-                    quantity = quantity, category = category, room = room, make = make,
-                    value = value, imagePath = imagePath, description = description)
-                itemList.add(i)
-            } while (cursor.moveToNext())
-        }
-        cursor.close()
-        return itemList
-    }
-    fun getItemsCount(): Int {
-        var itemCount = 0
-        val selectQuery = "SELECT COUNT(*) AS TOTAL FROM $TABLE_NAME"
-        val db: SQLiteDatabase = this.readableDatabase
-        val cursor: Cursor?
-
-        try {
-            cursor = db.rawQuery(selectQuery, null)
-        } catch (e: Exception) {
-            e.printStackTrace()
-            db.execSQL(selectQuery)
-            return itemCount
-        }
-
-        if (cursor.moveToFirst()) {
-            val totalColumn = cursor.getColumnIndexOrThrow("TOTAL")
-            itemCount = cursor.getInt(totalColumn)
-        }
-
-        cursor.close()
-        return itemCount
-    }
-    fun getDataRange(offset: Int = 0) : ArrayList<Item> {
-        val itemList: ArrayList<Item> = ArrayList()
-        val selectQuery = "SELECT * FROM $TABLE_NAME LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
         val db: SQLiteDatabase = this.readableDatabase
         val cursor: Cursor?
 
