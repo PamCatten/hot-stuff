@@ -8,7 +8,7 @@
     <string name="label_settings_fragment">Settings</string>
     <!-- Main: Toolbar Labels -->
     <string name="label_search">Search</string>
-    <string name="label_filter">Sort</string>
+    <string name="label_download">Download Records</string>
     <string name="label_expand_menu">More</string>
     <string name="label_rate">Rate</string>
     <string name="label_report">Report Bug</string>
@@ -28,7 +28,7 @@
     <string name="label_category">Category</string>
     <string name="label_room">Room</string>
     <string name="label_make">Brand / Manufacturer</string>
-    <string name="label_value">Value (per unit)</string>
+    <string name="label_value">Value (per item)</string>
     <string name="label_description">Description</string>
     <string name="label_create">Create</string>
     <string name="label_save">Save</string>

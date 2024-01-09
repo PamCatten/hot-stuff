@@ -6,21 +6,22 @@
         android:icon="@drawable/icon_search"
         android:title="@string/label_search"
         app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
-        android:orderInCategory="0" />
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+    <item
+        android:id="@+id/toolbar_main_download"
+        android:icon="@drawable/icon_download"
+        android:title="@string/label_download"
+        app:showAsAction="always"/>
     <item
         android:id="@+id/toolbar_main_report"
         android:title="@string/label_report"
-        app:showAsAction="never"
-        android:orderInCategory="1" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/toolbar_main_rate"
         android:title="@string/label_rate"
-        app:showAsAction="never"
-        android:orderInCategory="2" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/toolbar_main_feedback"
         android:title="@string/label_feedback"
-        app:showAsAction="never"
-        android:orderInCategory="3" />
+        app:showAsAction="never"/>
 </menu>

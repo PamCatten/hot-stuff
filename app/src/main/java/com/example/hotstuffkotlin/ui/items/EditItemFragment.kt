@@ -173,6 +173,7 @@ class EditItemFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
             override fun onPrepareMenu(menu: Menu) {
                 menu.findItem(R.id.toolbar_main_search).setVisible(false)
+                menu.findItem(R.id.toolbar_main_download).setVisible(false)
                 menu.findItem(R.id.toolbar_main_report).setVisible(false)
                 menu.findItem(R.id.toolbar_main_rate).setVisible(false)
                 menu.findItem(R.id.toolbar_main_feedback).setVisible(false)

@@ -90,6 +90,7 @@ class LearnFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 when (menuItem.itemId) {
                     R.id.toolbar_main_search -> { return true }
+                    R.id.toolbar_main_download -> { return true }
                     R.id.toolbar_main_report -> {
                         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
                         return true
@@ -111,6 +112,7 @@ class LearnFragment : Fragment() {
             }
             override fun onPrepareMenu(menu: Menu) {
                 menu.findItem(R.id.toolbar_main_search).setVisible(false)
+                menu.findItem(R.id.toolbar_main_download).setVisible(true)
                 menu.findItem(R.id.toolbar_main_report).setVisible(true)
                 menu.findItem(R.id.toolbar_main_rate).setVisible(true)
                 menu.findItem(R.id.toolbar_main_feedback).setVisible(true)

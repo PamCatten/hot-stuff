@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.navigation_item_detail, R.id.navigation_edit_item, R.id.navigation_search
+                R.id.navigation_item_detail, R.id.navigation_edit_item
                 -> navView.visibility = View.GONE
                 else -> navView.visibility = View.VISIBLE
             }

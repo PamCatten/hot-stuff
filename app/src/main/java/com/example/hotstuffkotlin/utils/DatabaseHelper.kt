@@ -13,21 +13,28 @@ class DatabaseHelper(context: Context?) :
     val context = context
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val query = "CREATE TABLE $TABLE_NAME (" +
-                "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_BUILDING_ID INTEGER, " +
-                "$COLUMN_NAME TEXT, " +
-                "$COLUMN_QUANTITY INTEGER, " +
-                "$COLUMN_CATEGORY TEXT, " +
-                "$COLUMN_ROOM TEXT, " +
-                "$COLUMN_MAKE TEXT, " +
-                "$COLUMN_VALUE MONEY, " +
-                "$COLUMN_IMAGE_PATH TEXT, " +
-                "$COLUMN_DESCRIPTION TEXT);"
-        db?.execSQL(query)
+        val queryItem = "CREATE TABLE $TABLE_NAME_ITEM (" +
+            "$COLUMN_ID_ITEM INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "$COLUMN_BUILDING_ID_ITEM INTEGER, " +
+            "$COLUMN_NAME_ITEM TEXT, " +
+            "$COLUMN_QUANTITY_ITEM INTEGER, " +
+            "$COLUMN_CATEGORY_ITEM TEXT, " +
+            "$COLUMN_ROOM_ITEM TEXT, " +
+            "$COLUMN_MAKE_ITEM TEXT, " +
+            "$COLUMN_VALUE_ITEM MONEY, " +
+            "$COLUMN_IMAGE_PATH_ITEM TEXT, " +
+            "$COLUMN_DESCRIPTION_ITEM TEXT);"
+        val queryBuilding = "CREATE TABLE $TABLE_NAME_BUILDING (" +
+            "$COLUMN_ID_BUILDING INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "$COLUMN_NAME_BUILDING TEXT, " +
+            "$COLUMN_DESCRIPTION_BUILDING TEXT);"
+
+        db?.execSQL(queryItem)
+        db?.execSQL(queryBuilding)
     }
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_ITEM")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_BUILDING")
         onCreate(db)
     }
     fun addItem(name: String, quantity: Int, category: String, room: String,
@@ -35,16 +42,16 @@ class DatabaseHelper(context: Context?) :
         val db : SQLiteDatabase = this.writableDatabase
         val cv = ContentValues()
 
-        cv.put(COLUMN_NAME, name)
-        cv.put(COLUMN_QUANTITY, quantity)
-        cv.put(COLUMN_CATEGORY, category)
-        cv.put(COLUMN_ROOM, room)
-        cv.put(COLUMN_MAKE, make)
-        cv.put(COLUMN_VALUE, value)
-        cv.put(COLUMN_IMAGE_PATH, image)
-        cv.put(COLUMN_DESCRIPTION, description)
+        cv.put(COLUMN_NAME_ITEM, name)
+        cv.put(COLUMN_QUANTITY_ITEM, quantity)
+        cv.put(COLUMN_CATEGORY_ITEM, category)
+        cv.put(COLUMN_ROOM_ITEM, room)
+        cv.put(COLUMN_MAKE_ITEM, make)
+        cv.put(COLUMN_VALUE_ITEM, value)
+        cv.put(COLUMN_IMAGE_PATH_ITEM, image)
+        cv.put(COLUMN_DESCRIPTION_ITEM, description)
 
-        val result: Long =  db.insert(TABLE_NAME, null, cv)
+        val result: Long =  db.insert(TABLE_NAME_ITEM, null, cv)
         if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Database insertion failed.", Toast.LENGTH_SHORT).show()
         else Toast.makeText(this.context, "Database insertion successful!", Toast.LENGTH_SHORT).show()
         db.close()
@@ -53,27 +60,57 @@ class DatabaseHelper(context: Context?) :
        make: String?, value: Double?, image: String?, description: String?) {
         val db : SQLiteDatabase = this.writableDatabase
         val cv = ContentValues()
-        cv.put(COLUMN_NAME, name)
-        cv.put(COLUMN_QUANTITY, quantity)
-        cv.put(COLUMN_CATEGORY, category)
-        cv.put(COLUMN_ROOM, room)
-        cv.put(COLUMN_MAKE, make)
-        cv.put(COLUMN_VALUE, value)
-        cv.put(COLUMN_IMAGE_PATH, image)
-        cv.put(COLUMN_DESCRIPTION, description)
-        val result =  db.update(TABLE_NAME, cv, "item_id=?", arrayOf(id.toString()))
+        cv.put(COLUMN_NAME_ITEM, name)
+        cv.put(COLUMN_QUANTITY_ITEM, quantity)
+        cv.put(COLUMN_CATEGORY_ITEM, category)
+        cv.put(COLUMN_ROOM_ITEM, room)
+        cv.put(COLUMN_MAKE_ITEM, make)
+        cv.put(COLUMN_VALUE_ITEM, value)
+        cv.put(COLUMN_IMAGE_PATH_ITEM, image)
+        cv.put(COLUMN_DESCRIPTION_ITEM, description)
+        val result =  db.update(TABLE_NAME_ITEM, cv, "item_id=?", arrayOf(id.toString()))
         if (result == (-1)) Toast.makeText(context, "Oh no! Update failed.", Toast.LENGTH_SHORT).show()
         else Toast.makeText(context, "Update successful!", Toast.LENGTH_SHORT).show()
     }
     fun deleteItem(id: Int) {
         val db : SQLiteDatabase = this.writableDatabase
-        val result = db.delete(TABLE_NAME, "item_id=?", arrayOf(id.toString()))
+        val result = db.delete(TABLE_NAME_ITEM, "item_id=?", arrayOf(id.toString()))
         if (result == (-1)) Toast.makeText(context, "Deletion failed.", Toast.LENGTH_SHORT).show()
         else Toast.makeText(context, "Delete successful!", Toast.LENGTH_SHORT).show()
     }
+
+    // As of now, addBuilding will only be called once, during the onboarding process, and
+    // deleteBuilding will never be called, but the current plan is to support multiple buildings
+    // in the future, so I'm going to leave them in to help future Cam out.
+    fun addBuilding(name: String, description: String?) {
+        val db : SQLiteDatabase = this.writableDatabase
+        val cv = ContentValues()
+        cv.put(COLUMN_NAME_BUILDING, name)
+        cv.put(COLUMN_DESCRIPTION_BUILDING, description)
+        val result: Long =  db.insert(TABLE_NAME_BUILDING, null, cv)
+        if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Database insertion failed.", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(this.context, "Database insertion successful!", Toast.LENGTH_SHORT).show()
+        db.close()
+    }
+    fun updateBuilding(id: Int, name: String, description: String?) {
+        val db: SQLiteDatabase = this.writableDatabase
+        val cv = ContentValues()
+        cv.put(COLUMN_NAME_ITEM, name)
+        cv.put(COLUMN_DESCRIPTION_ITEM, description)
+        val result =  db.update(TABLE_NAME_ITEM, cv, "building_id=?", arrayOf(id.toString()))
+        if (result == (-1)) Toast.makeText(context, "Oh no! Update failed.", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(context, "Update successful!", Toast.LENGTH_SHORT).show()
+    }
+    fun deleteBuilding(id: Int) {
+        val db: SQLiteDatabase = this.writableDatabase
+        val result = db.delete(TABLE_NAME_BUILDING, "building_id=?", arrayOf(id.toString()))
+        if (result == (-1)) Toast.makeText(context, "Deletion failed.", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(context, "Delete successful!", Toast.LENGTH_SHORT).show()
+    }
+
     fun getTotalQuantity() : String {
         val db = this.writableDatabase
-        val query = "SELECT SUM($COLUMN_QUANTITY) as TOTAL FROM $TABLE_NAME"
+        val query = "SELECT SUM($COLUMN_QUANTITY_ITEM) as TOTAL FROM $TABLE_NAME_ITEM"
         val cursor = db.rawQuery(query, null)
         var total = 0
         if (cursor.moveToFirst())
@@ -83,7 +120,7 @@ class DatabaseHelper(context: Context?) :
     }
     fun getTotalValue() : String {
         val db = this.writableDatabase
-        val query = "SELECT SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME"
+        val query = "SELECT SUM($COLUMN_QUANTITY_ITEM * $COLUMN_VALUE_ITEM) as TOTAL FROM $TABLE_NAME_ITEM"
         val cursor = db.rawQuery(query, null)
         var total = 0.00
         if (cursor.moveToFirst())
@@ -93,12 +130,12 @@ class DatabaseHelper(context: Context?) :
     }
     fun getCategoryQuantity(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
-        val query = "SELECT $COLUMN_CATEGORY, SUM($COLUMN_QUANTITY) AS TOTAL FROM $TABLE_NAME GROUP BY $COLUMN_CATEGORY"
+        val query = "SELECT $COLUMN_CATEGORY_ITEM, SUM($COLUMN_QUANTITY_ITEM) AS TOTAL FROM $TABLE_NAME_ITEM GROUP BY $COLUMN_CATEGORY_ITEM"
         val cursor = db.rawQuery(query, null)
         val categoryLabels = ArrayList<String>()
         val categoryQuantityFloats = ArrayList<Float>()
         if (cursor.moveToFirst()) {
-            val categoryColumn = cursor.getColumnIndexOrThrow("$COLUMN_CATEGORY")
+            val categoryColumn = cursor.getColumnIndexOrThrow("$COLUMN_CATEGORY_ITEM")
             val totalColumn = cursor.getColumnIndexOrThrow("TOTAL")
             do {
                 categoryLabels.add(cursor.getString(categoryColumn))
@@ -110,12 +147,12 @@ class DatabaseHelper(context: Context?) :
     }
     fun getRoomValue(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
-        val query = "SELECT $COLUMN_ROOM, SUM($COLUMN_QUANTITY * $COLUMN_VALUE) as TOTAL FROM $TABLE_NAME GROUP BY $COLUMN_ROOM ORDER BY TOTAL ASC"
+        val query = "SELECT $COLUMN_ROOM_ITEM, SUM($COLUMN_QUANTITY_ITEM * $COLUMN_VALUE_ITEM) as TOTAL FROM $TABLE_NAME_ITEM GROUP BY $COLUMN_ROOM_ITEM ORDER BY TOTAL ASC"
         val cursor = db.rawQuery(query, null)
         val roomLabels = ArrayList<String>()
         val roomValueFloats = ArrayList<Float>()
         if (cursor.moveToFirst()) {
-            val roomColumn = cursor.getColumnIndexOrThrow("$COLUMN_ROOM")
+            val roomColumn = cursor.getColumnIndexOrThrow("$COLUMN_ROOM_ITEM")
             val totalColumn = cursor.getColumnIndexOrThrow("TOTAL")
             do {
                 roomLabels.add(cursor.getString(roomColumn))
@@ -128,9 +165,9 @@ class DatabaseHelper(context: Context?) :
     fun getDataRange(offset: Int = 0, queryType: String = "ALL", searchQuery: String? = null): ArrayList<Item> {
         val itemList: ArrayList<Item> = ArrayList()
         val selectQuery: String = if (queryType == "SEARCH" && searchQuery != null) {
-            "SELECT * FROM $TABLE_NAME WHERE ($COLUMN_NAME LIKE $searchQuery OR $COLUMN_ROOM LIKE $searchQuery OR $COLUMN_CATEGORY LIKE $searchQuery OR $COLUMN_MAKE LIKE $searchQuery) LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
+            "SELECT * FROM $TABLE_NAME_ITEM WHERE ($COLUMN_NAME_ITEM LIKE $searchQuery OR $COLUMN_ROOM_ITEM LIKE $searchQuery OR $COLUMN_CATEGORY_ITEM LIKE $searchQuery OR $COLUMN_MAKE_ITEM LIKE $searchQuery) LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
         } else {
-            "SELECT * FROM $TABLE_NAME LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
+            "SELECT * FROM $TABLE_NAME_ITEM LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
         }
         val db: SQLiteDatabase = this.readableDatabase
         val cursor: Cursor?
@@ -177,19 +214,25 @@ class DatabaseHelper(context: Context?) :
     }
 
     companion object{
-        private const val DATABASE_NAME : String = "ItemManifest.db"
-        private const val DATABASE_VERSION : Int = 1
-        private const val TABLE_NAME : String = "item_manifest"
-        private const val COLUMN_ID : String = "item_id" // int? primary key item_manifest table
-        private const val COLUMN_BUILDING_ID : String = "item_building_id" // int? foreign key building_manifest table
-        private const val COLUMN_NAME : String = "item_name" // string, required
-        private const val COLUMN_QUANTITY : String = "item_quantity" // int? make required
-        private const val COLUMN_CATEGORY : String = "item_category"
-        private const val COLUMN_ROOM : String = "item_room" // nullable
-        private const val COLUMN_MAKE : String = "item_make" // nullable
-        private const val COLUMN_VALUE : String = "item_value" // double?
-        private const val COLUMN_IMAGE_PATH : String = "item_image" // nullable
-        private const val COLUMN_DESCRIPTION : String = "item_description" // nullable
+        private const val DATABASE_NAME: String = "HotStuff.db"
+        private const val DATABASE_VERSION: Int = 1
+        private const val TABLE_NAME_ITEM: String = "item_manifest"
+        private const val COLUMN_ID_ITEM: String = "item_id" // int? primary key item_manifest table
+        private const val COLUMN_BUILDING_ID_ITEM: String = "item_building_id" // int? foreign key building_manifest table
+        private const val COLUMN_NAME_ITEM: String = "item_name" // string, required
+        private const val COLUMN_QUANTITY_ITEM: String = "item_quantity" // int? make required
+        private const val COLUMN_CATEGORY_ITEM: String = "item_category"
+        private const val COLUMN_ROOM_ITEM: String = "item_room" // nullable
+        private const val COLUMN_MAKE_ITEM: String = "item_make" // nullable
+        private const val COLUMN_VALUE_ITEM: String = "item_value" // double?
+        private const val COLUMN_IMAGE_PATH_ITEM: String = "item_image" // nullable
+        private const val COLUMN_DESCRIPTION_ITEM : String = "item_description" // nullable
+
+        private const val TABLE_NAME_BUILDING: String = "building_manifest"
+        private const val COLUMN_ID_BUILDING: String = "building_id"
+        private const val COLUMN_NAME_BUILDING: String = "building_name"
+        private const val COLUMN_DESCRIPTION_BUILDING: String = "building_description"
+
         private const val PAGINATION_DATA_LIMIT : Int = 20
     }
 }
