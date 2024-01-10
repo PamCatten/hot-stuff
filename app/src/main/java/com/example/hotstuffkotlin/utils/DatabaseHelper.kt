@@ -5,8 +5,12 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.os.Environment
 import android.widget.Toast
+import androidx.core.database.getDoubleOrNull
+import androidx.core.database.getStringOrNull
 import com.example.hotstuffkotlin.models.Item
+import java.io.File
 
 class DatabaseHelper(context: Context?) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -211,6 +215,41 @@ class DatabaseHelper(context: Context?) :
         }
         cursor.close()
         return itemList
+    }
+
+    fun downloadAsCSV() {
+        val exportDirectory = File(Environment.getExternalStorageDirectory(), "")
+        if (!exportDirectory.exists()) exportDirectory.mkdirs()
+        // TODO: include date component here in file name to help differentiate multiple downloads
+        val file = File(exportDirectory, "ItemRecords.csv")
+        val db = this.writableDatabase
+        val cursor: Cursor?
+        val csvQuery = "SELECT * FROM $TABLE_NAME_ITEM"
+        cursor = db.rawQuery(csvQuery, null)
+
+        try {
+            file.createNewFile()
+            val csvHelper = CsvHelper(file)
+            val columnNames: ArrayList<String> = cursor.columnNames.toCollection(ArrayList())
+
+            csvHelper.separateRow(columnNames)
+            while (cursor.moveToNext()) {
+                val rowArray = ArrayList<String>()
+                rowArray.add(cursor.getString(2)) // name
+                rowArray.add(cursor.getInt(3).toString()) // quantity
+                rowArray.add(cursor.getString(4)) // category
+                rowArray.add(cursor.getString(5)) // room
+                rowArray.add(cursor.getStringOrNull(6) ?: "Unspecified") // make
+                rowArray.add(cursor.getDoubleOrNull(7).toString()) // value
+                rowArray.add(cursor.getStringOrNull(8).toString()) // imagePath
+                rowArray.add(cursor.getStringOrNull(9) ?: "") // description
+                csvHelper.separateRow(rowArray)
+            }
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        cursor.close()
     }
 
     companion object{
