@@ -11,6 +11,7 @@ import androidx.core.database.getDoubleOrNull
 import androidx.core.database.getStringOrNull
 import com.example.hotstuffkotlin.models.Item
 import java.io.File
+import java.io.PrintWriter
 
 class DatabaseHelper(context: Context?) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -217,11 +218,14 @@ class DatabaseHelper(context: Context?) :
         return itemList
     }
 
-    fun downloadAsCSV() {
-        val exportDirectory = File(Environment.getExternalStorageDirectory(), "")
-        if (!exportDirectory.exists()) exportDirectory.mkdirs()
-        // TODO: include date component here in file name to help differentiate multiple downloads
-        val file = File(exportDirectory, "ItemRecords.csv")
+    fun exportCSV() {
+        val exportDirectory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "")
+
+        if (!exportDirectory.exists())
+            exportDirectory.mkdirs()
+
+        val timeStamp = System.currentTimeMillis().toString()
+        val file = File(exportDirectory, "HS-Item-Manifest-$timeStamp.csv")
         val db = this.writableDatabase
         val cursor: Cursor?
         val csvQuery = "SELECT * FROM $TABLE_NAME_ITEM"
@@ -229,12 +233,13 @@ class DatabaseHelper(context: Context?) :
 
         try {
             file.createNewFile()
-            val csvHelper = CsvHelper(file)
+            val csvHelper = CSVHelper(PrintWriter(file))
             val columnNames: ArrayList<String> = cursor.columnNames.toCollection(ArrayList())
-
             csvHelper.separateRow(columnNames)
+            val rowArray = ArrayList<String>()
+
             while (cursor.moveToNext()) {
-                val rowArray = ArrayList<String>()
+                rowArray.clear()
                 rowArray.add(cursor.getString(2)) // name
                 rowArray.add(cursor.getInt(3).toString()) // quantity
                 rowArray.add(cursor.getString(4)) // category
@@ -246,8 +251,12 @@ class DatabaseHelper(context: Context?) :
                 csvHelper.separateRow(rowArray)
             }
 
+
+
+            Toast.makeText(context, "CSV creation successful!", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             e.printStackTrace()
+            Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
         }
         cursor.close()
     }
