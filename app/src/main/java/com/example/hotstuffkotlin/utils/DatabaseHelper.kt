@@ -230,11 +230,12 @@ class DatabaseHelper(context: Context?) :
         val cursor: Cursor?
         val csvQuery = "SELECT * FROM $TABLE_NAME_ITEM"
         cursor = db.rawQuery(csvQuery, null)
-
+        file.createNewFile()
+        val csvHelper = CSVHelper(PrintWriter(file))
         try {
-            file.createNewFile()
-            val csvHelper = CSVHelper(PrintWriter(file))
-            val columnNames: ArrayList<String> = cursor.columnNames.toCollection(ArrayList())
+            var columnNames: MutableList<String> = cursor.columnNames.toCollection(ArrayList())
+            columnNames = columnNames.subList(2, columnNames.size)
+
             csvHelper.separateRow(columnNames)
             val rowArray = ArrayList<String>()
 
@@ -250,14 +251,12 @@ class DatabaseHelper(context: Context?) :
                 rowArray.add(cursor.getStringOrNull(9) ?: "") // description
                 csvHelper.separateRow(rowArray)
             }
-
-
-
-            Toast.makeText(context, "CSV creation successful!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "CSV downloaded!", Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
             e.printStackTrace()
             Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
         }
+        csvHelper.close()
         cursor.close()
     }
 
