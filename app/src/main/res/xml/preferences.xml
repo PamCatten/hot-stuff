@@ -21,15 +21,15 @@
             android:key="@string/key_currency"
             android:summary="@string/label_currency_summary"
             app:iconSpaceReserved="false"/>
-        <ListPreference
-            android:defaultValue="@string/default_scale"
-            android:title="@string/label_scale"
-            android:dialogTitle="@string/label_scale"
-            android:entries="@array/dropdown_scale"
-            android:entryValues="@array/dropdown_scale_values"
-            android:key="@string/key_scale"
-            android:summary="@string/label_scale_summary"
-            app:iconSpaceReserved="false"/>
+<!--        <ListPreference-->
+<!--            android:defaultValue="@string/default_scale"-->
+<!--            android:title="@string/label_scale"-->
+<!--            android:dialogTitle="@string/label_scale"-->
+<!--            android:entries="@array/dropdown_scale"-->
+<!--            android:entryValues="@array/dropdown_scale_values"-->
+<!--            android:key="@string/key_scale"-->
+<!--            android:summary="@string/label_scale_summary"-->
+<!--            app:iconSpaceReserved="false"/>-->
     </PreferenceCategory>
     <!--<PreferenceCategory app:title="Optional Features (Beta)" app:iconSpaceReserved="false" app:allowDividerAbove="false">
         <SwitchPreferenceCompat

@@ -9,31 +9,19 @@
     android:scrollbars="none"
     android:theme="@style/container_fragment"
     android:id="@+id/layout_create_item"
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingBottom="?attr/actionBarSize"
     tools:context=".ui.create.CreateItemFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:theme="@style/container_fragment">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/appbar_edit_item"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:itemRippleColor="@null"
-            app:itemBackground="@android:color/transparent"
-            android:backgroundTint="@android:color/transparent"
-            android:background="@android:color/transparent"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemNameContainer"
             style="@style/text_input_layout"
             app:helperText="Required"
-            app:helperTextTextColor="?attr/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/appbar_edit_item">
+            app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemNameText"
                 style="@style/text_input_field"
@@ -44,10 +32,7 @@
             android:id="@+id/itemQuantityContainer"
             style="@style/text_input_layout"
             app:helperText="Required"
-            app:helperTextTextColor="?attr/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemNameContainer">
+            app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemQuantityText"
                 style="@style/text_input_field"
@@ -58,10 +43,7 @@
             android:id="@+id/itemCategoryContainer"
             style="@style/text_input_layout"
             app:helperText="Required"
-            app:helperTextTextColor="?attr/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemQuantityContainer">
+            app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemCategoryText"
                 style="@style/text_input_field"
@@ -72,10 +54,7 @@
             android:id="@+id/itemRoomContainer"
             style="@style/text_input_layout"
             app:helperText="Required"
-            app:helperTextTextColor="?attr/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemCategoryContainer">
+            app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemRoomText"
                 style="@style/text_input_field"
@@ -85,10 +64,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemMakeContainer"
             style="@style/text_input_layout"
-            app:helperTextTextColor="?attr/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemRoomContainer">
+            app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemMakeText"
                 style="@style/text_input_field"
@@ -98,10 +74,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemValueContainer"
             style="@style/text_input_layout"
-            app:helperTextTextColor="?attr/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemMakeContainer">
+            app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemValueText"
                 style="@style/text_input_field"
@@ -111,10 +84,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/itemDescriptionContainer"
             style="@style/text_input_layout"
-            app:helperTextTextColor="?attr/colorAccent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/itemValueContainer">
+            app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/itemDescriptionText"
                 style="@style/text_input_field"
@@ -122,28 +92,6 @@
                 android:maxLength="200"
                 android:hint="@string/label_description"/>
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/itemPhotoButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="Select Photo"
-            android:textColor="?attr/colorOnPrimary"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemDescriptionContainer" />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/itemCreateButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="@string/label_create"
-            android:textColor="?attr/colorOnPrimary"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/itemPhotoButton" />
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/create_image"
             android:layout_width="match_parent"
@@ -151,13 +99,24 @@
             android:scaleType="fitXY"
             android:cropToPadding="true"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginVertical="16dp"
-            android:paddingBottom="?attr/actionBarSize"
+            android:layout_marginVertical="10dp"
             android:elevation="8dp"
             app:shapeAppearanceOverlay="@style/image_rounded"
-            app:layout_constraintTop_toBottomOf="@+id/itemCreateButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/default_image"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/itemPhotoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="10dp"
+            android:text="Select Photo"
+            android:textColor="?attr/colorOnPrimary"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/itemCreateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/label_create"
+            android:textColor="?attr/colorOnPrimary"/>
+    </LinearLayout>
 </ScrollView>

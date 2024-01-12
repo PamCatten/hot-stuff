@@ -30,7 +30,7 @@
     <string name="label_make">Brand / Manufacturer</string>
     <string name="label_value">Value (per item)</string>
     <string name="label_description">Description</string>
-    <string name="label_create">Create</string>
+    <string name="label_create">Save item</string>
     <string name="label_save">Save</string>
     <string name="label_edit">Edit</string>
     <!-- Settings: Currency Icons -->
