@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentSettingsContainerBinding
+import com.example.hotstuffkotlin.utils.DatabaseHelper
 
 class SettingsContainerFragment : Fragment() {
     private var _binding: FragmentSettingsContainerBinding? = null
@@ -31,7 +32,10 @@ class SettingsContainerFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 when (menuItem.itemId) {
                     R.id.toolbar_main_search -> { return true }
-                    R.id.toolbar_main_download -> { return true }
+                    R.id.toolbar_main_download -> {
+                        DatabaseHelper(requireContext()).exportCSV()
+                        return true
+                    }
                     R.id.toolbar_main_report -> {
                         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
                         return true

@@ -123,7 +123,10 @@ class ItemsFragment : Fragment() {
                         })
                         return true
                     }
-                    R.id.toolbar_main_download -> { return true }
+                    R.id.toolbar_main_download -> {
+                        DatabaseHelper(requireContext()).exportCSV()
+                        return true
+                    }
                     R.id.toolbar_main_report -> {
                         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
                         return true
