@@ -1,14 +1,17 @@
 package com.example.hotstuffkotlin.ui.create
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -16,6 +19,7 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentCreateItemBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -39,8 +43,10 @@ class CreateItemFragment : Fragment() {
         val valueText = view.findViewById<TextInputEditText>(R.id.itemValueText)
         val makeText = view.findViewById<TextInputEditText>(R.id.itemMakeText)
         val descriptionText = view.findViewById<TextInputEditText>(R.id.itemDescriptionText)
-        val photoButton = view.findViewById<MaterialButton>(R.id.itemPhotoButton)
+        val takePhotoButton = view.findViewById<MaterialButton>(R.id.itemTakePhotoButton)
         val createButton = view.findViewById<MaterialButton>(R.id.itemCreateButton)
+
+        val createImage = view.findViewById<ShapeableImageView>(R.id.create_image)
 
         nameText.setOnFocusChangeListener { _, focused ->
             fun validName(): String? {
@@ -86,6 +92,18 @@ class CreateItemFragment : Fragment() {
 //                }
 //            }
 //        }
+        val cameraResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                result -> if (result.resultCode == Activity.RESULT_OK) {
+//                    createImage.setImageBitmap(result.data?.data as Bitmap)
+//                    val selectedPhotoURI = result.data?.data
+//                    createImage.setImageBitmap(selectedPhotoURI as Bitmap)
+            }
+        }
+
+        takePhotoButton?.setOnClickListener {
+            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            cameraResult.launch(cameraIntent)
+        }
 
         createButton?.setOnClickListener {
             fun resetForm() {
