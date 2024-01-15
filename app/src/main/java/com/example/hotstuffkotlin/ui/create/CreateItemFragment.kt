@@ -2,6 +2,7 @@ package com.example.hotstuffkotlin.ui.create
 
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -11,7 +12,10 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -44,6 +48,7 @@ class CreateItemFragment : Fragment() {
         val makeText = view.findViewById<TextInputEditText>(R.id.itemMakeText)
         val descriptionText = view.findViewById<TextInputEditText>(R.id.itemDescriptionText)
         val takePhotoButton = view.findViewById<MaterialButton>(R.id.itemTakePhotoButton)
+        val selectPhotoButton = view.findViewById<MaterialButton>(R.id.itemSelectPhotoButton)
         val createButton = view.findViewById<MaterialButton>(R.id.itemCreateButton)
 
         val createImage = view.findViewById<ShapeableImageView>(R.id.create_image)
@@ -93,16 +98,51 @@ class CreateItemFragment : Fragment() {
 //            }
 //        }
         val cameraResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-                result -> if (result.resultCode == Activity.RESULT_OK) {
-//                    createImage.setImageBitmap(result.data?.data as Bitmap)
-//                    val selectedPhotoURI = result.data?.data
-//                    createImage.setImageBitmap(selectedPhotoURI as Bitmap)
+                if (it.resultCode == Activity.RESULT_OK) {
+                    val imgUri = it.data?.data
+                    createImage.setImageURI(imgUri)
+            }
+        }
+
+        val galleryResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                val imgUri = it.data?.data
+                createImage.setImageURI(imgUri)
             }
         }
 
         takePhotoButton?.setOnClickListener {
-            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            cameraResult.launch(cameraIntent)
+            try {
+                val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(),
+                    android.Manifest.permission.CAMERA)
+                if (checkSelfPermission != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(requireActivity(),
+                        arrayOf(android.Manifest.permission.CAMERA), 1)
+                }
+//                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                cameraResult.launch(cameraIntent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        selectPhotoButton?.setOnClickListener {
+            try {
+                val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(),
+                    android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                if (checkSelfPermission != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(requireActivity(),
+                        arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 1)
+                }
+//                val galleryIntent = Intent(MediaStore.ACTION_PICK_IMAGES, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+                val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                galleryResult.launch(galleryIntent)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+            }
         }
 
         createButton?.setOnClickListener {
@@ -136,10 +176,10 @@ class CreateItemFragment : Fragment() {
             }
 
             fun checkForm() {
-                val nameCheck = nameText.text == null || nameText.text.toString() == ""
-                val categoryCheck = categoryText.text == null || categoryText.text.toString() == ""
-                val roomCheck = roomText.text == null || roomText.text.toString() == ""
-                val quantityNullCheck = quantityText.text == null || quantityText.text.toString() == ""
+                val nameCheck = (nameText.text == null) || (nameText.text.toString() == "")
+                val categoryCheck = (categoryText.text == null) || (categoryText.text.toString() == "")
+                val roomCheck = (roomText.text == null) || (roomText.text.toString() == "")
+                val quantityNullCheck = (quantityText.text == null) || (quantityText.text.toString() == "")
                 val quantityValueCheck = quantityText.text.toString().toInt() == 0
 
                 if (nameCheck) nameText.error = "Required"
