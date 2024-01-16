@@ -2,10 +2,9 @@ package com.example.hotstuffkotlin.ui.create
 
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -14,8 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -26,12 +24,14 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import java.io.File
 
 
 class CreateItemFragment : Fragment() {
 
     private var _binding: FragmentCreateItemBinding? = null
     private val binding get() = _binding!!
+    private lateinit var uri: Uri
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentCreateItemBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -52,6 +52,11 @@ class CreateItemFragment : Fragment() {
         val createButton = view.findViewById<MaterialButton>(R.id.itemCreateButton)
 
         val createImage = view.findViewById<ShapeableImageView>(R.id.create_image)
+
+        val requestPermission =
+            registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+                // do something
+            }
 
         nameText.setOnFocusChangeListener { _, focused ->
             fun validName(): String? {
@@ -90,20 +95,6 @@ class CreateItemFragment : Fragment() {
             if (!focused) roomContainer.helperText = validRoom()
         }
 
-//        val photo = view.findViewById<ShapeableImageView>(R.id.create_image)
-//        photoButton?.setOnClickListener {
-//            registerForActivityResult(ActivityResultContracts.TakePicture()) { isSuccess ->
-//                if (isSuccess) { photo.setImageURI()
-//                }
-//            }
-//        }
-        val cameraResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-                if (it.resultCode == Activity.RESULT_OK) {
-                    val imgUri = it.data?.data
-                    createImage.setImageURI(imgUri)
-            }
-        }
-
         val galleryResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == Activity.RESULT_OK) {
                 val imgUri = it.data?.data
@@ -111,38 +102,37 @@ class CreateItemFragment : Fragment() {
             }
         }
 
+        val takePicture = registerForActivityResult(ActivityResultContracts.TakePicture()) { isSaved ->
+            if (isSaved) createImage.setImageURI(uri)
+            else Toast.makeText(context, "Activity Result Error: Failed to retrieve image.", Toast.LENGTH_SHORT).show()
+
+        }
+
         takePhotoButton?.setOnClickListener {
-            try {
-                val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(),
-                    android.Manifest.permission.CAMERA)
-                if (checkSelfPermission != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(requireActivity(),
-                        arrayOf(android.Manifest.permission.CAMERA), 1)
-                }
-//                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                cameraResult.launch(cameraIntent)
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
-            }
+            val imageFile = File.createTempFile("HS_", ".jpg",
+                requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES))
+
+            uri = FileProvider.getUriForFile(requireContext(), "${requireContext().packageName}.provider", imageFile)
+            takePicture.launch(uri)
         }
 
         selectPhotoButton?.setOnClickListener {
-            try {
-                val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(),
-                    android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                if (checkSelfPermission != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(requireActivity(),
-                        arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 1)
-                }
-//                val galleryIntent = Intent(MediaStore.ACTION_PICK_IMAGES, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-                val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-                galleryResult.launch(galleryIntent)
-            } catch (e: Exception) {
-                e.printStackTrace()
-                Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
-            }
+//            val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(),
+//                android.Manifest.permission.READ_EXTERNAL_STORAGE)
+//            if (checkSelfPermission != PackageManager.PERMISSION_GRANTED) {
+//                ActivityCompat.requestPermissions(requireActivity(),
+//                    arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), PERMISSION_REQUEST_CODE)
+//                try {
+////                val galleryIntent = Intent(MediaStore.ACTION_PICK_IMAGES, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+////                    galleryResult.launch(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI))
+//                    startActivity(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI))
+//                } catch (e: Exception) {
+//                    e.printStackTrace()
+//                    Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+//                }
+//            } else {
+//                Toast.makeText(context, "Error: Please allow relevant permissions to utilize this feature.", Toast.LENGTH_SHORT).show()
+//            }
         }
 
         createButton?.setOnClickListener {
@@ -240,5 +230,9 @@ class CreateItemFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        private const val PERMISSION_REQUEST_CODE: Int = 10
     }
 }
