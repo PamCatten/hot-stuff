@@ -57,8 +57,8 @@ class DatabaseHelper(context: Context?) :
         cv.put(COLUMN_DESCRIPTION_ITEM, description)
 
         val result: Long =  db.insert(TABLE_NAME_ITEM, null, cv)
-        if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Database insertion failed.", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(this.context, "Database insertion successful!", Toast.LENGTH_SHORT).show()
+        if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Item failed to save", Toast.LENGTH_SHORT).show()
+        else Toast.makeText(this.context, "Item saved!", Toast.LENGTH_SHORT).show()
         db.close()
     }
     fun updateItem(id: Int, name: String, quantity: Int, category: String, room: String,
@@ -224,8 +224,7 @@ class DatabaseHelper(context: Context?) :
         if (!exportDirectory.exists())
             exportDirectory.mkdirs()
 
-        val timeStamp = System.currentTimeMillis().toString()
-        val file = File(exportDirectory, "HS-Item-Manifest-$timeStamp.csv")
+        val file = File(exportDirectory, "HS-Item-Manifest-${System.currentTimeMillis()}.csv")
         val db = this.writableDatabase
         val cursor: Cursor?
         val csvQuery = "SELECT * FROM $TABLE_NAME_ITEM"

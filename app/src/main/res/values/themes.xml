@@ -17,6 +17,8 @@
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo_splashscreen</item>
         <!-- Toolbar -->
         <item name="android:itemBackground">?attr/colorOnPrimary</item>
+        <!-- Dialogs -->
+        <item name="android:alertDialogTheme">@style/dialog_alert</item>
     </style>
     <style name="container_fragment">
         <item name="android:background">?attr/colorPrimaryVariant</item>
@@ -43,12 +45,24 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-    <style name="dialog_alert" parent="Base.Theme.AppCompat.Light.Dialog">
-        <item name="android:textColor">?attr/colorOnPrimary</item>
-        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
-        <item name="android:colorBackground">?attr/colorPrimaryVariant</item>
-        <item name="android:colorAccent">?attr/colorPrimary</item>
+    <style name="dialog_alert" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:background">?attr/colorPrimaryVariant</item>
+        <item name="android:backgroundDimEnabled">true</item>
         <item name="android:dialogCornerRadius">20dp</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/dialog_alert.body</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/dialog_alert.title</item>
+    </style>
+    <style name="dialog_alert.body" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="dialog_alert.title" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
     </style>
 <!--    <style name="dialog_title">-->
 <!--        <item name="android:textSize">20sp</item>-->

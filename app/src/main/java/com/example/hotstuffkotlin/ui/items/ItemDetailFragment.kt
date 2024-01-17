@@ -1,6 +1,5 @@
 package com.example.hotstuffkotlin.ui.items
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -18,6 +17,7 @@ import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.text.DecimalFormat
 
 class ItemDetailFragment : Fragment() {
@@ -68,11 +68,9 @@ class ItemDetailFragment : Fragment() {
 
         val deleteButton = view.findViewById<MaterialButton>(R.id.item_detail_delete_button)
         deleteButton.setOnClickListener{
-
-//            val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.dialog_alert)
-            val alertDialogBuilder = AlertDialog.Builder(requireContext())
+            val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(), R.style.dialog_alert)
             alertDialogBuilder.setTitle("Delete item?")
-            alertDialogBuilder.setMessage("${name.text} will be permanently removed from your device.")
+            alertDialogBuilder.setMessage("${name.text} will be permanently removed from your device")
             alertDialogBuilder.setPositiveButton("Delete") { dialog, _ ->
                 DatabaseHelper(requireContext()).deleteItem(bundle.getInt("id"))
                 bundle.putInt("delete", bundle.getInt("position"))
