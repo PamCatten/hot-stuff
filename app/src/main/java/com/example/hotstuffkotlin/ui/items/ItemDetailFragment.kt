@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -18,6 +19,7 @@ import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.imageview.ShapeableImageView
 import java.text.DecimalFormat
 
 class ItemDetailFragment : Fragment() {
@@ -34,7 +36,7 @@ class ItemDetailFragment : Fragment() {
         val make = view.findViewById<TextView>(R.id.item_detail_make_text)
         val value = view.findViewById<TextView>(R.id.item_detail_value_text)
         val quantity = view.findViewById<TextView>(R.id.item_detail_quantity_text)
-
+        val image = view.findViewById<ShapeableImageView>(R.id.item_detail_image)
         val bundle = this.requireArguments()
 
         fun formatValue(number: Double): String? {
@@ -58,7 +60,8 @@ class ItemDetailFragment : Fragment() {
         make.text = bundle.getString("make") ?: R.string.unspecified_value_filler.toString()
         description.text = bundle.getString("description") ?: R.string.unspecified_value_filler.toString()
 
-        // TODO: include image path
+        val imageURI = bundle.getString("image")
+        if (imageURI != null) image.setImageURI(imageURI.toUri())
 
         val editButton = view.findViewById<MaterialButton>(R.id.item_detail_edit_button)
         editButton.setOnClickListener{

@@ -114,7 +114,9 @@
     <string name="label_acknowledgements">Acknowledgements</string>
     <string name="label_sourcecode">View source code</string>
     <string name="label_terms">Terms and Conditions</string>
-
+    <string name="label_required_hint">Required</string>
+    <string name="label_quantity_value_hint">Quantity cannot be less than one</string>
+    <string name="label_dialog_positive">OK</string>
     <string name="label_dialog_create_title">Missing required value</string>
     <string name="label_dialog_create_body">To continue, make sure your item has all mandatory information filled out</string>
 
@@ -129,7 +131,6 @@
     <string name="feedback_info_identity">Cam</string>
 
     <string name="learn_dropdown_icon_content_description">Expand items icon</string>
-    <string name="filler_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore.</string>
     <string name="unspecified_value_filler">Unspecified</string>
 
     <string name="text_title">20dp</string>
@@ -137,10 +138,9 @@
     <string name="text_body">14dp</string>
     <string name="label_category_summary">Category Summary:</string>
     <string name="label_room_summary">Room Summary:</string>
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="label_select_photo">Select Photo</string>
     <string name="label_take_photo">Take Photo</string>
-
+    <string name="label_select_photo_toast">Photos and videos access must be enabled to use this feature</string>
 
 </resources>

@@ -1,6 +1,6 @@
 package com.example.hotstuffkotlin.ui.create
 
-import android.app.Activity
+import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -39,7 +39,7 @@ class CreateItemFragment : Fragment() {
 
     private var _binding: FragmentCreateItemBinding? = null
     private val binding get() = _binding!!
-    private lateinit var uri: Uri
+    private var uri: Uri? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentCreateItemBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -58,7 +58,6 @@ class CreateItemFragment : Fragment() {
         val takePhotoButton = view.findViewById<MaterialButton>(R.id.itemTakePhotoButton)
         val selectPhotoButton = view.findViewById<MaterialButton>(R.id.itemSelectPhotoButton)
         val createButton = view.findViewById<MaterialButton>(R.id.itemCreateButton)
-
         val createImage = view.findViewById<ShapeableImageView>(R.id.create_image)
 
         nameText.setOnFocusChangeListener { _, focused ->
@@ -69,7 +68,6 @@ class CreateItemFragment : Fragment() {
             }
             if (!focused) nameContainer.helperText = validName()
         }
-
         quantityText.setOnFocusChangeListener { _, focused ->
             fun validQuantity(): String? {
                 quantityText.error = null
@@ -79,7 +77,6 @@ class CreateItemFragment : Fragment() {
             }
             if (!focused) quantityContainer.helperText = validQuantity()
         }
-
         categoryText.setOnFocusChangeListener { _, focused ->
             fun validCategory(): String? {
                 categoryText.error = null
@@ -88,7 +85,6 @@ class CreateItemFragment : Fragment() {
             }
             if (!focused) categoryContainer.helperText = validCategory()
         }
-
         roomText.setOnFocusChangeListener { _, focused ->
             fun validRoom(): String? {
                 roomText.error = null
@@ -98,20 +94,34 @@ class CreateItemFragment : Fragment() {
             if (!focused) roomContainer.helperText = validRoom()
         }
 
-        val galleryResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            if (it.resultCode == Activity.RESULT_OK) {
-                val imgUri = it.data?.data
-                createImage.setImageURI(imgUri)
+        val selectPicture = registerForActivityResult(ActivityResultContracts.OpenDocument()) { resultURI ->
+            if (resultURI != null) {
+                try {
+                    uri = resultURI
+                    val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                    val resolver: ContentResolver = requireActivity().contentResolver
+//                    requireActivity().grantUriPermission(requireActivity().packageName, uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                    resolver.takePersistableUriPermission(uri!!, takeFlags)
+                    createImage.setImageURI(uri)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+                }
             }
         }
-
-        val selectPicture = registerForActivityResult(ActivityResultContracts.GetContent()) {
-            resultURI -> if (resultURI != null) createImage.setImageURI(resultURI)
-        }
-
+//        val selectPicture = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+//                result -> if (result.resultCode == Activity.RESULT_OK) {
+//                    uri = result.data?.data
+//                    val takeFlags = result.data?.flags?.and((Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION))
+//                    val resolver: ContentResolver = requireActivity().contentResolver
+//            if (takeFlags != null) {
+//                resolver.takePersistableUriPermission(uri, takeFlags)
+//            }
+//                    createImage.setImageURI(uri)
+//                }
+//        }
         val takePicture = registerForActivityResult(ActivityResultContracts.TakePicture()) {
             isSaved -> if (isSaved) {
-                val path = uri.path
                 createImage.setImageURI(uri)
             }
         }
@@ -132,32 +142,15 @@ class CreateItemFragment : Fragment() {
             val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(), requestedPermission)
             if (checkSelfPermission == PackageManager.PERMISSION_GRANTED) {
                 try {
-                    selectPicture.launch("image/*")
+                    selectPicture.launch(arrayOf(SELECT_INPUT_TYPE))
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
                 }
             } else if (checkSelfPermission == PackageManager.PERMISSION_DENIED) {
                 ActivityCompat.requestPermissions(requireActivity(), arrayOf(requestedPermission), PERMISSION_REQUEST_CODE)
-                Toast.makeText(context, "Photos and videos access must be enabled to use this feature", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getText(R.string.label_select_photo_toast), Toast.LENGTH_LONG).show()
             }
-
-//            val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE)
-//            if (checkSelfPermission != PackageManager.PERMISSION_GRANTED) {
-//                ActivityCompat.requestPermissions(requireActivity(),
-//                    arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), PERMISSION_REQUEST_CODE)
-//                try {
-////                val galleryIntent = Intent(MediaStore.ACTION_PICK_IMAGES, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-////                    galleryResult.launch(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI))
-//                    selectPicture.launch("image/*")
-////                    startActivity(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI))
-//                } catch (e: Exception) {
-//                    e.printStackTrace()
-//                    Toast.makeText(context, "Error: $e", Toast.LENGTH_LONG).show()
-//                }
-//            } else {
-//                Toast.makeText(context, "Error: Please allow relevant permissions to utilize this feature.", Toast.LENGTH_LONG).show()
-//            }
         }
 
         createButton?.setOnClickListener {
@@ -168,7 +161,7 @@ class CreateItemFragment : Fragment() {
                 val inputRoom: String = roomText.text.toString().trim()
                 val inputMake: String? = makeText.text?.toString()?.trim()
                 val inputValue: Double? = valueText.text?.toString()?.toDoubleOrNull()
-                val imagePath: String = "Example path" // TODO: Fix placeholder, Add take/select image support
+                val inputURI: String? = if (uri != null ) uri.toString() else null
                 val inputDescription: String? = descriptionText.text?.toString()?.trim()
 
                 nameText.text = null
@@ -177,19 +170,19 @@ class CreateItemFragment : Fragment() {
                 roomText.text = null
                 valueText.text = null
                 makeText.text = null
+                createImage.setImageResource(R.drawable.default_image)
                 descriptionText.text = null
 
-                nameContainer.helperText = "Required"
-                quantityContainer.helperText = "Required"
-                categoryContainer.helperText = "Required"
-                roomContainer.helperText = "Required"
+                nameContainer.helperText = getText(R.string.label_required_hint)
+                quantityContainer.helperText = getText(R.string.label_required_hint)
+                categoryContainer.helperText = getText(R.string.label_required_hint)
+                roomContainer.helperText = getText(R.string.label_required_hint)
 
                 DatabaseHelper(requireContext()).addItem(
                     name=inputName, quantity=inputQuantity, category=inputCategory, room=inputRoom,
-                    value=inputValue,make=inputMake, image=imagePath, description=inputDescription
+                    value=inputValue,make=inputMake, image=inputURI, description=inputDescription
                 )
             }
-
             fun checkForm() {
                 val nameCheck = (nameText.text == null) || (nameText.text.toString() == "")
                 val categoryCheck = (categoryText.text == null) || (categoryText.text.toString() == "")
@@ -197,17 +190,17 @@ class CreateItemFragment : Fragment() {
                 val quantityNullCheck = (quantityText.text == null) || (quantityText.text.toString() == "")
                 val quantityValueCheck = (quantityText.text.toString().toIntOrNull() == 0 || quantityText.text.toString() == "")
 
-                if (nameCheck) nameText.error = "Required"
-                if (categoryCheck) categoryText.error = "Required"
-                if (roomCheck) roomText.error = "Required"
-                if (quantityNullCheck) quantityText.error = "Required"
-                if (quantityValueCheck) quantityText.error = "Quantity cannot be less than one"
+                if (nameCheck) nameText.error = getText(R.string.label_required_hint)
+                if (categoryCheck) categoryText.error = getText(R.string.label_required_hint)
+                if (roomCheck) roomText.error = getText(R.string.label_required_hint)
+                if (quantityNullCheck) quantityText.error = getText(R.string.label_required_hint)
+                if (quantityValueCheck) quantityText.error = getText(R.string.label_quantity_value_hint)
 
                 if (nameCheck || categoryCheck || roomCheck || quantityNullCheck || quantityValueCheck) {
                     val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(), R.style.dialog_alert)
                     alertDialogBuilder.setTitle(R.string.label_dialog_create_title)
                     alertDialogBuilder.setMessage(R.string.label_dialog_create_body)
-                    alertDialogBuilder.setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                    alertDialogBuilder.setPositiveButton(getText(R.string.label_dialog_positive)) { dialog, _ -> dialog.dismiss() }
                     val alertDialog = alertDialogBuilder.create()
                     alertDialog.show()
                 }
@@ -266,7 +259,7 @@ class CreateItemFragment : Fragment() {
         contentResolver.also { resolver ->
             val contentValues = ContentValues().apply {
                 put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
-                put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
+                put(MediaStore.MediaColumns.MIME_TYPE, SELECT_MIME_TYPE)
                 put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
             }
             val imageUri: Uri? = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
@@ -285,6 +278,8 @@ class CreateItemFragment : Fragment() {
 
     companion object {
         private const val PERMISSION_REQUEST_CODE = 10
-        private const val ACCESS_PERMISSION = android.Manifest.permission.READ_EXTERNAL_STORAGE
+        private const val ACCESS_PERMISSION = android.Manifest.permission.READ_MEDIA_IMAGES
+        private const val SELECT_INPUT_TYPE = "image/*"
+        private const val SELECT_MIME_TYPE = "image/jpg"
     }
 }
