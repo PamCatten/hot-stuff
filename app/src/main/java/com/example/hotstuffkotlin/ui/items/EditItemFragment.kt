@@ -1,5 +1,8 @@
 package com.example.hotstuffkotlin.ui.items
 
+import android.content.ContentResolver
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -7,14 +10,21 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentEditItemBinding
+import com.example.hotstuffkotlin.ui.create.CreateItemFragment
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -40,7 +50,11 @@ class EditItemFragment : Fragment() {
         val quantityContainer = view.findViewById<TextInputLayout>(R.id.itemQuantityContainer)
         val categoryContainer = view.findViewById<TextInputLayout>(R.id.itemCategoryContainer)
         val roomContainer = view.findViewById<TextInputLayout>(R.id.itemRoomContainer)
-        val saveButton = view.findViewById<MaterialButton>(R.id.itemSaveButton)
+
+        val editImage = view.findViewById<ShapeableImageView>(R.id.item_edit_image)
+        val cameraButton = view.findViewById<MaterialButton>(R.id.button_edit_take)
+        val selectButton = view.findViewById<MaterialButton>(R.id.button_edit_select)
+        val saveButton = view.findViewById<MaterialButton>(R.id.button_edit_save)
 
         val id: Int = (bundle.getInt("id"))
         name.setText(bundle.getString("name"))
@@ -54,6 +68,9 @@ class EditItemFragment : Fragment() {
         if (bundle.getString("make") != null) make.setText(bundle.getString("make"))
         else make.setText(R.string.unspecified_value_filler)
 
+        var imageURI = bundle.getString("image")?.toUri()
+        if (imageURI != null) editImage.setImageURI(imageURI)
+
         if (bundle.getString("description") != null) description.setText(bundle.getString("description"))
         else description.setText(R.string.unspecified_value_filler)
 
@@ -65,7 +82,6 @@ class EditItemFragment : Fragment() {
             }
             if (!focused) nameContainer.helperText = validName()
         }
-
         quantity.setOnFocusChangeListener { _, focused ->
             fun validQuantity(): String? {
                 quantity.error = null
@@ -75,7 +91,6 @@ class EditItemFragment : Fragment() {
             }
             if (!focused) quantityContainer.helperText = validQuantity()
         }
-
         category.setOnFocusChangeListener { _, focused ->
             fun validCategory(): String? {
                 category.error = null
@@ -84,7 +99,6 @@ class EditItemFragment : Fragment() {
             }
             if (!focused) categoryContainer.helperText = validCategory()
         }
-
         room.setOnFocusChangeListener { _, focused ->
             fun validRoom(): String? {
                 room.error = null
@@ -94,6 +108,38 @@ class EditItemFragment : Fragment() {
             if (!focused) roomContainer.helperText = validRoom()
         }
 
+
+        val selectPicture = registerForActivityResult(ActivityResultContracts.OpenDocument()) { resultURI ->
+            if (resultURI != null) {
+                try {
+                    imageURI = resultURI
+                    val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                    val resolver: ContentResolver = requireActivity().contentResolver
+                    resolver.takePersistableUriPermission(imageURI!!, takeFlags)
+                    editImage.setImageURI(imageURI)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        selectButton?.setOnClickListener {
+            val requestedPermission = CreateItemFragment.ACCESS_PERMISSION
+            val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(), requestedPermission)
+            if (checkSelfPermission == PackageManager.PERMISSION_GRANTED) {
+                try {
+                    selectPicture.launch(arrayOf(CreateItemFragment.SELECT_INPUT_TYPE))
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+                }
+            } else if (checkSelfPermission == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(requireActivity(), arrayOf(requestedPermission),
+                    CreateItemFragment.PERMISSION_REQUEST_CODE
+                )
+                Toast.makeText(context, getText(R.string.label_select_photo_toast), Toast.LENGTH_LONG).show()
+            }
+        }
         saveButton?.setOnClickListener {
             fun resetForm() {
                 val inputName: String = name.text.toString().trim()
@@ -102,9 +148,8 @@ class EditItemFragment : Fragment() {
                 val inputRoom: String = room.text.toString().trim()
                 val inputMake: String? = make.text?.toString()?.trim()
                 val inputValue: Double? = value.text?.toString()?.toDoubleOrNull()
-                val imagePath: String = "Example path" // TODO: Fix placeholder, Add take/select image support
+                val inputURI: String? = if (imageURI != null) imageURI.toString() else null
                 val inputDescription: String? = description.text?.toString()?.trim()
-
                 name.text = null
                 quantity.text = null
                 category.text = null
@@ -112,11 +157,10 @@ class EditItemFragment : Fragment() {
                 value.text = null
                 make.text = null
                 description.text = null
-
-                nameContainer.helperText = "Required"
-                quantityContainer.helperText = "Required"
-                categoryContainer.helperText = "Required"
-                roomContainer.helperText = "Required"
+                nameContainer.helperText = getText(R.string.label_required_hint)
+                quantityContainer.helperText = getText(R.string.label_required_hint)
+                categoryContainer.helperText = getText(R.string.label_required_hint)
+                roomContainer.helperText = getText(R.string.label_required_hint)
 
                 bundle.putInt("id", id)
 //                bundle.putInt("buildingId", buildingId)
@@ -126,17 +170,16 @@ class EditItemFragment : Fragment() {
                 bundle.putString("room", inputRoom)
                 bundle.putString("make", inputMake)
                 bundle.putString("description", inputDescription)
-                bundle.putString("image", imagePath)
+                bundle.putString("image", inputURI)
                 bundle.putDouble("value", inputValue ?: 0.00)
 
                 DatabaseHelper(requireContext()).updateItem( id=id,
                     name=inputName, quantity=inputQuantity, category=inputCategory, room=inputRoom,
-                    value=inputValue,make=inputMake, image=imagePath, description=inputDescription
+                    value=inputValue,make=inputMake, image=inputURI, description=inputDescription
                 )
 
                 findNavController().navigate(R.id.action_edit_item_to_item_detail, bundle)
             }
-
             fun checkForm() {
                 val nameCheck = name.text == null || name.text.toString() == ""
                 val categoryCheck = category.text == null || category.text.toString() == ""

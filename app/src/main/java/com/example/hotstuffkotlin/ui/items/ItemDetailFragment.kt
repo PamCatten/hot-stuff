@@ -56,9 +56,14 @@ class ItemDetailFragment : Fragment() {
         else quantity.text = "$quantityNumeral items"
 
         value.text = "$valueCurrency $valueNumeral"
-
-        make.text = bundle.getString("make") ?: R.string.unspecified_value_filler.toString()
-        description.text = bundle.getString("description") ?: R.string.unspecified_value_filler.toString()
+        when (bundle.getString("make")) {
+            "", null -> make.text = getText(R.string.unspecified_value_filler)
+            else -> make.text = bundle.getString("make")
+        }
+        when (bundle.getString("description")) {
+            "", null -> description.text = getText(R.string.unspecified_value_filler)
+            else -> description.text = bundle.getString("description")
+        }
 
         val imageURI = bundle.getString("image")
         if (imageURI != null) image.setImageURI(imageURI.toUri())

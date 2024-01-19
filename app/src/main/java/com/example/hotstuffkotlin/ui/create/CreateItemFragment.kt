@@ -94,32 +94,6 @@ class CreateItemFragment : Fragment() {
             if (!focused) roomContainer.helperText = validRoom()
         }
 
-        val selectPicture = registerForActivityResult(ActivityResultContracts.OpenDocument()) { resultURI ->
-            if (resultURI != null) {
-                try {
-                    uri = resultURI
-                    val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-                    val resolver: ContentResolver = requireActivity().contentResolver
-//                    requireActivity().grantUriPermission(requireActivity().packageName, uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                    resolver.takePersistableUriPermission(uri!!, takeFlags)
-                    createImage.setImageURI(uri)
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-//        val selectPicture = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-//                result -> if (result.resultCode == Activity.RESULT_OK) {
-//                    uri = result.data?.data
-//                    val takeFlags = result.data?.flags?.and((Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION))
-//                    val resolver: ContentResolver = requireActivity().contentResolver
-//            if (takeFlags != null) {
-//                resolver.takePersistableUriPermission(uri, takeFlags)
-//            }
-//                    createImage.setImageURI(uri)
-//                }
-//        }
         val takePicture = registerForActivityResult(ActivityResultContracts.TakePicture()) {
             isSaved -> if (isSaved) {
                 createImage.setImageURI(uri)
@@ -137,6 +111,21 @@ class CreateItemFragment : Fragment() {
             }
         }
 
+
+        val selectPicture = registerForActivityResult(ActivityResultContracts.OpenDocument()) { resultURI ->
+            if (resultURI != null) {
+                try {
+                    uri = resultURI
+                    val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                    val resolver: ContentResolver = requireActivity().contentResolver
+                    resolver.takePersistableUriPermission(uri!!, takeFlags)
+                    createImage.setImageURI(uri)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
         selectPhotoButton?.setOnClickListener {
             val requestedPermission = ACCESS_PERMISSION
             val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(), requestedPermission)
@@ -161,7 +150,7 @@ class CreateItemFragment : Fragment() {
                 val inputRoom: String = roomText.text.toString().trim()
                 val inputMake: String? = makeText.text?.toString()?.trim()
                 val inputValue: Double? = valueText.text?.toString()?.toDoubleOrNull()
-                val inputURI: String? = if (uri != null ) uri.toString() else null
+                val inputURI: String? = if (uri != null) uri.toString() else null
                 val inputDescription: String? = descriptionText.text?.toString()?.trim()
 
                 nameText.text = null
@@ -277,9 +266,9 @@ class CreateItemFragment : Fragment() {
     }
 
     companion object {
-        private const val PERMISSION_REQUEST_CODE = 10
-        private const val ACCESS_PERMISSION = android.Manifest.permission.READ_MEDIA_IMAGES
-        private const val SELECT_INPUT_TYPE = "image/*"
+        const val PERMISSION_REQUEST_CODE = 10
+        const val ACCESS_PERMISSION = android.Manifest.permission.READ_MEDIA_IMAGES
+        const val SELECT_INPUT_TYPE = "image/*"
         private const val SELECT_MIME_TYPE = "image/jpg"
     }
 }
