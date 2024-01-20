@@ -1,14 +1,14 @@
 package com.example.hotstuffkotlin.ui.create
 
 import android.content.ContentResolver
-import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.ImageDecoder
+import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -32,7 +32,7 @@ import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import java.io.File
-import java.io.OutputStream
+import java.io.FileOutputStream
 
 
 class CreateItemFragment : Fragment() {
@@ -40,6 +40,7 @@ class CreateItemFragment : Fragment() {
     private var _binding: FragmentCreateItemBinding? = null
     private val binding get() = _binding!!
     private var uri: Uri? = null
+    private var imageFile: File? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentCreateItemBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -97,20 +98,35 @@ class CreateItemFragment : Fragment() {
         val takePicture = registerForActivityResult(ActivityResultContracts.TakePicture()) {
             isSaved -> if (isSaved) {
                 createImage.setImageURI(uri)
+                    val contentResolver = requireContext().contentResolver
+                    val source = ImageDecoder.createSource(contentResolver, uri!!)
+                    val bitmap = ImageDecoder.decodeBitmap(source) { decoder, _, _ ->
+                        decoder.setTargetSampleSize(1)
+                        decoder.isMutableRequired = true
+                    }
+
+                    val fos = FileOutputStream(imageFile)
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
+                    fos.flush()
+                    fos.close()
+
+                    MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(SELECT_MIME_TYPE), null)
             }
         }
-
         takePhotoButton?.setOnClickListener {
-            val fileName = "HS_${System.currentTimeMillis()}.jpg"
-            val imageDirectory = requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-            val imageFile = File(imageDirectory, fileName)
-
-            if (imageFile.createNewFile()) {
-                uri = FileProvider.getUriForFile(requireContext(), "${requireContext().packageName}.provider", imageFile)
-                takePicture.launch(uri)
+            try {
+                val imageAlbum = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Hot Stuff")
+                if (!imageAlbum.exists()) imageAlbum.mkdirs()
+                imageFile = File(imageAlbum, "HS-${System.currentTimeMillis()}.jpg")
+                if (imageFile!!.createNewFile()) {
+                    uri = FileProvider.getUriForFile(requireContext(), "${requireContext().packageName}.provider", imageFile!!)
+                    takePicture.launch(uri)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
             }
         }
-
 
         val selectPicture = registerForActivityResult(ActivityResultContracts.OpenDocument()) { resultURI ->
             if (resultURI != null) {
@@ -239,25 +255,6 @@ class CreateItemFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         return view
-    }
-
-    private fun saveBitmapToStorage(bitmap: Bitmap, uri: Uri, fileName: String) {
-        var fos: OutputStream?
-
-        val contentResolver = requireContext().contentResolver
-        contentResolver.also { resolver ->
-            val contentValues = ContentValues().apply {
-                put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
-                put(MediaStore.MediaColumns.MIME_TYPE, SELECT_MIME_TYPE)
-                put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
-            }
-            val imageUri: Uri? = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-            fos = imageUri?.let { resolver.openOutputStream(it) }
-        }
-
-        fos?.use {
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
-        }
     }
 
     override fun onDestroyView() {

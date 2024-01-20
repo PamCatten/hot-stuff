@@ -220,10 +220,7 @@ class DatabaseHelper(context: Context?) :
 
     fun exportCSV() {
         val exportDirectory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "")
-
-        if (!exportDirectory.exists())
-            exportDirectory.mkdirs()
-
+        if (!exportDirectory.exists()) exportDirectory.mkdirs()
         val file = File(exportDirectory, "HS-Item-Manifest-${System.currentTimeMillis()}.csv")
         val db = this.writableDatabase
         val cursor: Cursor?

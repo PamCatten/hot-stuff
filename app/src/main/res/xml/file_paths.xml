@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
-    <external-path name="imageDirectory"
-        path="Android/data/com.example.hotstuffkotlin/files/Pictures" />
+    <external-path name="imageDirectory" path="/Pictures/Hot Stuff"/>
 </paths>
