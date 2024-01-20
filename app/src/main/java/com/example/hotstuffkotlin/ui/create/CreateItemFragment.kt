@@ -109,7 +109,6 @@ class CreateItemFragment : Fragment() {
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
                     fos.flush()
                     fos.close()
-
                     MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(SELECT_MIME_TYPE), null)
             }
         }
@@ -266,6 +265,6 @@ class CreateItemFragment : Fragment() {
         const val PERMISSION_REQUEST_CODE = 10
         const val ACCESS_PERMISSION = android.Manifest.permission.READ_MEDIA_IMAGES
         const val SELECT_INPUT_TYPE = "image/*"
-        private const val SELECT_MIME_TYPE = "image/jpg"
+        const val SELECT_MIME_TYPE = "image/jpg"
     }
 }

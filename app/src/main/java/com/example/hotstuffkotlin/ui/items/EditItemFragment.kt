@@ -3,7 +3,11 @@ package com.example.hotstuffkotlin.ui.items
 import android.content.ContentResolver
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.ImageDecoder
+import android.media.MediaScannerConnection
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -14,6 +18,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -27,11 +32,14 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import java.io.File
+import java.io.FileOutputStream
 
 class EditItemFragment : Fragment() {
 
     private var _binding: FragmentEditItemBinding? = null
     private val binding get() = _binding!!
+    private var imageFile: File? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentEditItemBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -108,6 +116,39 @@ class EditItemFragment : Fragment() {
             if (!focused) roomContainer.helperText = validRoom()
         }
 
+        val takePicture = registerForActivityResult(ActivityResultContracts.TakePicture()) {
+                isSaved -> if (isSaved) {
+            editImage.setImageURI(imageURI)
+            val contentResolver = requireContext().contentResolver
+            val source = ImageDecoder.createSource(contentResolver, imageURI!!)
+            val bitmap = ImageDecoder.decodeBitmap(source) { decoder, _, _ ->
+                decoder.setTargetSampleSize(1)
+                decoder.isMutableRequired = true
+            }
+
+            val fos = FileOutputStream(imageFile)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
+            fos.flush()
+            fos.close()
+            MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(
+                CreateItemFragment.SELECT_MIME_TYPE
+            ), null)
+        }
+        }
+        cameraButton?.setOnClickListener {
+            try {
+                val imageAlbum = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Hot Stuff")
+                if (!imageAlbum.exists()) imageAlbum.mkdirs()
+                imageFile = File(imageAlbum, "HS-${System.currentTimeMillis()}.jpg")
+                if (imageFile!!.createNewFile()) {
+                    imageURI = FileProvider.getUriForFile(requireContext(), "${requireContext().packageName}.provider", imageFile!!)
+                    takePicture.launch(imageURI)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         val selectPicture = registerForActivityResult(ActivityResultContracts.OpenDocument()) { resultURI ->
             if (resultURI != null) {
