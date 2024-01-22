@@ -74,13 +74,13 @@ class EditItemFragment : Fragment() {
         else value.text = null
 
         if (bundle.getString("make") != null) make.setText(bundle.getString("make"))
-        else make.setText(R.string.unspecified_value_filler)
+        else make.setText(R.string.filler_unspecified_value)
 
         var imageURI = bundle.getString("image")?.toUri()
         if (imageURI != null) editImage.setImageURI(imageURI)
 
         if (bundle.getString("description") != null) description.setText(bundle.getString("description"))
-        else description.setText(R.string.unspecified_value_filler)
+        else description.setText(R.string.filler_unspecified_value)
 
         name.setOnFocusChangeListener { _, focused ->
             fun validName(): String? {

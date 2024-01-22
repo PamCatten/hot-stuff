@@ -2,41 +2,36 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="none"
+    android:paddingTop="?attr/actionBarSize"
     android:theme="@style/container_fragment"
-    android:id="@+id/layout_item_detail"
-    tools:context=".ui.items.ItemDetailFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout_item_detail">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="?attr/actionBarSize">
+        android:orientation="vertical">
         <TextView
             android:id="@+id/article_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
             android:background="@null"
+            android:layout_marginHorizontal="20dp"
             android:text="@string/label_name"
             android:textColor="?attr/colorOnPrimary"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="388dp" />
+            android:textStyle="bold"
+            android:textSize="20sp"/>
         <TextView
             android:id="@+id/article_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="20dp"
             android:background="@null"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="16sp"
-            android:text="@string/label_name"
-            android:paddingBottom="?attr/actionBarSize"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/article_name" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:lineHeight="20dp"
+            android:text="@string/label_name"/>
+    </LinearLayout>
 </ScrollView>

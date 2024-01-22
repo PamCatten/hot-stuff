@@ -130,8 +130,20 @@
     <string name="feedback_info_closing">Much love,</string>
     <string name="feedback_info_identity">Cam</string>
 
-    <string name="learn_dropdown_icon_content_description">Expand items icon</string>
-    <string name="unspecified_value_filler">Unspecified</string>
+    <string name="description_learn_dropdown_icon">Expand items icon</string>
+    <string name="filler_unspecified_value">Unspecified</string>
+    <string name="filler_article_title">Fringilla ut morbi tincidunt augue interdum velit euismod in</string>
+    <string name="filler_article_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet dictum sit amet justo donec. Enim praesent elementum facilisis leo. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus. \n\n
+        Enim sit amet venenatis urna cursus. Non curabitur gravida arcu ac. Diam sit amet nisl suscipit adipiscing bibendum. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Augue ut lectus arcu bibendum at varius vel pharetra vel. Magna ac placerat vestibulum lectus. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor.\n\n
+        Lacinia at quis risus sed vulputate odio ut enim blandit. Amet nulla facilisi morbi tempus iaculis urna id. Nec feugiat nisl pretium fusce id velit ut.\n\n
+        Sit amet est placerat in egestas erat imperdiet sed. Porttitor lacus luctus accumsan tortor posuere. Ultricies integer quis auctor elit sed vulputate. Magna ac placerat vestibulum lectus mauris ultrices eros in cursus. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Faucibus et molestie ac feugiat sed lectus. Risus nullam eget felis eget nunc lobortis mattis. Ut sem viverra aliquet eget sit amet. Lacus suspendisse faucibus interdum posuere. Purus sit amet volutpat consequat.\n\n
+        Mi bibendum neque egestas congue quisque. Urna condimentum mattis pellentesque id nibh. Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Neque viverra justo nec ultrices dui. Faucibus ornare suspendisse sed nisi. Viverra vitae congue eu consequat ac felis donec et odio. Morbi non arcu risus quis varius.\n\n
+        Sit amet mattis vulputate enim. Interdum varius sit amet mattis vulputate enim nulla. Ornare arcu odio ut sem nulla pharetra. Enim nunc faucibus a pellentesque. Sem integer vitae justo eget magna fermentum iaculis. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Amet facilisis magna etiam tempor orci eu lobortis elementum. Enim sed faucibus turpis in eu mi. Imperdiet massa tincidunt nunc pulvinar. Nunc sed id semper risus in hendrerit.\n\n
+        Sit amet nulla facilisi morbi tempus iaculis urna. Lacus suspendisse faucibus interdum posuere. Aliquet lectus proin nibh nisl. Cras sed felis eget velit aliquet sagittis id consectetur purus. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Vitae nunc sed velit dignissim sodales ut eu sem integer. Feugiat pretium nibh ipsum consequat nisl vel pretium lectus.\n\n
+        Ullamcorper malesuada proin libero nunc consequat interdum varius. Aenean sed adipiscing diam donec adipiscing tristique risus. Ut etiam sit amet nisl purus in mollis. In aliquam sem fringilla ut morbi. Est ullamcorper eget nulla facilisi. Ullamcorper a lacus vestibulum sed.\n\n
+        Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. Imperdiet nulla malesuada pellentesque elit eget. Nisl tincidunt eget nullam non nisi est sit amet. Quisque non tellus orci ac. Nunc non blandit massa enim nec dui. Tempor id eu nisl nunc mi ipsum faucibus vitae. Eu non diam phasellus vestibulum lorem sed risus ultricies tristique.\n\n
+        Enim diam vulputate ut pharetra sit amet aliquam. Egestas egestas fringilla phasellus faucibus scelerisque. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Vitae aliquet nec ullamcorper sit amet risus nullam. Arcu felis bibendum ut tristique et egestas. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu. Ipsum dolor sit amet consectetur adipiscing. Eu mi bibendum neque egestas congue quisque egestas diam. Neque gravida in fermentum et sollicitudin ac orci phasellus egestas.
+    </string>
 
     <string name="text_title">20dp</string>
     <string name="text_subtitle">16dp</string>
@@ -142,5 +154,56 @@
     <string name="label_select_photo">Select Photo</string>
     <string name="label_take_photo">Take Photo</string>
     <string name="label_select_photo_toast">Photos and videos access must be enabled to use this feature</string>
+
+    <string name="article_getStarted">getStarted</string>
+    <string name="article_export">export</string>
+
+    <string name="article_whyCare">whyCare</string>
+    <string name="article_whyCare_title">Hot Stuff: Simplify Your Fire Claims</string>
+    <string name="article_whyCare_text">
+        House fires are sudden, chaotic events, and while the thought of one breaking out may seem
+        unlikely, a house fire is reported in the United States every 88 seconds¹.
+        Unfortunately for many, the aftermath can be just as painful as the fire itself, because
+        while fires burn out, their victim\'s trauma carries on. While only some suffer with
+        the painful physical reminders of a fire, all deal with the heavy emotional strain that
+        comes with the fear and anxiety of displacement or potential homelessness,
+        losing their sense of safety and security, and the mounting stress that comes with the
+        financial challenges of pulling their lives back together.
+
+        \n\nThis is where we can help, because Hot Stuff isn\'t just about reacting to a crisis; it\'s
+        about helping you avoid the worst of it. By using Hot Stuff to catalog your possessions in
+        advance, you\'re creating a digital inventory that serves as a comprehensive record of your
+        belongings. While the hope is that it is never necessary, if a fire occurs, having a
+        specific, detailed catalog in advance can put you on the path to:
+        \n\n1. Getting fair value for your possessions, without the influence of
+        self-interested insurance companies or independent adjusters
+        \n\n2. Expediting your claims process, so you can get back to restoring what was lost sooner
+        rather than later
+        \n\n3. Having the peace of mind knowing your possessions are secured, leaving you to free to
+        focus on what matters most in life: the stuff that money can\'t buy
+
+        \n\nTaking the time to plan ahead for these unexpected, traumatic times can make a real
+        difference when it matters most, because it\'s much easier to remember everything in a room
+        when it\'s right there in front of you, than days or weeks later when it\'s all gone.
+        Hot Stuff was created with this in mind, an app that people could trade a few rainy
+        afternoons using, for the peace of mind knowing that if something were to happen, they
+        would be better prepared for this horrific possibility.
+
+        \n\nHot Stuff was designed ultimately to be an accessible tool, it requires no internet
+        connection, collects no data, has no ads, is fully open sourced software, and perhaps most
+        importantly, is completely free (but if you\'re reading this you already knew that)!
+        If you find a bug, have an idea on how to improve the app, want to help translate or to
+        contribute in some other way, please get in touch! Community feedback is always welcomed
+        and encouraged.
+
+        \n\nSadly, Hot Stuff is not a one-stop shop for all of someone\'s needs after a fire.
+        While we can\'t protect people from suffering the injustice and heartache of losing where
+        they live, we are grateful and proud to be of assistance (for at least our small part) of
+        the long, challenging road back home.
+
+        \n\n\nSources:
+        \n1. Hall, S. (November 2023). Fire loss in the United States During 2022.
+        Quincy, MA:National Fire Protection Association.
+    </string>
 
 </resources>

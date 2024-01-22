@@ -16,6 +16,7 @@ import androidx.constraintlayout.widget.Group
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentLearnBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
@@ -25,6 +26,7 @@ class LearnFragment : Fragment() {
     private val binding get() = _binding!!
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentLearnBinding.inflate(inflater, container, false)
+        val bundle = Bundle()
         val view = binding.root
 
         // walkthrough card
@@ -42,6 +44,21 @@ class LearnFragment : Fragment() {
                 groupWalkthrough.visibility = View.VISIBLE
                 dropdownIconWalkthrough?.setImageResource(R.drawable.icon_dropdown_close)
             }
+        }
+        val whyCareButton = view.findViewById<TextView>(R.id.learn_walkthrough_whyCare)
+        val getStartedButton = view.findViewById<TextView>(R.id.learn_walkthrough_gettingStarted)
+        val exportButton = view.findViewById<TextView>(R.id.learn_walkthrough_export)
+        whyCareButton.setOnClickListener {
+            bundle.putCharSequence("article", getText(R.string.article_whyCare))
+            findNavController().navigate(R.id.navigation_article, bundle)
+        }
+        getStartedButton.setOnClickListener {
+            bundle.putCharSequence("article", getText(R.string.article_getStarted))
+            findNavController().navigate(R.id.navigation_article, bundle)
+        }
+        exportButton.setOnClickListener {
+            bundle.putCharSequence("article", getText(R.string.article_export))
+            findNavController().navigate(R.id.navigation_article, bundle)
         }
 
         // resources card
@@ -80,7 +97,7 @@ class LearnFragment : Fragment() {
 
         val sourceCodeButton = view.findViewById<TextView>(R.id.learn_about_sourceCode)
         sourceCodeButton.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.learn_repo_link))))
+            findNavController().navigate(R.id.action_item_detail_to_items, bundle)
         }
 
         // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
