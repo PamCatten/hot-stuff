@@ -35,6 +35,10 @@ class ArticleFragment : Fragment() {
                 articleTitle.text = getText(R.string.filler_article_title)
                 articleText.text = getText(R.string.filler_article_text)
             }
+            getText(R.string.article_jargonGlossary) -> {
+                articleTitle.text = getText(R.string.article_jargonGlossary_title)
+                articleText.text = getText(R.string.article_jargonGlossary_text)
+            }
             else -> {}
         }
 //        articleTitle.text = getText(R.string.filler_article_title)

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:scrollbars="none"
+    android:scrollbars="vertical"
     android:paddingTop="?attr/actionBarSize"
     android:theme="@style/container_fragment"
     android:id="@+id/layout_item_detail">

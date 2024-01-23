@@ -97,7 +97,13 @@ class LearnFragment : Fragment() {
 
         val sourceCodeButton = view.findViewById<TextView>(R.id.learn_about_sourceCode)
         sourceCodeButton.setOnClickListener {
-            findNavController().navigate(R.id.action_item_detail_to_items, bundle)
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/PamCatten/hot-stuff-kotlin")))
+        }
+
+        val jargonButton = view.findViewById<TextView>(R.id.learn_resources_jargonGlossary)
+        jargonButton.setOnClickListener{
+            bundle.putCharSequence("article", getText(R.string.article_jargonGlossary))
+            findNavController().navigate(R.id.navigation_article, bundle)
         }
 
         // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
