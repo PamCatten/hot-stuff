@@ -52,54 +52,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-//        addMenuProvider(object: MenuProvider {
-//            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-//                if (!menu.hasVisibleItems()) menuInflater.inflate(R.menu.menu_toolbar_main, menu)
-//            }
-//            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-//                when (menuItem.itemId) {
-//                    R.id.toolbar_main_search -> { navController.navigate(R.id.navigation_search) }
-//                    R.id.toolbar_main_report -> {
-//                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
-//                    }
-//                    R.id.toolbar_main_rate -> {}
-//                    R.id.toolbar_main_feedback -> {
-//                        val intent = Intent(Intent.ACTION_VIEW)
-//                        // TODO: Find an alternative way to extract these
-//                        intent.data = Uri.parse("mailto:campatten.dev@outlook.com" +
-//                                "?subject=FEEDBACK: (Your Suggestion)" +
-//                                "&body=Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it! \n\n Much love, \nCam")
-//                        startActivity(intent)
-//                    }
-//                }
-//                return false
-//            }
-//            override fun onPrepareMenu(menu: Menu) {}
-//        })
-
-
-//        toolbar.setOnMenuItemClickListener {
-//            when (it.itemId) {
-//                R.id.toolbar_main_search -> {
-//                    navController.navigate(R.id.navigation_search)
-//                }
-//                R.id.toolbar_main_report -> {
-//                    startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
-//                }
-//                R.id.toolbar_main_rate -> {}
-//                R.id.toolbar_main_feedback -> {
-//                    val intent = Intent(Intent.ACTION_VIEW)
-//
-//                    // TODO: Find an alternative way to extract these
-//                    intent.data = Uri.parse("mailto:campatten.dev@outlook.com" +
-//                        "?subject=FEEDBACK: (Your Suggestion)" +
-//                        "&body=Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it! \n\n Much love, \nCam")
-//                    startActivity(intent)
-//                }
-//            }
-//            true
-//        }
-
         // bottom dialog
 //        val createButton = navView.menu.findItem(R.id.navigation_placeholder)
 //        createButton.setOnMenuItemClickListener {

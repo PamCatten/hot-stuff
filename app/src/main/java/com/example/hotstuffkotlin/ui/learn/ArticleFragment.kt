@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentArticleBinding
-import com.example.hotstuffkotlin.utils.DatabaseHelper
 
 class ArticleFragment : Fragment() {
 
@@ -50,6 +49,11 @@ class ArticleFragment : Fragment() {
                 articleTitle.text = getText(R.string.article_jargonGlossary_title)
                 articleText.text = getText(R.string.article_jargonGlossary_text)
             }
+            getText(R.string.article_acknowledgements) -> {
+                articleTitle.text = getText(R.string.article_acknowledgements_title)
+                articleText.text = getText(R.string.article_acknowledgements_text)
+                articleDisclosure.text = ""
+            }
             else -> {}
         }
 
@@ -61,10 +65,7 @@ class ArticleFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 when (menuItem.itemId) {
                     R.id.toolbar_main_search -> { return true }
-                    R.id.toolbar_main_download -> {
-                        DatabaseHelper(requireContext()).exportCSV()
-                        return true
-                    }
+                    R.id.toolbar_main_download -> { return true }
                     R.id.toolbar_main_report -> {
                         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
                         return true
@@ -86,7 +87,7 @@ class ArticleFragment : Fragment() {
             }
             override fun onPrepareMenu(menu: Menu) {
                 menu.findItem(R.id.toolbar_main_search).setVisible(false)
-                menu.findItem(R.id.toolbar_main_download).setVisible(true)
+                menu.findItem(R.id.toolbar_main_download).setVisible(false)
                 menu.findItem(R.id.toolbar_main_report).setVisible(true)
                 menu.findItem(R.id.toolbar_main_rate).setVisible(true)
                 menu.findItem(R.id.toolbar_main_feedback).setVisible(true)

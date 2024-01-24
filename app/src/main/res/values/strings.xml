@@ -645,4 +645,53 @@
     <string name="article_adjusters_text">
 
     </string>
+
+    <string name="article_acknowledgements">acknowledgements</string>
+    <string name="article_acknowledgements_title">Acknowledgements</string>
+    <string name="article_acknowledgements_text">
+        We use the following open source libraries, modules, and frameworks to make Hot Stuff:
+
+        \n\nAndroidX modules:
+        \nCore KTX
+        \nLifecycle KTX
+        \nLiveData KTX
+        \nNavigation KTX
+
+        \n\nJetpack libraries:
+        \nAppCompat
+        \nCardView
+        \nPreference
+        \nRecyclerView
+
+        \n\nTesting:
+        \nAndroidX Test
+        \nEspresso
+        \nJUnit4
+
+        \n\nMiscellaneous:
+        \nAndroid ConstraintLayout
+        \nMaterial Components for Android
+        \ncom.chibatching.kotpref:kotpref
+        \ncom.github.PhilJay:MPAndroidChart
+
+<!--        \n\nandroidx.core:core-ktx-->
+<!--        \nandroidx.appcompat:appcompat-->
+<!--        \nandroidx.constraintlayout:constraintlayout-->
+<!--        \nandroidx.lifecycle:lifecycle-livedata-ktx-->
+<!--        \nandroidx.lifecycle:lifecycle-viewmodel-ktx-->
+<!--        \nandroidx.navigation:navigation-fragment-ktx-->
+<!--        \nandroidx.navigation:navigation-ui-ktx-->
+<!--        \nandroidx.preference:preference-ktx-->
+<!--        \nandroidx.recyclerview:recyclerview-->
+<!--        \nandroidx.cardview:cardview-->
+
+<!--        \n\ncom.chibatching.kotpref:kotpref-->
+<!--        \ncom.google.android.material:material:1.11.0-->
+<!--        \ncom.github.PhilJay:MPAndroidChart-->
+
+<!--        \n\njunit:junit-->
+<!--        \nandroidx.test.ext:junit-->
+<!--        \nandroidx.test.espresso:espresso-core-->
+    </string>
+
 </resources>

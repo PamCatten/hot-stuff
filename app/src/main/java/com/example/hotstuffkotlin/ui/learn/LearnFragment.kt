@@ -45,18 +45,18 @@ class LearnFragment : Fragment() {
                 dropdownIconWalkthrough?.setImageResource(R.drawable.icon_dropdown_close)
             }
         }
-        val whyCareButton = view.findViewById<TextView>(R.id.learn_walkthrough_whyCare)
-        val getStartedButton = view.findViewById<TextView>(R.id.learn_walkthrough_gettingStarted)
-        val exportButton = view.findViewById<TextView>(R.id.learn_walkthrough_export)
-        whyCareButton.setOnClickListener {
+        val buttonWhyCare = view.findViewById<TextView>(R.id.learn_walkthrough_whyCare)
+        val buttonGetStarted = view.findViewById<TextView>(R.id.learn_walkthrough_gettingStarted)
+        val buttonExport = view.findViewById<TextView>(R.id.learn_walkthrough_export)
+        buttonWhyCare.setOnClickListener {
             bundle.putCharSequence("article", getText(R.string.article_whyCare))
             findNavController().navigate(R.id.navigation_article, bundle)
         }
-        getStartedButton.setOnClickListener {
+        buttonGetStarted.setOnClickListener {
             bundle.putCharSequence("article", getText(R.string.article_getStarted))
             findNavController().navigate(R.id.navigation_article, bundle)
         }
-        exportButton.setOnClickListener {
+        buttonExport.setOnClickListener {
             bundle.putCharSequence("article", getText(R.string.article_export))
             findNavController().navigate(R.id.navigation_article, bundle)
         }
@@ -78,6 +78,12 @@ class LearnFragment : Fragment() {
             }
         }
 
+        val buttonJargonGlossary = view.findViewById<TextView>(R.id.learn_resources_jargonGlossary)
+        buttonJargonGlossary.setOnClickListener{
+            bundle.putCharSequence("article", getText(R.string.article_jargonGlossary))
+            findNavController().navigate(R.id.navigation_article, bundle)
+        }
+
         // about card
         val cardViewAbout = view.findViewById<ViewGroup>(R.id.learn_about_card)
         val dropdownAbout = view.findViewById<ConstraintLayout>(R.id.learn_about_header)
@@ -95,14 +101,14 @@ class LearnFragment : Fragment() {
             }
         }
 
-        val sourceCodeButton = view.findViewById<TextView>(R.id.learn_about_sourceCode)
-        sourceCodeButton.setOnClickListener {
+        val buttonSourceCode = view.findViewById<TextView>(R.id.learn_about_sourceCode)
+        val buttonAcknowledgements = view.findViewById<TextView>(R.id.learn_about_acknowledgements)
+
+        buttonSourceCode.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/PamCatten/hot-stuff-kotlin")))
         }
-
-        val jargonButton = view.findViewById<TextView>(R.id.learn_resources_jargonGlossary)
-        jargonButton.setOnClickListener{
-            bundle.putCharSequence("article", getText(R.string.article_jargonGlossary))
+        buttonAcknowledgements.setOnClickListener{
+            bundle.putCharSequence("article", getText(R.string.article_acknowledgements))
             findNavController().navigate(R.id.navigation_article, bundle)
         }
 
