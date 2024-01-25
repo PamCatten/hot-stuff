@@ -86,4 +86,121 @@
         <item>spanish</item>
         <item>norwegian</item>
     </string-array>
+
+    <!-- Auto complete options for text input fields -->
+    <string-array name="autocomplete_building">
+        <item>Apartment</item>
+        <item>Condo</item>
+        <item>House</item>
+        <item>Townhouse</item>
+        <item>Vacation Home</item>
+        <item>Workplace</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="autocomplete_room">
+        <item>Attic</item>
+        <item>Barn</item>
+        <item>Basement</item>
+        <item>Bathroom</item>
+        <item>Bedroom</item>
+        <item>Carriage House</item>
+        <item>Cellar</item>
+        <item>Closet</item>
+        <item>Conservatory</item>
+        <item>Crawlspace</item>
+        <item>Deck</item>
+        <item>Den</item>
+        <item>Detached Garage</item>
+        <item>Dining Room</item>
+        <item>Driveway</item>
+        <item>Entryway</item>
+        <item>Family Room</item>
+        <item>Foyer</item>
+        <item>Game Room</item>
+        <item>Garage</item>
+        <item>Garden</item>
+        <item>Gazebo</item>
+        <item>Greenhouse</item>
+        <item>Guest Bedroom</item>
+        <item>Guest Bathroom</item>
+        <item>Guest House</item>
+        <item>Gym</item>
+        <item>Hallway</item>
+        <item>Kids Bedroom</item>
+        <item>Kitchen</item>
+        <item>Laundry Room</item>
+        <item>Library</item>
+        <item>Linen Closet</item>
+        <item>Living Room</item>
+        <item>Loft</item>
+        <item>Master Bedroom</item>
+        <item>Master Bathroom</item>
+        <item>Mezzanine</item>
+        <item>Mudroom</item>
+        <item>Nursery</item>
+        <item>Office</item>
+        <item>Pantry</item>
+        <item>Patio</item>
+        <item>Playroom</item>
+        <item>Pool</item>
+        <item>Pool House</item>
+        <item>Porch</item>
+        <item>Salon</item>
+        <item>Sauna</item>
+        <item>Shed</item>
+        <item>Solarium</item>
+        <item>Storage Room</item>
+        <item>Studio</item>
+        <item>Sunroom</item>
+        <item>Utility Room</item>
+        <item>Walk-In Closet</item>
+        <item>Workshop</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="autocomplete_categories">
+        <item>Antiques</item>
+        <item>Apparel</item>
+        <item>Accessories</item>
+        <item>Bags</item>
+        <item>Jewelry</item>
+        <item>Appliances</item>
+        <item>Artwork</item>
+        <item>Baby</item>
+        <item>Beauty</item>
+        <item>Books / Magazines</item>
+        <item>Collectibles</item>
+        <item>Craft Supplies</item>
+        <item>Cutlery</item>
+        <item>Designer</item>
+        <item>Dinnerware</item>
+        <item>Electronics</item>
+        <item>Fixtures</item>
+        <item>Footwear</item>
+        <item>Furniture</item>
+        <item>Games</item>
+        <item>Garden</item>
+        <item>Handmade</item>
+        <item>Home Decor</item>
+        <item>Home Improvement Supplies</item>
+        <item>House Plants</item>
+        <item>Kitchen Utensils</item>
+        <item>Landscaping</item>
+        <item>Lighting</item>
+        <item>Linens</item>
+        <item>Luggage</item>
+        <item>Music</item>
+        <item>Office Supplies</item>
+        <item>Organization / Storage</item>
+        <item>Personal Care</item>
+        <item>Pet Supplies</item>
+        <item>Plumbing / HVAC</item>
+        <item>Sports / Outdoors Equipment</item>
+        <item>Tools</item>
+        <item>Toys</item>
+        <item>Travel</item>
+        <item>Vehicles</item>
+        <item>Vehicle Supplies</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>
