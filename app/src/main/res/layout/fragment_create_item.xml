@@ -96,7 +96,7 @@
             android:id="@+id/create_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:scaleType="centerInside"
+            android:scaleType="centerCrop"
             android:cropToPadding="true"
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="10dp"

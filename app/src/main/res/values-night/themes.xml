@@ -11,7 +11,9 @@
         <!-- Status bar color. -->
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-
+        <!-- Navigation bar -->
+        <item name="android:navigationBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightNavigationBar">false</item>
         <!-- Splash screen -->
         <item name="android:windowSplashScreenBackground">@color/coral</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/coral</item>

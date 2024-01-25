@@ -9,7 +9,9 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -20,6 +22,7 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemsBinding
 import com.example.hotstuffkotlin.utils.Adapter
 import com.example.hotstuffkotlin.utils.DatabaseHelper
+import com.google.android.material.imageview.ShapeableImageView
 
 class ItemsFragment : Fragment() {
     private var _binding: FragmentItemsBinding? = null
@@ -36,6 +39,19 @@ class ItemsFragment : Fragment() {
 
         val adapter = Adapter(items)
         recyclerItems.adapter = adapter
+
+        val emptyContainer = view.findViewById<ConstraintLayout>(R.id.items_empty)
+        val emptyImage = view.findViewById<ShapeableImageView>(R.id.items_empty_image)
+        val emptyText = view.findViewById<TextView>(R.id.items_empty_text)
+        if (items.size == 0) {
+            emptyContainer.visibility = View.VISIBLE
+//            emptyImage.visibility =  View.VISIBLE
+//            emptyText.visibility = View.VISIBLE
+        } else {
+            emptyContainer.visibility = View.GONE
+//            emptyImage.visibility = View.GONE
+//            emptyText.visibility = View.GONE
+        }
 
         recyclerItems.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
