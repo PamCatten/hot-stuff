@@ -17,11 +17,13 @@
         <!-- Splash screen -->
         <item name="android:windowSplashScreenBackground">@color/coral</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/coral</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo_splashscreen</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/image_splash</item>
         <!-- Toolbar -->
         <item name="android:itemBackground">?attr/colorOnPrimary</item>
         <!-- Dialogs -->
         <item name="android:alertDialogTheme">@style/dialog_alert</item>
+        <!-- Text -->
+        <item name="fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="container_fragment">
         <item name="android:background">?attr/colorPrimaryVariant</item>

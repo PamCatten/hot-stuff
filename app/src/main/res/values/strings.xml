@@ -124,6 +124,27 @@
     <string name="learn_repo_link">https://github.com/PamCatten/hot-stuff-kotlin</string>
     <string name="toolbar_issue_link">https://github.com/PamCatten/hot-stuff-kotlin/issues/new</string>
 
+    <string name="onboard_button_skip">SKIP</string>
+    <string name="onboard_button_continue">NEXT</string>
+    <string name="onboard_button_done">GET STARTED</string>
+
+    <string name="onboard_one_title">Peace of mind, simplified</string>
+    <string name="onboard_one_text">
+
+    </string>
+    <string name="onboard_two_title">Organize efficiently</string>
+    <string name="onboard_two_text">
+
+    </string>
+    <string name="onboard_three_title">Privacy first</string>
+    <string name="onboard_three_text">
+        Hot Stuff doesn\'t require an account and we never collect
+        personal information. Capture your possessions confidently knowing your data is secure.
+    </string>
+    <string name="onboard_four_title">Welcome aboard!</string>
+    <string name="onboard_four_text">
+
+    </string>
     <string name="feedback_email">campatten.dev@outlook.com</string>
     <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>
     <string name="feedback_info_body">Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure \'feedback\' is somewhere in the subject of your suggestion so it ends up where I can see it!</string>

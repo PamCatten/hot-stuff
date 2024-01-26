@@ -174,7 +174,7 @@ class CreateItemFragment : Fragment() {
                 roomText.text = null
                 valueText.text = null
                 makeText.text = null
-                createImage.setImageResource(R.drawable.default_image)
+                createImage.setImageResource(R.drawable.image_default_item)
                 descriptionText.text = null
 
                 nameContainer.helperText = getText(R.string.label_required_hint)

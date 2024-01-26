@@ -2,12 +2,10 @@
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="?attr/actionBarSize"
         android:paddingBottom="?attr/actionBarSize"
-        tools:context=".ui.items.ItemsFragment"
         android:id="@+id/layout_items"
         android:orientation="vertical">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,13 +19,12 @@
                 android:scaleType="centerInside"
                 android:layout_gravity="center"
                 android:cropToPadding="true"
-                android:elevation="8dp"
                 app:shapeAppearanceOverlay="@style/image_rounded"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:srcCompat="@drawable/no_items"/>
+                app:srcCompat="@drawable/image_empty_recyclerview"/>
             <TextView
                 android:id="@+id/items_empty_text"
                 android:layout_width="wrap_content"
@@ -43,7 +40,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/itemsRecyclerView"
             android:clickable="true"

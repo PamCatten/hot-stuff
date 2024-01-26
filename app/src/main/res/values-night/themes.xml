@@ -17,10 +17,12 @@
         <!-- Splash screen -->
         <item name="android:windowSplashScreenBackground">@color/coral</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/coral</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo_splashscreen</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/image_splash</item>
 
         <!-- Dialog -->
         <item name="shapeAppearanceLargeComponent">@style/dialogBackground</item>
+        <!-- Text -->
+        <item name="fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="dialogBackground" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>

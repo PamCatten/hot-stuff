@@ -24,7 +24,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:itemRippleColor="@null"
-        app:itemIconTint="@drawable/nav_selector"
+        app:itemIconTint="@drawable/selector_nav"
         app:menu="@menu/menu_navbar_main"
         app:itemBackground="@android:color/transparent"
         app:labelVisibilityMode="labeled"/>

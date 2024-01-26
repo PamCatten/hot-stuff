@@ -99,7 +99,7 @@
             android:layout_marginVertical="10dp"
             android:elevation="8dp"
             app:shapeAppearanceOverlay="@style/image_rounded"
-            app:srcCompat="@drawable/default_image"/>
+            app:srcCompat="@drawable/image_default_item"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

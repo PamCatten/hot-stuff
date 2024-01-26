@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="32dp">
+    <TextView
+        android:id="@+id/onboard_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hot stuff"
+        android:fontFamily="@font/open_sans_bold"
+        android:textColor="?attr/colorAccent"
+        android:textAlignment="center"
+        android:textSize="55sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/onboard_frame"/>
+    <LinearLayout
+        android:id="@+id/onboard_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/onboard_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_marginVertical="16dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            app:cornerRadius="25dp"
+            android:text="CONTINUE"
+            android:backgroundTint="?attr/colorAccent"
+            android:textColor="?attr/colorPrimaryVariant" />
+        <TextView
+            android:id="@+id/onboard_text_disclaimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="By clicking continue you are agreeing to our Terms."
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="14sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

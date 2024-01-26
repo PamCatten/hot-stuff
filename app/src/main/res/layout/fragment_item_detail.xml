@@ -25,7 +25,7 @@
             android:elevation="8dp"
             app:shapeAppearanceOverlay="@style/image_rounded"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/default_image"/>
+            app:srcCompat="@drawable/image_default_item"/>
         <TextView
             android:id="@+id/item_detail_name_title"
             android:layout_width="match_parent"
