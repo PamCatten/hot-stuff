@@ -8,12 +8,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.ActivityMainBinding
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -27,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         initTheme()
 
         // onboard
-        val viewPager = findViewById<ViewPager>(R.id.onboard_viewPager)
-        val progressDots = findViewById<TabLayout>(R.id.onboard_progressDots)
+        val viewPager = findViewById<ViewPager2>(R.id.onboard_viewPager)
+//        val progressDots = findViewById<TabLayout>(R.id.onboard_progressDots)
 //        progressDots.setupWithViewPager(viewPager, true)
 
         // toolbar

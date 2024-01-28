@@ -14,6 +14,7 @@ import android.widget.TextView
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
 import com.example.hotstuffkotlin.utils.ChartMarker
@@ -34,6 +35,12 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        // onboard screen testing
+        val isOnboardCompleted = false
+        if (isOnboardCompleted == false) {
+            findNavController().navigate(R.id.action_home_to_onboard)
+        }
 
         val totalItems = view.findViewById<TextView>(R.id.label_building_quantity)
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)

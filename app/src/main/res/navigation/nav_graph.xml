@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.example.hotstuffkotlin.ui.home.HomeFragment"
         android:label="@string/label_home_fragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_onboard"
+            app:destination="@id/navigation_onboard"/>
+    </fragment>
     <fragment
         android:id="@+id/navigation_items"
         android:name="com.example.hotstuffkotlin.ui.items.ItemsFragment"
@@ -68,4 +72,40 @@
             android:id="@+id/action_article_to_learn"
             app:destination="@+id/navigation_learn"/>
     </fragment>
+    <fragment
+        android:id="@+id/navigation_onboard"
+        android:name="com.example.hotstuffkotlin.onboard.OnboardFragment"
+        android:label=""
+        tools:layout="@layout/fragment_onboard" >
+        <action
+            android:id="@+id/action_onboard_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_onboard_to_view_pager"
+            app:destination="@id/navigation_view_pager"
+            app:popUpTo="@id/navigation_onboard"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_view_pager"
+        android:name="com.example.hotstuffkotlin.onboard.ViewPagerFragment"
+        android:label=""
+        tools:layout="@layout/fragment_view_pager" >
+<!--        <action-->
+<!--            android:id="@+id/action_view_pager_to_home"-->
+<!--            app:destination="@id/navigation_home"-->
+<!--            app:popUpTo="@id/navigation_view_pager"-->
+<!--            app:popUpToInclusive="true" />-->
+    </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/viewPagerFragment"-->
+<!--        android:name="com.jovanovic.stefan.mytestapp.onboarding.ViewPagerFragment"-->
+<!--        android:label="fragment_view_pager"-->
+<!--        tools:layout="@layout/fragment_view_pager" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_viewPagerFragment_to_homeFragment"-->
+<!--            app:destination="@id/homeFragment"-->
+<!--            app:popUpTo="@id/viewPagerFragment"-->
+<!--            app:popUpToInclusive="true" />-->
+<!--    </fragment>-->
 </navigation>

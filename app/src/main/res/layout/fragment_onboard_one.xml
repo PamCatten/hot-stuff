@@ -46,10 +46,10 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/onboard_two_one_button"
+            android:id="@+id/onboard_one_skip_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:paddingHorizontal="20dp"
             android:textSize="14sp"
             android:textStyle="bold"
             android:textAllCaps="true"
@@ -67,7 +67,7 @@
             android:id="@+id/onboard_one_continue_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:paddingHorizontal="20dp"
             android:textSize="14sp"
             android:textStyle="bold"
             android:textAllCaps="true"
