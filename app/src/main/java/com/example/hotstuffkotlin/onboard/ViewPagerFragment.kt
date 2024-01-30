@@ -30,6 +30,7 @@ class ViewPagerFragment : Fragment() {
         val adapter = OnboardAdapter(fragmentList, requireActivity().supportFragmentManager, lifecycle)
 
         viewPager.adapter = adapter
+//        viewPager.isUserInputEnabled = false // disables swiping
 
         return view
     }

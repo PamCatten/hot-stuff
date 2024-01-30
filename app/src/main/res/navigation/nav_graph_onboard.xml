@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/navigation_onboard">
+
+    <fragment
+        android:id="@+id/navigation_onboard"
+        android:name="com.example.hotstuffkotlin.onboard.OnboardFragment"
+        android:label=""
+        tools:layout="@layout/fragment_onboard" >
+<!--        <action-->
+<!--            android:id="@+id/action_onboard_to_home"-->
+<!--            app:destination="@id/navigation_home" />-->
+        <action
+            android:id="@+id/action_onboard_to_view_pager"
+            app:destination="@id/navigation_view_pager"
+            app:popUpTo="@id/navigation_onboard"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_view_pager"
+        android:name="com.example.hotstuffkotlin.onboard.ViewPagerFragment"
+        android:label=""
+        tools:layout="@layout/fragment_view_pager" >
+        <!--        <action-->
+        <!--            android:id="@+id/action_view_pager_to_home"-->
+        <!--            app:destination="@id/navigation_home"-->
+        <!--            app:popUpTo="@id/navigation_view_pager"-->
+        <!--            app:popUpToInclusive="true" />-->
+    </fragment>
+</navigation>

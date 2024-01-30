@@ -13,15 +13,4 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-<!--    <com.google.android.material.tabs.TabLayout-->
-<!--        android:id="@+id/onboard_progressDots"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:tabBackground="@drawable/selector_dots"-->
-<!--        app:tabGravity="center"-->
-<!--        app:tabIndicatorHeight="0dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

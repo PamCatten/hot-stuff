@@ -24,9 +24,15 @@
         <!-- Text -->
         <item name="fontFamily">@font/open_sans_regular</item>
     </style>
+
     <style name="dialogBackground" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 
 </resources>

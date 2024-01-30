@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.MaterialToolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_onboard"
+    android:outlineProvider="none"
+    android:elevation="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:itemRippleColor="@null"
+    app:popupTheme="@style/AppTheme.PopupMenuStyle"/>

@@ -14,9 +14,9 @@ import android.widget.TextView
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
+import com.example.hotstuffkotlin.ui.OnboardActivity
 import com.example.hotstuffkotlin.utils.ChartMarker
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
@@ -39,7 +39,8 @@ class HomeFragment : Fragment() {
         // onboard screen testing
         val isOnboardCompleted = false
         if (isOnboardCompleted == false) {
-            findNavController().navigate(R.id.action_home_to_onboard)
+//            findNavController().navigate(R.id.action_home_to_onboard)
+            startActivity(Intent(context, OnboardActivity::class.java))
         }
 
         val totalItems = view.findViewById<TextView>(R.id.label_building_quantity)

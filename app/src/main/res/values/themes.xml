@@ -25,10 +25,12 @@
         <!-- Text -->
         <item name="fontFamily">@font/open_sans_regular</item>
     </style>
+
     <style name="container_fragment">
         <item name="android:background">?attr/colorPrimaryVariant</item>
         <item name="android:outlineProvider">none</item>
     </style>
+
     <style name="text_title">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
@@ -36,6 +38,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
     <style name="text_subtitle">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
@@ -43,6 +46,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
     <style name="text_body">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
@@ -50,6 +54,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
     <style name="dialog_alert" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="android:background">?attr/colorPrimaryVariant</item>
         <item name="android:backgroundDimEnabled">true</item>
@@ -57,62 +62,66 @@
         <item name="materialAlertDialogBodyTextStyle">@style/dialog_alert.body</item>
         <item name="materialAlertDialogTitleTextStyle">@style/dialog_alert.title</item>
     </style>
+
     <style name="dialog_alert.body" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="dialog_alert.title" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">20sp</item>
     </style>
-<!--    <style name="dialog_title">-->
-<!--        <item name="android:textSize">20sp</item>-->
-<!--        <item name="android:textColor">?attr/colorOnPrimary</item>-->
-<!--        <item name="android:textStyle">bold</item>-->
-<!--        <item name="android:textAlignment">viewStart</item>-->
-<!--        <item name="android:layout_width">wrap_content</item>-->
-<!--        <item name="android:layout_height">wrap_content</item>-->
-<!--        <item name="android:width">0dp</item>-->
-<!--        <item name="android:layout_weight">1</item>-->
-<!--    </style>-->
-<!--    <style name="dialog_subtitle">-->
-<!--        <item name="android:textSize">18sp</item>-->
-<!--        <item name="android:textColor">?attr/colorOnPrimary</item>-->
-<!--        <item name="android:textAlignment">viewStart</item>-->
-<!--        <item name="android:layout_width">wrap_content</item>-->
-<!--        <item name="android:layout_height">wrap_content</item>-->
-<!--        <item name="android:width">0dp</item>-->
-<!--        <item name="android:layout_weight">1</item>-->
-<!--        <item name="android:paddingLeft">20dp</item>-->
-<!--    </style>-->
-<!--    <style name="dialog_icon">-->
-<!--        <item name="android:layout_width">wrap_content</item>-->
-<!--        <item name="android:layout_height">wrap_content</item>-->
-<!--        <item name="android:tint">?attr/colorOnPrimary</item>-->
-<!--        <item name="android:background">@null</item>-->
-<!--        <item name="android:maxWidth">24dp</item>-->
-<!--        <item name="android:maxHeight">24dp</item>-->
-<!--    </style>-->
-<!--    <style name="dialog_linear">-->
-<!--        <item name="android:layout_width">match_parent</item>-->
-<!--        <item name="android:layout_height">wrap_content</item>-->
-<!--        <item name="android:padding">10dp</item>-->
-<!--        <item name="android:orientation">horizontal</item>-->
-<!--    </style>-->
+    <!--    <style name="dialog_title">-->
+    <!--        <item name="android:textSize">20sp</item>-->
+    <!--        <item name="android:textColor">?attr/colorOnPrimary</item>-->
+    <!--        <item name="android:textStyle">bold</item>-->
+    <!--        <item name="android:textAlignment">viewStart</item>-->
+    <!--        <item name="android:layout_width">wrap_content</item>-->
+    <!--        <item name="android:layout_height">wrap_content</item>-->
+    <!--        <item name="android:width">0dp</item>-->
+    <!--        <item name="android:layout_weight">1</item>-->
+    <!--    </style>-->
+    <!--    <style name="dialog_subtitle">-->
+    <!--        <item name="android:textSize">18sp</item>-->
+    <!--        <item name="android:textColor">?attr/colorOnPrimary</item>-->
+    <!--        <item name="android:textAlignment">viewStart</item>-->
+    <!--        <item name="android:layout_width">wrap_content</item>-->
+    <!--        <item name="android:layout_height">wrap_content</item>-->
+    <!--        <item name="android:width">0dp</item>-->
+    <!--        <item name="android:layout_weight">1</item>-->
+    <!--        <item name="android:paddingLeft">20dp</item>-->
+    <!--    </style>-->
+    <!--    <style name="dialog_icon">-->
+    <!--        <item name="android:layout_width">wrap_content</item>-->
+    <!--        <item name="android:layout_height">wrap_content</item>-->
+    <!--        <item name="android:tint">?attr/colorOnPrimary</item>-->
+    <!--        <item name="android:background">@null</item>-->
+    <!--        <item name="android:maxWidth">24dp</item>-->
+    <!--        <item name="android:maxHeight">24dp</item>-->
+    <!--    </style>-->
+    <!--    <style name="dialog_linear">-->
+    <!--        <item name="android:layout_width">match_parent</item>-->
+    <!--        <item name="android:layout_height">wrap_content</item>-->
+    <!--        <item name="android:padding">10dp</item>-->
+    <!--        <item name="android:orientation">horizontal</item>-->
+    <!--    </style>-->
     <style name="dialog_background" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>
     </style>
+
     <style name="text_input_layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="android:layout_marginHorizontal">16dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginVertical">10dp</item>
     </style>
+
     <style name="text_input_field">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
@@ -120,6 +129,7 @@
         <item name="android:lines">1</item>
         <item name="android:inputType">text</item>
     </style>
+
     <style name="card">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -131,36 +141,43 @@
         <item name="cardPreventCornerOverlap">true</item>
         <item name="cardBackgroundColor">?attr/colorPrimaryVariant</item>
     </style>
+
     <style name="card_constraint">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">16dp</item>
     </style>
+
     <style name="card_header">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+
     <style name="card_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textSize">16sp</item>
     </style>
+
     <style name="card_subtitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textSize">14sp</item>
     </style>
+
     <style name="card_icon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
     </style>
+
     <style name="card_group">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:visibility">gone</item>
     </style>
+
     <style name="image_rounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">10dp</item>
@@ -171,8 +188,43 @@
         <item name="actionOverflowMenuStyle">@style/dialog_popup_menu.overflow</item>
     </style>
 
-    <style name="dialog_popup" parent="@style/Widget.MaterialComponents.PopupMenu"/>
+    <style name="dialog_popup" parent="@style/Widget.MaterialComponents.PopupMenu" />
+
     <style name="dialog_popup_menu.overflow" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
         <item name="android:popupBackground">@drawable/dialog_overflow_bg</item>
     </style>
+
+    <style name="text_onboard_text">
+        <item name="android:lineHeight">26dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="button_onboard_skip">
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:text">@string/onboard_button_skip</item>
+        <item name="android:backgroundTint">?attr/colorPrimaryVariant</item>
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
+    <style name="button_onboard_continue">
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:text">@string/onboard_button_continue</item>
+        <item name="android:backgroundTint">?attr/colorAccent</item>
+        <item name="android:textColor">?attr/colorPrimaryVariant</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
 </resources>
