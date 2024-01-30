@@ -35,11 +35,9 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
+        val context = requireContext()
 
-        // onboard screen testing
-        val isOnboardCompleted = false
-        if (isOnboardCompleted == false) {
-//            findNavController().navigate(R.id.action_home_to_onboard)
+        if (SharedPreferenceHelper.getInstance(requireContext()).getOnboardPref()) {
             startActivity(Intent(context, OnboardActivity::class.java))
         }
 
@@ -47,13 +45,12 @@ class HomeFragment : Fragment() {
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
 //        val buildingName = view.findViewById<TextView>(R.id.label_building_name)
 
-        val context = requireContext()
         val colorOnPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.RED)
 
         val currencyIcon = SharedPreferenceHelper.getInstance(context).getCurrencyPref(context)
         val derivedTotal = DatabaseHelper(context).getTotalValue()
 
-        totalValue.text = "$currencyIcon $derivedTotal" // TODO: Placeholders w/ string resource
+        totalValue.text = getString(R.string.label_building_value_builder, currencyIcon, derivedTotal)
         totalItems.text = DatabaseHelper(context).getTotalQuantity()
 
 //        val derivedName = "Sample House"

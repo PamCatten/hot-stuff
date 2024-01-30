@@ -1,5 +1,7 @@
 package com.example.hotstuffkotlin.onboard
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -7,6 +9,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.activity.addCallback
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
@@ -29,20 +32,15 @@ class OnboardFragment : Fragment() {
         // Disable onBack click
         requireActivity().onBackPressedDispatcher.addCallback(this) {}
 
-        val continueButton = view.findViewById<MaterialButton>(R.id.onboard_button)
-        continueButton.setOnClickListener {
+        val buttonContinue = view.findViewById<MaterialButton>(R.id.onboard_button)
+        buttonContinue.setOnClickListener {
             findNavController().navigate(R.id.action_onboard_to_view_pager)
         }
 
-//        val onBoardingFinished = true
-//            if(onBoardingFinished){
-//                findNavController().navigate(R.id.navigation_home)
-//            }else{
-//                findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
-//            }
-
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_onboard, container, false)
+        val disclaimer = view.findViewById<TextView>(R.id.onboard_text_disclaimer)
+        disclaimer.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.learn_eula_link))))
+        }
 //
 //    private fun onBoardingFinished(): Boolean{
 //        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)

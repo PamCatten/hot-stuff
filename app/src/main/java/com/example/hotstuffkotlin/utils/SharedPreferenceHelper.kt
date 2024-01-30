@@ -26,6 +26,20 @@ class SharedPreferenceHelper {
         }
     }
     fun getThemePref() = prefs?.getString("theme", "system")
+    fun getOnboardPref(): Boolean {
+        return prefs?.getBoolean("onboard", true) == true
+    }
+
+    //TEST DELETE WHEN DONE WITH ONBOARD
+    fun testOnboard() {
+        prefs!!.edit().putBoolean("onboard", true).apply()
+    }
+    //END
+
+    fun finishOnboarding() {
+        prefs!!.edit().putBoolean("onboard", false).apply()
+    }
+
     fun applyThemePref(themePreference: String?) {
         when (themePreference) {
             "light" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -57,7 +71,7 @@ class SharedPreferenceHelper {
             context.getString(R.string.label_tugrik) -> R.string.icon_tugrik
             context.getString(R.string.label_won) -> R.string.icon_won
             context.getString(R.string.label_yen_yuan) -> R.string.icon_yen_yuan
-            else -> R.string.icon_euro
+            else -> R.string.icon_dollar
         }
         return context.getString(icon)
     }

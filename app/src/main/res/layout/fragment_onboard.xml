@@ -47,7 +47,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="By clicking continue you are agreeing to our Terms."
+            android:autoLink="web"
+            android:textAlignment="center"
+            android:linksClickable="true"
+            android:text="@string/onboard_disclaimer"
             android:textColor="?attr/colorOnPrimary"
             android:textSize="14sp" />
     </LinearLayout>

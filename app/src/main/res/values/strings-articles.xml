@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="article_legal_disclosure">
+        Hot Stuff does not provide legal, financial, or insurance advice. This page is written
+        for informational purposes only, and is not a substitute for professional advice from a
+        licensed attorney, financial advisor, or insurance professional.
+</string>
+
+    <string name="article_getStarted">getStarted</string>
+    <string name="article_export">export</string>
+
+    <string name="article_whyCare">whyCare</string>
+    <string name="article_whyCare_title">Hot Stuff: Simplify Your Fire Claims</string>
+    <string name="article_whyCare_text">
+        House fires are sudden, chaotic events, and while the thought of one breaking out may seem
+        unlikely, a house fire is reported in the United States every 88 seconds¹.
+        Unfortunately for many, the aftermath can be just as painful as the fire itself, because
+        while fires burn out, their victim\'s trauma carries on. While only some suffer with
+        the painful physical reminders of a fire, all deal with the heavy emotional strain that
+        comes with the fear and anxiety of displacement or potential homelessness,
+        losing their sense of safety and security, and the mounting stress that comes with the
+        financial challenges of pulling their lives back together.
+
+        \n\nThis is where we can help, because Hot Stuff isn\'t just about reacting to a crisis; it\'s
+        about helping you avoid the worst of it. By using Hot Stuff to catalog your possessions in
+        advance, you\'re creating a digital inventory that serves as a comprehensive record of your
+        belongings. While the hope is that it is never necessary, if a fire occurs, having a
+        specific, detailed catalog in advance can put you on the path to:
+        \n\n1. Getting fair value for your possessions, without the influence of
+        self-interested insurance companies or independent adjusters
+        \n\n2. Expediting your claims process, so you can get back to restoring what was lost sooner
+        rather than later
+        \n\n3. Having the peace of mind knowing your possessions are secured, leaving you to free to
+        focus on what matters most in life: the stuff that money can\'t buy
+
+        \n\nTaking the time to plan ahead for these unexpected, traumatic times can make a real
+        difference when it matters most, because it\'s much easier to remember everything in a room
+        when it\'s right there in front of you, than days or weeks later when it\'s all gone.
+        Hot Stuff was created with this in mind, an app that people could trade a few rainy
+        afternoons using, for the peace of mind knowing that if something were to happen, they
+        would be better prepared for this horrific possibility.
+
+        \n\nHot Stuff was designed ultimately to be an accessible tool, it requires no internet
+        connection, collects no data, has no ads, is fully open sourced software, and perhaps most
+        importantly, is completely free (but if you\'re reading this you already knew that)!
+        If you find a bug, have an idea on how to improve the app, want to help translate or to
+        contribute in some other way, please get in touch! Community feedback is always welcomed
+        and encouraged.
+
+        \n\nSadly, Hot Stuff is not a one-stop shop for all of someone\'s needs after a fire.
+        While we can\'t protect people from suffering the injustice and heartache of losing where
+        they live, we are grateful and proud to be of assistance (for at least our small part) of
+        the long, challenging road back home.
+
+        \n\n\nSources:
+        \n1. Hall, S. (November 2023). Fire loss in the United States During 2022.
+        Quincy, MA:National Fire Protection Association.
+    </string>
+
+    <string name="article_jargonGlossary">jargon</string>
+    <string name="article_jargonGlossary_title">Glossary of Insurance Jargon</string>
+    <string name="article_jargonGlossary_text">
+        Fire insurance policies can be a difficult, complicated read if you aren\'t an insurance
+        industry professional. This glossary exists as an optional resource if you want help
+        understanding some of the terms you may have seen within the details of a fire insurance
+        policy or other related documents. Please note, the information provided below is meant to
+        serve as a general guide, it only covers the context of fire insurance, and is not exhaustive.
+        Different types of insurance and insurance providers may have varied interpretations,
+        definitions, or alternatives to the terms listed below.
+
+        \n\nIf you notice any discrepancies or feel unsure about any specific details of your policy,
+        you should seek clarification right away to avoid potential issues during a claim. Insurance
+        providers can use tricky language, so do your best to stay informed, review your policy regularly,
+        and make adjustments as needed to maintain your desired level of coverage for your property.
+
+        \n\nA
+        \n\nAccident
+        \nAn unforeseen act or result that may cause property damage. In some
+        policies, it is identified as occurring at a specific time and place. In others, it
+        includes continuous or repeated exposure to the same conditions.
+
+        \n\nAct of God (also known as a Catastrophe)
+        \nAn event caused by the forces of nature, without human intervention and which could not
+        have been prevented by reasonable action on behalf of the policyholder; for example, floods,
+        tornadoes, earthquakes, hurricanes, etc.
+
+        \n\nActual Cash Value
+        \nThe market value of lost or damaged property at the time of loss. This is generally in
+        contrast with another, more expensive form of reimbursement: replacement cost. Payout is
+        calculated as the actual cost of replacing property minus depreciation.
+
+        \n\nAdditional living expense
+        \nCoverage that provides a specified amount per day for additional expenses in the event
+        that you cannot live in your insured residence.
+
+        \n\nAdhesion
+        \nA special characteristic of most insurance contracts. Has non-negotiable terms set by the
+        insurance provider for which the purchasing customer may only accept or reject.
+
+        \n\nAgent
+        \nAn individual who acts as a representative of the provider and sells insurance, usually on
+        a commission basis. Generally, there are two types: exclusive (who sell for only
+        one provider), and non-exclusive (who sell for multiple).
+
+        \n\nAmendment (also known as an Endorsement)
+        \nA statement added to an insurance policy that alters, deletes or adds coverage, terms or
+        provisions of the policy.
+
+        \n\nAppraisal
+        \nAn evaluation process that determines the value of property, or the extent of damage,
+        usually performed by an authorized, impartial expert.
+
+        \n\nArson
+        \nIntentional and malicious burning of property.
+
+        \n\nB
+        \n\nC
+
+        \n\nCancellation
+        \nThe termination of a policy before its expiration date.
+
+        \n\nCatastrophe (also known as an Act of God)
+        \nA sudden, severe disaster that results in a large amount of damage affecting a specific
+        geographic area; for example: hurricanes, floods, tornadoes, etc.
+
+        \n\nClaim
+        \nA request for payment under a single item of coverage on an insurance policy.
+
+        \n\nClaimant
+        \nThe policyholder making a claim.
+
+        \n\nClaims Representative (also known as an Inside Adjuster)
+        \nAn employee at an insurance provider who handles a policyholder\'s claim.
+
+        \n\nClaimed Expenses
+        \nA request for payment for a claimant\'s out of pocket expenses.
+
+        \n\nCondition
+        \nUsed to describe the general maintenance and upkeep of property.
+
+        \n\nConditions
+        \nThe section or sections of a policy that explains the duties and responsibilities of the
+        policyholder and the insurance provider.
+
+        \n\nConstruction type
+        \nThe construction of the insured building; there are two common types for homes: frame
+        (wood, drywall, insulation) and masonry (bricks, stones, concrete blocks).
+
+        \n\nCoverage
+        \nThe protections and benefits provided to a policyholder by an insurance provider, as
+        outlined in an insurance contract.
+
+        \n\nD
+
+        \n\nDamage
+        \nLoss or harm to property.
+
+        \n\nDeclarations (also known as a Dec Page)
+        \nThe section of the policy that includes a summary of your policy, including personal and
+        related information such as your name and address; the property that is being insured, its
+        location and description; the policy period; the amount of insurance coverage, applicable
+        premiums, etc.
+
+        \n\nDefensible space
+        \nA buffer between buildings on a property and any long grass, trees, shrubs, or wildland area
+        surrounding them. Acts to minimize the radiant heat exposure and pathways wildfire can burn,
+        creating a barrier between the surrounding area and any structures on the property. In the US,
+        fire-prone areas tend to require anywhere between one to two-hundred feet of space.
+
+        \n\nDeductible
+        \nThe portion of a claim you pay out of pocket. Generally, choosing a higher deductible will
+        lower your insurance premiums.
+
+        \n\nDepreciation
+        \nThe decrease in value of any property due to age, wear and tear, or other related factors.
+
+        \n\nDwelling
+        \nThe section of a policy that covers the physical structure of the primary residence of a
+        property.
+
+        \n\nE
+
+        \n\nEndorsement (also known as an Amendment)
+        \nA provision or document added to an insurance policy that changes the original coverage
+        offered in the policy.
+
+        \n\nEquity
+        \nPercent of a policy paid.
+
+        \n\nEstimate
+        \nAn assessment of the cost to repair any damaged property.
+
+        \n\nExclusions
+        \nThe section of an insurance policy that excludes coverage for certain risks, persons,
+        properties, or locations.
+
+        \n\nF
+
+        \n\FAIR (Fair Insurance Requirements) Plan
+        \nA program to make fire and other forms of property insurance available to homeowners who
+        may have difficulty obtaining coverage from insurance providers for a variety of reasons;
+        including: being in areas prone to natural disasters, high-crime, being in disrepair,
+        or having many previous claims.
+
+        \n\nField Appraiser (also known as a Field Adjuster)
+        \nAn insurance representative who works primarily outside, often meeting
+        with policyholders face-to-face. Typical responsibilities include scene investigations,
+        negotiations with claimants, and conducting damage inspections.
+
+        \n\nFire insurance
+        \nThe section of a homeowner\'s policy that insures against direct loss by fire, smoke, and other
+        defined causes. Most have coverage for wildfires, but this is not always the case in
+        fire-prone areas.
+
+        \n\nFloater insurance
+        \nA type of policy that covers personal property as it moves anywhere within a specified
+        territory; provides additional coverage over what normal insurance policies do not.
+
+        \n\nG
+        \n\nH
+
+        \n\nHazard
+        \nSituations or conditions that increases the possibility or extent of a loss; for example:
+        supplemental heating devices, old wiring, smokers living in the residence, further distance
+        from fire stations, etc.
+
+        \n\nHomeowner
+        \nAn individual who owns and does not rent their residence.
+
+        \n\nHousehold Member
+        \nFamily members or individuals living within the policyholder\'s residence.
+
+        \n\nI
+
+        \n\nImprovements and Betterments
+        \nAdditions or changes made by a lessee or renter at their expense which enhance
+        the value of the occupied building. These become part of the realty (and are not legally
+        subject to removal) and require special insurance consideration.
+
+        \n\nIndemnity
+        \nThe insurance principle of putting the insured back in the same (or similar) financial
+        position after a loss as he or she was in before the loss occurred.
+
+        \n\nInside Adjuster (also known as a Claims Representative)
+        \nAn employee at an insurance provider who handles a policyholder\'s claim.
+
+        \n\nInsurable Interest
+        \nAny interest in a subject, or any legal relation to it, of such a nature that a certain
+        event (such as fire) might cause monetary loss requiring insurance.
+
+        \n\nInsurance Provider (also known as an Insurer, or Insurance Company)
+        \nAn organization that provides insurance.
+
+        \n\nInsured
+        \nA person or organization covered by an insurance policy.
+
+        \n\nInsuring Agreements
+        \nThe part or parts of an insurance policy that state the various coverages provided.
+
+        \n\nJ
+        \n\nK
+        \n\nL
+
+        \n\nLapse
+        \nA period of time when someone goes without insurance coverage.
+
+        \n\nLease
+        \nA contract granting use or occupation of property during a specified period, in exchange
+        for a specified rent.
+
+        \n\nLeaseholder
+        \nAn individual who possesses or has use of property through a lease.
+
+        \n\nLessee
+        \nAn individual to whom a lease is granted.
+
+        \n\nLien
+        \nAn underlying claim on property as a security for the payment of a debt or completion of duty.
+
+        \n\nLienholder
+        \nThe person or organization with a claim against property until some debt is paid off or
+        duty completed; generally the mortgage lender, such as a bank, credit union, or other type
+        of financial institution.
+
+        \n\nLimit
+        \nThe maximum amount of protection provided by the insurance provider to the policyholder for
+        a specific coverage.
+
+        \n\nLimit of Liability (also known as Limits of Insurance)
+        \nThe maximum amount an insurance provider will pay for a covered loss, as stated in the
+        policyholder\'s policy.
+
+        \n\nLoss
+        \nA measurable cost of direct and/or accidental damage to an insured property; the
+        basis for filing a claim.
+
+        \n\nLoss History
+        \nA record of prior claims the policyholder has filed.
+
+        \n\nLoss of Use
+        \nCompensation for losses the policyholder incurs due to the inability to use their property.
+
+        \n\nM
+
+        \n\nMisrepresentation
+        \nWritten or verbal statements that are misleading or untrue.
+
+        \n\nMitigation
+        \nSteps taken to prevent or reduce the amount or likelihood of loss.
+
+        \n\nMonoline
+        \nA policy written to cover a single line of insurance; for example: fire, flood,
+        earthquake, etc.
+
+        \n\nN
+
+        \n\nNamed insured (also known as a policyholder)
+        \nThe person or persons insured by the insurance policy. The names are listed on the
+        declarations page within the policy.
+
+        \n\nNamed perils
+        \nCovered hazards that are listed in an insurance policy.
+
+        \n\nNon-Renewal
+        \nWhen an insurance provider decides not to renew a policy at the end of its policy period;
+        providers are required to notify policyholders prior to dropping their coverage.
+
+        \n\nO
+
+        \n\nOccupancy
+        \nThe number of people living at the property, and whether they live there full-time.
+
+        \n\nOccurrence
+        \nAn event, or repeated exposure to conditions, which unexpectedly causes injury or damage
+        during the policy period.
+
+        \n\nOutbuildings (also known as Other Structures)
+        \nA structure located on the residence premises that is not directly attached to the
+        dwelling structure; for example: sheds, fences, detached garages, etc.
+
+        \n\nP
+
+        \n\nPeril
+        \nA cause of a possible accident, loss, or claim; for example: power surges, falling debris,
+        lightning strikes, etc.
+
+        \n\nPersonal property
+        \nTangible property that is not land, connected to land, and is movable in some way; for
+        example: furniture, appliances, electronics, etc. Standard policies limits the amount you can
+        claim per item, so policyholders may wish to acquire additional coverage to schedule
+        higher-value property items.
+
+        \n\nPolicy
+        \nA formal written contract for insurance between an insurance provider and a policyholder.
+
+        \n\nPolicy expiration date
+        \nThe date the policy period ends; generally found on the declarations page, insurance card,
+        and any cancellation or policy renewal notices.
+
+        \n\nPolicy period
+        \nThe length of time your policy is active and coverage is provided for.
+
+        \n\nPolicyholder (also known as the named insured)
+        \nThe person or persons insured by the insurance policy. The names are listed on the
+        declarations page within the policy.
+
+        \n\nPremium
+        \nThe price of the policy that a insurance provider charges in return for providing coverage
+        to the policyholder. Not to be confused with a rate.
+
+        \n\nProof of Loss
+        \nA statement made regarding the extent of the claim; it may be requested in accordance with
+        the conditions of the policy.
+
+        \n\nProperty
+        \nAnything that has value; there are two types: real property and personal property.
+
+        \n\nProperty fire wall
+        \nA physical wall with qualities of fire resistance and structural stability. Designed to
+        control the spread of a fire.
+
+        \n\nProtective devices
+        \nSafety equipment designed to prevent, protect or notify you in the event of an emergency;
+        for example: fire extinguishers, dead-bolt locks, fire alarms, smoke alarms and burglar alarms.
+
+        \n\nProximate Cause
+        \nAn act or omission initiating an unbroken sequence of events resulting in damage to property.
+
+        \n\nQ
+        \n\nR
+
+        \n\nRate
+        \nThe base rating units used to determine a policyholder\'s premium.
+
+        \n\nRating
+        \nThe determination of premium to be charged for coverage on a risk based upon risk
+        characteristics and actuarial calculations on the chance of loss.
+
+        \n\nReal property
+        \nLand and the permanent things attached to, embedded in, or growing on it; for example:
+        buildings, outdoor fixtures, machinery, etc.
+
+        \n\nRelease
+        \nA legally binding contract stating that all obligations past, present or future arising
+        from a particular accident or occurrence have been fulfilled.
+
+        \n\nRenewal
+        \nA policy issued to replace one that will expire by a certain date.
+
+        \n\nRenters Insurance
+        \nA type of property insurance providing coverage to an individual living in an apartment,
+        condominium or single family home owned by someone else.
+
+        \n\nReplacement cost
+        \nThe cost to repair or replace property with to the same standard and quality. This is in
+        contrast with a cheaper form of reimbursement called Actual Cash Value. Payout is calculated
+        as the cost of replacing property up to a limit of liability.
+
+        \n\nResidence premises
+        \nThe physical location of the property for which insurance coverage is provided.
+
+        \n\nRisk
+        \nThe chance of suffering a loss.
+
+        \n\nS
+
+        \n\nSalvage
+        \nDamaged property which is taken over by the insurance provider after payment of a claim.
+
+        \n\nScheduled Property
+        \nA listing of personal property items that are insured for a specific amount to that item’s
+        full value; for example: jewelry, art, designer clothes, etc. Items are usually scheduled
+        when they are higher in value and subject to limits of liability within the policy that are
+        lower than their value.
+
+        \n\nStatute of Limitation
+        \nA specified time period during which a policyholder can file a claim for damages, if
+        this period ends without a filed claim, you will not be able to get reimbursement. The
+        length of time you have to file varies depending on the territory the policy is in.
+
+        \n\nSub-limit
+        \nA specified amount less than the maximum limits on a policy. Sub-limits are noted for
+        specified coverages or types of property.
+
+        \n\nSubrogation
+        \nInsurance provider\'s right to legally pursue damages from a third party that caused an
+        insurance loss to the policyholder.
+
+        \n\nSupplement (also known as a Supplemental Estimate)
+        \nUsed to cover damage not included in the original estimate.
+        \nAdditional estimate of repair costs revealed after the initial assessment was done.
+
+        \n\nSupplemental heating device
+        \nA fuel-burning appliance used as secondary heating source; for example: wood, coal and pellet
+        stoves, freestanding fireplaces, etc. Residences with them tend to require special
+        requirements be met to be insurable. Small, portable space heating devices are generally not
+        considered supplemental heating devices.
+
+        \n\nSurcharge
+        \nA temporary increase in a premium that is assessed as a penalty to compensate
+        insurance providers for increased risk. They are usually added when providers identify
+        behavior they deem to be risky to insure, like missing payments, filing an excessive number
+        of claims, having lapses in your insurance coverage, etc.
+
+        \n\nT
+
+        \n\nTotal Loss
+        \nProperty that has sustained damage so extensive that rebuilding or replacing it is less
+        expensive than repairing it into safe, working order (depending on area regulations). Payout
+        is generally the limit of liability on the property.
+
+        \n\nU
+
+        \n\nUnderwriting
+        \nThe process an insurance provider uses to determine if someone is eligible for insurance
+        and, if so, how much that person should pay for insurance.
+
+        \n\nV
+        \n\nW
+
+        \n\nWear and Tear
+        \nGeneral or nonspecific damage that builds up over time.
+
+        \n\nX
+        \n\nY
+        \n\nZ
+    </string>
+
+    <string name="article_adjusters">adjusters</string>
+    <string name="article_adjusters_title">Public Adjusters: the Good and the Bad</string>
+    <string name="article_adjusters_text">
+    </string>
+
+    <string name="article_acknowledgements">acknowledgements</string>
+    <string name="article_acknowledgements_title">Acknowledgements</string>
+    <string name="article_acknowledgements_text">
+        We use the following open source libraries, modules, and frameworks to make Hot Stuff:
+
+        \n\nAndroidX modules:
+        \nCore KTX
+        \nLifecycle KTX
+        \nLiveData KTX
+        \nNavigation KTX
+
+        \n\nJetpack libraries:
+        \nAppCompat
+        \nCardView
+        \nPreference
+        \nRecyclerView
+
+        \n\nTesting:
+        \nAndroidX Test
+        \nEspresso
+        \nJUnit4
+
+        \n\nMiscellaneous:
+        \nAndroid ConstraintLayout
+        \nMaterial Components for Android
+        \ncom.chibatching.kotpref:kotpref
+        \ncom.github.PhilJay:MPAndroidChart
+    </string>
+</resources>

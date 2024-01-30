@@ -38,12 +38,14 @@ class ArticleFragment : Fragment() {
                 articleText.text = getText(R.string.article_whyCare_text)
             }
             getText(R.string.article_getStarted) -> {
-                articleTitle.text = getText(R.string.filler_article_title)
-                articleText.text = getText(R.string.filler_article_text)
+                articleTitle.text = ""
+                articleText.text = ""
+                articleDisclosure.text = ""
             }
             getText(R.string.article_export) -> {
-                articleTitle.text = getText(R.string.filler_article_title)
-                articleText.text = getText(R.string.filler_article_text)
+                articleTitle.text = ""
+                articleText.text = ""
+                articleDisclosure.text = ""
             }
             getText(R.string.article_jargonGlossary) -> {
                 articleTitle.text = getText(R.string.article_jargonGlossary_title)
