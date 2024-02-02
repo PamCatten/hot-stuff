@@ -80,8 +80,13 @@ class LearnFragment : Fragment() {
         }
 
         val buttonJargonGlossary = view.findViewById<TextView>(R.id.learn_resources_jargonGlossary)
+        val buttonAdjusters = view.findViewById<TextView>(R.id.learn_resources_adjusters)
         buttonJargonGlossary.setOnClickListener{
             bundle.putCharSequence("article", getText(R.string.article_jargonGlossary))
+            findNavController().navigate(R.id.navigation_article, bundle)
+        }
+        buttonAdjusters.setOnClickListener {
+            bundle.putCharSequence("article", getText(R.string.article_adjusters))
             findNavController().navigate(R.id.navigation_article, bundle)
         }
 

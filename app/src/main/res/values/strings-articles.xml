@@ -27,7 +27,7 @@
         belongings. While the hope is that it is never necessary, if a fire occurs, having a
         specific, detailed catalog in advance can put you on the path to:
         \n\n1. Getting fair value for your possessions, without the influence of
-        self-interested insurance companies or independent adjusters
+        self-interested insurance companies or public adjusters
         \n\n2. Expediting your claims process, so you can get back to restoring what was lost sooner
         rather than later
         \n\n3. Having the peace of mind knowing your possessions are secured, leaving you to free to
@@ -241,6 +241,10 @@
         \nThe insurance principle of putting the insured back in the same (or similar) financial
         position after a loss as he or she was in before the loss occurred.
 
+        \n\nIndependent Adjuster
+        \nA third-party contractor hired by an insurance provider to evaluating insurance claims to
+        determine (and if possible, minimize) the provider\'s liability.
+
         \n\nInside Adjuster (also known as a Claims Representative)
         \nAn employee at an insurance provider who handles a policyholder\'s claim.
 
@@ -386,6 +390,10 @@
         \n\nProximate Cause
         \nAn act or omission initiating an unbroken sequence of events resulting in damage to property.
 
+        \n\nPublic adjuster (also known as private adjusters)
+        \nAn third-party professional hired by a policyholder to help settle an insurance claim on
+        their behalf, generally for a flat percentage of the final claim settlement payout.
+
         \n\nQ
         \n\nR
 
@@ -487,8 +495,76 @@
     </string>
 
     <string name="article_adjusters">adjusters</string>
-    <string name="article_adjusters_title">Public Adjusters: the Good and the Bad</string>
+    <string name="article_adjusters_title">Public Adjusters: Pros and Cons</string>
     <string name="article_adjusters_text">
+    Dealing with insurance claims can be a daunting task by itself, and it is often made even worse
+    by the heartache and stress that comes in the aftermath of major damage. When facing this
+    challenge policyholders often find themselves at a crossroads: should they navigate the difficult
+    process alone or enlist the assistance of a public adjuster? While public adjusters can offer
+    valuable expertise, it\'s crucial to understand both the advantages and drawbacks before
+    deciding to hire one.
+
+    \n\nPros:
+
+    \n\nMaximizing Compensation
+    \nThe biggest advantage of hiring a public adjuster is their expertise. They do this through
+    industry knowledge; such as knowing where to look for potential missed damage or how best to
+    create records of what was lost; and through negotiation, to maximize their client\'s best
+    possible settlement.
+
+    \n\nGuidance
+    \nPublic adjusters have an in-depth knowledge of the claims processes. An adjuster\'s expertise
+    can help them translate jargon and legalese so clients can better understand the details of their
+    policies.
+
+    \n\nTime and Stress Relief
+    \nManaging an insurance claim can be a stressful and time-consuming process. Public adjusters
+    handle the paperwork, communication, and negotiations, allowing their clients to focus on
+    putting their lives back together.
+
+    \n\nDisputes
+    \nPublic adjusters can review and renegotiate settlements if a policyholder is unhappy with their
+    insurance provider\'s initial offer.
+
+    \n\nCons:
+
+    \n\nCost
+    \nThe largest drawback of hiring a public adjuster, the cost is usually between 5% to 20% of the
+    final settlement, or in some cases, a flat or hourly rate. While some areas may cap the total
+    fee an adjuster can receive, and some adjusters are open to negotiating their fees, policyholders
+    everywhere need to weigh the benefits adjusters provide with the costs, which are paid directly
+    from their payouts.
+
+    \n\nSuitability
+    \nNot every insurance claim warrants the involvement of a public adjuster. For smaller or
+    uncomplicated claims, it is likely more cost-effective for policyholders to handle them by
+    themselves, avoiding the added expense the adjuster will make on their settlement. In fact,
+    some adjusters will even refuse claims below a certain level of payout, so it\'s crucial that
+    policyholders assess the complexity of their claim before deciding whether a public adjuster is
+    necessary.
+
+    \n\nPayout Limits
+    \nPublic adjusters cannot get more money for their clients from insurance providers than they
+    have coverage for in their policy. The limit of insurance or limit of liability in a policy is
+    the maximum amount a policyholder can receive, and it\'s extremely unlikely a public adjuster
+    will be able to negotiate a settlement above that amount.
+
+    \n\nClaim Processing Delays
+    \nHiring a public adjuster often extends how long it takes for claims to be processed, as they
+    negotiate back and forth with the insurance provider over the final settlement amount. Generally,
+    the more complicated the claim, the longer it will take for a public adjuster and provider to
+    hash out the details, extending the period a policyholder has to wait for their payout by weeks
+    or months.
+
+    \n\nAvailability and Validity
+    \nOnly some areas require public adjusters to be licensed, in others no qualifications are
+    required at all, which can lead to vulnerable people being taken advantage of. When hiring an
+    adjuster policyholders should make sure they fully understand the details of the contract and
+    the structure of fees before signing anything.
+
+    \n\nUltimately, hiring a public adjuster can be a strategic move, but it\'s essential for
+    policyholders to carefully consider if the circumstances of their claim are appropriate for the
+    cost of professional assistance.
     </string>
 
     <string name="article_acknowledgements">acknowledgements</string>
@@ -496,24 +572,24 @@
     <string name="article_acknowledgements_text">
         We use the following open source libraries, modules, and frameworks to make Hot Stuff:
 
-        \n\nAndroidX modules:
+        \n\nAndroidX modules
         \nCore KTX
         \nLifecycle KTX
         \nLiveData KTX
         \nNavigation KTX
 
-        \n\nJetpack libraries:
+        \n\nJetpack libraries
         \nAppCompat
         \nCardView
         \nPreference
         \nRecyclerView
 
-        \n\nTesting:
+        \n\nTesting
         \nAndroidX Test
         \nEspresso
         \nJUnit4
 
-        \n\nMiscellaneous:
+        \n\nMiscellaneous
         \nAndroid ConstraintLayout
         \nMaterial Components for Android
         \ncom.chibatching.kotpref:kotpref
