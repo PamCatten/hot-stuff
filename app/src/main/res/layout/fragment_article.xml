@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:background="@null"
-            android:textColor="?attr/colorOnPrimary"
+            android:textColor="?attr/colorAccent"
             android:textSize="16sp"
             android:lineHeight="20dp"
             android:text="@string/label_name"/>

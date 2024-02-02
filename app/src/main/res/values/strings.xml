@@ -112,6 +112,7 @@
     <string name="label_detail">Attention to detail</string>
     <string name="label_jargon_glossary">Insurance jargon glossary</string>
     <string name="label_adjusters">Public adjusters</string>
+    <string name="label_likeKind">Like Kind and Quality</string>
     <string name="label_example_form">Example Proof of Loss form</string>
     <string name="label_acknowledgements">Acknowledgements</string>
     <string name="label_sourcecode">View source code</string>

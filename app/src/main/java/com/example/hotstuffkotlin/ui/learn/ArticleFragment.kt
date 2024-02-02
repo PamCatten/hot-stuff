@@ -47,6 +47,10 @@ class ArticleFragment : Fragment() {
                 articleText.text = ""
                 articleDisclosure.text = ""
             }
+            getText(R.string.article_detail) -> {
+                articleTitle.text = getText(R.string.article_detail_title)
+                articleText.text = getText(R.string.article_detail_text)
+            }
             getText(R.string.article_jargonGlossary) -> {
                 articleTitle.text = getText(R.string.article_jargonGlossary_title)
                 articleText.text = getText(R.string.article_jargonGlossary_text)
@@ -54,6 +58,10 @@ class ArticleFragment : Fragment() {
             getText(R.string.article_adjusters) -> {
                 articleTitle.text = getText(R.string.article_adjusters_title)
                 articleText.text = getText(R.string.article_adjusters_text)
+            }
+            getText(R.string.article_likeKind) -> {
+                articleTitle.text = getText(R.string.article_likeKind_title)
+                articleText.text = getText(R.string.article_likeKind_text)
             }
             getText(R.string.article_acknowledgements) -> {
                 articleTitle.text = getText(R.string.article_acknowledgements_title)

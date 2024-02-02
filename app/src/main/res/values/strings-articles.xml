@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="article_legal_disclosure">
-        Hot Stuff does not provide legal, financial, or insurance advice. This page is written
+        \nHot Stuff does not provide legal, financial, or insurance advice. This page is written
         for informational purposes only, and is not a substitute for professional advice from a
         licensed attorney, financial advisor, or insurance professional.
 </string>
@@ -55,6 +55,95 @@
         \n\n\nSources:
         \n1. Hall, S. (November 2023). Fire loss in the United States During 2022.
         Quincy, MA:National Fire Protection Association.
+    </string>
+
+    <string name="article_detail">detail</string>
+    <string name="article_detail_title">Attention to Detail: Why it Matters</string>
+    <string name="article_detail_text">
+        In the face of the unexpected, having a detailed home inventory is an essential part of
+        having a smooth and successful experience when filing insurance claims. Every home is filled
+        with valued possessions and taking the time to make records of them ensures that when
+        disaster strikes they can accurately be accounted for.
+
+        \n\nAttention to detail is the linchpin in accurately valuing possessions. Providing
+        specific, precise details, like serial number, model name, manufacturer, price, receipt, etc.
+        ensures that an insurance provider cannot undervalue a policyholder\'s belongings.
+
+        \n\nThe most efficient way to create a home inventory is by approaching it systematically.
+        Opening every drawer, every cabinet, and moving through the house, finishing one room and
+        then moving on to the next. Not only does this help ensure complete coverage, but it also
+        makes the challenge more manageable.
+
+        \n\nA home inventory is an ongoing process, not a one-time task, it\'s okay if it takes
+        several days, weeks, or months to finish. However, when finished it is important to stay on
+        top of updating the inventory, ideally a few times a year, to avoid forgetting about details
+        when adding new items or remembering to remove old ones.
+        Keeping an inventory current guarantees that coverage remains reflective of a home\'s true
+        value, and strengthens a policyholder\'s case during the claims process.
+
+        \n\nSome policyholders focus only on the larger, more expensive items, which is fair, people
+        have a lot of stuff, and recording all of it can be a time-consuming process. However, it is
+        important to remember that the little, mundane things in life can add up very quickly.
+
+        \n\nIn a total loss most people may forget about or skip over bathrooms entirely, and yet
+        they would likely be missing out on hundreds of dollars of losses. Life has gotten to be so
+        expensive, consider the cost of:
+
+        \n\nshampoos,
+        \nlotions,
+        \nconditioner,
+        \nscale,
+        \nsoap dispenser,
+        \ntoilet brush,
+        \nhairdryer,
+        \nbath mat,
+        \nshower curtain,
+        \ncurtain liner,
+        \ncurtain rod,
+        \ncurtain rings,
+        \nplunger,
+        \nsoap bars,
+        \nmedications,
+        \ntrash can,
+        \ntowels,
+        \ntoothpaste,
+        \nrazors,
+        \nhairbrushes,
+        \nnail clippers,
+        \nmouthwash,
+        \ntoothbrushes, etc.
+
+        \n\nThink of all the different items not mentioned here, and imagine trying to remember all
+        of them and more a few days after your life has fallen apart. These mundane items can be a
+        pain to record now, but again, they add up quick.
+
+    </string>
+
+    <string name="article_likeKind">likeKind</string>
+    <string name="article_likeKind_title">Like Kind and Quality</string>
+    <string name="article_likeKind_text">
+        \'Like kind and quality\' refers to a principle that, in the event of a covered loss, the
+        insurance provider is obligated to replace or repair the damaged property with items of a
+        similar nature and value. This principle ensures that policyholders are not left with
+        inferior replacements or repairs after a covered incident.
+
+        \n\nNot all insurance policies bind providers to the principle, as such policyholders may
+        want to familiarize themselves with the language specific to their policy, as different
+        providers can have different terms, definitions, and conditions of coverage.
+
+        \n\nLying on an insurance claim is a terrible idea, it is both illegal and can cause
+        policyholders even bigger problems (such as invalidating the entire claim). However,
+        sometimes it may make sense not to tell the whole truth; Particularly with items that
+        possess unique or specific features that contribute to their value, and may not have a
+        direct equivalent in the market that perfectly matches its distinct characteristics.
+
+        \n\nFor example, a vintage watch, a custom-made piece of furniture, a high-resolution camera,
+        or a rare collectible are all likely to have a combination of niche features that are
+        difficult for insurance providers to easily find replacements for on the open market. A
+        policyholder that strongly insists on a fair replacement for those features, with calm,
+        clear reasoning for their position, may find that the replacement cost of a comparable item
+        is likely to be fairly expensive, potentially more expensive than the appraised value of a
+        specific, very detailed item.
     </string>
 
     <string name="article_jargonGlossary">jargon</string>

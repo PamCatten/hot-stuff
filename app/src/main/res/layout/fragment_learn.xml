@@ -156,11 +156,18 @@
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_jargonGlossary"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <TextView
+                    android:id="@+id/learn_resources_likeKind"
+                    style="@style/card_subtitle"
+                    android:paddingVertical="16dp"
+                    android:text="@string/label_likeKind"
+                    app:layout_constraintTop_toBottomOf="@id/learn_resources_adjusters"
+                    app:layout_constraintLeft_toLeftOf="parent"/>
+                <TextView
                     android:id="@+id/learn_resources_exampleForm"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_example_form"
-                    app:layout_constraintTop_toBottomOf="@id/learn_resources_adjusters"
+                    app:layout_constraintTop_toBottomOf="@id/learn_resources_likeKind"
                     app:layout_constraintLeft_toLeftOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_resources_group"
@@ -170,6 +177,7 @@
                         learn_resources_attentionToDetail,
                         learn_resources_jargonGlossary,
                         learn_resources_adjusters,
+                        learn_resources_likeKind,
                         learn_resources_exampleForm"
                     tools:visibility="gone"/>
             </androidx.constraintlayout.widget.ConstraintLayout>

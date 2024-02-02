@@ -79,14 +79,24 @@ class LearnFragment : Fragment() {
             }
         }
 
+        val buttonDetail = view.findViewById<TextView>(R.id.learn_resources_attentionToDetail)
         val buttonJargonGlossary = view.findViewById<TextView>(R.id.learn_resources_jargonGlossary)
         val buttonAdjusters = view.findViewById<TextView>(R.id.learn_resources_adjusters)
+        val buttonLikeKind = view.findViewById<TextView>(R.id.learn_resources_likeKind)
+        buttonDetail.setOnClickListener {
+            bundle.putCharSequence("article", getText(R.string.article_detail))
+            findNavController().navigate(R.id.navigation_article, bundle)
+        }
         buttonJargonGlossary.setOnClickListener{
             bundle.putCharSequence("article", getText(R.string.article_jargonGlossary))
             findNavController().navigate(R.id.navigation_article, bundle)
         }
         buttonAdjusters.setOnClickListener {
             bundle.putCharSequence("article", getText(R.string.article_adjusters))
+            findNavController().navigate(R.id.navigation_article, bundle)
+        }
+        buttonLikeKind.setOnClickListener {
+            bundle.putCharSequence("article", getText(R.string.article_likeKind))
             findNavController().navigate(R.id.navigation_article, bundle)
         }
 
