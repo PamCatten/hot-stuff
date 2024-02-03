@@ -60,8 +60,8 @@
     <string name="label_theme">Theme</string>
     <string name="label_scale">Text Size</string>
     <string name="label_language">Language</string>
-    <string name="label_currency_summary">Choose your preference of currency icon \n\n
-        WARNING: Changing your preferred currency does not update previously entered values</string>
+    <string name="label_currency_summary">Choose your preference of currency icon
+        \n\nWARNING: Changing your preferred currency does not update previously entered values</string>
     <string name="label_scale_summary">Change the size of text throughout the app</string>
     <string name="label_theme_summary">Choose your preference of app theme</string>
     <string name="label_language_summary">Choose the language you want to use for text within the app</string>

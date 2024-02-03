@@ -31,6 +31,31 @@
 <!--            android:summary="@string/label_scale_summary"-->
 <!--            app:iconSpaceReserved="false"/>-->
     </PreferenceCategory>
+    <PreferenceCategory android:title="Building Information" app:iconSpaceReserved="false">
+        <EditTextPreference
+            android:defaultValue=""
+            android:title="Name"
+            android:dialogTitle="Building Name"
+            android:key="buildingName"
+            android:summary="Change your building\'s name"
+            app:iconSpaceReserved="false"/>
+<!--        <ListPreference-->
+<!--            android:defaultValue="house"-->
+<!--            android:title="Type"-->
+<!--            android:dialogTitle="Building Type"-->
+<!--            android:entries="@array/dropdown_building_type"-->
+<!--            android:entryValues="@array/dropdown_building_type_values"-->
+<!--            android:key="buildingType"-->
+<!--            android:summary="Change your building\'s type"-->
+<!--            app:iconSpaceReserved="false"/>-->
+<!--        <EditTextPreference-->
+<!--            android:defaultValue=""-->
+<!--            android:title="Description"-->
+<!--            android:dialogTitle="Building Description"-->
+<!--            android:key="buildingDescription"-->
+<!--            android:summary="Change your building\'s description"-->
+<!--            app:iconSpaceReserved="false"/>-->
+    </PreferenceCategory>
     <!--<PreferenceCategory app:title="Optional Features (Beta)" app:iconSpaceReserved="false" app:allowDividerAbove="false">
         <SwitchPreferenceCompat
             android:defaultValue="false"

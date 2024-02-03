@@ -87,8 +87,7 @@
         <item>norwegian</item>
     </string-array>
 
-    <!-- Auto complete options for text input fields -->
-    <string-array name="autocomplete_building">
+    <string-array name="dropdown_building_type">
         <item>Apartment</item>
         <item>Condo</item>
         <item>House</item>
@@ -97,6 +96,17 @@
         <item>Workplace</item>
         <item>Other</item>
     </string-array>
+
+    <string-array name="dropdown_building_type_values">
+        <item>apartment</item>
+        <item>condo</item>
+        <item>house</item>
+        <item>townhouse</item>
+        <item>vacation</item>
+        <item>workplace</item>
+        <item>other</item>
+    </string-array>
+    <!-- Auto complete options for text input fields -->
     <string-array name="autocomplete_room">
         <item>Attic</item>
         <item>Barn</item>

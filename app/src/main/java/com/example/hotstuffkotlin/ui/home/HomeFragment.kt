@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
-import com.example.hotstuffkotlin.ui.OnboardActivity
+import com.example.hotstuffkotlin.onboard.OnboardActivity
 import com.example.hotstuffkotlin.utils.ChartMarker
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper

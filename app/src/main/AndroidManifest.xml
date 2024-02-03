@@ -19,10 +19,11 @@
         android:theme="@style/AppTheme"
         tools:targetApi="34">
         <activity
-            android:name=".ui.OnboardActivity"
+            android:name=".onboard.OnboardActivity"
             android:exported="false"
             android:label=""
             android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
             android:parentActivityName=".ui.MainActivity"/>
         <activity
             android:name=".ui.MainActivity"
