@@ -1,4 +1,4 @@
-package com.example.hotstuffkotlin.onboard
+package com.example.hotstuffkotlin.ui.onboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,26 +7,26 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.hotstuffkotlin.R
-import com.example.hotstuffkotlin.databinding.FragmentOnboardTwoBinding
+import com.example.hotstuffkotlin.databinding.FragmentOnboardOneBinding
 import com.google.android.material.button.MaterialButton
 
-class SecondScreen : Fragment() {
+class FirstScreen : Fragment() {
 
-    private var _binding: FragmentOnboardTwoBinding? = null
+    private var _binding: FragmentOnboardOneBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = FragmentOnboardTwoBinding.inflate(inflater, container, false)
+        _binding = FragmentOnboardOneBinding.inflate(inflater, container, false)
         val view = binding.root
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.onboard_viewPager)
 
-        val continueButton = view.findViewById<MaterialButton>(R.id.onboard_two_continue_button)
+        val continueButton = view.findViewById<MaterialButton>(R.id.onboard_one_continue_button)
         continueButton.setOnClickListener {
-            viewPager?.currentItem = 2
+            viewPager?.currentItem = 1
         }
 
-        val skipButton = view.findViewById<MaterialButton>(R.id.onboard_two_skip_button)
+        val skipButton = view.findViewById<MaterialButton>(R.id.onboard_one_skip_button)
         skipButton.setOnClickListener {
             viewPager?.currentItem = 3
         }

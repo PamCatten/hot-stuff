@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/container_fragment"
-    tools:context=".onboard.OnboardActivity">
+    tools:context=".ui.onboard.OnboardActivity">
     <include
         layout="@layout/toolbar_onboard"
         android:layout_height="1dp"

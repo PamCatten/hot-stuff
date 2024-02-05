@@ -1,4 +1,4 @@
-package com.example.hotstuffkotlin.onboard
+package com.example.hotstuffkotlin.ui.onboard
 
 import android.content.Intent
 import android.net.Uri

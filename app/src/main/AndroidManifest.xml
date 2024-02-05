@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="34">
         <activity
-            android:name=".onboard.OnboardActivity"
+            android:name=".ui.onboard.OnboardActivity"
             android:exported="false"
             android:label=""
             android:theme="@style/AppTheme"

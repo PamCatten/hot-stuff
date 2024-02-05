@@ -14,8 +14,8 @@
     <string name="label_report">Report Bug</string>
     <string name="label_feedback">Send Feedback</string>
     <!-- Main: Create Dialog Labels -->
-    <string name="label_create_item">Create a new item</string>
-    <string name="label_create_building">Create a new building</string>
+<!--    <string name="label_create_item">Create a new item</string>-->
+<!--    <string name="label_create_building">Create a new building</string>-->
     <!-- Home: Placeholder Labels -->
     <string name="label_building_value">Total Building Value</string>
     <string name="label_building_value_placeholder">$ 0.00</string>
@@ -23,7 +23,7 @@
     <string name="label_building_quantity_placeholder">0 items</string>
     <string name="label_chart_type_placeholder">Item Distribution</string>
     <string name="label_building_value_builder">%1$s %2$s</string>
-    <!-- CreateItem / EditItem / ItemDetail: InputText Hints, Button Labels -->
+    <!-- CreateItem / EditItem / ItemDetail / CreateBuilding: InputText Hints, Button Labels -->
     <string name="label_name">Name</string>
     <string name="label_quantity">Quantity</string>
     <string name="label_category">Category</string>
@@ -34,6 +34,8 @@
     <string name="label_create">Save item</string>
     <string name="label_save">Save</string>
     <string name="label_edit">Edit</string>
+    <string name="label_type">Type</string>
+    <string name="label_create_building">Create Building</string>
     <!-- Settings: Currency Icons -->
     <string name="icon_bitcoin">₿</string>
     <string name="icon_dollar">$</string>
@@ -151,7 +153,7 @@
     <string name="onboard_four_title">Peace of mind, simplified</string>
     <string name="onboard_four_text">
         Put yourself on the path to peace of mind by securing your belongings digitally.
-        Now, with the introductions out of the way, let\'s get you prepared for the unexpected!
+        Let\'s get you prepared for the unexpected!
     </string>
     <string name="feedback_email">campatten.dev@outlook.com</string>
     <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>

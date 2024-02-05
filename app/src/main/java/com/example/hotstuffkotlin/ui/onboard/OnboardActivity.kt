@@ -1,4 +1,4 @@
-package com.example.hotstuffkotlin.onboard
+package com.example.hotstuffkotlin.ui.onboard
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
