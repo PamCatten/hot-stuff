@@ -21,11 +21,6 @@
         android:label=""
         tools:layout="@layout/fragment_view_pager">
         <action
-            android:id="@+id/action_view_pager_to_main_activity"
-            app:destination="@id/navigation_main_activity"
-            app:popUpTo="@id/navigation_main_activity"
-            app:popUpToInclusive="true" />
-        <action
             android:id="@+id/action_view_pager_to_create_building"
             app:destination="@id/navigation_create_building"/>
     </fragment>
@@ -33,7 +28,13 @@
         android:id="@+id/navigation_create_building"
         android:name="com.example.hotstuffkotlin.ui.onboard.CreateBuildingFragment"
         android:label=""
-        tools:layout="@layout/fragment_create_building"/>
+        tools:layout="@layout/fragment_create_building">
+        <action
+            android:id="@+id/action_create_building_to_main_activity"
+            app:destination="@id/navigation_main_activity"
+            app:popUpTo="@id/navigation_main_activity"
+            app:popUpToInclusive="true"/>
+    </fragment>
     <activity
         android:id="@+id/navigation_main_activity"
         android:name="com.example.hotstuffkotlin.ui.MainActivity"

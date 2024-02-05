@@ -217,7 +217,7 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:text">@string/onboard_button_continue</item>
+        <item name="android:text">@string/onboard_button_move</item>
         <item name="android:backgroundTint">?attr/colorAccent</item>
         <item name="android:textColor">?attr/colorPrimaryVariant</item>
     </style>

@@ -29,6 +29,7 @@ class DatabaseHelper(context: Context?) :
             "$COLUMN_VALUE_ITEM MONEY, " +
             "$COLUMN_IMAGE_PATH_ITEM TEXT, " +
             "$COLUMN_DESCRIPTION_ITEM TEXT);"
+
         val queryBuilding = "CREATE TABLE $TABLE_NAME_BUILDING (" +
             "$COLUMN_ID_BUILDING INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COLUMN_NAME_BUILDING TEXT, " +
@@ -86,11 +87,12 @@ class DatabaseHelper(context: Context?) :
 
     // As of now, addBuilding will only be called once, during the onboarding process, and
     // deleteBuilding will never be called, but the current plan is to support multiple buildings
-    // in the future, so I'm going to leave them in to help future Cam out.
-    fun addBuilding(name: String, description: String?) {
+    // in the future
+    fun addBuilding(name: String, type: String?, description: String?) {
         val db : SQLiteDatabase = this.writableDatabase
         val cv = ContentValues()
         cv.put(COLUMN_NAME_BUILDING, name)
+        cv.put(COLUMN_TYPE_BUILDING, type)
         cv.put(COLUMN_DESCRIPTION_BUILDING, description)
         val result: Long =  db.insert(TABLE_NAME_BUILDING, null, cv)
         if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Database insertion failed.", Toast.LENGTH_SHORT).show()
@@ -274,6 +276,7 @@ class DatabaseHelper(context: Context?) :
         private const val TABLE_NAME_BUILDING: String = "building_manifest"
         private const val COLUMN_ID_BUILDING: String = "building_id"
         private const val COLUMN_NAME_BUILDING: String = "building_name"
+        private const val COLUMN_TYPE_BUILDING: String = "building_type"
         private const val COLUMN_DESCRIPTION_BUILDING: String = "building_description"
 
         private const val PAGINATION_DATA_LIMIT : Int = 20

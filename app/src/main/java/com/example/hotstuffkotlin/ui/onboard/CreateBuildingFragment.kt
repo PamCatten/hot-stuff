@@ -12,8 +12,13 @@ import androidx.activity.addCallback
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentCreateBuildingBinding
+import com.example.hotstuffkotlin.utils.DatabaseHelper
+import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -31,12 +36,13 @@ class CreateBuildingFragment : Fragment() {
         // Disable onBack click
         requireActivity().onBackPressedDispatcher.addCallback(this) {}
 
-        val buildingName = view.findViewById<TextInputLayout>(R.id.building_name_container)
-        val buildingNameText = view.findViewById<TextInputEditText>(R.id.building_name_field)
-        val buildingType = view.findViewById<TextInputLayout>(R.id.building_type_container)
-        val buildingTypeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.building_type_field)
-        val buildingDescription = view.findViewById<TextInputLayout>(R.id.building_description_container)
-        val buildingDescriptionText = view.findViewById<TextInputEditText>(R.id.building_description_field)
+        val buildingName = view.findViewById<TextInputLayout>(R.id.create_building_name_container)
+        val buildingNameText = view.findViewById<TextInputEditText>(R.id.create_building_name_field)
+        val buildingType = view.findViewById<TextInputLayout>(R.id.create_building_type_container)
+        val buildingTypeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_building_type_field)
+        val buildingDescription = view.findViewById<TextInputLayout>(R.id.create_building_desc_container)
+        val buildingDescriptionText = view.findViewById<TextInputEditText>(R.id.building_create_desc_field)
+        val createBuildingButton = view.findViewById<MaterialButton>(R.id.building_create_button)
 
         val adapter = ArrayAdapter(requireContext(), com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
             resources.getStringArray(R.array.dropdown_building_type))
@@ -50,22 +56,44 @@ class CreateBuildingFragment : Fragment() {
             }
             if (!focused) buildingName.helperText = validName()
         }
-        buildingTypeText.setOnFocusChangeListener { _, focused ->
-            fun validCategory(): String? {
-                buildingTypeText.error = null
-                return if (buildingTypeText.text == null) "Required"
-                else null
-            }
-            if (!focused) buildingType.helperText = validCategory()
-        }
-//        roomText.setOnFocusChangeListener { _, focused ->
-//            fun validRoom(): String? {
-//                roomText.error = null
-//                return if (roomText.text.toString() == "" || roomText.text == null) "Required"
+//        buildingTypeText.setOnFocusChangeListener { _, focused ->
+//            fun validType(): String? {
+//                buildingTypeText.error = null
+//                return if (buildingTypeText.text.isEmpty()) "Required"
 //                else null
 //            }
-//            if (!focused) roomContainer.helperText = validRoom()
+//            if (!focused) buildingType.helperText = validType()
 //        }
+
+        createBuildingButton.setOnClickListener {
+            fun confirmForm() {
+                DatabaseHelper(requireContext()).addBuilding(
+                    name = buildingNameText.text.toString().trim(),
+                    type = buildingTypeText.text.toString().trim(),
+                    description = buildingDescriptionText.text.toString().trim())
+
+                SharedPreferenceHelper.getInstance(requireContext()).finishOnboarding()
+                findNavController().navigate(R.id.action_create_building_to_main_activity)
+                requireActivity().finish()
+            }
+            fun checkForm() {
+                val nameCheck = (buildingNameText.text == null) || (buildingNameText.text.toString() == "")
+//                val typeCheck = buildingTypeText.text.isEmpty()
+
+                if (nameCheck) buildingNameText.error = getText(R.string.label_required_hint)
+//                if (typeCheck) buildingTypeText.error = getText(R.string.label_required_hint)
+
+                if (nameCheck) {
+                    val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(), R.style.dialog_alert)
+                    alertDialogBuilder.setTitle(R.string.label_dialog_create_title)
+                    alertDialogBuilder.setMessage(R.string.label_dialog_create_building_body)
+                    alertDialogBuilder.setPositiveButton(getText(R.string.label_dialog_positive)) { dialog, _ -> dialog.dismiss() }
+                    val alertDialog = alertDialogBuilder.create()
+                    alertDialog.show()
+                } else confirmForm()
+            }
+            checkForm()
+        }
 
 //
 //    private fun onBoardingFinished(): Boolean{

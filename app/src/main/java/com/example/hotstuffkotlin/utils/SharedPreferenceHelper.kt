@@ -40,6 +40,10 @@ class SharedPreferenceHelper {
         prefs!!.edit().putBoolean("onboard", false).apply()
     }
 
+    fun getBuildingNamePref(): String? {
+        return prefs?.getString("buildingName", "Test")
+    }
+
     fun applyThemePref(themePreference: String?) {
         when (themePreference) {
             "light" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)

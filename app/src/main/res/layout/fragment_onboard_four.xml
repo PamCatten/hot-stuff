@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/button_onboard_continue"
-            android:text="@string/onboard_button_done"
+            android:text="@string/onboard_button_continue"
             app:cornerRadius="25dp"
             app:layout_constraintVertical_bias="1"
             app:layout_constraintTop_toBottomOf="@id/onboard_four_text"

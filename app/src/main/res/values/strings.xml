@@ -34,7 +34,9 @@
     <string name="label_create">Save item</string>
     <string name="label_save">Save</string>
     <string name="label_edit">Edit</string>
-    <string name="label_type">Type</string>
+    <string name="label_building_name">Building name</string>
+    <string name="label_building_type">Building type</string>
+    <string name="label_building_description">Brief description</string>
     <string name="label_create_building">Create Building</string>
     <!-- Settings: Currency Icons -->
     <string name="icon_bitcoin">₿</string>
@@ -124,6 +126,7 @@
     <string name="label_dialog_positive">OK</string>
     <string name="label_dialog_create_title">Missing required value</string>
     <string name="label_dialog_create_body">To continue, make sure your item has all mandatory information filled out</string>
+    <string name="label_dialog_create_building_body">To continue, make sure your building has all mandatory information filled out</string>
 
     <!-- Web Links -->
     <string name="learn_repo_link">https://github.com/PamCatten/hot-stuff-kotlin</string>
@@ -132,7 +135,8 @@
 
     <string name="onboard_disclaimer">By clicking continue you are agreeing to our <a href="https://github.com/PamCatten/hot-stuff-kotlin/blob/main/EULA">Terms of Service.</a></string>
     <string name="onboard_button_skip">SKIP</string>
-    <string name="onboard_button_continue">NEXT</string>
+    <string name="onboard_button_move">NEXT</string>
+    <string name="onboard_button_continue">CONTINUE</string>
     <string name="onboard_button_done">GET STARTED</string>
 
     <string name="onboard_one_title">Welcome aboard!</string>
@@ -152,9 +156,17 @@
     </string>
     <string name="onboard_four_title">Peace of mind, simplified</string>
     <string name="onboard_four_text">
-        Put yourself on the path to peace of mind by securing your belongings digitally.
-        Let\'s get you prepared for the unexpected!
+        By securing your belongings digitally, you\'re giving yourself the peace of mind of being
+        prepared for the unexpected. Stay with us for one more step and we can help get you there!
     </string>
+    <string name="onboard_create_building_title">No place like home</string>
+    <string name="onboard_create_building_text">
+        Before can you start cataloging your belongings, we need some basic details about your home to
+        help organize things behind the scenes.
+
+        \n\nThese values appear only in the app, and anything you enter here can be changed later.
+    </string>
+
     <string name="feedback_email">campatten.dev@outlook.com</string>
     <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>
     <string name="feedback_info_body">
