@@ -122,7 +122,7 @@ class ItemsFragment : Fragment() {
                             override fun onQueryTextChange(newText: String): Boolean {
                                 if (newText.isEmpty()) {
                                     items.clear()
-                                    adapter.searchClear(items)
+                                    adapter.clearSearchResults()
                                     query = null
                                     for (i in DatabaseHelper(requireContext()).getDataRange()) items.add(i)
                                 } else {

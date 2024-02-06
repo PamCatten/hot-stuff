@@ -7,9 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.models.Item
-class Adapter(private var items : List<Item>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(private var items: MutableList<Item>): RecyclerView.Adapter<Adapter.ViewHolder>() {
 
-    private lateinit var mListener : OnItemClickListener
+    private lateinit var mListener: OnItemClickListener
     interface OnItemClickListener { fun onItemClick(position : Int) }
     fun setOnItemClickListener(listener: OnItemClickListener){
         mListener = listener
@@ -33,14 +33,18 @@ class Adapter(private var items : List<Item>) : RecyclerView.Adapter<Adapter.Vie
         holder.itemQuantity.text = quantityString
     }
 
-    fun searchClear(updatedItemsArray: ArrayList<Item>) {
-        items = updatedItemsArray
+    /**
+     * Clears search results stored in the [Adapter] and notifies the RecyclerView ViewHolder of the
+     * search results removal.
+     */
+    fun clearSearchResults() {
+        items.clear()
         notifyItemRangeRemoved(0, itemCount)
     }
+
     fun searchInsert(insertPosition: Int, updatedItemsArray: ArrayList<Item>) {
         items = updatedItemsArray
         notifyItemInserted(insertPosition)
-//        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {
