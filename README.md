@@ -9,7 +9,7 @@ Hot Stuff is an offline Android app designed to help users quickly record and ag
 ## Getting Started
 // TODO: Installation steps, links to Google Play and anywhere else HS is available on
 
-### Supported Versions
+#### Supported Versions
 Currently, this app supports a minimum Android SDK version of **33**, and the target SDK version is **34**.
 
 ## Documentation
@@ -46,12 +46,14 @@ Similar deployed software that helps users record, sort, and list their items on
 * [My Stuff Organizer](https://play.google.com/store/apps/details?id=com.ebizzapps.mystufforganizer&hl=en&gl=US)
 
 ## Contributing
+Bug reports, feature requests, questions, and pull requests always welcome! 
 
+Check out our [Contributing Guidelines](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/CONTRIBUTING.md).
 ## Legal
 #### Developers
 This project is FOSS (Free and Open Source Software) licensed under the Apache License, Version 2.0. You can read the license in its entirety either [here](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/LICENSE) or [here](https://www.apache.org/licenses/LICENSE-2.0).
 #### Users
-This app is subject to the Terms of Use laid out [here](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/TERMS).
+This app is subject to our [Terms of Use](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/TERMS).
 
 
 ## Contact
