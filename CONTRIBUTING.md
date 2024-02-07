@@ -1,13 +1,13 @@
 # Contributing Guidelines
 
 The biggest ongoing priority with Hot Stuff is continuing to improve accessibility, including keeping it as easy as possible for contributers to 
-make the features, bug-fixes, and other changes that will continue to improve user experience all around the world, without sacrificing code quality. 
+make the changes that will continue to improve user experience all around the world, without sacrificing code quality. 
 
 That being said, code quality remains an ever-present issue in keeping projects maintainable, so please follow the contributer guidelines so 
 that Hot Stuff stays organized.
 
 ## Submitting issues
-As stated before, bug reports, feature requests, and questions are all welcome. Submit issues [here](https://github.com/PamCatten/hot-stuff-kotlin/issues).
+As always, bug reports, feature requests, and questions are all welcome. Issues can be submitted [here](https://github.com/PamCatten/hot-stuff-kotlin/issues).
 
 There are two main issue templates, one for **bug reports** and another for **feature requests**. Please use them! You're issue will be much easier to understand, and bugs 
 easier to fix, if you follow the templates. If your issue doesn't fit into those, no worries, just use the generic template.
@@ -25,14 +25,14 @@ When submitting a feature request:
 ## Submitting PRs
 These guidelines exist to make life easy for all of us, so please try your best to follow them, I promise you 
 that this process is much more fun when things can move along efficiently. 
-0. Search open pull requests AND existing issues to make sure the problem/feature you're solving/adding isn't already being worked on or has an open pull request
-1. Fork the [repo](https://github.com/PamCatten/hot-stuff-kotlin)
-2. Create a new branch based on `main`, and name it something related to your changes
-3. Add your commits, following the [Commit Style Guide](#commit-style-guide)
-4. Write test coverage for your changes
-5. Create the pull request, and resolve any identified issues
-6. Wait for merge approval
-7. Celebrate!
+1. Search open pull requests AND existing issues to make sure the problem/feature you're solving/adding isn't already being worked on or has an open pull request
+2. Fork the [repo](https://github.com/PamCatten/hot-stuff-kotlin)
+3. Create a new branch based on `main`, and name it something related to your changes
+4. Add your commits, following the [Commit Style Guide](#commit-style-guide)
+5. Write test coverage for your changes
+6. Create the pull request, and resolve any identified issues
+7. Wait for merge approval
+8. Celebrate!
 
 ## Commit Style Guide
 Hot Stuff is a baby. We're a young project with some room to grow, so we're easy, 
@@ -65,4 +65,4 @@ Try to follow the more or less commonly accepted format that follows (lifted fro
 If you're planning a big change, feel free to start a [discussion](https://github.com/PamCatten/hot-stuff-kotlin/discussions) or reach out over [email](mailto:campatten.dev@outlook.com), 
 people may be able to help!
 
-Hey! Thanks for taking the time to read Hot Stuff's contributing guidelines! You're welcome here any time.
+Hey, thanks for taking the time to read the contributing guidelines! Fun fact: you are now a member of Hot Stuff's really cool people club, welcome aboard!
