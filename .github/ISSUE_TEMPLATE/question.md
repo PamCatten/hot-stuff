@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**BEFORE YOU SUBMIT, CONSIDER MAKING A [DISCUSSION](https://github.com/PamCatten/hot-stuff-kotlin/discussions) FIRST OR REACHING OUT OVER [email](mailto:campatten.dev@outlook.com)**
+**BEFORE YOU SUBMIT, PLEASE SEARCH THROUGH PRIOR ISSUES TO SEE IF YOUR QUESTION HAS ALREADY BEEN ANSWERED, CHECK THE FAQ, AND CONSIDER MAKING A [DISCUSSION](https://github.com/PamCatten/hot-stuff-kotlin/discussions) FIRST OR REACHING OUT OVER [EMAIL](mailto:campatten.dev@outlook.com)**
 
 **Question**
 Your question
