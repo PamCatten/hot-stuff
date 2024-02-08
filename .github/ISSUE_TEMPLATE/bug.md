@@ -1,6 +1,6 @@
 ---
 name: BUG
-about: Create a report to help us improve Hot Stuff!
+about: Found a bug? Create a report to help us improve Hot Stuff!
 title: "[BUG]"
 labels: bug
 assignees: ''
