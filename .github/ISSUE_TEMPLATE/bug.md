@@ -1,5 +1,5 @@
 ---
-name: BUG
+name: Bug
 about: Found a bug? Create a report to help us improve Hot Stuff!
 title: "[BUG]"
 labels: bug
