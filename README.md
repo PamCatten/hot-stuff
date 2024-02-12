@@ -17,16 +17,27 @@ See the documentation for descriptions and usage examples of Hot Stuff's functio
 
 ## Design
 ### Design Document
-See the [technical design document](https://docs.google.com/document/d/177xGpi3BK14RevmSoKWCA5AEw8B0tt4f7ILGGo3Y3MI/edit#heading=h.j040vupqoagj) for Hot Stuff.
+See the [technical design document](https://docs.google.com/document/d/177xGpi3BK14RevmSoKWCA5AEw8B0tt4f7ILGGo3Y3MI/edit#heading=h.j040vupqoagj) for more details about how or why Hot Stuff is in its current state. 
 ### Design Philosophy
-Hot Stuff was not built with the intention of being the end-all be-all feature-laden king of the Android home inventory software market. Ultimately, I believe these types of app to be imperfect tools for what they're charged with, so the goal was to make a middleman that was as helpful, unobstrusive, and easy-to-use as possible, to hopefully aid people as they transistioned to the preferred format of insurance providers—the spreadsheet. 
+Filing an insurance claim is a difficult process, especially in the wake of fires or other devastating emergencies; Hot Stuff was built with this in mind.
+It's designed to provide a simple, accessible solution for managing belongings, and to streamline the cataloguing process without overwhelming users with unneded complexity. 
 
-// FINISH SOAPBOX HERE, KEEP IT BRIEF
+The underlying purpose of Hot Stuff is to serve as a bridge between traditional methods and the spreadsheet-based inventory management software preferred by insurance providers. While spreadsheets can be convenient for people who are familiar with computers, we know that some people find using these programs challenging, and would prefer to use applications on their mobile device instead. Hot Stuff exists to serve these needs and to provide a middle ground between methods by offering an easy-to-use interface for users to work with on their mobile devices, that can then, with permission, convert their information to work within spreadsheet-based software if users wish to transition formats.
 
-The trade-off for storing records locally are brutal; no information is shared between devices, meaning that upon deletion or device destruction, everything—potentially hours of work, is lost, with no potential for recovery. Devastating.
+Recognizing the importance of accessibility, Hot Stuff is built to operate entirely offline. This means that users can manage their inventory data regardless of internet connectivity, making it a reliable solution for remote or unstable network environments. It also means that users have complete privacy and security, because their sensitive inventory information never leaves their device. 
 
-That is to say that ideally, Hot Stuff has a shelf life, because the risks borne of an extended stay after users start adding items are too great. The optimal lifecycle should look a little like: users download the app, learn a little about the process and their insurance, record belongings at their convenience, transfer the manifest to a spreadsheet via .CSV, and then delete the app and get along with their lives. 
+However, it's essential to acknowledge the inherent trade-off associated with local storage: users bear the responsibility of their data, increasing the risk of irreversible data loss by app deletion or device destruction as time goes on. Therefore, Hot Stuff has a built-in shelf-life. While it serves as a valuable tool for recording and organizing belongings, its ultimate purpose is to be a helpful, unobstrusive, and easy-to-use middleman that helps users transition to a better, more permanent storage solution. 
 
+We *strongly* suggest the following lifecycle for Hot Stuff usage. Users should: 
+* Download the application
+* Familiarize themselves with the inventory process and their insurance requirements
+* Record their belongings at their convenience and to their best satisfaction
+* Export their inventory information to a spreadsheet for long-term maintenance and storage
+* Tearfully wave goodbye and delete the application
+
+By embracing this lifecycle, users will both mitigate the risks associated with extended reliance on the app, and help ensure the long-term safety of their inventory data.
+
+When designing Hot Stuff, our hope was to create a companion for our users that could both help safeguard peace of mind in the day-to-day, or help ease the burden that comes in the aftermath of tragedy. If we succeeded, and you have the time to do so, consider getting involved; If we failed, consider giving us some [feedback](https://github.com/PamCatten/hot-stuff-kotlin/issues/new?assignees=&labels=enhancement&projects=&template=feature.md&title=%5BFEATURE%5D): we've come a long way already, but there's always more we can do.
 ## Accessibility
 // TODO: Extremely important, include references to all work done for this objective
 ### Screen Reader Support
@@ -34,7 +45,7 @@ That is to say that ideally, Hot Stuff has a shelf life, because the risks borne
 ### Additional Language Support
 
 ## Similar software
-The format of Hot Stuff is entirely my own creation, which is unfortunate, because it means I put a lot time into re-inventing stuff that already exists! If, like me, you didn't know the name of this type of project, and as a result, didn't know what to google when you started, these apps are called home inventory or inventory management software. 
+The format of Hot Stuff is entirely our own creation, which is unfortunate, because it means we put a lot time into re-inventing stuff that already exists! If, like us, you didn't know the name of this type of project, and as a result, didn't know what to google when you started, these apps are called home inventory or inventory management software. 
 
 Due to its offline nature, FOSS-ness, requiring no account or personal information, and a (relatively) lighter size, Hot Stuff still serves a niche unfilled by some of the other software listed below; with the caveat that the general structure will likely be similar to some, if not all of the other applications.  
 
