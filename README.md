@@ -17,6 +17,7 @@ See the documentation for descriptions and usage examples of Hot Stuff's functio
 
 ## Design
 ### Design Document
+See the [technical design document](https://docs.google.com/document/d/177xGpi3BK14RevmSoKWCA5AEw8B0tt4f7ILGGo3Y3MI/edit#heading=h.j040vupqoagj) for Hot Stuff.
 ### Design Philosophy
 Hot Stuff was not built with the intention of being the end-all be-all feature-laden king of the Android home inventory software market. Ultimately, I believe these types of app to be imperfect tools for what they're charged with, so the goal was to make a middleman that was as helpful, unobstrusive, and easy-to-use as possible, to hopefully aid people as they transistioned to the preferred format of insurance providers—the spreadsheet. 
 
