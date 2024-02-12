@@ -35,13 +35,13 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
-                android:text="No items found!"
+                android:text="@string/label_no_items"
                 app:layout_constraintTop_toBottomOf="@id/items_empty_image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/itemsRecyclerView"
+            android:id="@+id/items_recycler_view"
             android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

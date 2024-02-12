@@ -10,7 +10,6 @@ import com.github.mikephil.charting.utils.MPPointF
 
 class ChartMarker(context: Context?, layoutResource: Int,
     private val labels: ArrayList<String>): MarkerView(context, layoutResource) {
-
     private var txtViewData: TextView? = null
     init { txtViewData = findViewById(R.id.home_chart_dialog) }
 

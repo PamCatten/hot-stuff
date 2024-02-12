@@ -33,7 +33,7 @@ class ItemsFragment : Fragment() {
         _binding = FragmentItemsBinding.inflate(inflater, container, false)
         val view = binding.root
         val items = DatabaseHelper(requireContext()).getDataRange()
-        val recyclerItems = view.findViewById<RecyclerView>(R.id.itemsRecyclerView)
+        val recyclerItems = view.findViewById<RecyclerView>(R.id.items_recycler_view)
         recyclerItems.layoutManager = LinearLayoutManager(context)
         recyclerItems.itemAnimator = null
 

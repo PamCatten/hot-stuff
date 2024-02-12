@@ -134,7 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:text="@string/label_create"
+            android:text="@string/label_save_item"
             android:textColor="?attr/colorOnPrimary"/>
     </LinearLayout>
 </ScrollView>

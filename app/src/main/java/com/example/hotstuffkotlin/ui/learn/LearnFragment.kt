@@ -49,6 +49,7 @@ class LearnFragment : Fragment() {
         val buttonWhyCare = view.findViewById<TextView>(R.id.learn_walkthrough_whyCare)
         val buttonGetStarted = view.findViewById<TextView>(R.id.learn_walkthrough_gettingStarted)
         val buttonExport = view.findViewById<TextView>(R.id.learn_walkthrough_export)
+
         buttonWhyCare.setOnClickListener {
             bundle.putCharSequence("article", getText(R.string.article_whyCare))
             findNavController().navigate(R.id.navigation_article, bundle)

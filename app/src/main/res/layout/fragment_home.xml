@@ -68,7 +68,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
             <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/topBarChart"
+                android:id="@+id/chart_home_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="200dp" />
@@ -91,7 +91,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
             <com.github.mikephil.charting.charts.HorizontalBarChart
-                android:id="@+id/bottomBarChart"
+                android:id="@+id/chart_home_two"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="200dp"/>

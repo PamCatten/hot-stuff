@@ -69,13 +69,13 @@
             style="@style/text_input_layout"
             android:layout_marginHorizontal="0dp">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/building_create_desc_field"
+                android:id="@+id/create_building_desc_field"
                 style="@style/text_input_field"
                 android:inputType="text"
                 android:hint="@string/label_building_description"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/building_create_button"
+            android:id="@+id/create_building_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"

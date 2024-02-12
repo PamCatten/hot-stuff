@@ -24,6 +24,8 @@
     <string name="label_building_quantity_placeholder">0 items</string>
     <string name="label_chart_type_placeholder">Item Distribution</string>
     <string name="label_building_value_builder">%1$s %2$s</string>
+    <!-- Items -->
+    <string name="label_no_items">No items found!</string>
     <!-- CreateItem / EditItem / ItemDetail / CreateBuilding: InputText Hints, Button Labels -->
     <string name="label_name">Name</string>
     <string name="label_quantity">Quantity</string>
@@ -32,7 +34,7 @@
     <string name="label_make">Brand / Manufacturer</string>
     <string name="label_value">Value (per item)</string>
     <string name="label_description">Description</string>
-    <string name="label_create">Save item</string>
+    <string name="label_save_item">Save item</string>
     <string name="label_save">Save</string>
     <string name="label_edit">Edit</string>
     <!-- Onboard: Create Building -->

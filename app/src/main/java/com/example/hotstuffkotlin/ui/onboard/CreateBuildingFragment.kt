@@ -41,8 +41,8 @@ class CreateBuildingFragment : Fragment() {
         val buildingType = view.findViewById<TextInputLayout>(R.id.create_building_type_container)
         val buildingTypeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_building_type_field)
         val buildingDescription = view.findViewById<TextInputLayout>(R.id.create_building_desc_container)
-        val buildingDescriptionText = view.findViewById<TextInputEditText>(R.id.building_create_desc_field)
-        val createBuildingButton = view.findViewById<MaterialButton>(R.id.building_create_button)
+        val buildingDescriptionText = view.findViewById<TextInputEditText>(R.id.create_building_desc_field)
+        val createBuildingButton = view.findViewById<MaterialButton>(R.id.create_building_button)
 
         val adapter = ArrayAdapter(requireContext(), com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
             resources.getStringArray(R.array.dropdown_building_type))

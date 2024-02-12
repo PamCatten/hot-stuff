@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
 //        val derivedName = "Sample House"
 //        buildingName.text = derivedName
 
-        val catChart = view.findViewById<BarChart>(R.id.topBarChart)
+        val catChart = view.findViewById<BarChart>(R.id.chart_home_one)
         val catDatabaseLabels = DatabaseHelper(context).getCategoryQuantity().first
         val catDatabaseTotals = DatabaseHelper(context).getCategoryQuantity().second
 
@@ -93,7 +93,7 @@ class HomeFragment : Fragment() {
 
         catChart.marker = ChartMarker(context, R.layout.dialog_chart, catAxisLabels)
 
-        val roomChart = view.findViewById<HorizontalBarChart>(R.id.bottomBarChart)
+        val roomChart = view.findViewById<HorizontalBarChart>(R.id.chart_home_two)
         val roomDatabaseLabels = DatabaseHelper(context).getRoomValue().first
         val roomDatabaseTotals = DatabaseHelper(context).getRoomValue().second
 
