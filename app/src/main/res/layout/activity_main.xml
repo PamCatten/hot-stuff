@@ -28,7 +28,7 @@
         app:menu="@menu/menu_navbar_main"
         app:itemBackground="@android:color/transparent"
         app:labelVisibilityMode="labeled"/>
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_activity_main"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"

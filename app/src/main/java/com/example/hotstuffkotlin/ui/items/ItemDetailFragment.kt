@@ -57,11 +57,11 @@ class ItemDetailFragment : Fragment() {
 
         value.text = "$valueCurrency $valueNumeral"
         when (bundle.getString("make")) {
-            "", null -> make.text = getText(R.string.filler_unspecified_value)
+            "", null -> make.text = getText(R.string.filler_unspecified)
             else -> make.text = bundle.getString("make")
         }
         when (bundle.getString("description")) {
-            "", null -> description.text = getText(R.string.filler_unspecified_value)
+            "", null -> description.text = getText(R.string.filler_unspecified)
             else -> description.text = bundle.getString("description")
         }
 

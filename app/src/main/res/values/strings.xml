@@ -16,8 +16,9 @@
     <!-- Main: Create Dialog Labels -->
 <!--    <string name="label_create_item">Create a new item</string>-->
 <!--    <string name="label_create_building">Create a new building</string>-->
-    <!-- Home: Placeholder Labels -->
+    <!-- Home -->
     <string name="label_building_value">Total Building Value</string>
+    <string name="label_total_value">Total Item Value</string>
     <string name="label_building_value_placeholder">$ 0.00</string>
     <string name="label_building_name_placeholder">Sample House</string>
     <string name="label_building_quantity_placeholder">0 items</string>
@@ -34,11 +35,41 @@
     <string name="label_create">Save item</string>
     <string name="label_save">Save</string>
     <string name="label_edit">Edit</string>
+    <!-- Onboard: Create Building -->
     <string name="label_building_name">Building name</string>
     <string name="label_building_type">Building type</string>
     <string name="label_building_description">Brief description</string>
     <string name="label_create_building">Create Building</string>
-    <!-- Settings: Currency Icons -->
+    <string name="desc_building_type">Building type</string>
+    <!-- Item Detail -->
+    <string name="label_delete">Delete</string>
+    <string name="desc_delete_item">Delete Item</string>
+    <string name="desc_item_image">Item image</string>
+    <!-- Learn -->
+    <string name="label_walkthroughs">Walkthroughs</string>
+    <string name="label_resources">Resources</string>
+    <string name="label_about">About Hot Stuff</string>
+    <string name="label_walkthroughs_subtitle">Short user guides to help you get started</string>
+    <string name="label_resources_subtitle">Additional notes and perspectives</string>
+    <string name="label_about_subtitle">General app information</string>
+    <string name="label_why_care">Why should I care?</string>
+    <string name="label_get_started">Getting started</string>
+    <string name="label_export">Exporting records</string>
+    <string name="label_detail">Attention to detail</string>
+    <string name="label_jargon_glossary">Insurance jargon glossary</string>
+    <string name="label_adjusters">Public adjusters</string>
+    <string name="label_likeKind">Like Kind and Quality</string>
+    <string name="label_example_form">Example Proof of Loss form</string>
+    <string name="label_acknowledgements">Acknowledgements</string>
+    <string name="label_sourcecode">View source code</string>
+    <string name="label_terms">Terms and Conditions</string>
+    <string name="label_required_hint">Required</string>
+    <string name="label_quantity_value_hint">Quantity cannot be less than one</string>
+    <string name="label_dialog_positive">OK</string>
+    <string name="label_dialog_create_title">Missing required value</string>
+    <string name="label_dialog_create_body">To continue, make sure your item has all mandatory information filled out</string>
+    <string name="label_dialog_create_building_body">To continue, make sure your building has all mandatory information filled out</string>
+    <!-- Settings -->
     <string name="icon_bitcoin">₿</string>
     <string name="icon_dollar">$</string>
     <string name="icon_dong">₫</string>
@@ -59,7 +90,6 @@
     <string name="icon_tugrik">₮</string>
     <string name="icon_won">₩</string>
     <string name="icon_yen_yuan">¥</string>
-    <!-- Settings: Preference Category / Summary Labels -->
     <string name="label_currency">Currency</string>
     <string name="label_theme">Theme</string>
     <string name="label_scale">Text Size</string>
@@ -92,42 +122,17 @@
     <string name="label_tugrik">tugrik</string>
     <string name="label_won">won</string>
     <string name="label_yen_yuan">yen_yuan</string>
-    <!-- Settings: Preference Defaults -->
     <string name="default_currency">dollar</string>
     <string name="default_scale">medium</string>
     <string name="default_theme">device</string>
     <string name="default_language">english</string>
-    <!-- Settings: Preference Keys -->
     <string name="key_currency">currency</string>
     <string name="key_scale">textsize</string>
     <string name="key_theme">theme</string>
     <string name="key_language">language</string>
-    <!-- Learn: Card Titles and Subtitles -->
-    <string name="label_walkthroughs">Walkthroughs</string>
-    <string name="label_resources">Resources</string>
-    <string name="label_about">About Hot Stuff</string>
-    <string name="label_walkthroughs_subtitle">Short user guides to help you get started</string>
-    <string name="label_resources_subtitle">Additional notes and perspectives</string>
-    <string name="label_about_subtitle">General app information</string>
-    <!-- Learn: Destination Labels -->
-    <string name="label_why_care">Why should I care?</string>
-    <string name="label_get_started">Getting started</string>
-    <string name="label_export">Exporting records</string>
-    <string name="label_detail">Attention to detail</string>
-    <string name="label_jargon_glossary">Insurance jargon glossary</string>
-    <string name="label_adjusters">Public adjusters</string>
-    <string name="label_likeKind">Like Kind and Quality</string>
-    <string name="label_example_form">Example Proof of Loss form</string>
-    <string name="label_acknowledgements">Acknowledgements</string>
-    <string name="label_sourcecode">View source code</string>
-    <string name="label_terms">Terms and Conditions</string>
-    <string name="label_required_hint">Required</string>
-    <string name="label_quantity_value_hint">Quantity cannot be less than one</string>
-    <string name="label_dialog_positive">OK</string>
-    <string name="label_dialog_create_title">Missing required value</string>
-    <string name="label_dialog_create_body">To continue, make sure your item has all mandatory information filled out</string>
-    <string name="label_dialog_create_building_body">To continue, make sure your building has all mandatory information filled out</string>
 
+    <!-- CardView Item -->
+    <string name="label_divider">⋅</string>
     <!-- Web Links -->
     <string name="learn_repo_link">https://github.com/PamCatten/hot-stuff-kotlin</string>
     <string name="toolbar_issue_link">https://github.com/PamCatten/hot-stuff-kotlin/issues/new</string>
@@ -138,7 +143,6 @@
     <string name="onboard_button_move">NEXT</string>
     <string name="onboard_button_continue">CONTINUE</string>
     <string name="onboard_button_done">GET STARTED</string>
-
     <string name="onboard_one_title">Welcome aboard!</string>
     <string name="onboard_one_text">
         Welcome to Hot Stuff! Your trusted companion for streamlining the
@@ -161,7 +165,7 @@
     </string>
     <string name="onboard_create_building_title">No place like home</string>
     <string name="onboard_create_building_text">
-        Before can you start cataloging your belongings, we need some basic details about your home to
+        Before you can start cataloging your belongings, we need some basic details about your home to
         help organize things behind the scenes.
 
         \n\nThese values appear only in the app, and anything you enter here can be changed later.
@@ -176,9 +180,13 @@
     </string>
     <string name="feedback_info_closing">Much love,</string>
     <string name="feedback_info_identity">Cam</string>
-
     <string name="description_learn_dropdown_icon">Expand items icon</string>
-    <string name="filler_unspecified_value">Unspecified</string>
+
+    <!-- Filler -->
+    <string name="filler_unspecified">Unspecified</string>
+    <string name="filler_label_short">Lorem</string>
+    <string name="filler_label_medium">Lorem ipsum dolor</string>
+    <string name="filler_label_long">Lorem ipsum dolor sit amet</string>
 
     <string name="text_title">20dp</string>
     <string name="text_subtitle">16dp</string>
@@ -189,6 +197,4 @@
     <string name="label_select_photo">Select Photo</string>
     <string name="label_take_photo">Take Photo</string>
     <string name="label_select_photo_toast">Photos and videos access must be enabled to use this feature</string>
-
-    <string name="preference_key_nightmode">NIGHTMODE</string>
 </resources>
