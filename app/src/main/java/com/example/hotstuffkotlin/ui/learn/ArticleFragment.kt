@@ -81,7 +81,7 @@ class ArticleFragment : Fragment() {
                     R.id.toolbar_main_search -> { return true }
                     R.id.toolbar_main_download -> { return true }
                     R.id.toolbar_main_report -> {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_issue))))
                         return true
                     }
                     R.id.toolbar_main_rate -> { return true }

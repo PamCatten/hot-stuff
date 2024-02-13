@@ -39,7 +39,7 @@ class OnboardFragment : Fragment() {
 
         val disclaimer = view.findViewById<TextView>(R.id.onboard_text_disclaimer)
         disclaimer.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.learn_eula_link))))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_terms))))
         }
 //
 //    private fun onBoardingFinished(): Boolean{

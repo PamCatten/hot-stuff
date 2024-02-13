@@ -127,14 +127,14 @@ class LearnFragment : Fragment() {
         val buttonTerms = view.findViewById<TextView>(R.id.learn_about_terms)
 
         buttonSourceCode.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.learn_repo_link))))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_repo))))
         }
         buttonAcknowledgements.setOnClickListener{
             bundle.putCharSequence("article", getText(R.string.article_acknowledgements))
             findNavController().navigate(R.id.navigation_article, bundle)
         }
         buttonTerms.setOnClickListener{
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.learn_eula_link))))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_terms))))
         }
 
         // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
@@ -150,7 +150,7 @@ class LearnFragment : Fragment() {
                         return true
                     }
                     R.id.toolbar_main_report -> {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_issue))))
                         return true
                     }
                     R.id.toolbar_main_rate -> { return true }

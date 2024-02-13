@@ -1,6 +1,6 @@
 package com.example.hotstuffkotlin.models
 
-data class Item(
+data class Item (
     var id: Int = 1,
     var buildingId : Int = 1,
     var name : String = "",

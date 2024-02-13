@@ -14,9 +14,8 @@ import com.example.hotstuffkotlin.models.Item
 import java.io.File
 import java.io.PrintWriter
 
-class DatabaseHelper(val context: Context?) :
+class DatabaseHelper(val context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-
     override fun onCreate(db: SQLiteDatabase?) {
         val queryItem = "CREATE TABLE $TABLE_NAME_ITEM (" +
             "$COLUMN_ITEM_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -43,51 +42,61 @@ class DatabaseHelper(val context: Context?) :
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_BUILDING")
         onCreate(db)
     }
-    fun addItem(name: String, quantity: Int, category: String, room: String,
-        make: String?, value: Double?, image: String?, description: String?) {
+
+    /**
+     * Add the passed item to SQLite database and toast result (whether success/failure)
+     *
+     * @param item the item to be added to database
+     * @author Cam Patten
+     */
+    fun addItem(item: Item) {
         val db = this.writableDatabase
         val cv = ContentValues()
-
-        cv.put(COLUMN_ITEM_NAME, name)
-        cv.put(COLUMN_ITEM_QUANTITY, quantity)
-        cv.put(COLUMN_ITEM_CATEGORY, category)
-        cv.put(COLUMN_ITEM_ROOM, room)
-        cv.put(COLUMN_ITEM_MAKE, make)
-        cv.put(COLUMN_ITEM_VALUE, value)
-        cv.put(COLUMN_ITEM_IMAGE_URI, image)
-        cv.put(COLUMN_ITEM_DESCRIPTION, description)
-
-        val result: Long =  db.insert(TABLE_NAME_ITEM, null, cv)
+        cv.put(COLUMN_ITEM_BUILDING_ID, item.buildingId)
+        cv.put(COLUMN_ITEM_NAME, item.name)
+        cv.put(COLUMN_ITEM_QUANTITY, item.quantity)
+        cv.put(COLUMN_ITEM_CATEGORY, item.category)
+        cv.put(COLUMN_ITEM_ROOM, item.room)
+        cv.put(COLUMN_ITEM_MAKE, item.make)
+        cv.put(COLUMN_ITEM_VALUE, item.value)
+        cv.put(COLUMN_ITEM_IMAGE_URI, item.imageUri)
+        cv.put(COLUMN_ITEM_DESCRIPTION, item.description)
+        val result = db.insert(TABLE_NAME_ITEM, null, cv)
         if (result == (-1).toLong()) {
-            Toast.makeText(this.context, R.string.toast_addItem_fail.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_addItem_fail),
                 Toast.LENGTH_LONG).show()
         }
         else {
-            Toast.makeText(this.context, R.string.toast_addItem_success.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_addItem_success),
                 Toast.LENGTH_LONG).show()
         }
         db.close()
     }
-    fun updateItem(id: Int, name: String, quantity: Int, category: String, room: String,
-       make: String?, value: Double?, image: String?, description: String?) {
+    /**
+     * Update the passed item in the database and toast result (whether success/failure)
+     *
+     * @param item the item in the database to be updated
+     * @author Cam Patten
+     */
+    fun updateItem(item: Item) {
         val db = this.writableDatabase
         val cv = ContentValues()
-        cv.put(COLUMN_ITEM_NAME, name)
-        cv.put(COLUMN_ITEM_QUANTITY, quantity)
-        cv.put(COLUMN_ITEM_CATEGORY, category)
-        cv.put(COLUMN_ITEM_ROOM, room)
-        cv.put(COLUMN_ITEM_MAKE, make)
-        cv.put(COLUMN_ITEM_VALUE, value)
-        cv.put(COLUMN_ITEM_IMAGE_URI, image)
-        cv.put(COLUMN_ITEM_DESCRIPTION, description)
+        cv.put(COLUMN_ITEM_NAME, item.name)
+        cv.put(COLUMN_ITEM_QUANTITY, item.quantity)
+        cv.put(COLUMN_ITEM_CATEGORY, item.category)
+        cv.put(COLUMN_ITEM_ROOM, item.room)
+        cv.put(COLUMN_ITEM_MAKE, item.make)
+        cv.put(COLUMN_ITEM_VALUE, item.value)
+        cv.put(COLUMN_ITEM_IMAGE_URI, item.imageUri)
+        cv.put(COLUMN_ITEM_DESCRIPTION, item.description)
         val result =  db.update(TABLE_NAME_ITEM, cv, "$COLUMN_ITEM_ID=?",
-            arrayOf(id.toString()))
+            arrayOf(item.id.toString()))
         if (result == (-1)) {
-            Toast.makeText(context, R.string.toast_updateItem_fail.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_updateItem_fail),
                 Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(context, R.string.toast_updateItem_success.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_updateItem_success),
                 Toast.LENGTH_SHORT).show()
         }
     }
@@ -96,11 +105,11 @@ class DatabaseHelper(val context: Context?) :
         val result = db.delete(TABLE_NAME_ITEM, "$COLUMN_ITEM_ID=?",
             arrayOf(id.toString()))
         if (result == (-1)) {
-            Toast.makeText(context, R.string.toast_deleteItem_fail.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_deleteItem_fail),
                 Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(context, R.string.toast_deleteItem_success.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_deleteItem_success),
                 Toast.LENGTH_SHORT).show()
         }
     }
@@ -116,11 +125,11 @@ class DatabaseHelper(val context: Context?) :
         cv.put(COLUMN_BUILDING_DESCRIPTION, description)
         val result: Long =  db.insert(TABLE_NAME_BUILDING, null, cv)
         if (result == (-1).toLong()) {
-            Toast.makeText(this.context, R.string.toast_addBuilding_fail.toString(),
+            Toast.makeText(this.context, context.getText(R.string.toast_addBuilding_fail),
                 Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(this.context, R.string.toast_addBuilding_success.toString(),
+            Toast.makeText(this.context, context.getText(R.string.toast_addBuilding_success),
                 Toast.LENGTH_SHORT).show()
         }
         db.close()
@@ -133,11 +142,11 @@ class DatabaseHelper(val context: Context?) :
         val result =  db.update(TABLE_NAME_ITEM, cv, "$COLUMN_BUILDING_ID=?",
             arrayOf(id.toString()))
         if (result == (-1)) {
-            Toast.makeText(context, R.string.toast_updateBuilding_fail.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_updateBuilding_fail),
                 Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(context, R.string.toast_updateItem_success.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_updateItem_success),
                 Toast.LENGTH_SHORT).show()
         }
     }
@@ -146,11 +155,11 @@ class DatabaseHelper(val context: Context?) :
         val result = db.delete(TABLE_NAME_BUILDING, "$COLUMN_BUILDING_ID=?",
             arrayOf(id.toString()))
         if (result == (-1)) {
-            Toast.makeText(context, R.string.toast_deleteBuilding_fail.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_deleteBuilding_fail),
                 Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(context, R.string.toast_deleteBuilding_success.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_deleteBuilding_success),
                 Toast.LENGTH_SHORT).show()
         }
     }
@@ -295,11 +304,11 @@ class DatabaseHelper(val context: Context?) :
                 rowArray.add(cursor.getStringOrNull(9) ?: "") // description
                 csvHelper.separateRow(rowArray)
             }
-            Toast.makeText(context, R.string.toast_exportCSV_success.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_exportCSV_success),
                 Toast.LENGTH_LONG).show()
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(context, R.string.toast_exportCSV_fail.toString(),
+            Toast.makeText(context, context.getText(R.string.toast_exportCSV_fail),
                 Toast.LENGTH_LONG).show()
             Toast.makeText(context, "Error: $e",
                 Toast.LENGTH_LONG).show()
@@ -312,23 +321,47 @@ class DatabaseHelper(val context: Context?) :
         private const val DATABASE_VERSION = 1
         private const val PAGINATION_DATA_LIMIT = 20
 
-        private val DATABASE_NAME = R.string.db_name.toString()
-        private val TABLE_NAME_ITEM = R.string.db_table_item.toString()
-        private val COLUMN_ITEM_ID = R.string.db_column_item_id.toString()
-        private val COLUMN_ITEM_BUILDING_ID = R.string.db_column_item_buildingId.toString()
-        private val COLUMN_ITEM_NAME = R.string.db_column_item_name.toString()
-        private val COLUMN_ITEM_QUANTITY = R.string.db_column_item_quantity.toString()
-        private val COLUMN_ITEM_CATEGORY = R.string.db_column_item_category.toString()
-        private val COLUMN_ITEM_ROOM = R.string.db_column_item_room.toString()
-        private val COLUMN_ITEM_MAKE = R.string.db_column_item_make.toString()
-        private val COLUMN_ITEM_VALUE = R.string.db_column_item_value.toString()
-        private val COLUMN_ITEM_IMAGE_URI = R.string.db_column_item_imageUri.toString()
-        private val COLUMN_ITEM_DESCRIPTION = R.string.db_column_item_description.toString()
-        private val TABLE_NAME_BUILDING = R.string.db_table_building.toString()
-        private val COLUMN_BUILDING_ID = R.string.db_column_building_id.toString()
-        private val COLUMN_BUILDING_NAME = R.string.db_column_building_name.toString()
-        private val COLUMN_BUILDING_TYPE = R.string.db_column_building_type.toString()
-        private val COLUMN_BUILDING_DESCRIPTION = R.string.db_column_building_description.toString()
-        private val COLUMN_RESULT = R.string.db_column_result.toString()
+        private const val DATABASE_NAME = "HotStuff.db"
+        private const val TABLE_NAME_ITEM = "ITEM"
+        private const val COLUMN_ITEM_ID = "ID"
+        private const val COLUMN_ITEM_BUILDING_ID = "BUILDING_ID"
+        private const val COLUMN_ITEM_NAME = "NAME"
+        private const val COLUMN_ITEM_QUANTITY = "QUANTITY"
+        private const val COLUMN_ITEM_CATEGORY = "CATEGORY"
+        private const val COLUMN_ITEM_ROOM = "ROOM"
+        private const val COLUMN_ITEM_MAKE = "MAKE"
+        private const val COLUMN_ITEM_VALUE = "VALUE"
+        private const val COLUMN_ITEM_IMAGE_URI = "IMAGE_URI"
+        private const val COLUMN_ITEM_DESCRIPTION = "DESCRIPTION"
+        private const val TABLE_NAME_BUILDING = "BUILDING"
+        private const val COLUMN_BUILDING_ID = "ID"
+        private const val COLUMN_BUILDING_NAME = "NAME"
+        private const val COLUMN_BUILDING_TYPE = "TYPE"
+        private const val COLUMN_BUILDING_DESCRIPTION = "DESCRIPTION"
+        private const val COLUMN_RESULT = "TOTAL"
+
+        // TODO: Cannot retrieve strings without context, cannot add context here within the
+        //  companion object without exposing leaks, seems only solution is providing context in
+        //  front of each of variable reference and retrieving strings there, pretty gross. Need
+        //  to find a better way, but for now, keeping the string resources here
+        //leaks
+//        private val DATABASE_NAME = R.string.db_name.toString()
+//        private val TABLE_NAME_ITEM = R.string.db_table_item.toString()
+//        private val COLUMN_ITEM_ID = R.string.db_column_item_id.toString()
+//        private val COLUMN_ITEM_BUILDING_ID = R.string.db_column_item_buildingId.toString()
+//        private val COLUMN_ITEM_NAME = R.string.db_column_item_name.toString()
+//        private val COLUMN_ITEM_QUANTITY = R.string.db_column_item_quantity.toString()
+//        private val COLUMN_ITEM_CATEGORY = R.string.db_column_item_category.toString()
+//        private val COLUMN_ITEM_ROOM = R.string.db_column_item_room.toString()
+//        private val COLUMN_ITEM_MAKE = R.string.db_column_item_make.toString()
+//        private val COLUMN_ITEM_VALUE = R.string.db_column_item_value.toString()
+//        private val COLUMN_ITEM_IMAGE_URI = R.string.db_column_item_imageUri.toString()
+//        private val COLUMN_ITEM_DESCRIPTION = R.string.db_column_item_description.toString()
+//        private val TABLE_NAME_BUILDING = R.string.db_table_building.toString()
+//        private val COLUMN_BUILDING_ID = R.string.db_column_building_id.toString()
+//        private val COLUMN_BUILDING_NAME = R.string.db_column_building_name.toString()
+//        private val COLUMN_BUILDING_TYPE = R.string.db_column_building_type.toString()
+//        private val COLUMN_BUILDING_DESCRIPTION = R.string.db_column_building_description.toString()
+//        private val COLUMN_RESULT = R.string.db_column_result.toString()
     }
 }

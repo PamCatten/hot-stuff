@@ -1,21 +1,18 @@
 <resources>
     <string name="app_name">Hot Stuff</string>
-    <!-- Main: Navbar / Fragment labels -->
+    <!-- Navbar / Fragment labels -->
     <string name="label_home_fragment">Home</string>
     <string name="label_items_fragment">Items</string>
     <string name="label_create_fragment">Create</string>
     <string name="label_learn_fragment">Learn</string>
     <string name="label_settings_fragment">Settings</string>
-    <!-- Main: Toolbar Labels -->
+    <!-- Toolbar Labels -->
     <string name="label_search">Search</string>
     <string name="label_download">Download Records</string>
     <string name="label_expand_menu">More</string>
     <string name="label_rate">Rate</string>
     <string name="label_report">Report Bug</string>
     <string name="label_feedback">Send Feedback</string>
-    <!-- Main: Create Dialog Labels -->
-<!--    <string name="label_create_item">Create a new item</string>-->
-<!--    <string name="label_create_building">Create a new building</string>-->
     <!-- Home -->
     <string name="label_building_value">Total Building Value</string>
     <string name="label_total_value">Total Item Value</string>
@@ -24,9 +21,11 @@
     <string name="label_building_quantity_placeholder">0 items</string>
     <string name="label_chart_type_placeholder">Item Distribution</string>
     <string name="label_building_value_builder">%1$s %2$s</string>
+    <string name="label_category_summary">Category Summary:</string>
+    <string name="label_room_summary">Room Summary:</string>
     <!-- Items -->
     <string name="label_no_items">No items found!</string>
-    <!-- CreateItem / EditItem / ItemDetail / CreateBuilding: InputText Hints, Button Labels -->
+    <!-- CreateItem / EditItem / ItemDetail / CreateBuilding -->
     <string name="label_name">Name</string>
     <string name="label_quantity">Quantity</string>
     <string name="label_category">Category</string>
@@ -37,7 +36,12 @@
     <string name="label_save_item">Save item</string>
     <string name="label_save">Save</string>
     <string name="label_edit">Edit</string>
-    <!-- Onboard: Create Building -->
+    <string name="label_select_photo">Select Photo</string>
+    <string name="label_take_photo">Take Photo</string>
+    <string name="toast_need_photo_permission">Photos and videos access must be enabled to use this
+        feature
+    </string>
+    <!-- Create Building -->
     <string name="label_building_name">Building name</string>
     <string name="label_building_type">Building type</string>
     <string name="label_building_description">Brief description</string>
@@ -69,8 +73,13 @@
     <string name="label_quantity_value_hint">Quantity cannot be less than one</string>
     <string name="label_dialog_positive">OK</string>
     <string name="label_dialog_create_title">Missing required value</string>
-    <string name="label_dialog_create_body">To continue, make sure your item has all mandatory information filled out</string>
-    <string name="label_dialog_create_building_body">To continue, make sure your building has all mandatory information filled out</string>
+    <string name="label_dialog_create_body">To continue, make sure your item has all mandatory
+        information filled out
+    </string>
+    <string name="label_dialog_create_building_body">To continue, make sure your building has all
+        mandatory information filled out
+    </string>
+    <string name="desc_expand_dropdown">Expand dropdown</string>
     <!-- Settings -->
     <string name="icon_bitcoin">₿</string>
     <string name="icon_dollar">$</string>
@@ -96,8 +105,9 @@
     <string name="label_theme">Theme</string>
     <string name="label_scale">Text Size</string>
     <string name="label_language">Language</string>
-    <string name="label_currency_summary">Choose your preference of currency icon
-        \n\nWARNING: Changing your preferred currency does not update previously entered values</string>
+    <string name="label_currency_summary">Choose your preference of currency icon \n\nWARNING:
+        Changing your preferred currency does not update previously entered values
+    </string>
     <string name="label_scale_summary">Change the size of text throughout the app</string>
     <string name="label_theme_summary">Choose your preference of app theme</string>
     <string name="label_language_summary">Choose the language you want to use for text within the app</string>
@@ -132,78 +142,71 @@
     <string name="key_scale">textsize</string>
     <string name="key_theme">theme</string>
     <string name="key_language">language</string>
-
     <!-- CardView Item -->
     <string name="label_divider">⋅</string>
     <!-- Web Links -->
-    <string name="learn_repo_link">https://github.com/PamCatten/hot-stuff-kotlin</string>
-    <string name="toolbar_issue_link">https://github.com/PamCatten/hot-stuff-kotlin/issues/new</string>
-    <string name="learn_eula_link">https://github.com/PamCatten/hot-stuff-kotlin/blob/main/EULA</string>
-
-    <string name="onboard_disclaimer">By clicking continue you are agreeing to our <a href="https://github.com/PamCatten/hot-stuff-kotlin/blob/main/EULA">Terms of Service.</a></string>
+    <string name="link_repo">https://github.com/PamCatten/hot-stuff-kotlin</string>
+    <string name="link_issue">https://github.com/PamCatten/hot-stuff-kotlin/issues/new</string>
+    <string name="link_terms">https://github.com/PamCatten/hot-stuff-kotlin/blob/main/TERMS</string>
+    <!-- Onboard -->
+    <string name="onboard_disclaimer">By clicking continue you are agreeing to our
+        <a href="https://github.com/PamCatten/hot-stuff-kotlin/blob/main/TERMS">Terms of Service</a>
+    </string>
     <string name="onboard_button_skip">SKIP</string>
     <string name="onboard_button_move">NEXT</string>
     <string name="onboard_button_continue">CONTINUE</string>
     <string name="onboard_button_done">GET STARTED</string>
     <string name="onboard_one_title">Welcome aboard!</string>
-    <string name="onboard_one_text">
-        Welcome to Hot Stuff! Your trusted companion for streamlining the
-        process of documenting your belongings for insurance claims.
+    <string name="onboard_one_text">Welcome to Hot Stuff! Your trusted companion for streamlining
+        the process of documenting your belongings for insurance claims.
     </string>
     <string name="onboard_two_title">Organize efficiently</string>
-    <string name="onboard_two_text">
-        Effortlessly add items, take pictures, and download your records to seamlessly transfer the work
-        you do here to Excel or Google Sheets.
+    <string name="onboard_two_text">Effortlessly add items, take pictures, and download your
+        records to seamlessly transfer the work you do here to Excel or Google Sheets.
     </string>
     <string name="onboard_three_title">Privacy first</string>
-    <string name="onboard_three_text">
-        Hot Stuff is designed with privacy in mind. No personal information, account or internet
-        connection is required to use it. Create records confidently knowing your data is secure.
+    <string name="onboard_three_text">Hot Stuff is designed with privacy in mind. No personal
+        information, account or internet connection is required to use it. Create records
+        confidently knowing your data is secure.
     </string>
     <string name="onboard_four_title">Peace of mind, simplified</string>
-    <string name="onboard_four_text">
-        By securing your belongings digitally, you\'re giving yourself the peace of mind of being
-        prepared for the unexpected. Stay with us for one more step and we can help get you there!
+    <string name="onboard_four_text">By securing your belongings digitally, you\'re giving yourself
+        the peace of mind of being prepared for the unexpected. Stay with us for one more step and
+        we can help get you there!
     </string>
     <string name="onboard_create_building_title">No place like home</string>
-    <string name="onboard_create_building_text">
-        Before you can start cataloging your belongings, we need some basic details about your home to
-        help organize things behind the scenes.
-
+    <string name="onboard_create_building_text">Before you can start cataloging your belongings, we
+        need some basic details about your home to help organize things behind the scenes.
         \n\nThese values appear only in the app, and anything you enter here can be changed later.
     </string>
-
     <!-- Feedback email template -->
     <string name="feedback_email">campatten.dev@outlook.com</string>
     <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>
-    <string name="feedback_info_body">
-        Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure
-        \'feedback\' is somewhere in the subject of your suggestion so it ends up where I can see
-        it!
+    <string name="feedback_info_body">Hey! Thanks for helping me improve Hot Stuff. Just a quick
+        heads up, please make sure \'feedback\' is somewhere in the subject of your suggestion so
+        it ends up where I can see it!
     </string>
     <string name="feedback_info_closing">Much love,</string>
     <string name="feedback_info_identity">Cam</string>
-
     <!-- Database -->
-    <string name="db_name">HotStuff.db</string>
-    <string name="db_table_item">ITEM</string>
-    <string name="db_column_item_id">ID</string>
-    <string name="db_column_item_buildingId">BUILDING_ID</string>
-    <string name="db_column_item_name">NAME</string>
-    <string name="db_column_item_quantity">QUANTITY</string>
-    <string name="db_column_item_category">CATEGORY</string>
-    <string name="db_column_item_room">ROOM</string>
-    <string name="db_column_item_make">MAKE</string>
-    <string name="db_column_item_value">VALUE</string>
-    <string name="db_column_item_imageUri">IMAGE_URI</string>
-    <string name="db_column_item_description">DESCRIPTION</string>
-    <string name="db_table_building">BUILDING</string>
-    <string name="db_column_building_id">ID</string>
-    <string name="db_column_building_name">NAME</string>
-    <string name="db_column_building_type">TYPE</string>
-    <string name="db_column_building_description">DESCRIPTION</string>
-    <string name="db_column_result">TOTAL</string>
-
+<!--    <string name="db_name">HotStuff.db</string>-->
+<!--    <string name="db_table_item">ITEM</string>-->
+<!--    <string name="db_column_item_id">ID</string>-->
+<!--    <string name="db_column_item_buildingId">BUILDING_ID</string>-->
+<!--    <string name="db_column_item_name">NAME</string>-->
+<!--    <string name="db_column_item_quantity">QUANTITY</string>-->
+<!--    <string name="db_column_item_category">CATEGORY</string>-->
+<!--    <string name="db_column_item_room">ROOM</string>-->
+<!--    <string name="db_column_item_make">MAKE</string>-->
+<!--    <string name="db_column_item_value">VALUE</string>-->
+<!--    <string name="db_column_item_imageUri">IMAGE_URI</string>-->
+<!--    <string name="db_column_item_description">DESCRIPTION</string>-->
+<!--    <string name="db_table_building">BUILDING</string>-->
+<!--    <string name="db_column_building_id">ID</string>-->
+<!--    <string name="db_column_building_name">NAME</string>-->
+<!--    <string name="db_column_building_type">TYPE</string>-->
+<!--    <string name="db_column_building_description">DESCRIPTION</string>-->
+<!--    <string name="db_column_result">TOTAL</string>-->
     <!-- Database Helper Toasts-->
     <string name="toast_addItem_success">Item saved</string>
     <string name="toast_addItem_fail">Save failed. Please send a bug report</string>
@@ -219,23 +222,9 @@
     <string name="toast_deleteBuilding_fail">Delete failed. Please send a bug report</string>
     <string name="toast_exportCSV_success">Items exported. Check your downloads folder</string>
     <string name="toast_exportCSV_fail">Export failed. Please send a bug report</string>
-
-
-    <string name="description_learn_dropdown_icon">Expand items icon</string>
-
     <!-- Filler -->
     <string name="filler_unspecified">Unspecified</string>
     <string name="filler_label_short">Lorem</string>
     <string name="filler_label_medium">Lorem ipsum dolor</string>
     <string name="filler_label_long">Lorem ipsum dolor sit amet</string>
-
-    <string name="text_title">20dp</string>
-    <string name="text_subtitle">16dp</string>
-    <string name="text_body">14dp</string>
-    <string name="label_category_summary">Category Summary:</string>
-    <string name="label_room_summary">Room Summary:</string>
-
-    <string name="label_select_photo">Select Photo</string>
-    <string name="label_take_photo">Take Photo</string>
-    <string name="label_select_photo_toast">Photos and videos access must be enabled to use this feature</string>
 </resources>

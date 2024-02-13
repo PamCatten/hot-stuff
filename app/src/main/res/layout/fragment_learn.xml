@@ -43,7 +43,7 @@
                     <ImageView
                         android:id="@+id/learn_walkthrough_dropdown_icon"
                         style="@style/card_icon"
-                        android:contentDescription="@string/description_learn_dropdown_icon"
+                        android:contentDescription="@string/desc_expand_dropdown"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
                         app:layout_constraintRight_toRightOf="parent"
@@ -120,7 +120,7 @@
                     <ImageView
                         android:id="@+id/learn_resources_dropdown_icon"
                         style="@style/card_icon"
-                        android:contentDescription="@string/description_learn_dropdown_icon"
+                        android:contentDescription="@string/desc_expand_dropdown"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
                         app:layout_constraintRight_toRightOf="parent"
@@ -206,7 +206,7 @@
                     <ImageView
                         android:id="@+id/learn_about_dropdown_icon"
                         style="@style/card_icon"
-                        android:contentDescription="@string/description_learn_dropdown_icon"
+                        android:contentDescription="@string/desc_expand_dropdown"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
                         app:layout_constraintRight_toRightOf="parent"

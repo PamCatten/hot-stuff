@@ -26,6 +26,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentEditItemBinding
+import com.example.hotstuffkotlin.models.Item
 import com.example.hotstuffkotlin.ui.create.CreateItemFragment
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
@@ -178,19 +179,23 @@ class EditItemFragment : Fragment() {
                 ActivityCompat.requestPermissions(requireActivity(), arrayOf(requestedPermission),
                     CreateItemFragment.PERMISSION_REQUEST_CODE
                 )
-                Toast.makeText(context, getText(R.string.label_select_photo_toast), Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getText(R.string.toast_need_photo_permission), Toast.LENGTH_LONG).show()
             }
         }
         saveButton?.setOnClickListener {
             fun resetForm() {
-                val inputName: String = name.text.toString().trim()
-                val inputQuantity: Int = quantity.text.toString().toInt()
-                val inputCategory: String = category.text.toString().trim()
-                val inputRoom: String = room.text.toString().trim()
-                val inputMake: String? = make.text?.toString()?.trim()
-                val inputValue: Double? = value.text?.toString()?.toDoubleOrNull()
-                val inputURI: String? = if (imageURI != null) imageURI.toString() else null
-                val inputDescription: String? = description.text?.toString()?.trim()
+                val item = Item()
+                item.id = id
+//                item.buildingId =
+                item.name = name.text.toString().trim()
+                item.quantity = quantity.text.toString().toInt()
+                item.category = category.text.toString().trim()
+                item.room = room.text.toString().trim()
+                item.make = make.text?.toString()?.trim()
+                item.value = value.text?.toString()?.toDoubleOrNull()
+                item.imageUri = if (imageURI != null) imageURI.toString() else null
+                item.description = description.text?.toString()?.trim()
+
                 name.text = null
                 quantity.text = null
                 category.text = null
@@ -205,20 +210,16 @@ class EditItemFragment : Fragment() {
 
                 bundle.putInt("id", id)
 //                bundle.putInt("buildingId", buildingId)
-                bundle.putInt("quantity", inputQuantity)
-                bundle.putString("name", inputName)
-                bundle.putString("category", inputCategory)
-                bundle.putString("room", inputRoom)
-                bundle.putString("make", inputMake)
-                bundle.putString("description", inputDescription)
-                bundle.putString("image", inputURI)
-                bundle.putDouble("value", inputValue ?: 0.00)
+                bundle.putInt("quantity", item.quantity)
+                bundle.putString("name", item.name)
+                bundle.putString("category", item.category)
+                bundle.putString("room", item.room)
+                bundle.putString("make", item.make)
+                bundle.putDouble("value", item.value ?: 0.00)
+                bundle.putString("image", item.imageUri)
+                bundle.putString("description", item.description)
 
-                DatabaseHelper(requireContext()).updateItem( id=id,
-                    name=inputName, quantity=inputQuantity, category=inputCategory, room=inputRoom,
-                    value=inputValue,make=inputMake, image=inputURI, description=inputDescription
-                )
-
+                DatabaseHelper(requireContext()).updateItem(item)
                 findNavController().navigate(R.id.action_edit_item_to_item_detail, bundle)
             }
             fun checkForm() {

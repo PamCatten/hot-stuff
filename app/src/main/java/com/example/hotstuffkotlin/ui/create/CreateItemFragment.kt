@@ -25,6 +25,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentCreateItemBinding
+import com.example.hotstuffkotlin.models.Item
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -153,20 +154,31 @@ class CreateItemFragment : Fragment() {
                 }
             } else if (checkSelfPermission == PackageManager.PERMISSION_DENIED) {
                 ActivityCompat.requestPermissions(requireActivity(), arrayOf(requestedPermission), PERMISSION_REQUEST_CODE)
-                Toast.makeText(context, getText(R.string.label_select_photo_toast), Toast.LENGTH_LONG).show()
+                Toast.makeText(context, getText(R.string.toast_need_photo_permission), Toast.LENGTH_LONG).show()
             }
         }
 
         createButton?.setOnClickListener {
             fun resetForm() {
-                val inputName: String = nameText.text.toString().trim()
-                val inputQuantity: Int = quantityText.text.toString().toInt()
-                val inputCategory: String = categoryText.text.toString().trim()
-                val inputRoom: String = roomText.text.toString().trim()
-                val inputMake: String? = makeText.text?.toString()?.trim()
-                val inputValue: Double? = valueText.text?.toString()?.toDoubleOrNull()
-                val inputURI: String? = if (uri != null) uri.toString() else null
-                val inputDescription: String? = descriptionText.text?.toString()?.trim()
+//                val inputName: String = nameText.text.toString().trim()
+//                val inputQuantity: Int = quantityText.text.toString().toInt()
+//                val inputCategory: String = categoryText.text.toString().trim()
+//                val inputRoom: String = roomText.text.toString().trim()
+//                val inputMake: String? = makeText.text?.toString()?.trim()
+//                val inputValue: Double? = valueText.text?.toString()?.toDoubleOrNull()
+//                val inputURI: String? = if (uri != null) uri.toString() else null
+//                val inputDescription: String? = descriptionText.text?.toString()?.trim()
+                val newItem = Item()
+//                newItem.buildingId
+                newItem.name = nameText.text.toString().trim()
+                newItem.quantity = quantityText.text.toString().toInt()
+                newItem.category = categoryText.text.toString().trim()
+                newItem.room = roomText.text.toString().trim()
+                newItem.make = makeText.text?.toString()?.trim()
+                newItem.value = valueText.text?.toString()?.toDoubleOrNull()
+                newItem.imageUri = if (uri != null) uri.toString() else null
+                newItem.description = descriptionText.text?.toString()?.trim()
+
 
                 nameText.text = null
                 quantityText.text = null
@@ -182,10 +194,7 @@ class CreateItemFragment : Fragment() {
                 categoryContainer.helperText = getText(R.string.label_required_hint)
                 roomContainer.helperText = getText(R.string.label_required_hint)
 
-                DatabaseHelper(requireContext()).addItem(
-                    name=inputName, quantity=inputQuantity, category=inputCategory, room=inputRoom,
-                    value=inputValue,make=inputMake, image=inputURI, description=inputDescription
-                )
+                DatabaseHelper(requireContext()).addItem(newItem)
             }
             fun checkForm() {
                 val nameCheck = (nameText.text == null) || (nameText.text.toString() == "")
@@ -226,7 +235,7 @@ class CreateItemFragment : Fragment() {
                         return true
                     }
                     R.id.toolbar_main_report -> {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.toolbar_issue_link))))
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_issue))))
                         return true
                     }
                     R.id.toolbar_main_rate -> { return true }
