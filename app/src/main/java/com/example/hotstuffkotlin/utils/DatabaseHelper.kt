@@ -9,31 +9,31 @@ import android.os.Environment
 import android.widget.Toast
 import androidx.core.database.getDoubleOrNull
 import androidx.core.database.getStringOrNull
+import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.models.Item
 import java.io.File
 import java.io.PrintWriter
 
-class DatabaseHelper(context: Context?) :
+class DatabaseHelper(val context: Context?) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
-    val context = context
 
     override fun onCreate(db: SQLiteDatabase?) {
         val queryItem = "CREATE TABLE $TABLE_NAME_ITEM (" +
-            "$COLUMN_ID_ITEM INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "$COLUMN_BUILDING_ID_ITEM INTEGER, " +
-            "$COLUMN_NAME_ITEM TEXT, " +
-            "$COLUMN_QUANTITY_ITEM INTEGER, " +
-            "$COLUMN_CATEGORY_ITEM TEXT, " +
-            "$COLUMN_ROOM_ITEM TEXT, " +
-            "$COLUMN_MAKE_ITEM TEXT, " +
-            "$COLUMN_VALUE_ITEM MONEY, " +
-            "$COLUMN_IMAGE_PATH_ITEM TEXT, " +
-            "$COLUMN_DESCRIPTION_ITEM TEXT);"
+            "$COLUMN_ITEM_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "$COLUMN_ITEM_BUILDING_ID INTEGER, " +
+            "$COLUMN_ITEM_NAME TEXT, " +
+            "$COLUMN_ITEM_QUANTITY INTEGER, " +
+            "$COLUMN_ITEM_CATEGORY TEXT, " +
+            "$COLUMN_ITEM_ROOM TEXT, " +
+            "$COLUMN_ITEM_MAKE TEXT, " +
+            "$COLUMN_ITEM_VALUE MONEY, " +
+            "$COLUMN_ITEM_IMAGE_URI TEXT, " +
+            "$COLUMN_ITEM_DESCRIPTION TEXT);"
 
         val queryBuilding = "CREATE TABLE $TABLE_NAME_BUILDING (" +
-            "$COLUMN_ID_BUILDING INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "$COLUMN_NAME_BUILDING TEXT, " +
-            "$COLUMN_DESCRIPTION_BUILDING TEXT);"
+            "$COLUMN_BUILDING_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "$COLUMN_BUILDING_NAME TEXT, " +
+            "$COLUMN_BUILDING_DESCRIPTION TEXT);"
 
         db?.execSQL(queryItem)
         db?.execSQL(queryBuilding)
@@ -45,105 +45,147 @@ class DatabaseHelper(context: Context?) :
     }
     fun addItem(name: String, quantity: Int, category: String, room: String,
         make: String?, value: Double?, image: String?, description: String?) {
-        val db : SQLiteDatabase = this.writableDatabase
+        val db = this.writableDatabase
         val cv = ContentValues()
 
-        cv.put(COLUMN_NAME_ITEM, name)
-        cv.put(COLUMN_QUANTITY_ITEM, quantity)
-        cv.put(COLUMN_CATEGORY_ITEM, category)
-        cv.put(COLUMN_ROOM_ITEM, room)
-        cv.put(COLUMN_MAKE_ITEM, make)
-        cv.put(COLUMN_VALUE_ITEM, value)
-        cv.put(COLUMN_IMAGE_PATH_ITEM, image)
-        cv.put(COLUMN_DESCRIPTION_ITEM, description)
+        cv.put(COLUMN_ITEM_NAME, name)
+        cv.put(COLUMN_ITEM_QUANTITY, quantity)
+        cv.put(COLUMN_ITEM_CATEGORY, category)
+        cv.put(COLUMN_ITEM_ROOM, room)
+        cv.put(COLUMN_ITEM_MAKE, make)
+        cv.put(COLUMN_ITEM_VALUE, value)
+        cv.put(COLUMN_ITEM_IMAGE_URI, image)
+        cv.put(COLUMN_ITEM_DESCRIPTION, description)
 
         val result: Long =  db.insert(TABLE_NAME_ITEM, null, cv)
-        if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Item failed to save", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(this.context, "Item saved!", Toast.LENGTH_SHORT).show()
+        if (result == (-1).toLong()) {
+            Toast.makeText(this.context, R.string.toast_addItem_fail.toString(),
+                Toast.LENGTH_LONG).show()
+        }
+        else {
+            Toast.makeText(this.context, R.string.toast_addItem_success.toString(),
+                Toast.LENGTH_LONG).show()
+        }
         db.close()
     }
     fun updateItem(id: Int, name: String, quantity: Int, category: String, room: String,
        make: String?, value: Double?, image: String?, description: String?) {
-        val db : SQLiteDatabase = this.writableDatabase
+        val db = this.writableDatabase
         val cv = ContentValues()
-        cv.put(COLUMN_NAME_ITEM, name)
-        cv.put(COLUMN_QUANTITY_ITEM, quantity)
-        cv.put(COLUMN_CATEGORY_ITEM, category)
-        cv.put(COLUMN_ROOM_ITEM, room)
-        cv.put(COLUMN_MAKE_ITEM, make)
-        cv.put(COLUMN_VALUE_ITEM, value)
-        cv.put(COLUMN_IMAGE_PATH_ITEM, image)
-        cv.put(COLUMN_DESCRIPTION_ITEM, description)
-        val result =  db.update(TABLE_NAME_ITEM, cv, "item_id=?", arrayOf(id.toString()))
-        if (result == (-1)) Toast.makeText(context, "Oh no! Update failed.", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(context, "Update successful!", Toast.LENGTH_SHORT).show()
+        cv.put(COLUMN_ITEM_NAME, name)
+        cv.put(COLUMN_ITEM_QUANTITY, quantity)
+        cv.put(COLUMN_ITEM_CATEGORY, category)
+        cv.put(COLUMN_ITEM_ROOM, room)
+        cv.put(COLUMN_ITEM_MAKE, make)
+        cv.put(COLUMN_ITEM_VALUE, value)
+        cv.put(COLUMN_ITEM_IMAGE_URI, image)
+        cv.put(COLUMN_ITEM_DESCRIPTION, description)
+        val result =  db.update(TABLE_NAME_ITEM, cv, "$COLUMN_ITEM_ID=?",
+            arrayOf(id.toString()))
+        if (result == (-1)) {
+            Toast.makeText(context, R.string.toast_updateItem_fail.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(context, R.string.toast_updateItem_success.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
     }
     fun deleteItem(id: Int) {
-        val db : SQLiteDatabase = this.writableDatabase
-        val result = db.delete(TABLE_NAME_ITEM, "item_id=?", arrayOf(id.toString()))
-        if (result == (-1)) Toast.makeText(context, "Deletion failed.", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(context, "Delete successful!", Toast.LENGTH_SHORT).show()
+        val db = this.writableDatabase
+        val result = db.delete(TABLE_NAME_ITEM, "$COLUMN_ITEM_ID=?",
+            arrayOf(id.toString()))
+        if (result == (-1)) {
+            Toast.makeText(context, R.string.toast_deleteItem_fail.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(context, R.string.toast_deleteItem_success.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     // As of now, addBuilding will only be called once, during the onboarding process, and
     // deleteBuilding will never be called, but the current plan is to support multiple buildings
     // in the future
     fun addBuilding(name: String, type: String?, description: String?) {
-        val db : SQLiteDatabase = this.writableDatabase
+        val db = this.writableDatabase
         val cv = ContentValues()
-        cv.put(COLUMN_NAME_BUILDING, name)
-        cv.put(COLUMN_TYPE_BUILDING, type)
-        cv.put(COLUMN_DESCRIPTION_BUILDING, description)
+        cv.put(COLUMN_BUILDING_NAME, name)
+        cv.put(COLUMN_BUILDING_TYPE, type)
+        cv.put(COLUMN_BUILDING_DESCRIPTION, description)
         val result: Long =  db.insert(TABLE_NAME_BUILDING, null, cv)
-        if (result == (-1).toLong()) Toast.makeText(this.context, "Oh no! Database insertion failed.", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(this.context, "Database insertion successful!", Toast.LENGTH_SHORT).show()
+        if (result == (-1).toLong()) {
+            Toast.makeText(this.context, R.string.toast_addBuilding_fail.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(this.context, R.string.toast_addBuilding_success.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
         db.close()
     }
     fun updateBuilding(id: Int, name: String, description: String?) {
-        val db: SQLiteDatabase = this.writableDatabase
+        val db = this.writableDatabase
         val cv = ContentValues()
-        cv.put(COLUMN_NAME_ITEM, name)
-        cv.put(COLUMN_DESCRIPTION_ITEM, description)
-        val result =  db.update(TABLE_NAME_ITEM, cv, "building_id=?", arrayOf(id.toString()))
-        if (result == (-1)) Toast.makeText(context, "Oh no! Update failed.", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(context, "Update successful!", Toast.LENGTH_SHORT).show()
+        cv.put(COLUMN_ITEM_NAME, name)
+        cv.put(COLUMN_ITEM_DESCRIPTION, description)
+        val result =  db.update(TABLE_NAME_ITEM, cv, "$COLUMN_BUILDING_ID=?",
+            arrayOf(id.toString()))
+        if (result == (-1)) {
+            Toast.makeText(context, R.string.toast_updateBuilding_fail.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(context, R.string.toast_updateItem_success.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
     }
     fun deleteBuilding(id: Int) {
-        val db: SQLiteDatabase = this.writableDatabase
-        val result = db.delete(TABLE_NAME_BUILDING, "building_id=?", arrayOf(id.toString()))
-        if (result == (-1)) Toast.makeText(context, "Deletion failed.", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(context, "Delete successful!", Toast.LENGTH_SHORT).show()
+        val db = this.writableDatabase
+        val result = db.delete(TABLE_NAME_BUILDING, "$COLUMN_BUILDING_ID=?",
+            arrayOf(id.toString()))
+        if (result == (-1)) {
+            Toast.makeText(context, R.string.toast_deleteBuilding_fail.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(context, R.string.toast_deleteBuilding_success.toString(),
+                Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun getTotalQuantity() : String {
         val db = this.writableDatabase
-        val query = "SELECT SUM($COLUMN_QUANTITY_ITEM) as TOTAL FROM $TABLE_NAME_ITEM"
+        val query = "SELECT SUM($COLUMN_ITEM_QUANTITY) as $COLUMN_RESULT FROM $TABLE_NAME_ITEM"
         val cursor = db.rawQuery(query, null)
         var total = 0
         if (cursor.moveToFirst())
-            total = cursor.getInt(cursor.getColumnIndexOrThrow("TOTAL"))
+            total = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_RESULT))
         cursor.close()
         return if (total == 1) "1 item" else "$total items"
     }
     fun getTotalValue() : String {
         val db = this.writableDatabase
-        val query = "SELECT SUM($COLUMN_QUANTITY_ITEM * $COLUMN_VALUE_ITEM) as TOTAL FROM $TABLE_NAME_ITEM"
+        val query = "SELECT SUM($COLUMN_ITEM_QUANTITY * $COLUMN_ITEM_VALUE) as " +
+                "$COLUMN_RESULT FROM $TABLE_NAME_ITEM"
         val cursor = db.rawQuery(query, null)
         var total = 0.00
         if (cursor.moveToFirst())
-            total = cursor.getDouble(cursor.getColumnIndexOrThrow("TOTAL"))
+            total = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_RESULT))
         cursor.close()
         return String.format("%.2f", total)
     }
     fun getCategoryQuantity(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
-        val query = "SELECT $COLUMN_CATEGORY_ITEM, SUM($COLUMN_QUANTITY_ITEM) AS TOTAL FROM $TABLE_NAME_ITEM GROUP BY $COLUMN_CATEGORY_ITEM"
+        val query = "SELECT $COLUMN_ITEM_CATEGORY, SUM($COLUMN_ITEM_QUANTITY) AS " +
+                "$COLUMN_RESULT FROM $TABLE_NAME_ITEM GROUP BY $COLUMN_ITEM_CATEGORY"
         val cursor = db.rawQuery(query, null)
         val categoryLabels = ArrayList<String>()
         val categoryQuantityFloats = ArrayList<Float>()
         if (cursor.moveToFirst()) {
-            val categoryColumn = cursor.getColumnIndexOrThrow("$COLUMN_CATEGORY_ITEM")
-            val totalColumn = cursor.getColumnIndexOrThrow("TOTAL")
+            val categoryColumn = cursor.getColumnIndexOrThrow(COLUMN_ITEM_CATEGORY)
+            val totalColumn = cursor.getColumnIndexOrThrow(COLUMN_RESULT)
             do {
                 categoryLabels.add(cursor.getString(categoryColumn))
                 categoryQuantityFloats.add(cursor.getFloat(totalColumn))
@@ -154,13 +196,14 @@ class DatabaseHelper(context: Context?) :
     }
     fun getRoomValue(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
-        val query = "SELECT $COLUMN_ROOM_ITEM, SUM($COLUMN_QUANTITY_ITEM * $COLUMN_VALUE_ITEM) as TOTAL FROM $TABLE_NAME_ITEM GROUP BY $COLUMN_ROOM_ITEM ORDER BY TOTAL ASC"
+        val query = "SELECT $COLUMN_ITEM_ROOM, SUM($COLUMN_ITEM_QUANTITY * $COLUMN_ITEM_VALUE) as " +
+                "$COLUMN_RESULT FROM $TABLE_NAME_ITEM GROUP BY $COLUMN_ITEM_ROOM ORDER BY $COLUMN_RESULT ASC"
         val cursor = db.rawQuery(query, null)
         val roomLabels = ArrayList<String>()
         val roomValueFloats = ArrayList<Float>()
         if (cursor.moveToFirst()) {
-            val roomColumn = cursor.getColumnIndexOrThrow("$COLUMN_ROOM_ITEM")
-            val totalColumn = cursor.getColumnIndexOrThrow("TOTAL")
+            val roomColumn = cursor.getColumnIndexOrThrow(COLUMN_ITEM_ROOM)
+            val totalColumn = cursor.getColumnIndexOrThrow(COLUMN_RESULT)
             do {
                 roomLabels.add(cursor.getString(roomColumn))
                 roomValueFloats.add(cursor.getFloat(totalColumn))
@@ -169,14 +212,17 @@ class DatabaseHelper(context: Context?) :
         cursor.close()
         return Pair(roomLabels, roomValueFloats)
     }
-    fun getDataRange(offset: Int = 0, queryType: String = "ALL", searchQuery: String? = null): ArrayList<Item> {
+    fun getDataRange(offset: Int = 0, queryType: String = "ALL",
+                     searchQuery: String? = null): ArrayList<Item> {
         val itemList: ArrayList<Item> = ArrayList()
         val selectQuery: String = if (queryType == "SEARCH" && searchQuery != null) {
-            "SELECT * FROM $TABLE_NAME_ITEM WHERE ($COLUMN_NAME_ITEM LIKE $searchQuery OR $COLUMN_ROOM_ITEM LIKE $searchQuery OR $COLUMN_CATEGORY_ITEM LIKE $searchQuery OR $COLUMN_MAKE_ITEM LIKE $searchQuery) LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
+            "SELECT * FROM $TABLE_NAME_ITEM WHERE ($COLUMN_ITEM_NAME LIKE $searchQuery OR " +
+            "$COLUMN_ITEM_ROOM LIKE $searchQuery OR $COLUMN_ITEM_CATEGORY LIKE $searchQuery " +
+            "OR $COLUMN_ITEM_MAKE LIKE $searchQuery) LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
         } else {
             "SELECT * FROM $TABLE_NAME_ITEM LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
         }
-        val db: SQLiteDatabase = this.readableDatabase
+        val db = this.readableDatabase
         val cursor: Cursor?
 
         try {
@@ -187,7 +233,7 @@ class DatabaseHelper(context: Context?) :
             return ArrayList()
         }
 
-        var itemId: Int
+        var id: Int
         var buildingId: Int
         var name: String
         var quantity: Int
@@ -195,24 +241,24 @@ class DatabaseHelper(context: Context?) :
         var room: String?
         var make: String?
         var value: Double?
-        var imagePath: String?
+        var imageUri: String?
         var description: String?
 
         if (cursor.moveToFirst()) {
             do {
-                itemId = cursor.getInt(cursor.getColumnIndexOrThrow("item_id"))
-                buildingId = cursor.getInt(cursor.getColumnIndexOrThrow("item_building_id"))
-                name = cursor.getString(cursor.getColumnIndexOrThrow("item_name"))
-                quantity = cursor.getInt(cursor.getColumnIndexOrThrow("item_quantity"))
-                category = cursor.getString(cursor.getColumnIndexOrThrow("item_category"))
-                room = cursor.getString(cursor.getColumnIndexOrThrow("item_room"))
-                make = cursor.getString(cursor.getColumnIndexOrThrow("item_make"))
-                value = cursor.getDouble(cursor.getColumnIndexOrThrow("item_value"))
-                imagePath = cursor.getString(cursor.getColumnIndexOrThrow("item_image"))
-                description = cursor.getString(cursor.getColumnIndexOrThrow("item_description"))
-                val i = Item(itemId = itemId, buildingId = buildingId, name = name,
+                id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ITEM_ID))
+                buildingId = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ITEM_BUILDING_ID))
+                name = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ITEM_NAME))
+                quantity = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ITEM_QUANTITY))
+                category = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ITEM_CATEGORY))
+                room = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ITEM_ROOM))
+                make = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ITEM_MAKE))
+                value = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_ITEM_VALUE))
+                imageUri = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ITEM_IMAGE_URI))
+                description = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ITEM_DESCRIPTION))
+                val i = Item(id = id, buildingId = buildingId, name = name,
                     quantity = quantity, category = category, room = room, make = make,
-                    value = value, imagePath = imagePath, description = description)
+                    value = value, imageUri = imageUri, description = description)
                 itemList.add(i)
             } while (cursor.moveToNext())
         }
@@ -223,7 +269,7 @@ class DatabaseHelper(context: Context?) :
     fun exportCSV() {
         val exportDirectory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "")
         if (!exportDirectory.exists()) exportDirectory.mkdirs()
-        val file = File(exportDirectory, "HS-Item-Manifest-${System.currentTimeMillis()}.csv")
+        val file = File(exportDirectory, "HS-Data-${System.currentTimeMillis()}.csv")
         val db = this.writableDatabase
         val cursor: Cursor?
         val csvQuery = "SELECT * FROM $TABLE_NAME_ITEM"
@@ -243,42 +289,46 @@ class DatabaseHelper(context: Context?) :
                 rowArray.add(cursor.getInt(3).toString()) // quantity
                 rowArray.add(cursor.getString(4)) // category
                 rowArray.add(cursor.getString(5)) // room
-                rowArray.add(cursor.getStringOrNull(6) ?: "Unspecified") // make
+                rowArray.add(cursor.getStringOrNull(6) ?: "") // make
                 rowArray.add(cursor.getDoubleOrNull(7).toString()) // value
-                rowArray.add(cursor.getStringOrNull(8).toString()) // imagePath
+                rowArray.add(cursor.getStringOrNull(8).toString()) // image_uri
                 rowArray.add(cursor.getStringOrNull(9) ?: "") // description
                 csvHelper.separateRow(rowArray)
             }
-            Toast.makeText(context, "CSV downloaded!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.toast_exportCSV_success.toString(),
+                Toast.LENGTH_LONG).show()
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.toast_exportCSV_fail.toString(),
+                Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Error: $e",
+                Toast.LENGTH_LONG).show()
         }
         csvHelper.close()
         cursor.close()
     }
 
     companion object{
-        private const val DATABASE_NAME: String = "HotStuff.db"
-        private const val DATABASE_VERSION: Int = 1
-        private const val TABLE_NAME_ITEM: String = "item_manifest"
-        private const val COLUMN_ID_ITEM: String = "item_id" // int? primary key item_manifest table
-        private const val COLUMN_BUILDING_ID_ITEM: String = "item_building_id" // int? foreign key building_manifest table
-        private const val COLUMN_NAME_ITEM: String = "item_name" // string, required
-        private const val COLUMN_QUANTITY_ITEM: String = "item_quantity" // int? make required
-        private const val COLUMN_CATEGORY_ITEM: String = "item_category"
-        private const val COLUMN_ROOM_ITEM: String = "item_room" // nullable
-        private const val COLUMN_MAKE_ITEM: String = "item_make" // nullable
-        private const val COLUMN_VALUE_ITEM: String = "item_value" // double?
-        private const val COLUMN_IMAGE_PATH_ITEM: String = "item_image" // nullable
-        private const val COLUMN_DESCRIPTION_ITEM : String = "item_description" // nullable
+        private const val DATABASE_VERSION = 1
+        private const val PAGINATION_DATA_LIMIT = 20
 
-        private const val TABLE_NAME_BUILDING: String = "building_manifest"
-        private const val COLUMN_ID_BUILDING: String = "building_id"
-        private const val COLUMN_NAME_BUILDING: String = "building_name"
-        private const val COLUMN_TYPE_BUILDING: String = "building_type"
-        private const val COLUMN_DESCRIPTION_BUILDING: String = "building_description"
-
-        private const val PAGINATION_DATA_LIMIT : Int = 20
+        private val DATABASE_NAME = R.string.db_name.toString()
+        private val TABLE_NAME_ITEM = R.string.db_table_item.toString()
+        private val COLUMN_ITEM_ID = R.string.db_column_item_id.toString()
+        private val COLUMN_ITEM_BUILDING_ID = R.string.db_column_item_buildingId.toString()
+        private val COLUMN_ITEM_NAME = R.string.db_column_item_name.toString()
+        private val COLUMN_ITEM_QUANTITY = R.string.db_column_item_quantity.toString()
+        private val COLUMN_ITEM_CATEGORY = R.string.db_column_item_category.toString()
+        private val COLUMN_ITEM_ROOM = R.string.db_column_item_room.toString()
+        private val COLUMN_ITEM_MAKE = R.string.db_column_item_make.toString()
+        private val COLUMN_ITEM_VALUE = R.string.db_column_item_value.toString()
+        private val COLUMN_ITEM_IMAGE_URI = R.string.db_column_item_imageUri.toString()
+        private val COLUMN_ITEM_DESCRIPTION = R.string.db_column_item_description.toString()
+        private val TABLE_NAME_BUILDING = R.string.db_table_building.toString()
+        private val COLUMN_BUILDING_ID = R.string.db_column_building_id.toString()
+        private val COLUMN_BUILDING_NAME = R.string.db_column_building_name.toString()
+        private val COLUMN_BUILDING_TYPE = R.string.db_column_building_type.toString()
+        private val COLUMN_BUILDING_DESCRIPTION = R.string.db_column_building_description.toString()
+        private val COLUMN_RESULT = R.string.db_column_result.toString()
     }
 }

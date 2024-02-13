@@ -82,7 +82,7 @@ class ItemsFragment : Fragment() {
         val bundle = Bundle()
         adapter.setOnItemClickListener(object : Adapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                bundle.putInt("id", items[position].itemId)
+                bundle.putInt("id", items[position].id)
                 bundle.putInt("buildingId", items[position].buildingId)
                 bundle.putInt("quantity", items[position].quantity)
                 bundle.putString("name", items[position].name)
@@ -90,7 +90,7 @@ class ItemsFragment : Fragment() {
                 bundle.putString("room", items[position].room)
                 bundle.putString("make", items[position].make)
                 bundle.putString("description", items[position].description)
-                bundle.putString("image", items[position].imagePath)
+                bundle.putString("image", items[position].imageUri)
                 bundle.putDouble("value", items[position].value ?: 0.00)
                 bundle.putInt("position", position)
                 bundle.putInt("delete", -1)

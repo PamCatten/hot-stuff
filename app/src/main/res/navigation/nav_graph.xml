@@ -72,15 +72,4 @@
             android:id="@+id/action_article_to_learn"
             app:destination="@+id/navigation_learn"/>
     </fragment>
-<!--    <fragment-->
-<!--        android:id="@+id/viewPagerFragment"-->
-<!--        android:name="com.jovanovic.stefan.mytestapp.onboarding.ViewPagerFragment"-->
-<!--        android:label="fragment_view_pager"-->
-<!--        tools:layout="@layout/fragment_view_pager" >-->
-<!--        <action-->
-<!--            android:id="@+id/action_viewPagerFragment_to_homeFragment"-->
-<!--            app:destination="@id/homeFragment"-->
-<!--            app:popUpTo="@id/viewPagerFragment"-->
-<!--            app:popUpToInclusive="true" />-->
-<!--    </fragment>-->
 </navigation>

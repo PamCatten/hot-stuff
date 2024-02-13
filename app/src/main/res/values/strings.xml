@@ -173,6 +173,7 @@
         \n\nThese values appear only in the app, and anything you enter here can be changed later.
     </string>
 
+    <!-- Feedback email template -->
     <string name="feedback_email">campatten.dev@outlook.com</string>
     <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>
     <string name="feedback_info_body">
@@ -182,6 +183,44 @@
     </string>
     <string name="feedback_info_closing">Much love,</string>
     <string name="feedback_info_identity">Cam</string>
+
+    <!-- Database -->
+    <string name="db_name">HotStuff.db</string>
+    <string name="db_table_item">ITEM</string>
+    <string name="db_column_item_id">ID</string>
+    <string name="db_column_item_buildingId">BUILDING_ID</string>
+    <string name="db_column_item_name">NAME</string>
+    <string name="db_column_item_quantity">QUANTITY</string>
+    <string name="db_column_item_category">CATEGORY</string>
+    <string name="db_column_item_room">ROOM</string>
+    <string name="db_column_item_make">MAKE</string>
+    <string name="db_column_item_value">VALUE</string>
+    <string name="db_column_item_imageUri">IMAGE_URI</string>
+    <string name="db_column_item_description">DESCRIPTION</string>
+    <string name="db_table_building">BUILDING</string>
+    <string name="db_column_building_id">ID</string>
+    <string name="db_column_building_name">NAME</string>
+    <string name="db_column_building_type">TYPE</string>
+    <string name="db_column_building_description">DESCRIPTION</string>
+    <string name="db_column_result">TOTAL</string>
+
+    <!-- Database Helper Toasts-->
+    <string name="toast_addItem_success">Item saved</string>
+    <string name="toast_addItem_fail">Save failed. Please send a bug report</string>
+    <string name="toast_updateItem_success">Item updated</string>
+    <string name="toast_updateItem_fail">Update failed. Please send a bug report</string>
+    <string name="toast_deleteItem_success">Item deleted</string>
+    <string name="toast_deleteItem_fail">Delete failed. Please send a bug report</string>
+    <string name="toast_addBuilding_success">Building saved</string>
+    <string name="toast_addBuilding_fail">Save failed. Please send a bug report</string>
+    <string name="toast_updateBuilding_success">Building failed</string>
+    <string name="toast_updateBuilding_fail">Update failed. Please send a bug report</string>
+    <string name="toast_deleteBuilding_success">Building deleted</string>
+    <string name="toast_deleteBuilding_fail">Delete failed. Please send a bug report</string>
+    <string name="toast_exportCSV_success">Items exported. Check your downloads folder</string>
+    <string name="toast_exportCSV_fail">Export failed. Please send a bug report</string>
+
+
     <string name="description_learn_dropdown_icon">Expand items icon</string>
 
     <!-- Filler -->
