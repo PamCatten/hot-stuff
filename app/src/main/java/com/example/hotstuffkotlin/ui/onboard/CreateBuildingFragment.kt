@@ -15,6 +15,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentCreateBuildingBinding
+import com.example.hotstuffkotlin.models.Building
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 import com.google.android.material.button.MaterialButton
@@ -67,10 +68,11 @@ class CreateBuildingFragment : Fragment() {
 
         createBuildingButton.setOnClickListener {
             fun confirmForm() {
-                DatabaseHelper(requireContext()).addBuilding(
-                    name = buildingNameText.text.toString().trim(),
-                    type = buildingTypeText.text.toString().trim(),
-                    description = buildingDescriptionText.text.toString().trim())
+                val newBuilding = Building()
+                newBuilding.name = buildingNameText.text.toString().trim()
+                newBuilding.type = buildingTypeText.text.toString().trim()
+                newBuilding.description = buildingDescriptionText.text.toString().trim()
+                DatabaseHelper(requireContext()).addBuilding(newBuilding)
 
                 SharedPreferenceHelper.getInstance(requireContext()).finishOnboarding()
                 findNavController().navigate(R.id.action_create_building_to_main_activity)

@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.core.database.getDoubleOrNull
 import androidx.core.database.getStringOrNull
 import com.example.hotstuffkotlin.R
+import com.example.hotstuffkotlin.models.Building
 import com.example.hotstuffkotlin.models.Item
 import java.io.File
 import java.io.PrintWriter
@@ -44,7 +45,7 @@ class DatabaseHelper(val context: Context) :
     }
 
     /**
-     * Add the passed item to SQLite database and toast result (whether success/failure)
+     * Add the passed item to the database and toast the result (whether success/failure).
      *
      * @param item the item to be added to database
      * @author Cam Patten
@@ -73,7 +74,7 @@ class DatabaseHelper(val context: Context) :
         db.close()
     }
     /**
-     * Update the passed item in the database and toast result (whether success/failure)
+     * Update the passed item in the database and toast the result (whether success/failure).
      *
      * @param item the item in the database to be updated
      * @author Cam Patten
@@ -100,6 +101,14 @@ class DatabaseHelper(val context: Context) :
                 Toast.LENGTH_SHORT).show()
         }
     }
+
+    /**
+     * Delete the row of the passed item id in the database and toast the result
+     * (whether success/failure).
+     *
+     * @param id the id of the item to be deleted
+     * @author Cam Patten
+     */
     fun deleteItem(id: Int) {
         val db = this.writableDatabase
         val result = db.delete(TABLE_NAME_ITEM, "$COLUMN_ITEM_ID=?",
@@ -114,15 +123,22 @@ class DatabaseHelper(val context: Context) :
         }
     }
 
-    // As of now, addBuilding will only be called once, during the onboarding process, and
-    // deleteBuilding will never be called, but the current plan is to support multiple buildings
-    // in the future
-    fun addBuilding(name: String, type: String?, description: String?) {
+    /**
+     * Add the passed building to the database and toast the result (whether success/failure).
+     *
+     * As of now, [addBuilding] is only called during the onboarding process, but we plan to support
+     * users being able to create multiple buildings in the future, when it would presumably be of
+     * greater utility.
+     *
+     * @param building the building to be added to database
+     * @author Cam Patten
+     */
+    fun addBuilding(building: Building) {
         val db = this.writableDatabase
         val cv = ContentValues()
-        cv.put(COLUMN_BUILDING_NAME, name)
-        cv.put(COLUMN_BUILDING_TYPE, type)
-        cv.put(COLUMN_BUILDING_DESCRIPTION, description)
+        cv.put(COLUMN_BUILDING_NAME, building.name)
+        cv.put(COLUMN_BUILDING_TYPE, building.type)
+        cv.put(COLUMN_BUILDING_DESCRIPTION, building.description)
         val result: Long =  db.insert(TABLE_NAME_BUILDING, null, cv)
         if (result == (-1).toLong()) {
             Toast.makeText(this.context, context.getText(R.string.toast_addBuilding_fail),
@@ -134,22 +150,40 @@ class DatabaseHelper(val context: Context) :
         }
         db.close()
     }
-    fun updateBuilding(id: Int, name: String, description: String?) {
+
+    /**
+     * Update the passed building in the database and toast the result (whether success/failure).
+     *
+     * @param building the building to be updated in the database
+     * @author Cam Patten
+     */
+    fun updateBuilding(building: Building) {
         val db = this.writableDatabase
         val cv = ContentValues()
-        cv.put(COLUMN_ITEM_NAME, name)
-        cv.put(COLUMN_ITEM_DESCRIPTION, description)
-        val result =  db.update(TABLE_NAME_ITEM, cv, "$COLUMN_BUILDING_ID=?",
-            arrayOf(id.toString()))
+        cv.put(COLUMN_BUILDING_NAME, building.name)
+        cv.put(COLUMN_BUILDING_TYPE, building.type)
+        cv.put(COLUMN_BUILDING_DESCRIPTION, building.description)
+        val result =  db.update(TABLE_NAME_BUILDING, cv, "$COLUMN_BUILDING_ID=?",
+            arrayOf(building.id.toString()))
         if (result == (-1)) {
             Toast.makeText(context, context.getText(R.string.toast_updateBuilding_fail),
                 Toast.LENGTH_SHORT).show()
         }
         else {
-            Toast.makeText(context, context.getText(R.string.toast_updateItem_success),
+            Toast.makeText(context, context.getText(R.string.toast_updateBuilding_success),
                 Toast.LENGTH_SHORT).show()
         }
     }
+    /**
+     * Delete the row of the passed building id in the database and toast the result
+     * (whether success/failure).
+     *
+     * As of now, [deleteBuilding] is never called, but we plan to support users being able to
+     * create multiple buildings in the future, when it would presumably be of greater utility.
+     *
+     * @param id the id of the building to be deleted
+     * @author Cam Patten
+     */
     fun deleteBuilding(id: Int) {
         val db = this.writableDatabase
         val result = db.delete(TABLE_NAME_BUILDING, "$COLUMN_BUILDING_ID=?",
@@ -164,7 +198,13 @@ class DatabaseHelper(val context: Context) :
         }
     }
 
-    fun getTotalQuantity() : String {
+    /**
+     * Sums the quantity column of the ITEM table and returns the total as a formatted string.
+     *
+     * @return The total sum of saved item quantities in the database as a formatted string.
+     * @author Cam Patten
+     */
+    fun getTotalQuantity(): String {
         val db = this.writableDatabase
         val query = "SELECT SUM($COLUMN_ITEM_QUANTITY) as $COLUMN_RESULT FROM $TABLE_NAME_ITEM"
         val cursor = db.rawQuery(query, null)
@@ -172,9 +212,21 @@ class DatabaseHelper(val context: Context) :
         if (cursor.moveToFirst())
             total = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_RESULT))
         cursor.close()
-        return if (total == 1) "1 item" else "$total items"
+        return if (total == 1) {
+            context.getString(R.string.label_total_quantity_item_builder, total.toString())
+        } else {
+            context.getString(R.string.label_total_quantity_items_builder, total.toString())
+        }
     }
-    fun getTotalValue() : String {
+
+    /**
+     * Sums the multiplied product of the quantity and value columns from the ITEM table and returns
+     * the total as a formatted string.
+     *
+     * @return The total sum of saved item values in the database to two decimal places as a string.
+     * @author Cam Patten
+     */
+    fun getTotalValue(): String {
         val db = this.writableDatabase
         val query = "SELECT SUM($COLUMN_ITEM_QUANTITY * $COLUMN_ITEM_VALUE) as " +
                 "$COLUMN_RESULT FROM $TABLE_NAME_ITEM"
@@ -185,6 +237,14 @@ class DatabaseHelper(val context: Context) :
         cursor.close()
         return String.format("%.2f", total)
     }
+    /**
+     * Retrieves ArrayLists of category names saved in the database and the total
+     * item quantity of each category.
+     *
+     * @return A pair of ArrayLists: entered category names, and summed totals of the item
+     * quantities associated with those categories.
+     * @author Cam Patten
+     */
     fun getCategoryQuantity(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
         val query = "SELECT $COLUMN_ITEM_CATEGORY, SUM($COLUMN_ITEM_QUANTITY) AS " +
@@ -203,6 +263,14 @@ class DatabaseHelper(val context: Context) :
         cursor.close()
         return Pair(categoryLabels, categoryQuantityFloats)
     }
+    /**
+     * Retrieves ArrayLists of room names saved in the database and the total
+     * item quantity of each room.
+     *
+     * @return A pair of ArrayLists: entered room names, and the summed total value of items
+     * within those rooms.
+     * @author Cam Patten
+     */
     fun getRoomValue(): Pair<ArrayList<String>, ArrayList<Float>> {
         val db = this.writableDatabase
         val query = "SELECT $COLUMN_ITEM_ROOM, SUM($COLUMN_ITEM_QUANTITY * $COLUMN_ITEM_VALUE) as " +
@@ -221,10 +289,20 @@ class DatabaseHelper(val context: Context) :
         cursor.close()
         return Pair(roomLabels, roomValueFloats)
     }
-    fun getDataRange(offset: Int = 0, queryType: String = "ALL",
+    /**
+     * Retrieves a limited number of saved items from the database.
+     *
+     * @param offset The number of rows to be ignored in a result
+     * @param isSearchQuery Determines if the query needs to be modified to search the NAME, ROOM,
+     * CATEGORY, and MAKE columns in the database for values similar to a [searchQuery].
+     * @param searchQuery String used to search for similar values in the database.
+     * @return An ArrayList of items to be displayed in the RecyclerView .
+     * @author Cam Patten
+     */
+    fun getDataRange(offset: Int = 0, isSearchQuery: Boolean = false,
                      searchQuery: String? = null): ArrayList<Item> {
         val itemList: ArrayList<Item> = ArrayList()
-        val selectQuery: String = if (queryType == "SEARCH" && searchQuery != null) {
+        val selectQuery: String = if (isSearchQuery && searchQuery != null) {
             "SELECT * FROM $TABLE_NAME_ITEM WHERE ($COLUMN_ITEM_NAME LIKE $searchQuery OR " +
             "$COLUMN_ITEM_ROOM LIKE $searchQuery OR $COLUMN_ITEM_CATEGORY LIKE $searchQuery " +
             "OR $COLUMN_ITEM_MAKE LIKE $searchQuery) LIMIT $PAGINATION_DATA_LIMIT OFFSET $offset"
@@ -275,6 +353,12 @@ class DatabaseHelper(val context: Context) :
         return itemList
     }
 
+    /**
+     * Write item records to .CSV file, export to device downloads directory and toast result (whether
+     * success/failure).
+     *
+     * @author Cam Patten
+     */
     fun exportCSV() {
         val exportDirectory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "")
         if (!exportDirectory.exists()) exportDirectory.mkdirs()
@@ -344,7 +428,7 @@ class DatabaseHelper(val context: Context) :
         //  companion object without exposing leaks, seems only solution is providing context in
         //  front of each of variable reference and retrieving strings there, pretty gross. Need
         //  to find a better way, but for now, keeping the string resources here
-        //leaks
+
 //        private val DATABASE_NAME = R.string.db_name.toString()
 //        private val TABLE_NAME_ITEM = R.string.db_table_item.toString()
 //        private val COLUMN_ITEM_ID = R.string.db_column_item_id.toString()

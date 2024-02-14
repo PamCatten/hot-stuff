@@ -21,6 +21,8 @@
     <string name="label_building_quantity_placeholder">0 items</string>
     <string name="label_chart_type_placeholder">Item Distribution</string>
     <string name="label_building_value_builder">%1$s %2$s</string>
+    <string name="label_total_quantity_item_builder">%1$s item</string>
+    <string name="label_total_quantity_items_builder">%1$s items</string>
     <string name="label_category_summary">Category Summary:</string>
     <string name="label_room_summary">Room Summary:</string>
     <!-- Items -->

@@ -70,7 +70,7 @@ class ItemsFragment : Fragment() {
                     }
                     else if (!loading && visibleItemCount + pastVisibleItems >= totalItemCount && query != null) {
                         loading = true
-                        val moreItems = DatabaseHelper(requireContext()).getDataRange(totalItemCount, "SEARCH", query)
+                        val moreItems = DatabaseHelper(requireContext()).getDataRange(totalItemCount, true, query)
                         for (i in moreItems) items.add(i)
                         adapter.notifyItemRangeInserted(totalItemCount, layoutManager.itemCount)
                         loading = false
@@ -128,7 +128,7 @@ class ItemsFragment : Fragment() {
                                 } else {
                                     items.clear()
                                     query = "'%$newText%'"
-                                    val retrievedItems = DatabaseHelper(requireContext()).getDataRange(items.size, "SEARCH", query)
+                                    val retrievedItems = DatabaseHelper(requireContext()).getDataRange(items.size, true, query)
                                     for (i in retrievedItems) {
                                         items.add(i)
                                         adapter.searchInsert(retrievedItems.indexOf(i), retrievedItems)
