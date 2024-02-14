@@ -41,6 +41,21 @@ When designing Hot Stuff, our hope was to create a companion for our users that 
 ## Accessibility
 // TODO: Extremely important, include references to all work done for this objective
 ### Screen Reader Support
+### CVD (Color Vision Deficiency) Support
+To ensure that text and other important components are easily distinguishable for users with CVD, we have made an effort to optimize color contrast where possible. 
+
+
+For example: the color palette used to plot chart elements for charts were chosen to be distinguishable for users with various types of CVD, below are some visualizations to help demonstrate.
+
+Here is the palette with 'normal' vision: ![](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/assets/theme_normal.png)
+
+Here is the palette with deuteranopic (red-green) vision: ![](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/assets/theme_deuternanopia.png)
+
+Here is the palette with protanopic (red-green) vision: ![](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/assets/theme_protanopia.png)
+
+Here is the palette with tritanopic (blue-yellow) vision: ![](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/assets/theme_tritanopia.png)
+
+
 ### Right-to-Left Text Support
 ### Additional Language Support
 
