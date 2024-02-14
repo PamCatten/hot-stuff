@@ -15,7 +15,13 @@ import com.example.hotstuffkotlin.models.Item
 import java.io.File
 import java.io.PrintWriter
 
-class DatabaseHelper(val context: Context) :
+/**
+ * Create a helper object to perform basic CRUD operations with SQL on the database.
+ *
+ * @param context Used to push to and receive information from the application environment.
+ * @author Cam Patten
+ */
+class DatabaseHelper(val context: Context):
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase?) {
         val queryItem = "CREATE TABLE $TABLE_NAME_ITEM (" +
@@ -43,7 +49,6 @@ class DatabaseHelper(val context: Context) :
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_BUILDING")
         onCreate(db)
     }
-
     /**
      * Add the passed item to the database and toast the result (whether success/failure).
      *
@@ -101,7 +106,6 @@ class DatabaseHelper(val context: Context) :
                 Toast.LENGTH_SHORT).show()
         }
     }
-
     /**
      * Delete the row of the passed item id in the database and toast the result
      * (whether success/failure).
@@ -122,7 +126,6 @@ class DatabaseHelper(val context: Context) :
                 Toast.LENGTH_SHORT).show()
         }
     }
-
     /**
      * Add the passed building to the database and toast the result (whether success/failure).
      *
@@ -150,7 +153,6 @@ class DatabaseHelper(val context: Context) :
         }
         db.close()
     }
-
     /**
      * Update the passed building in the database and toast the result (whether success/failure).
      *
@@ -197,7 +199,6 @@ class DatabaseHelper(val context: Context) :
                 Toast.LENGTH_SHORT).show()
         }
     }
-
     /**
      * Sums the quantity column of the ITEM table and returns the total as a formatted string.
      *
@@ -218,9 +219,8 @@ class DatabaseHelper(val context: Context) :
             context.getString(R.string.label_total_quantity_items_builder, total.toString())
         }
     }
-
     /**
-     * Sums the multiplied product of the quantity and value columns from the ITEM table and returns
+     * Sum the multiplied product of the quantity and value columns from the ITEM table and return
      * the total as a formatted string.
      *
      * @return The total sum of saved item values in the database to two decimal places as a string.
@@ -238,7 +238,7 @@ class DatabaseHelper(val context: Context) :
         return String.format("%.2f", total)
     }
     /**
-     * Retrieves ArrayLists of category names saved in the database and the total
+     * Retrieve ArrayLists of category names saved in the database and the total
      * item quantity of each category.
      *
      * @return A pair of ArrayLists: entered category names, and summed totals of the item
@@ -264,7 +264,7 @@ class DatabaseHelper(val context: Context) :
         return Pair(categoryLabels, categoryQuantityFloats)
     }
     /**
-     * Retrieves ArrayLists of room names saved in the database and the total
+     * Retrieve ArrayLists of room names saved in the database and the total
      * item quantity of each room.
      *
      * @return A pair of ArrayLists: entered room names, and the summed total value of items
@@ -290,7 +290,7 @@ class DatabaseHelper(val context: Context) :
         return Pair(roomLabels, roomValueFloats)
     }
     /**
-     * Retrieves a limited number of saved items from the database.
+     * Retrieve a limited number of saved items from the database.
      *
      * @param offset The number of rows to be ignored in a result
      * @param isSearchQuery Determines if the query needs to be modified to search the NAME, ROOM,
@@ -357,6 +357,7 @@ class DatabaseHelper(val context: Context) :
      * Write item records to .CSV file, export to device downloads directory and toast result (whether
      * success/failure).
      *
+     * @see [CSVHelper]
      * @author Cam Patten
      */
     fun exportCSV() {

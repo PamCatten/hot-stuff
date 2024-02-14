@@ -1,8 +1,20 @@
 package com.example.hotstuffkotlin.utils
 import java.io.Writer
 
+/**
+ * Create a helper object to convert and format List values to a text-output stream.
+ *
+ * @param printWriter instance of [Writer] created in [DatabaseHelper.exportCSV]
+ * @see [DatabaseHelper]
+ * @author Cam Patten
+ */
 class CSVHelper(printWriter: Writer) {
     private val writer = printWriter
+    /**
+     * Separate, escape, and write a given row of values to a text-output stream.
+     *
+     * @author Cam Patten
+     */
     fun separateRow(nextLine: MutableList<String>?) {
         if (nextLine == null) return
         val stringBuffer = StringBuffer()
@@ -24,6 +36,11 @@ class CSVHelper(printWriter: Writer) {
         writer.write(stringBuffer.toString())
     }
 
+    /**
+     * Flush and close Java I/O stream.
+     *
+     * @author Cam Patten
+     */
     fun close() {
         writer.flush()
         writer.close()
