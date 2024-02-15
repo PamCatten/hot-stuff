@@ -147,12 +147,12 @@
     <!-- CardView Item -->
     <string name="label_divider">⋅</string>
     <!-- Web Links -->
-    <string name="link_repo">https://github.com/PamCatten/hot-stuff-kotlin</string>
-    <string name="link_issue">https://github.com/PamCatten/hot-stuff-kotlin/issues/new</string>
-    <string name="link_terms">https://github.com/PamCatten/hot-stuff-kotlin/blob/main/TERMS</string>
+    <string name="link_repo">https://github.com/PamCatten/hot-stuff</string>
+    <string name="link_issue">https://github.com/PamCatten/hot-stuff/issues/new</string>
+    <string name="link_terms">https://github.com/PamCatten/hot-stuff/blob/main/TERMS</string>
     <!-- Onboard -->
     <string name="onboard_disclaimer">By clicking continue you are agreeing to our
-        <a href="https://github.com/PamCatten/hot-stuff-kotlin/blob/main/TERMS">Terms of Service</a>
+        <a href="https://github.com/PamCatten/hot-stuff/blob/main/TERMS">Terms of Service</a>
     </string>
     <string name="onboard_button_skip">SKIP</string>
     <string name="onboard_button_move">NEXT</string>

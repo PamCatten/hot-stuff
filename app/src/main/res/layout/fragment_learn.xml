@@ -24,14 +24,14 @@
                     android:id="@+id/learn_walkthrough_header"
                     style="@style/card_header"
                     app:layout_constraintTop_toTopOf="@id/learn_walkthrough_layout"
-                    app:layout_constraintLeft_toLeftOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
                     <TextView
                         android:id="@+id/learn_walkthrough_title"
                         style="@style/card_title"
                         android:text="@string/label_walkthroughs"
                         android:textSize="18sp"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"/>
                     <TextView
                         android:id="@+id/learn_walkthrough_subtitle"
                         android:layout_width="wrap_content"
@@ -39,14 +39,14 @@
                         style="@style/card_subtitle"
                         android:text="@string/label_walkthroughs_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_title"
-                        app:layout_constraintLeft_toLeftOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"/>
                     <ImageView
                         android:id="@+id/learn_walkthrough_dropdown_icon"
                         style="@style/card_icon"
                         android:contentDescription="@string/desc_expand_dropdown"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
-                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -63,21 +63,21 @@
                     android:paddingVertical="16dp"
                     android:text="@string/label_why_care"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_divider"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
                     android:id="@+id/learn_walkthrough_gettingStarted"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_get_started"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_whyCare"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
                     android:id="@+id/learn_walkthrough_export"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_export"
                     app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_gettingStarted"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_walkthrough_group"
                     style="@style/card_group"
@@ -101,14 +101,14 @@
                     android:id="@+id/learn_resources_header"
                     style="@style/card_header"
                     app:layout_constraintTop_toTopOf="@id/learn_resources_layout"
-                    app:layout_constraintLeft_toLeftOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
                     <TextView
                         android:id="@+id/learn_resources_title"
                         style="@style/card_title"
                         android:textSize="18sp"
                         android:text="@string/label_resources"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"/>
                     <TextView
                         android:id="@+id/learn_resources_subtitle"
                         android:layout_width="wrap_content"
@@ -116,14 +116,14 @@
                         style="@style/card_subtitle"
                         android:text="@string/label_resources_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_resources_title"
-                        app:layout_constraintLeft_toLeftOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"/>
                     <ImageView
                         android:id="@+id/learn_resources_dropdown_icon"
                         style="@style/card_icon"
                         android:contentDescription="@string/desc_expand_dropdown"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
-                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -140,28 +140,28 @@
                     android:paddingVertical="16dp"
                     android:text="@string/label_detail"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_divider"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_jargonGlossary"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_jargon_glossary"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_attentionToDetail"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_adjusters"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_adjusters"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_jargonGlossary"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
                     android:id="@+id/learn_resources_likeKind"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_likeKind"
                     app:layout_constraintTop_toBottomOf="@id/learn_resources_adjusters"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_resources_group"
                     style="@style/card_group"
@@ -186,15 +186,14 @@
                     android:id="@+id/learn_about_header"
                     style="@style/card_header"
                     app:layout_constraintTop_toTopOf="@id/learn_about_layout"
-                    app:layout_constraintLeft_toLeftOf="parent">
+                    app:layout_constraintStart_toStartOf="parent">
                     <TextView
                         android:id="@+id/learn_about_title"
                         style="@style/card_title"
                         android:text="@string/label_about"
                         android:textSize="18sp"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        />
+                        app:layout_constraintStart_toStartOf="parent"/>
                     <TextView
                         android:id="@+id/learn_about_subtitle"
                         android:layout_width="wrap_content"
@@ -202,14 +201,14 @@
                         style="@style/card_subtitle"
                         android:text="@string/label_about_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_about_title"
-                        app:layout_constraintLeft_toLeftOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"/>
                     <ImageView
                         android:id="@+id/learn_about_dropdown_icon"
                         style="@style/card_icon"
                         android:contentDescription="@string/desc_expand_dropdown"
                         android:src="@drawable/icon_dropdown"
                         app:tint="?attr/colorOnPrimary"
-                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"/>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -226,21 +225,21 @@
                     android:paddingVertical="16dp"
                     android:text="@string/label_sourcecode"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_divider"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
                     android:id="@+id/learn_about_acknowledgements"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_acknowledgements"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_sourceCode"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <TextView
                     android:id="@+id/learn_about_terms"
                     style="@style/card_subtitle"
                     android:paddingVertical="16dp"
                     android:text="@string/label_terms"
                     app:layout_constraintTop_toBottomOf="@id/learn_about_acknowledgements"
-                    app:layout_constraintLeft_toLeftOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent"/>
                 <androidx.constraintlayout.widget.Group
                     android:id="@+id/learn_about_group"
                     style="@style/card_group"
