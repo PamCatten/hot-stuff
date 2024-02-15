@@ -158,6 +158,9 @@
     <string name="onboard_button_move">NEXT</string>
     <string name="onboard_button_continue">CONTINUE</string>
     <string name="onboard_button_done">GET STARTED</string>
+    <string name="onboard_title_lowercase">hot stuff</string>
+    <string name="desc_onboard_image">Amorphous blobs in the vague shape of ascending flames</string>
+    <!-- Onboard Screens -->
     <string name="onboard_one_title">Welcome aboard!</string>
     <string name="onboard_one_text">Welcome to Hot Stuff! Your trusted companion for streamlining
         the process of documenting your belongings for insurance claims.

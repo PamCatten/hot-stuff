@@ -12,6 +12,7 @@
         android:layout_weight="65"
         android:scaleType="fitXY"
         android:cropToPadding="true"
+        android:contentDescription="@string/desc_onboard_image"
         android:src="@drawable/image_onboard_three"/>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

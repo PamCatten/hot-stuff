@@ -18,78 +18,77 @@
         android:orientation="vertical"
         android:theme="@style/container_fragment">
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/itemNameContainer"
+            android:id="@+id/edit_name_container"
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itemNameText"
+                android:id="@+id/edit_name_text"
                 style="@style/text_input_field"
                 android:inputType="textCapWords"
                 android:hint="@string/label_name"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/itemQuantityContainer"
+            android:id="@+id/edit_quantity_container"
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itemQuantityText"
+                android:id="@+id/edit_quantity_text"
                 style="@style/text_input_field"
                 android:inputType="number"
                 android:hint="@string/label_quantity"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/itemCategoryContainer"
+            android:id="@+id/edit_category_container"
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itemCategoryText"
+                android:id="@+id/edit_category_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_category"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/itemRoomContainer"
+            android:id="@+id/edit_room_container"
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itemRoomText"
+                android:id="@+id/edit_room_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_room"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/itemMakeContainer"
+            android:id="@+id/edit_make_container"
             style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itemMakeText"
+                android:id="@+id/edit_make_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_make"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/itemValueContainer"
+            android:id="@+id/edit_value_container"
             style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itemValueText"
+                android:id="@+id/edit_value_text"
                 style="@style/text_input_field"
                 android:inputType="numberDecimal"
                 android:hint="@string/label_value"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/itemDescriptionContainer"
+            android:id="@+id/edit_description_container"
             style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/itemDescriptionText"
+                android:id="@+id/edit_description_text"
                 style="@style/text_input_field"
-                android:inputType="textCapSentences"
-                android:maxLength="200"
+                android:inputType="textAutoCorrect"
                 android:hint="@string/label_description"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.imageview.ShapeableImageView

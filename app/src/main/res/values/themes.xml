@@ -120,14 +120,16 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginVertical">10dp</item>
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="android:textColorHint">?attr/colorOnPrimary</item>
     </style>
 
     <style name="text_input_field">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:textColorHint">?attr/colorOnPrimary</item>
         <item name="android:lines">1</item>
         <item name="android:inputType">text</item>
+        <item name="android:minHeight">48dp</item>
     </style>
 
     <style name="card">

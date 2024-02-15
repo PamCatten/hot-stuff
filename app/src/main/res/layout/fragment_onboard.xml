@@ -10,7 +10,7 @@
         android:id="@+id/onboard_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hot stuff"
+        android:text="@string/onboard_title_lowercase"
         android:fontFamily="@font/open_sans_bold"
         android:textColor="?attr/colorAccent"
         android:textAlignment="center"
@@ -39,7 +39,7 @@
             android:textStyle="bold"
             android:textAllCaps="true"
             app:cornerRadius="25dp"
-            android:text="CONTINUE"
+            android:text="@string/onboard_button_continue"
             android:backgroundTint="?attr/colorAccent"
             android:textColor="?attr/colorPrimaryVariant" />
         <TextView

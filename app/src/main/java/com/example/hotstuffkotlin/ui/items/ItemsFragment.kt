@@ -122,7 +122,7 @@ class ItemsFragment : Fragment() {
                             override fun onQueryTextChange(newText: String): Boolean {
                                 if (newText.isEmpty()) {
                                     items.clear()
-                                    adapter.clearSearchResults()
+                                    adapter.searchClear()
                                     query = null
                                     for (i in DatabaseHelper(requireContext()).getDataRange()) items.add(i)
                                 } else {
@@ -131,7 +131,7 @@ class ItemsFragment : Fragment() {
                                     val retrievedItems = DatabaseHelper(requireContext()).getDataRange(items.size, true, query)
                                     for (i in retrievedItems) {
                                         items.add(i)
-                                        adapter.searchInsert(retrievedItems.indexOf(i), retrievedItems)
+                                        adapter.searchInsert(retrievedItems.indexOf(i), items)
                                     }
                                 }
                                 return false
