@@ -48,7 +48,6 @@ When designing Hot Stuff, our hope was to create a companion for our users that 
 ### CVD (Color Vision Deficiency) Support
 To ensure that text and other important components are easily distinguishable for users with CVD, we have made an effort to optimize color contrast where possible. 
 
-
 For example: the color palette used to plot chart elements for charts were chosen to be distinguishable for users with various types of CVD, below are some visualizations to help demonstrate.
 
 Here is the palette with 'normal' vision: ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_normal.png)
@@ -61,13 +60,19 @@ Here is the palette with tritanopic (blue-yellow) vision: ![](https://github.com
 
 As you can see, despite sharing the same hue, the colors in the palette closest in shade and staturation should be distinctive enough for users with various types of CVD to differentiate between them.
 
-### Right-to-Left Text Support
 ### Additional Language Support
-While Hot Stuff currently only supports English, we recognize the importance of language diversity and are committed to expanding our language support in the future for the benefit of a global audience. 
+While Hot Stuff currently only has English translations, we recognize the importance of language diversity and are committed to expanding our language support in the future for the benefit of a global audience. 
 
-If you are capable of translating a language that is not currently supported and would like to contribute, we would welcome and encourage your help; The app strings are available in the Hot Stuff project over on [Transifex](https://www.transifex.com/pamcatten/hot-stuff/). 
+If you are fluent in a language that is not currently supported and want to contribute, we would love to have your help! The app strings are available for translation over in the Hot Stuff project on [Transifex](https://www.transifex.com/pamcatten/hot-stuff/). 
 
-If you want to translate a language that isn't already included within the project, feel free to send us an [email](mailto:campatten.dev@outlook.com), and we'll add your language when we see it.
+If the language you want to translate isn't listed within the Transifex project, feel free to [reach out](mailto:campatten.dev@outlook.com) and we'll add it when we see your email.
+
+### Right-to-Left Text Support
+While Hot Stuff currently only has English translations, we have included within the app several features to support right-to-left (RTL) languages, ensuring that users who read RTL scripts such as Arabic, Hebrew, and Farsi will be able to effectively use our project when translations are available.
+
+Currently we support:
+* Text within the application is aligned to the right by default for RTL languages, ensuring that content is displayed correctly and is easy to read
+* Mirroring UI elements such as buttons, fields, and dialogs, to align with RTL reading, to hopefully provide a more natural RTL user experience
 
 ## Similar software
 The format of Hot Stuff is entirely our own creation, which is unfortunate, because it means we put a lot time into re-inventing stuff that already exists! If, like us, you didn't know the name of this type of project, these apps are called home inventory or inventory management software. 
@@ -84,7 +89,7 @@ Similar software that helps users record, sort, and list their items on Android 
 
 ## Legal
 #### Developers
-This project is FOSS (Free and Open Source Software) licensed under the Apache License, Version 2.0. You can read the license in its entirety either [here](https://github.com/PamCatten/hot-stuff/blob/main/LICENSE) or on the [Apache website](https://www.apache.org/licenses/LICENSE-2.0).
+This application is FOSS (Free and Open Source Software) licensed under the Apache License, Version 2.0. You can read the license in its entirety either [here](https://github.com/PamCatten/hot-stuff/blob/main/LICENSE) or on the [Apache website](https://www.apache.org/licenses/LICENSE-2.0).
 #### Users
 This app is subject to our [Terms of Use](https://github.com/PamCatten/hot-stuff/blob/main/TERMS).
 
