@@ -55,6 +55,7 @@ Here is the palette with protanopic (red-green) vision: ![](https://github.com/P
 
 Here is the palette with tritanopic (blue-yellow) vision: ![](https://github.com/PamCatten/hot-stuff-kotlin/blob/main/assets/theme_tritanopia.png)
 
+As you can see, despite sharing the same hue, the colors in the palette closest in shade and staturation should be distinctive enough for users with various types of CVD to differentiate between them.
 
 ### Right-to-Left Text Support
 ### Additional Language Support
