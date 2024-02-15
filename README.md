@@ -15,6 +15,11 @@ Currently, this app supports a minimum Android SDK version of **33**, and the ta
 ## Documentation
 See the documentation for descriptions and usage examples of Hot Stuff's functions.
 
+## Contributing
+Bug reports, feature requests, questions, and pull requests always welcome! 
+
+Check out our [Contributing Guidelines](https://github.com/PamCatten/hot-stuff/blob/main/CONTRIBUTING.md).
+
 ## Design
 ### Design Document
 See the [technical design document](https://docs.google.com/document/d/177xGpi3BK14RevmSoKWCA5AEw8B0tt4f7ILGGo3Y3MI/edit#heading=h.j040vupqoagj) for more details about how or why Hot Stuff is in its current state. 
@@ -39,7 +44,6 @@ By embracing this lifecycle, users will both mitigate the risks associated with 
 
 When designing Hot Stuff, our hope was to create a companion for our users that could both help safeguard peace of mind in the day-to-day, or help ease the burden that comes in the aftermath of tragedy. If we succeeded, and you have the time to do so, consider getting involved; If we failed, consider giving us some [feedback](https://github.com/PamCatten/hot-stuff/issues/new?assignees=&labels=enhancement&projects=&template=feature.md&title=%5BFEATURE%5D): we've come a long way already, but there's always more we can do.
 ## Accessibility
-// TODO: Extremely important, include references to all work done for this objective
 ### Screen Reader Support
 ### CVD (Color Vision Deficiency) Support
 To ensure that text and other important components are easily distinguishable for users with CVD, we have made an effort to optimize color contrast where possible. 
@@ -59,13 +63,18 @@ As you can see, despite sharing the same hue, the colors in the palette closest 
 
 ### Right-to-Left Text Support
 ### Additional Language Support
+While Hot Stuff currently only supports English, we recognize the importance of language diversity and are committed to expanding our language support in the future for the benefit of a global audience. 
+
+If you are capable of translating a language that is not currently supported and would like to contribute, we would welcome and encourage your help; The app strings are available in the Hot Stuff project over on [Transifex](https://www.transifex.com/pamcatten/hot-stuff/). 
+
+If you want to translate a language that isn't already included within the project, feel free to send us an [email](mailto:campatten.dev@outlook.com), and we'll add your language when we see it.
 
 ## Similar software
-The format of Hot Stuff is entirely our own creation, which is unfortunate, because it means we put a lot time into re-inventing stuff that already exists! If, like us, you didn't know the name of this type of project, and as a result, didn't know what to google when you started, these apps are called home inventory or inventory management software. 
+The format of Hot Stuff is entirely our own creation, which is unfortunate, because it means we put a lot time into re-inventing stuff that already exists! If, like us, you didn't know the name of this type of project, these apps are called home inventory or inventory management software. 
 
-Due to its offline nature, FOSS-ness, requiring no account or personal information, and a (relatively) lighter size, Hot Stuff still serves a niche unfilled by some of the other software listed below; with the caveat that the general structure will likely be similar to some, if not all of the other applications.  
+Due to its offline nature, lack of monetization, requiring no account or personal information, and a (relatively) lighter size, Hot Stuff still serves a niche unfilled by some of the other software listed below; with the caveat that the general structure will likely be similar to some, if not all of the other applications.  
 
-Similar deployed software that helps users record, sort, and list their items on Android (the list may be incomplete, and some appear to be unmaintained):
+Similar software that helps users record, sort, and list their items on Android (the list may be incomplete, and some appear to be unmaintained):
 * [Sortly](https://play.google.com/store/apps/details?id=com.sortly.mythings&pcampaignid=web_share)
 * [Encircle](https://play.google.com/store/apps/details?id=com.encircle&pcampaignid=web_share)
 * [HouseBook](https://play.google.com/store/apps/details?id=chenige.chkchk.wairz&pcampaignid=web_share)
@@ -73,13 +82,9 @@ Similar deployed software that helps users record, sort, and list their items on
 * [ZenOwn](https://play.google.com/store/apps/details?id=com.zenown.app&hl=en&gl=US)
 * [My Stuff Organizer](https://play.google.com/store/apps/details?id=com.ebizzapps.mystufforganizer&hl=en&gl=US)
 
-## Contributing
-Bug reports, feature requests, questions, and pull requests always welcome! 
-
-Check out our [Contributing Guidelines](https://github.com/PamCatten/hot-stuff/blob/main/CONTRIBUTING.md).
 ## Legal
 #### Developers
-This project is FOSS (Free and Open Source Software) licensed under the Apache License, Version 2.0. You can read the license in its entirety either [here](https://github.com/PamCatten/hot-stuff/blob/main/LICENSE) or [here](https://www.apache.org/licenses/LICENSE-2.0).
+This project is FOSS (Free and Open Source Software) licensed under the Apache License, Version 2.0. You can read the license in its entirety either [here](https://github.com/PamCatten/hot-stuff/blob/main/LICENSE) or on the [Apache website](https://www.apache.org/licenses/LICENSE-2.0).
 #### Users
 This app is subject to our [Terms of Use](https://github.com/PamCatten/hot-stuff/blob/main/TERMS).
 
