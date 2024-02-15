@@ -110,21 +110,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:textColor="?attr/colorOnPrimary"
+                android:textColor="?attr/colorPrimaryVariant"
                 android:text="@string/label_take_photo"
                 android:layout_weight=".5"
                 app:icon="@drawable/icon_camera"
-                app:iconTint="?attr/colorOnPrimary" />
+                app:iconTint="?attr/colorPrimaryVariant" />
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_edit_select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:textColor="?attr/colorOnPrimary"
+                android:textColor="?attr/colorPrimaryVariant"
                 android:text="@string/label_select_photo"
                 android:layout_weight=".5"
                 app:icon="@drawable/icon_gallery"
-                app:iconTint="?attr/colorOnPrimary" />
+                app:iconTint="?attr/colorPrimaryVariant" />
         </LinearLayout>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_edit_save"
@@ -132,6 +132,6 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:text="@string/label_save"
-            android:textColor="?attr/colorOnPrimary"/>
+            android:textColor="?attr/colorPrimaryVariant"/>
     </LinearLayout>
 </ScrollView>

@@ -56,6 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
+            android:textColorHint="?attr/colorOnPrimary"
+            app:boxStrokeColor="@color/text_input_box_stroke"
             app:endIconTint="?attr/colorPrimaryVariant">
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/create_building_type_field"
