@@ -44,19 +44,25 @@ By embracing this lifecycle, users will both mitigate the risks associated with 
 
 When designing Hot Stuff, our hope was to create a companion for our users that could both help safeguard peace of mind in the day-to-day, or help ease the burden that comes in the aftermath of tragedy. If we succeeded, and you have the time to do so, consider getting involved; If we failed, consider giving us some [feedback](https://github.com/PamCatten/hot-stuff/issues/new?assignees=&labels=enhancement&projects=&template=feature.md&title=%5BFEATURE%5D): we've come a long way already, but there's always more we can do.
 ## Accessibility
-### Screen Reader Support
-### CVD (Color Vision Deficiency) Support
-To ensure that text and other important components are easily distinguishable for users with CVD, we have made an effort to optimize color contrast where possible. 
+We are committed to ensuring accessibility for all users and as such have taken steps with the design of the application to be in compliance with the Web Content Accessibility Guidelines (WCAG) 2.2 Level A standards. You can read more about the standards on the W3's [website](https://www.w3.org/TR/WCAG22/).
 
-For example: the color palette used to plot chart elements for charts were chosen to be distinguishable for users with various types of CVD, below are some visualizations to help demonstrate.
+### Visual Impairment (VI) Support
+All non-text content within the application, such as images and multimedia, includes text descriptions to ensure that the content remains accessible to users who cannot see the visual elements of the interface. 
 
-Here is the palette with 'normal' vision: ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_normal.png)
+In addition, forms are designed to be accessible, with clear labels, and are easy to navigate and complete for users using screen readers such as [TalkBack](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845&sjid=8657868966461860489-NA) by Google, or other assistive technologies (AT).
 
-Here is the palette with deuteranopic (red-green) vision: ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_deuternanopia.png)
+### Color Vision Deficiency (CVD) Support
+To ensure that text and other important components remain easy-to-use for users with CVD, we have made sure the application meets the WCAG 2.2 Level A minimum requirement of a 3:1 color contrast ratio between all elements. We have also taken the step to modify the color palette used in the application to enhance the visibility of chart elements for users with different types of CVD, as you can see in the visualizations below.
 
-Here is the palette with protanopic (red-green) vision: ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_protanopia.png)
+The following is Hot Stuff's chart color palette filtered to appear as how users with various types of CVD would see it:
 
-Here is the palette with tritanopic (blue-yellow) vision: ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_tritanopia.png)
+'Normal' vision ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_normal.png)
+
+Deuteranopic (red-green) vision ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_deuternanopia.png)
+
+Protanopic (red-green) vision ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_protanopia.png)
+
+Tritanopic (blue-yellow) vision ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_tritanopia.png)
 
 As you can see, despite sharing the same hue, the colors in the palette closest in shade and staturation should be distinctive enough for users with various types of CVD to differentiate between them.
 
