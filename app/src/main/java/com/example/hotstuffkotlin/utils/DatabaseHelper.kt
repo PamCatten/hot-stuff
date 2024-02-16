@@ -39,6 +39,7 @@ class DatabaseHelper(val context: Context):
         val queryBuilding = "CREATE TABLE $TABLE_NAME_BUILDING (" +
             "$COLUMN_BUILDING_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "$COLUMN_BUILDING_NAME TEXT, " +
+            "$COLUMN_BUILDING_TYPE TEXT, " +
             "$COLUMN_BUILDING_DESCRIPTION TEXT);"
 
         db?.execSQL(queryItem)
@@ -49,6 +50,32 @@ class DatabaseHelper(val context: Context):
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_BUILDING")
         onCreate(db)
     }
+
+    fun upgradeTables() {
+        val db = this.writableDatabase
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_ITEM")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_BUILDING")
+        val queryItem = "CREATE TABLE $TABLE_NAME_ITEM (" +
+        "$COLUMN_ITEM_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_ITEM_BUILDING_ID INTEGER, " +
+                "$COLUMN_ITEM_NAME TEXT, " +
+                "$COLUMN_ITEM_QUANTITY INTEGER, " +
+                "$COLUMN_ITEM_CATEGORY TEXT, " +
+                "$COLUMN_ITEM_ROOM TEXT, " +
+                "$COLUMN_ITEM_MAKE TEXT, " +
+                "$COLUMN_ITEM_VALUE MONEY, " +
+                "$COLUMN_ITEM_IMAGE_URI TEXT, " +
+                "$COLUMN_ITEM_DESCRIPTION TEXT);"
+
+        val queryBuilding = "CREATE TABLE $TABLE_NAME_BUILDING (" +
+                "$COLUMN_BUILDING_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_BUILDING_NAME TEXT, " +
+                "$COLUMN_BUILDING_TYPE TEXT, " +
+                "$COLUMN_BUILDING_DESCRIPTION TEXT);"
+        db?.execSQL(queryItem)
+        db?.execSQL(queryBuilding)
+    }
+
     /**
      * Add the passed item to the database and toast the result (whether success/failure).
      *
@@ -352,6 +379,13 @@ class DatabaseHelper(val context: Context):
         cursor.close()
         return itemList
     }
+
+    /**
+     *
+     *
+     * @author Cam Patten
+     * @return
+     */
 
     /**
      * Write item records to .CSV file, export to device downloads directory and toast result (whether

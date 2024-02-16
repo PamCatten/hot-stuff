@@ -143,6 +143,9 @@
     <string name="key_currency">currency</string>
     <string name="key_scale">textsize</string>
     <string name="key_theme">theme</string>
+    <string name="key_name">buildingName</string>
+    <string name="key_type">buildingType</string>
+    <string name="key_description">buildingDescription</string>
     <string name="key_language">language</string>
     <!-- CardView Item -->
     <string name="label_divider">⋅</string>
@@ -221,7 +224,7 @@
     <string name="toast_deleteItem_fail">Delete failed. Please send a bug report</string>
     <string name="toast_addBuilding_success">Building saved</string>
     <string name="toast_addBuilding_fail">Save failed. Please send a bug report</string>
-    <string name="toast_updateBuilding_success">Building failed</string>
+    <string name="toast_updateBuilding_success">Building updated</string>
     <string name="toast_updateBuilding_fail">Update failed. Please send a bug report</string>
     <string name="toast_deleteBuilding_success">Building deleted</string>
     <string name="toast_deleteBuilding_fail">Delete failed. Please send a bug report</string>

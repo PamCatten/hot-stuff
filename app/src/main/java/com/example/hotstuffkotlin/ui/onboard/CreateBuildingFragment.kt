@@ -39,9 +39,9 @@ class CreateBuildingFragment : Fragment() {
 
         val buildingName = view.findViewById<TextInputLayout>(R.id.create_building_name_container)
         val buildingNameText = view.findViewById<TextInputEditText>(R.id.create_building_name_field)
-        val buildingType = view.findViewById<TextInputLayout>(R.id.create_building_type_container)
+//        val buildingType = view.findViewById<TextInputLayout>(R.id.create_building_type_container)
         val buildingTypeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_building_type_field)
-        val buildingDescription = view.findViewById<TextInputLayout>(R.id.create_building_desc_container)
+//        val buildingDescription = view.findViewById<TextInputLayout>(R.id.create_building_desc_container)
         val buildingDescriptionText = view.findViewById<TextInputEditText>(R.id.create_building_desc_field)
         val createBuildingButton = view.findViewById<MaterialButton>(R.id.create_building_button)
 
@@ -57,14 +57,6 @@ class CreateBuildingFragment : Fragment() {
             }
             if (!focused) buildingName.helperText = validName()
         }
-//        buildingTypeText.setOnFocusChangeListener { _, focused ->
-//            fun validType(): String? {
-//                buildingTypeText.error = null
-//                return if (buildingTypeText.text.isEmpty()) "Required"
-//                else null
-//            }
-//            if (!focused) buildingType.helperText = validType()
-//        }
 
         createBuildingButton.setOnClickListener {
             fun confirmForm() {
@@ -74,18 +66,16 @@ class CreateBuildingFragment : Fragment() {
                 newBuilding.description = buildingDescriptionText.text.toString().trim()
                 DatabaseHelper(requireContext()).addBuilding(newBuilding)
 
+                SharedPreferenceHelper.getInstance(requireContext()).updateBuildingPrefs(
+                    newBuilding.name, newBuilding.type, newBuilding.description)
                 SharedPreferenceHelper.getInstance(requireContext()).finishOnboarding()
                 findNavController().navigate(R.id.action_create_building_to_main_activity)
                 requireActivity().finish()
             }
             fun checkForm() {
                 val nameCheck = (buildingNameText.text == null) || (buildingNameText.text.toString() == "")
-//                val typeCheck = buildingTypeText.text.isEmpty()
-
-                if (nameCheck) buildingNameText.error = getText(R.string.label_required_hint)
-//                if (typeCheck) buildingTypeText.error = getText(R.string.label_required_hint)
-
                 if (nameCheck) {
+                    buildingNameText.error = getText(R.string.label_required_hint)
                     val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(), R.style.dialog_alert)
                     alertDialogBuilder.setTitle(R.string.label_dialog_create_title)
                     alertDialogBuilder.setMessage(R.string.label_dialog_create_building_body)
@@ -97,11 +87,6 @@ class CreateBuildingFragment : Fragment() {
             checkForm()
         }
 
-//
-//    private fun onBoardingFinished(): Boolean{
-//        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-//        return sharedPref.getBoolean("Finished", false)
-//    }
 
         // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
         requireActivity().addMenuProvider(object: MenuProvider {

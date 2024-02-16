@@ -36,25 +36,22 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
         val context = requireContext()
-
         if (SharedPreferenceHelper.getInstance(requireContext()).getOnboardPref()) {
             startActivity(Intent(context, OnboardActivity::class.java))
         }
-
+//        DatabaseHelper(context).upgradeTables() // TEMP FUNCTION
         val totalItems = view.findViewById<TextView>(R.id.label_building_quantity)
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
-//        val buildingName = view.findViewById<TextView>(R.id.label_building_name)
-
+        val buildingName = view.findViewById<TextView>(R.id.label_building_name)
         val colorOnPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.RED)
-
         val currencyIcon = SharedPreferenceHelper.getInstance(context).getCurrencyPref(context)
         val derivedTotal = DatabaseHelper(context).getTotalValue()
 
         totalValue.text = getString(R.string.label_building_value_builder, currencyIcon, derivedTotal)
         totalItems.text = DatabaseHelper(context).getTotalQuantity()
 
-//        val derivedName = "Sample House"
-//        buildingName.text = derivedName
+        val derivedName = SharedPreferenceHelper.getInstance(context).getPref(getString(R.string.key_name))
+        buildingName.text = derivedName
 
         val catChart = view.findViewById<BarChart>(R.id.chart_home_one)
         val catDatabaseLabels = DatabaseHelper(context).getCategoryQuantity().first

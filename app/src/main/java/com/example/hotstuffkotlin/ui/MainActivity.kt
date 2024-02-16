@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         initTheme()
 
-        // onboard
-
         // toolbar
         toolbar = findViewById(R.id.toolbar_main)
         setSupportActionBar(toolbar)

@@ -29,6 +29,11 @@ class SharedPreferenceHelper {
     fun getOnboardPref(): Boolean {
         return prefs?.getBoolean("onboard", true) == true
     }
+    fun updateBuildingPrefs(name: String, type: String?, description: String?) {
+        prefs!!.edit().putString("name", name).apply()
+        prefs!!.edit().putString("type", type).apply()
+        prefs!!.edit().putString("description", description).apply()
+    }
 
     //TEST DELETE WHEN DONE WITH ONBOARD
     fun testOnboard() {
@@ -40,8 +45,8 @@ class SharedPreferenceHelper {
         prefs!!.edit().putBoolean("onboard", false).apply()
     }
 
-    fun getBuildingNamePref(): String? {
-        return prefs?.getString("buildingName", "Test")
+    fun getPref(key: String): String? {
+        return prefs?.getString(key, "")
     }
 
     fun applyThemePref(themePreference: String?) {

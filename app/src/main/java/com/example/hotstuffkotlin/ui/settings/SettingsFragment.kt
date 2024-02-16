@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceFragmentCompat
 import com.example.hotstuffkotlin.R
+import com.example.hotstuffkotlin.models.Building
+import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
@@ -24,15 +26,24 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     }
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
         when (key) {
-            "theme" -> {
+            getString(R.string.key_theme) -> {
                 when (preferenceHelper.getThemePref()) {
                     getString(R.string.label_light) -> setTheme(AppCompatDelegate.MODE_NIGHT_NO)
                     getString(R.string.label_dark) -> setTheme(AppCompatDelegate.MODE_NIGHT_YES)
                     getString(R.string.label_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                 }
             }
-            "currency" -> {
+            getString(R.string.key_currency) -> {
                 // do nothing for now
+            }
+            getString(R.string.key_name),
+            getString(R.string.key_type),
+            getString(R.string.key_description) -> {
+                val building = Building()
+                building.name = preferenceHelper.getPref(key).toString()
+                building.type = preferenceHelper.getPref(key).toString()
+                building.description = preferenceHelper.getPref(key).toString()
+                DatabaseHelper(requireContext()).updateBuilding(building)
             }
         }
     }
