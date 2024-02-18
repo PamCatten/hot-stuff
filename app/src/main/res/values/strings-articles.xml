@@ -4,11 +4,15 @@
         \nHot Stuff does not provide legal, financial, or insurance advice. This page is written
         for informational purposes only, and is not a substitute for professional advice from a
         licensed attorney, financial advisor, or insurance professional.
-</string>
-
+    </string>
     <string name="article_getStarted">getStarted</string>
+    <string name="article_getStarted_title">Walkthrough: Getting Started</string>
+    <string name="article_getStarted_text">
+    </string>
     <string name="article_export">export</string>
-
+    <string name="article_export_title">Walkthrough: Export Item Records</string>
+    <string name="article_export_text">
+    </string>
     <string name="article_whyCare">whyCare</string>
     <string name="article_whyCare_title">Hot Stuff: Simplify Your Fire Claims</string>
     <string name="article_whyCare_text">
@@ -138,10 +142,10 @@
         providers can have different terms, definitions, and conditions of coverage.
 
         \n\nLying on an insurance claim is a terrible idea, it is both illegal and can cause
-        policyholders even bigger problems (such as invalidating the entire claim). However,
-        sometimes it may make sense not to tell the whole truth; Particularly with items that
-        possess unique or specific features that contribute to their value, and may not have a
-        direct equivalent in the market that perfectly matches its distinct characteristics.
+        policyholders even bigger problems (such as invalidating entire claims). However,
+        sometimes it may make sense not to be forthcoming with the entire truth; Particularly with
+        items that possess unique or specific features that contribute to their value, and may not
+        have equivalents in the market that perfectly match their distinct characteristics.
 
         \n\nFor example, a vintage watch, a custom-made piece of furniture, a high-resolution camera,
         or a rare collectible are all likely to have a combination of niche features that are

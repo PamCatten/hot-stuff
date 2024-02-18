@@ -22,6 +22,7 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemsBinding
 import com.example.hotstuffkotlin.utils.Adapter
 import com.example.hotstuffkotlin.utils.DatabaseHelper
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.imageview.ShapeableImageView
 
 class ItemsFragment : Fragment() {
@@ -112,13 +113,11 @@ class ItemsFragment : Fragment() {
                         // TODO: Find a way to remove auto-generated Search Icon in the query
                         searchView.isIconified = false
                         searchView.queryHint = "Search Hot Stuff"
-
                         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
                             override fun onQueryTextSubmit(query: String?): Boolean {
                                 searchView.clearFocus()
                                 return false
                             }
-
                             override fun onQueryTextChange(newText: String): Boolean {
                                 if (newText.isEmpty()) {
                                     items.clear()
@@ -140,23 +139,31 @@ class ItemsFragment : Fragment() {
                         return true
                     }
                     R.id.toolbar_main_download -> {
-                        DatabaseHelper(requireContext()).exportCSV()
+                        val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(),
+                            R.style.dialog_alert)
+                        alertDialogBuilder.setTitle("Export item records?")
+                        alertDialogBuilder.setMessage("Your records will be saved to your " +
+                                "device's downloads folder.")
+                        alertDialogBuilder.setPositiveButton("OK") { dialog, _ ->
+                            DatabaseHelper(requireContext()).exportCSV()
+                            dialog.dismiss()
+                        }
+                        alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        val alertDialog = alertDialogBuilder.create()
+                        alertDialog.show()
                         return true
                     }
-                    R.id.toolbar_main_report -> {
+                    R.id.toolbar_main_report,
+                    R.id.toolbar_main_feedback-> {
                         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_issue))))
                         return true
                     }
                     R.id.toolbar_main_rate -> { return true }
-                    R.id.toolbar_main_feedback -> {
-                        val intent = Intent(Intent.ACTION_VIEW)
-                        // TODO: Find an alternative way to extract these
-                        intent.data = Uri.parse(
-                            "mailto:campatten.dev@outlook.com" +
-                                    "?subject=FEEDBACK: (Your Suggestion)" +
-                                    "&body=Hey! Thanks for helping me improve Hot Stuff. Just a quick heads up, please make sure 'feedback' is somewhere in the subject of your suggestion so it ends up where I can see it! \n\n Much love, \nCam"
-                        )
-                        startActivity(intent)
+                    R.id.toolbar_main_feedback,
+                    R.id.toolbar_main_report -> {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_issue))))
                         return true
                     }
                     else -> return true
