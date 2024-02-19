@@ -8,6 +8,64 @@
     <string name="article_getStarted">getStarted</string>
     <string name="article_getStarted_title">Walkthrough: Getting Started</string>
     <string name="article_getStarted_text">
+        Welcome! This guide exists to provide a brief introduction to Hot Stuff\'s features and to
+        explain the basic workflow of cataloging your possessions.
+
+        \n\nFeatures
+        \nHome: See charts and summaries of the items you have saved.
+
+        \n\nItems: Scroll or search through saved items, export item records, and view, update, and
+        delete saved items.
+
+        \n\nCreate: Enter details, take photos, and save new records of your items.
+
+        \n\nLearn: Learn about using Hot Stuff and read some additional perspectives on topics
+        around the insurance claim process.
+
+        \n\nSettings: Customize your experience by changing the app\'s theme, the preferred currency,
+        and any building information.
+
+        \n\nWorkflow
+        \nStep 1: Tap the \'Create\' icon in the navigation bar at the bottom of the screen.
+
+        \n\nStep 2: Fill in the required details for the item, including the name, quantity,
+        category, and room. The rest of the form, including brand/manufacturer, item value,
+        description, and a photo of
+        the item, are all relevant, recommended information to include, but they aren\'t needed to
+        save an item to your records.
+
+        \n\nStep 3: Save the item to your records by pressing the \'Save Item\' button at the end of
+        the form, a message should appear at the bottom of the screen when your item has been saved.
+
+        \n\nStep 4: To save another item you can stay on the \'Create\' screen to begin the process
+        again, however, if you wish to see your item or modify it\'s details, you can click
+        on the \'Items\' icon in the navigation bar at the bottom of the screen to see a scrollable
+        list of items you\'ve saved.
+
+        \n\nStep 5: To modify your item, you can either scroll through the list until you
+        find it, or you can tap the \'Search\' icon in the toolbar at the top of the screen to search
+        your database for items with names, categories, rooms, and brands/manufacturers similar to
+        what you type into the search bar.
+
+        \n\nStep 6: To edit an item, you can tap the \'Edit\' button at the bottom of the
+        screen to be taken to a screen similar to the \'Create\' items page. Any changes you make
+        here can be saved by pressing the \'Save Changes\' button at the bottom of the screen, if
+        you don\'t wish to change any of your item\'s details you can tap the back arrow icon at
+        the top of the screen to return to the details page.
+
+        \n\nStep 7: To delete an item, you can tap the \'Delete\' button at the bottom of the screen.
+        A popup will appear asking if you\'re sure, if you press \'Delete\' again you\'ll be brought
+        back to the \'Items\' screen and a message should appear at the bottom of the screen when
+        your item has been deleted.
+
+        \n\nThat\'s the basic flow of the app! If you want to export your item records, you can read
+        more about it in the \'Exporting records\' walkthrough. If you find a bug or want to give
+        some feedback you can tap the \'Options\' in the toolbar at the top of the screen to open a
+        menu with those resources.
+
+        \n\nLastly, if you have a question not answered here or need some further assistance, please
+        visit our GitHub (linked in the \'About Hot Stuff\' section of the \'Learn\' screen), it
+        should have resources and links to get in contact with the developer.
     </string>
     <string name="article_export">export</string>
     <string name="article_export_title">Walkthrough: Export Item Records</string>

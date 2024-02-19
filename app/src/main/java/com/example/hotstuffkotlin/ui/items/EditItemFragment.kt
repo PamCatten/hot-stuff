@@ -240,15 +240,6 @@ class EditItemFragment : Fragment() {
             }
             checkForm()
 
-
-//            val callback = object : OnBackPressedCallback(
-//        true // default to enabled
-//            ) {
-//                override fun handleOnBackPressed() {
-//                    navigateBack()
-//                }
-//            }
-//            requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, callback)
         }
         // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
         requireActivity().addMenuProvider(object: MenuProvider {

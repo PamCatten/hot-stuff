@@ -36,6 +36,7 @@
     <string name="label_value">Value (per item)</string>
     <string name="label_description">Description</string>
     <string name="label_save_item">Save item</string>
+    <string name="label_save_changes">Save changes</string>
     <string name="label_save">Save</string>
     <string name="label_edit">Edit</string>
     <string name="label_select_photo">Select Photo</string>
