@@ -12,6 +12,30 @@
     <string name="article_export">export</string>
     <string name="article_export_title">Walkthrough: Export Item Records</string>
     <string name="article_export_text">
+        Follow these steps to export your data to a .CSV (Comma-Separated Values) file, which can
+        then be opened in spreadsheet software like Google Sheets or Excel.
+
+        \n\nStep 1: Navigate to the \'Items\' screen.
+
+        \n\nStep 2: Tap the \'Export\' icon in the toolbar at the top of the screen.
+
+        \n\nStep 3: A popup should appear prompting if you want to continue, press \'OK\'.
+
+        \n\nStep 4: Wait for your data to download, a message should appear at the bottom of the
+        screen when your items are successfully exported.
+
+        \n\nStep 5: Check your device\'s downloads folder, your data should be there, named in this
+        format: \'HS-DATA-[numbers].csv\'.
+
+        \n\nStep 6: Using spreadsheet software like Google Sheets or Excel, open the
+        file, you should see your item records organized into columns.
+
+        \n\nStep 7: In that spreadsheet software, edit the rows, columns, or cells of the file if
+        you notice any changes you need to make to your records.
+
+        \n\nThat\'s it! You\'ve successfully exported your item records to a .CSV file using Hot
+        Stuff. You can now use the file as a reference for personal records and for reporting claims
+        to insurance providers!
     </string>
     <string name="article_whyCare">whyCare</string>
     <string name="article_whyCare_title">Hot Stuff: Simplify Your Fire Claims</string>

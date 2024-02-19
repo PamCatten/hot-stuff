@@ -43,8 +43,8 @@ class ArticleFragment : Fragment() {
                 articleDisclosure.text = ""
             }
             getText(R.string.article_export) -> {
-                articleTitle.text = ""
-                articleText.text = ""
+                articleTitle.text = getText(R.string.article_export_title)
+                articleText.text = getText(R.string.article_export_text)
                 articleDisclosure.text = ""
             }
             getText(R.string.article_detail) -> {

@@ -8,7 +8,7 @@
     <string name="label_settings_fragment">Settings</string>
     <!-- Toolbar Labels -->
     <string name="label_search">Search</string>
-    <string name="label_download">Download Records</string>
+    <string name="label_download">Export</string>
     <string name="label_expand_menu">More</string>
     <string name="label_rate">Rate</string>
     <string name="label_report">Report Bug</string>
@@ -188,14 +188,14 @@
         \n\nThese values appear only in the app, and anything you enter here can be changed later.
     </string>
     <!-- Feedback email template -->
-    <string name="feedback_email">campatten.dev@outlook.com</string>
-    <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>
-    <string name="feedback_info_body">Hey! Thanks for helping me improve Hot Stuff. Just a quick
-        heads up, please make sure \'feedback\' is somewhere in the subject of your suggestion so
-        it ends up where I can see it!
-    </string>
-    <string name="feedback_info_closing">Much love,</string>
-    <string name="feedback_info_identity">Cam</string>
+<!--    <string name="feedback_email">campatten.dev@outlook.com</string>-->
+<!--    <string name="feedback_subject">FEEDBACK: (Your Suggestion)</string>-->
+<!--    <string name="feedback_info_body">Hey! Thanks for helping me improve Hot Stuff. Just a quick-->
+<!--        heads up, please make sure \'feedback\' is somewhere in the subject of your suggestion so-->
+<!--        it ends up where I can see it!-->
+<!--    </string>-->
+<!--    <string name="feedback_info_closing">Much love,</string>-->
+<!--    <string name="feedback_info_identity">Cam</string>-->
     <!-- Database -->
 <!--    <string name="db_name">HotStuff.db</string>-->
 <!--    <string name="db_table_item">ITEM</string>-->
