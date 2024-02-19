@@ -64,7 +64,7 @@ Protanopic (red-green) vision ![](https://github.com/PamCatten/hot-stuff/blob/ma
 
 Tritanopic (blue-yellow) vision ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/theme_tritanopia.png)
 
-As you can see, despite sharing the same hue, the colors in the palette closest in shade and staturation should be distinctive enough for users with various types of CVD to differentiate between them.
+As you can see, despite sharing the same hue, the colors in the palette closest in shade and staturation should still be distinctive enough for users with various types of CVD to differentiate between.
 
 ### Additional Language Support
 While Hot Stuff currently only has English translations, we recognize the importance of language diversity and are committed to expanding our language support in the future for the benefit of a global audience. 
