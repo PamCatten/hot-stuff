@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory android:title="@string/label_appearance" app:iconSpaceReserved="false">
         <ListPreference
-            android:defaultValue="@string/default_theme"
             android:title="@string/label_theme"
             android:dialogTitle="@string/label_theme"
             android:entries="@array/dropdown_theme"
@@ -13,7 +12,6 @@
             android:summary="@string/label_theme_summary"
             app:iconSpaceReserved="false"/>
         <ListPreference
-            android:defaultValue="@string/default_currency"
             android:title="@string/label_currency"
             android:dialogTitle="@string/label_currency"
             android:entries="@array/currency_labels"
@@ -33,14 +31,12 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="Building Information" app:iconSpaceReserved="false">
         <EditTextPreference
-            android:defaultValue=""
             android:title="Name"
             android:dialogTitle="Building Name"
             android:key="@string/key_buildingName"
             android:summary="Change your building\'s name"
             app:iconSpaceReserved="false"/>
         <ListPreference
-            android:defaultValue="house"
             android:title="Type"
             android:dialogTitle="Building Type"
             android:entries="@array/building_type"
@@ -49,7 +45,6 @@
             android:summary="Change your building\'s type"
             app:iconSpaceReserved="false"/>
         <EditTextPreference
-            android:defaultValue=""
             android:title="Description"
             android:dialogTitle="Building Description"
             android:key="@string/key_buildingDesc"
@@ -63,10 +58,20 @@
             android:key="@string/key_share"
             app:iconSpaceReserved="false" />
         <Preference
+            android:title="@string/label_source_code"
+            android:summary="@string/label_source_code_summary"
+            android:key="@string/key_source_code"
+            app:iconSpaceReserved="false"/>
+        <Preference
             android:title="@string/label_terms"
             android:summary="@string/label_terms_summary"
             android:key="@string/key_terms"
             app:iconSpaceReserved="false" />
+        <Preference
+            android:title="@string/label_open_source"
+            android:summary="@string/label_open_source_summary"
+            android:key="@string/key_open_source"
+            app:iconSpaceReserved="false"/>
         <Preference
             android:title="@string/label_version_number"
             android:key="@string/key_version"

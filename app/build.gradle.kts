@@ -55,6 +55,7 @@ dependencies {
 
     // third party
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    implementation("com.google.android.gms:play-services-oss-licenses:17.0.1")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
 
     // testing

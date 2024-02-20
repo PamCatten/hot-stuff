@@ -120,6 +120,10 @@
     <string name="label_share">Share Hot Stuff</string>
     <string name="label_share_summary">Like Hot Stuff? Share the app with your friends and family</string>
     <string name="label_terms_summary">Read our terms and conditions</string>
+    <string name="label_source_code">Source Code</string>
+    <string name="label_source_code_summary">View Hot Stuff\'s source code</string>
+    <string name="label_open_source">Open Source Licenses</string>
+    <string name="label_open_source_summary">Read the licenses of the OSS libraries we use to make Hot Stuff</string>
     <string name="label_version_number">Version Number</string>
 
     <string name="default_currency">dollar</string>

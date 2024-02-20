@@ -103,34 +103,6 @@ class LearnFragment : Fragment() {
 //        SharedPreferenceHelper.getInstance(requireContext()).testOnboard()
         // END
 
-        // about card
-        val cardViewAbout = view.findViewById<ViewGroup>(R.id.learn_about_card)
-        val dropdownAbout = view.findViewById<ConstraintLayout>(R.id.learn_about_header)
-        val dropdownIconAbout = view.findViewById<ImageView>(R.id.learn_about_dropdown_icon)
-        val groupAbout = view.findViewById<Group>(R.id.learn_about_group)
-
-        dropdownAbout?.setOnClickListener{
-            if(groupAbout?.visibility == View.VISIBLE && cardViewAbout != null) {
-                groupAbout.visibility = View.GONE
-                dropdownIconAbout?.setImageResource(R.drawable.icon_dropdown)
-            }
-            else if (groupAbout?.visibility == View.GONE && cardViewAbout != null) {
-                groupAbout.visibility = View.VISIBLE
-                dropdownIconAbout?.setImageResource(R.drawable.icon_dropdown_close)
-            }
-        }
-
-        val buttonSourceCode = view.findViewById<TextView>(R.id.learn_about_sourceCode)
-        val buttonAcknowledgements = view.findViewById<TextView>(R.id.learn_about_acknowledgements)
-
-        buttonSourceCode.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_repo))))
-        }
-        buttonAcknowledgements.setOnClickListener{
-            bundle.putCharSequence("article", getText(R.string.article_acknowledgements))
-            findNavController().navigate(R.id.navigation_article, bundle)
-        }
-
         // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
         requireActivity().addMenuProvider(object: MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {

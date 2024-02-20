@@ -13,6 +13,7 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.models.Building
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var preferenceHelper: SharedPreferenceHelper
@@ -29,7 +30,19 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
 
         val terms = findPreference<Preference>(getString(R.string.key_terms))
         terms?.setOnPreferenceClickListener {
-            readTerms()
+            visitDestination(getString(R.string.link_terms))
+            true
+        }
+
+        val sourceCode = findPreference<Preference>(getString(R.string.key_source_code))
+        sourceCode?.setOnPreferenceClickListener {
+            visitDestination(getString(R.string.link_repo))
+            true
+        }
+
+        val openSource = findPreference<Preference>(getString(R.string.key_open_source))
+        openSource?.setOnPreferenceClickListener {
+            startActivity(Intent(context, OssLicensesMenuActivity::class.java))
             true
         }
 
@@ -72,17 +85,14 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     private fun shareApp() {
         // TODO: ADD LINK TO PLAY STORE AND OPEN IN NEW JAVA INTENT
     }
-
-    private fun readTerms() {
+    private fun visitDestination(link: String) {
         try {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_terms))))
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(link)))
         } catch (e: Exception) {
             Toast.makeText(context, R.string.toast_no_app, Toast.LENGTH_LONG).show()
             e.printStackTrace()
         }
-
     }
-
     private fun setTheme(mode: Int) {
         AppCompatDelegate.setDefaultNightMode(mode)
     }
