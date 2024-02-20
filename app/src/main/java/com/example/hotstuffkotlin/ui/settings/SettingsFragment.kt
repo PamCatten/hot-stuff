@@ -22,6 +22,12 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         setPreferencesFromResource(R.xml.preferences, rootKey)
         preferenceHelper = SharedPreferenceHelper.getInstance(requireContext())
 
+        val rate = findPreference<Preference>(getString(R.string.key_rate))
+        rate?.setOnPreferenceClickListener {
+            // do nothing for now
+            true
+        }
+
         val share = findPreference<Preference>(getString(R.string.key_share))
         share?.setOnPreferenceClickListener {
             shareApp()

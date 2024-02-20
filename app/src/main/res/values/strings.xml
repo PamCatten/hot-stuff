@@ -9,9 +9,6 @@
     <string name="label_search">Search</string>
     <string name="label_download">Export</string>
     <string name="label_expand_menu">More</string>
-    <string name="label_rate">Rate</string>
-    <string name="label_report">Report Bug</string>
-    <string name="label_feedback">Send Feedback</string>
     <!-- Home -->
     <string name="label_building_value">Total Building Value</string>
     <string name="label_total_value">Total Item Value</string>
@@ -115,6 +112,14 @@
     <string name="label_system">Use device default</string>
     <string name="label_light">Light theme</string>
     <string name="label_dark">Dark theme</string>
+    <!-- Settings: Contact Us -->
+    <string name="label_contact">Contact</string>
+    <string name="label_feedback">Send Feedback</string>
+    <string name="label_feedback_summary">Send feedback to help improve Hot Stuff</string>
+    <string name="label_report">Report Bug</string>
+    <string name="label_report_summary">Found a bug? File a report and let us know</string>
+    <string name="label_rate">Rate</string>
+    <string name="label_rate_summary">Love us? Hate us? Let the world know</string>
     <!-- Settings: App Information -->
     <string name="label_app_info">App Information</string>
     <string name="label_share">Share Hot Stuff</string>

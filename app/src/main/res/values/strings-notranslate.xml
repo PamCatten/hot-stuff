@@ -17,6 +17,7 @@
     <string name="key_contact" translatable="false">contact</string>
     <string name="key_feedback" translatable="false">feedback</string>
     <string name="key_report_bug" translatable="false">report_bug</string>
+    <string name="key_rate" translatable="false">rate</string>
 
     <!-- Arrays -->
     <string name="theme_system" translatable="false">system</string>
