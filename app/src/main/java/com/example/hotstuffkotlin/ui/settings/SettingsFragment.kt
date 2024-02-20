@@ -28,6 +28,12 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             true
         }
 
+        val feedback = findPreference<Preference>(getString(R.string.key_feedback))
+        feedback?.setOnPreferenceClickListener {
+            visitDestination(getString(R.string.link_issue))
+            true
+        }
+
         val share = findPreference<Preference>(getString(R.string.key_share))
         share?.setOnPreferenceClickListener {
             shareApp()

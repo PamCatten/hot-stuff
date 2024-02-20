@@ -115,9 +115,9 @@
     <!-- Settings: Contact Us -->
     <string name="label_contact">Contact</string>
     <string name="label_feedback">Send Feedback</string>
-    <string name="label_feedback_summary">Send feedback to help improve Hot Stuff</string>
+    <string name="label_feedback_summary">Have a suggestion? We\'d love to hear from you!</string>
     <string name="label_report">Report Bug</string>
-    <string name="label_report_summary">Found a bug? File a report and let us know</string>
+    <string name="label_report_summary">Encountered a problem? Let us know so we can fix it</string>
     <string name="label_rate">Rate</string>
     <string name="label_rate_summary">Love us? Hate us? Let the world know</string>
     <!-- Settings: App Information -->
@@ -126,9 +126,9 @@
     <string name="label_share_summary">Like Hot Stuff? Share the app with your friends and family</string>
     <string name="label_terms_summary">Read our terms and conditions</string>
     <string name="label_source_code">Source Code</string>
-    <string name="label_source_code_summary">View Hot Stuff\'s source code</string>
+    <string name="label_source_code_summary">View or contribute to the app\'s source code on GitHub</string>
     <string name="label_open_source">Open Source Licenses</string>
-    <string name="label_open_source_summary">Read the licenses of the OSS libraries we use to make Hot Stuff</string>
+    <string name="label_open_source_summary">View the open source licenses used in the app</string>
     <string name="label_version_number">Version Number</string>
 
     <string name="default_currency">dollar</string>
