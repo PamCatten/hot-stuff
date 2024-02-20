@@ -46,7 +46,7 @@ class CreateBuildingFragment : Fragment() {
         val createBuildingButton = view.findViewById<MaterialButton>(R.id.create_building_button)
 
         val adapter = ArrayAdapter(requireContext(), com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
-            resources.getStringArray(R.array.dropdown_building_type))
+            resources.getStringArray(R.array.building_type))
         buildingTypeText.setAdapter(adapter)
 
         buildingNameText.setOnFocusChangeListener { _, focused ->

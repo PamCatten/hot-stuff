@@ -30,6 +30,7 @@ import com.example.hotstuffkotlin.models.Item
 import com.example.hotstuffkotlin.ui.create.CreateItemFragment
 import com.example.hotstuffkotlin.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -118,23 +119,22 @@ class EditItemFragment : Fragment() {
         }
 
         val takePicture = registerForActivityResult(ActivityResultContracts.TakePicture()) {
-                isSaved -> if (isSaved) {
-            editImage.setImageURI(imageURI)
-            val contentResolver = requireContext().contentResolver
-            val source = ImageDecoder.createSource(contentResolver, imageURI!!)
-            val bitmap = ImageDecoder.decodeBitmap(source) { decoder, _, _ ->
-                decoder.setTargetSampleSize(1)
-                decoder.isMutableRequired = true
-            }
+            isSaved -> if (isSaved) {
+                editImage.setImageURI(imageURI)
+                val contentResolver = requireContext().contentResolver
+                val source = ImageDecoder.createSource(contentResolver, imageURI!!)
+                val bitmap = ImageDecoder.decodeBitmap(source) { decoder, _, _ ->
+                    decoder.setTargetSampleSize(1)
+                    decoder.isMutableRequired = true
+                }
 
-            val fos = FileOutputStream(imageFile)
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
-            fos.flush()
-            fos.close()
-            MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(
-                CreateItemFragment.SELECT_MIME_TYPE
-            ), null)
-        }
+                val fos = FileOutputStream(imageFile)
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
+                fos.flush()
+                fos.close()
+                MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(
+                    CreateItemFragment.SELECT_MIME_TYPE), null)
+            }
         }
         cameraButton?.setOnClickListener {
             try {
@@ -229,13 +229,14 @@ class EditItemFragment : Fragment() {
                 val quantityNullCheck = quantity.text == null || quantity.text.toString() == ""
                 val quantityValueCheck = quantity.text.toString().toInt() == 0
 
-                if (nameCheck) name.error = "Required"
-                if (categoryCheck) category.error = "Required"
-                if (roomCheck) room.error = "Required"
-                if (quantityNullCheck) quantity.error = "Required"
-                if (quantityValueCheck) quantity.error = "Quantity cannot be less than one"
-
-                if (nameCheck || categoryCheck || roomCheck || quantityNullCheck || quantityValueCheck) return
+                if (nameCheck || categoryCheck || roomCheck || quantityNullCheck || quantityValueCheck) {
+                    val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(), R.style.dialog_alert)
+                    alertDialogBuilder.setTitle(R.string.label_dialog_create_title)
+                    alertDialogBuilder.setMessage(R.string.label_dialog_create_body)
+                    alertDialogBuilder.setPositiveButton(getText(R.string.label_dialog_positive)) { dialog, _ -> dialog.dismiss() }
+                    val alertDialog = alertDialogBuilder.create()
+                    alertDialog.show()
+                }
                 else resetForm()
             }
             checkForm()

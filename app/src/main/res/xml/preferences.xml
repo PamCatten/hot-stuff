@@ -2,13 +2,13 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:title="General" app:iconSpaceReserved="false">
+    <PreferenceCategory android:title="@string/label_appearance" app:iconSpaceReserved="false">
         <ListPreference
             android:defaultValue="@string/default_theme"
             android:title="@string/label_theme"
             android:dialogTitle="@string/label_theme"
             android:entries="@array/dropdown_theme"
-            android:entryValues="@array/dropdown_theme_values"
+            android:entryValues="@array/theme_values"
             android:key="@string/key_theme"
             android:summary="@string/label_theme_summary"
             app:iconSpaceReserved="false"/>
@@ -16,8 +16,8 @@
             android:defaultValue="@string/default_currency"
             android:title="@string/label_currency"
             android:dialogTitle="@string/label_currency"
-            android:entries="@array/dropdown_currency"
-            android:entryValues="@array/dropdown_currency_values"
+            android:entries="@array/currency_labels"
+            android:entryValues="@array/currency_values"
             android:key="@string/key_currency"
             android:summary="@string/label_currency_summary"
             app:iconSpaceReserved="false"/>
@@ -36,42 +36,30 @@
             android:defaultValue=""
             android:title="Name"
             android:dialogTitle="Building Name"
-            android:key="@string/key_name"
+            android:key="@string/key_buildingName"
             android:summary="Change your building\'s name"
             app:iconSpaceReserved="false"/>
         <ListPreference
             android:defaultValue="house"
             android:title="Type"
             android:dialogTitle="Building Type"
-            android:entries="@array/dropdown_building_type"
-            android:entryValues="@array/dropdown_building_type_values"
-            android:key="@string/key_type"
+            android:entries="@array/building_type"
+            android:entryValues="@array/building_type_values"
+            android:key="@string/key_buildingType"
             android:summary="Change your building\'s type"
             app:iconSpaceReserved="false"/>
         <EditTextPreference
             android:defaultValue=""
             android:title="Description"
             android:dialogTitle="Building Description"
-            android:key="@string/key_description"
+            android:key="@string/key_buildingDesc"
             android:summary="Change your building\'s description"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>
-    <!--<PreferenceCategory app:title="Optional Features (Beta)" app:iconSpaceReserved="false" app:allowDividerAbove="false">
-        <SwitchPreferenceCompat
-            android:defaultValue="false"
-            android:key="@string/settings_preference_search_key"
-            android:summary="@string/settings_preference_search_summary"
-            android:title="@string/settings_preference_search_title"
+    <PreferenceCategory app:title="@string/label_app_info" app:iconSpaceReserved="false">
+        <Preference
+            android:title="@string/label_version_number"
+            android:key="@string/key_version"
             app:iconSpaceReserved="false"/>
-        <ListPreference
-            android:defaultValue="@string/settings_preference_language_default"
-            android:title="@string/settings_preference_language_title"
-            android:dialogTitle="@string/settings_preference_language_title"
-            android:entries="@array/settings_preferences_language_entries"
-            android:entryValues="@array/settings_preferences_language_values"
-            android:key="@string/settings_preference_language_key"
-            android:summary="@string/settings_preference_language_summary"
-            app:iconSpaceReserved="false"/>
-    </PreferenceCategory>-->
-
+    </PreferenceCategory>
 </PreferenceScreen>

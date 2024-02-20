@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Hot Stuff</string>
     <!-- Navbar / Fragment labels -->
     <string name="label_home_fragment">Home</string>
     <string name="label_items_fragment">Items</string>
@@ -83,71 +82,47 @@
         mandatory information filled out
     </string>
     <string name="desc_expand_dropdown">Expand dropdown</string>
-    <!-- Settings -->
-    <string name="icon_bitcoin">₿</string>
-    <string name="icon_dollar">$</string>
-    <string name="icon_dong">₫</string>
-    <string name="icon_euro">€</string>
-    <string name="icon_guarani">₲</string>
-    <string name="icon_hryvnia">₴</string>
-    <string name="icon_kip">₭</string>
-    <string name="icon_lari">₾</string>
-    <string name="icon_lira">₺</string>
-    <string name="icon_manat">₼</string>
-    <string name="icon_naira">₦</string>
-    <string name="icon_peso">₱</string>
-    <string name="icon_pound">₤</string>
-    <string name="icon_ruble">₽</string>
-    <string name="icon_rupee">र</string>
-    <string name="icon_shekel">₪</string>
-    <string name="icon_tenge">₸</string>
-    <string name="icon_tugrik">₮</string>
-    <string name="icon_won">₩</string>
-    <string name="icon_yen_yuan">¥</string>
+    <!-- Settings: Appearance -->
+    <string name="label_appearance">Appearance</string>
     <string name="label_currency">Currency</string>
-    <string name="label_theme">Theme</string>
-    <string name="label_scale">Text Size</string>
-    <string name="label_language">Language</string>
-    <string name="label_currency_summary">Choose your preference of currency icon \n\nWARNING:
-        Changing your preferred currency does not update previously entered values
+    <string name="label_currency_summary">
+        Choose your preference of currency icon
+        \n\nWARNING: Changing your preferred currency does not update previously entered values
     </string>
-    <string name="label_scale_summary">Change the size of text throughout the app</string>
+    <string name="label_bitcoin">₿ Bitcoin</string>
+    <string name="label_dollar">$ Dollar</string>
+    <string name="label_dong">₫ Dong</string>
+    <string name="label_euro">€ Euro</string>
+    <string name="label_guarani">₲ Guarani</string>
+    <string name="label_hryvnia">₴ Hryvnia</string>
+    <string name="label_kip">₭ Kip</string>
+    <string name="label_lari">₾ Lari</string>
+    <string name="label_lira">₺ Lira</string>
+    <string name="label_manat">₼ Manat</string>
+    <string name="label_naira">₦ Naira</string>
+    <string name="label_peso">₱ Peso</string>
+    <string name="label_pound">₤ Pound Sterling</string>
+    <string name="label_ruble">₽ Ruble</string>
+    <string name="label_rupee">र Rupee</string>
+    <string name="label_shekel">₪ Shekel</string>
+    <string name="label_tenge">₸ Tenge</string>
+    <string name="label_tugrik">₮ Tugrik</string>
+    <string name="label_won">₩ Won</string>
+    <string name="label_yen_yuan">¥ Yen / Yuan</string>
+    <!-- Settings: Theme Preference -->
+    <string name="label_theme">Theme</string>
     <string name="label_theme_summary">Choose your preference of app theme</string>
-    <string name="label_language_summary">Choose the language you want to use for text within the app</string>
-    <string name="label_light">light</string>
-    <string name="label_dark">dark</string>
-    <string name="label_system">system</string>
-    <string name="label_bitcoin">bitcoin</string>
-    <string name="label_dollar">dollar</string>
-    <string name="label_dong">dong</string>
-    <string name="label_euro">euro</string>
-    <string name="label_guarani">guarani</string>
-    <string name="label_hryvnia">hryvnia</string>
-    <string name="label_kip">kip</string>
-    <string name="label_lari">lari</string>
-    <string name="label_lira">lira</string>
-    <string name="label_manat">manat</string>
-    <string name="label_naira">naira</string>
-    <string name="label_peso">peso</string>
-    <string name="label_pound">pound</string>
-    <string name="label_ruble">ruble</string>
-    <string name="label_rupee">rupee</string>
-    <string name="label_shekel">shekel</string>
-    <string name="label_tenge">tenge</string>
-    <string name="label_tugrik">tugrik</string>
-    <string name="label_won">won</string>
-    <string name="label_yen_yuan">yen_yuan</string>
+    <string name="label_system">Use device default</string>
+    <string name="label_light">Light theme</string>
+    <string name="label_dark">Dark theme</string>
+    <!-- Settings: App Information -->
+    <string name="label_app_info">App Information</string>
+    <string name="label_version_number">Version Number</string>
+
     <string name="default_currency">dollar</string>
     <string name="default_scale">medium</string>
     <string name="default_theme">device</string>
     <string name="default_language">english</string>
-    <string name="key_currency">currency</string>
-    <string name="key_scale">textsize</string>
-    <string name="key_theme">theme</string>
-    <string name="key_name">buildingName</string>
-    <string name="key_type">buildingType</string>
-    <string name="key_description">buildingDescription</string>
-    <string name="key_language">language</string>
     <!-- CardView Item -->
     <string name="label_divider">⋅</string>
     <!-- Web Links -->

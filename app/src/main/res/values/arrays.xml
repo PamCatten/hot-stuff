@@ -7,44 +7,22 @@
     </string-array>
     <!-- Settings -->
     <string-array name="dropdown_theme">
-        <item>Use device default</item>
-        <item>Light theme</item>
-        <item>Dark theme</item>
-    </string-array>
-    <string-array name="dropdown_theme_values">
         <item>@string/label_system</item>
         <item>@string/label_light</item>
         <item>@string/label_dark</item>
     </string-array>
-    <string-array name="dropdown_currency">
-        <item>₿ (Bitcoin)</item>
-        <item>$ (Dollar)</item>
-        <item>₫ (Dong)</item>
-        <item>€ (Euro)</item>
-        <item>₲ (Guarani)</item>
-        <item>₴ (Hryvnia)</item>
-        <item>₭ (Kip)</item>
-        <item>₾ (Lari)</item>
-        <item>₺ (Lira)</item>
-        <item>₼ (Manat)</item>
-        <item>₦ (Naira)</item>
-        <item>₱ (Peso)</item>
-        <item>₤ (Pound Sterling)</item>
-        <item>₽ (Ruble)</item>
-        <item>र (Rupee)</item>
-        <item>₪ (Shekel)</item>
-        <item>₸ (Tenge)</item>
-        <item>₮ (Tugrik)</item>
-        <item>₩ (Won)</item>
-        <item>¥ (Yen / Yuan)</item>
+    <string-array name="theme_values">
+        <item>@string/theme_system</item>
+        <item>@string/theme_light</item>
+        <item>@string/theme_dark</item>
     </string-array>
-    <string-array name="dropdown_currency_values">
+    <string-array name="currency_labels">
         <item>@string/label_bitcoin</item>
         <item>@string/label_dollar</item>
         <item>@string/label_dong</item>
         <item>@string/label_euro</item>
         <item>@string/label_guarani</item>
-        <item>@string/label_hryvnia</item>
+        <item>@string/label_guarani</item>
         <item>@string/label_kip</item>
         <item>@string/label_lari</item>
         <item>@string/label_lira</item>
@@ -60,34 +38,30 @@
         <item>@string/label_won</item>
         <item>@string/label_yen_yuan</item>
     </string-array>
-    <string-array name="dropdown_scale">
-        <item>Tiny</item>
-        <item>Small</item>
-        <item>Medium</item>
-        <item>Large</item>
-        <item>Huge</item>
-    </string-array>
-    <string-array name="dropdown_scale_values">
-        <item>tiny</item>
-        <item>small</item>
-        <item>medium</item>
-        <item>large</item>
-        <item>huge</item>
-    </string-array>
-    <string-array name="dropdown_language">
-        <item>English</item>
-        <item>Francais</item>
-        <item>Español</item>
-        <item>Norsk</item>
-    </string-array>
-    <string-array name="dropdown_language_values">
-        <item>english</item>
-        <item>french</item>
-        <item>spanish</item>
-        <item>norwegian</item>
+    <string-array name="currency_values">
+        <item>@string/cur_bitcoin</item>
+        <item>@string/cur_dollar</item>
+        <item>@string/cur_dong</item>
+        <item>@string/cur_euro</item>
+        <item>@string/cur_guarani</item>
+        <item>@string/cur_hryvnia</item>
+        <item>@string/cur_kip</item>
+        <item>@string/cur_lari</item>
+        <item>@string/cur_lira</item>
+        <item>@string/cur_manat</item>
+        <item>@string/cur_naira</item>
+        <item>@string/cur_peso</item>
+        <item>@string/cur_pound</item>
+        <item>@string/cur_ruble</item>
+        <item>@string/cur_rupee</item>
+        <item>@string/cur_shekel</item>
+        <item>@string/cur_tenge</item>
+        <item>@string/cur_tugrik</item>
+        <item>@string/cur_won</item>
+        <item>@string/cur_yen_yuan</item>
     </string-array>
 
-    <string-array name="dropdown_building_type">
+    <string-array name="building_type">
         <item>Apartment</item>
         <item>Condo</item>
         <item>House</item>
@@ -97,14 +71,14 @@
         <item>Other</item>
     </string-array>
 
-    <string-array name="dropdown_building_type_values">
-        <item>apartment</item>
-        <item>condo</item>
-        <item>house</item>
-        <item>townhouse</item>
-        <item>vacation</item>
-        <item>workplace</item>
-        <item>other</item>
+    <string-array name="building_type_values">
+        <item>@string/type_apartment</item>
+        <item>@string/type_condo</item>
+        <item>@string/type_house</item>
+        <item>@string/type_townhouse</item>
+        <item>@string/type_vacation_house</item>
+        <item>@string/type_workplace</item>
+        <item>@string/type_other</item>
     </string-array>
     <!-- Auto complete options for text input fields -->
     <string-array name="autocomplete_room">

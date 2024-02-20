@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Hot Stuff</string>
+    <string name="key_currency" translatable="false">currency</string>
+    <string name="key_theme" translatable="false"> theme</string>
+    <string name="key_buildingName" translatable="false">buildingName</string>
+    <string name="key_buildingType" translatable="false">buildingType</string>
+    <string name="key_buildingDesc" translatable="false">buildingDescription</string>
+    <!-- Planned -->
+    <string name="key_open_source" translatable="false">open_source</string>
+    <string name="key_faq" translatable="false">faq</string>
+    <string name="key_share" translatable="false">share</string>
+    <string name="key_terms" translatable="false">terms</string>
+    <string name="key_version" translatable="false">version</string>
+    <string name="key_language" translatable="false">language</string>
+
+    <!-- Arrays -->
+    <string name="theme_system" translatable="false">system</string>
+    <string name="theme_light" translatable="false">light</string>
+    <string name="theme_dark" translatable="false">dark</string>
+
+    <string name="cur_bitcoin" translatable="false">bitcoin</string>
+    <string name="cur_dollar" translatable="false">dollar</string>
+    <string name="cur_dong" translatable="false">dong</string>
+    <string name="cur_euro" translatable="false">euro</string>
+    <string name="cur_guarani" translatable="false">guarani</string>
+    <string name="cur_hryvnia" translatable="false">hryvnia</string>
+    <string name="cur_kip" translatable="false">kip</string>
+    <string name="cur_lari" translatable="false">lari</string>
+    <string name="cur_lira" translatable="false">lira</string>
+    <string name="cur_manat" translatable="false">manat</string>
+    <string name="cur_naira" translatable="false">naira</string>
+    <string name="cur_peso" translatable="false">peso</string>
+    <string name="cur_pound" translatable="false">pound</string>
+    <string name="cur_ruble" translatable="false">ruble</string>
+    <string name="cur_rupee" translatable="false">rupee</string>
+    <string name="cur_shekel" translatable="false">shekel</string>
+    <string name="cur_tenge" translatable="false">tenge</string>
+    <string name="cur_tugrik" translatable="false">tugrik</string>
+    <string name="cur_won" translatable="false">won</string>
+    <string name="cur_yen_yuan" translatable="false">yen_yuan</string>
+
+    <string name="icon_bitcoin">₿</string>
+    <string name="icon_dollar">$</string>
+    <string name="icon_dong">₫</string>
+    <string name="icon_euro">€</string>
+    <string name="icon_guarani">₲</string>
+    <string name="icon_hryvnia">₴</string>
+    <string name="icon_kip">₭</string>
+    <string name="icon_lari">₾</string>
+    <string name="icon_lira">₺</string>
+    <string name="icon_manat">₼</string>
+    <string name="icon_naira">₦</string>
+    <string name="icon_peso">₱</string>
+    <string name="icon_pound">₤</string>
+    <string name="icon_ruble">₽</string>
+    <string name="icon_rupee">र</string>
+    <string name="icon_shekel">₪</string>
+    <string name="icon_tenge">₸</string>
+    <string name="icon_tugrik">₮</string>
+    <string name="icon_won">₩</string>
+    <string name="icon_yen_yuan">¥</string>
+
+
+
+    <string name="type_apartment" translatable="false">apartment</string>
+    <string name="type_condo" translatable="false">condo</string>
+    <string name="type_house" translatable="false">house</string>
+    <string name="type_townhouse" translatable="false">townhouse</string>
+    <string name="type_vacation_house" translatable="false">vacation_house</string>
+    <string name="type_workplace" translatable="false">workplace</string>
+    <string name="type_other" translatable="false">other</string>
+
+
+
+</resources>

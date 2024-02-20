@@ -11,8 +11,7 @@ import java.io.Writer
 class CSVHelper(printWriter: Writer) {
     private val writer = printWriter
     /**
-     * Separate, escape, and write a given row of values to a text-output stream.
-     *
+     * Separate and escape quotes escape, and write a given row of values to a text-output stream.
      * @author Cam Patten
      */
     fun separateRow(nextLine: MutableList<String>?) {
@@ -20,7 +19,6 @@ class CSVHelper(printWriter: Writer) {
         val stringBuffer = StringBuffer()
         for (i in 0 until nextLine.size) {
             if (i != 0) stringBuffer.append(SEPARATOR)
-
             val nextElement: String = nextLine[i]
             stringBuffer.append(QUOTE_CHAR)
             for (j in nextElement.indices) {
@@ -33,12 +31,19 @@ class CSVHelper(printWriter: Writer) {
             stringBuffer.append(QUOTE_CHAR)
         }
         stringBuffer.append(LINE_END)
+        writeToFile(stringBuffer)
+    }
+
+    /**
+     * Write a string buffer to the file associated with the invoked CSVHelper [Writer].
+     * @author Cam Patten
+     */
+    private fun writeToFile(stringBuffer: StringBuffer) {
         writer.write(stringBuffer.toString())
     }
 
     /**
      * Flush and close Java I/O stream.
-     *
      * @author Cam Patten
      */
     fun close() {

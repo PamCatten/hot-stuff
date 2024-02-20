@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         totalValue.text = getString(R.string.label_building_value_builder, currencyIcon, derivedTotal)
         totalItems.text = DatabaseHelper(context).getTotalQuantity()
 
-        val derivedName = SharedPreferenceHelper.getInstance(context).getPref(getString(R.string.key_name))
+        val derivedName = SharedPreferenceHelper.getInstance(context).getPref(getString(R.string.key_buildingName))
         buildingName.text = derivedName
 
         val catChart = view.findViewById<BarChart>(R.id.chart_home_one)

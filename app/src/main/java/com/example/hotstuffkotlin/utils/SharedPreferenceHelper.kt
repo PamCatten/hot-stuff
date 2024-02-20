@@ -60,26 +60,26 @@ class SharedPreferenceHelper {
 
     fun getCurrencyPref(context : Context): String {
         val icon = when (prefs?.getString("currency", "dollar")) {
-            context.getString(R.string.label_bitcoin) -> R.string.icon_bitcoin
-            context.getString(R.string.label_dollar) -> R.string.icon_dollar
-            context.getString(R.string.label_dong) -> R.string.icon_dong
-            context.getString(R.string.label_euro) -> R.string.icon_euro
-            context.getString(R.string.label_guarani) -> R.string.icon_guarani
-            context.getString(R.string.label_hryvnia) -> R.string.icon_hryvnia
-            context.getString(R.string.label_kip) -> R.string.icon_kip
-            context.getString(R.string.label_lari) -> R.string.icon_lari
-            context.getString(R.string.label_lira) -> R.string.icon_lira
-            context.getString(R.string.label_manat) -> R.string.icon_manat
-            context.getString(R.string.label_naira) -> R.string.icon_naira
-            context.getString(R.string.label_peso) -> R.string.icon_peso
-            context.getString(R.string.label_pound) -> R.string.icon_pound
-            context.getString(R.string.label_ruble) -> R.string.icon_ruble
-            context.getString(R.string.label_rupee) -> R.string.icon_rupee
-            context.getString(R.string.label_shekel) -> R.string.icon_shekel
-            context.getString(R.string.label_tenge) -> R.string.icon_tenge
-            context.getString(R.string.label_tugrik) -> R.string.icon_tugrik
-            context.getString(R.string.label_won) -> R.string.icon_won
-            context.getString(R.string.label_yen_yuan) -> R.string.icon_yen_yuan
+            context.getString(R.string.cur_bitcoin) -> R.string.icon_bitcoin
+            context.getString(R.string.cur_dollar) -> R.string.icon_dollar
+            context.getString(R.string.cur_dong) -> R.string.icon_dong
+            context.getString(R.string.cur_euro) -> R.string.icon_euro
+            context.getString(R.string.cur_guarani) -> R.string.icon_guarani
+            context.getString(R.string.cur_hryvnia) -> R.string.icon_hryvnia
+            context.getString(R.string.cur_kip) -> R.string.icon_kip
+            context.getString(R.string.cur_lari) -> R.string.icon_lari
+            context.getString(R.string.cur_lira) -> R.string.icon_lira
+            context.getString(R.string.cur_manat) -> R.string.icon_manat
+            context.getString(R.string.cur_naira) -> R.string.icon_naira
+            context.getString(R.string.cur_peso) -> R.string.icon_peso
+            context.getString(R.string.cur_pound) -> R.string.icon_pound
+            context.getString(R.string.cur_ruble) -> R.string.icon_ruble
+            context.getString(R.string.cur_rupee) -> R.string.icon_rupee
+            context.getString(R.string.cur_shekel) -> R.string.icon_shekel
+            context.getString(R.string.cur_tenge) -> R.string.icon_tenge
+            context.getString(R.string.cur_tugrik) -> R.string.icon_tugrik
+            context.getString(R.string.cur_won) -> R.string.icon_won
+            context.getString(R.string.cur_yen_yuan) -> R.string.icon_yen_yuan
             else -> R.string.icon_dollar
         }
         return context.getString(icon)
