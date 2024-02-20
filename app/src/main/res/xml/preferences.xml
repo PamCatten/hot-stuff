@@ -58,6 +58,16 @@
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/label_app_info" app:iconSpaceReserved="false">
         <Preference
+            android:title="@string/label_share"
+            android:summary="@string/label_share_summary"
+            android:key="@string/key_share"
+            app:iconSpaceReserved="false" />
+        <Preference
+            android:title="@string/label_terms"
+            android:summary="@string/label_terms_summary"
+            android:key="@string/key_terms"
+            app:iconSpaceReserved="false" />
+        <Preference
             android:title="@string/label_version_number"
             android:key="@string/key_version"
             app:iconSpaceReserved="false"/>

@@ -117,6 +117,9 @@
     <string name="label_dark">Dark theme</string>
     <!-- Settings: App Information -->
     <string name="label_app_info">App Information</string>
+    <string name="label_share">Share Hot Stuff</string>
+    <string name="label_share_summary">Like Hot Stuff? Share the app with your friends and family</string>
+    <string name="label_terms_summary">Read our terms and conditions</string>
     <string name="label_version_number">Version Number</string>
 
     <string name="default_currency">dollar</string>
@@ -191,7 +194,8 @@
 <!--    <string name="db_column_building_type">TYPE</string>-->
 <!--    <string name="db_column_building_description">DESCRIPTION</string>-->
 <!--    <string name="db_column_result">TOTAL</string>-->
-    <!-- Database Helper Toasts-->
+    <!-- Toasts-->
+    <string name="toast_no_app">No app found to open this</string>
     <string name="toast_addItem_success">Item saved</string>
     <string name="toast_addItem_fail">Save failed. Please send a bug report</string>
     <string name="toast_updateItem_success">Item updated</string>
