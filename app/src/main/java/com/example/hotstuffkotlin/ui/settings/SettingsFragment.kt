@@ -1,8 +1,10 @@
 package com.example.hotstuffkotlin.ui.settings
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
@@ -31,6 +33,18 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         val feedback = findPreference<Preference>(getString(R.string.key_feedback))
         feedback?.setOnPreferenceClickListener {
             visitDestination(getString(R.string.link_issue))
+            true
+        }
+
+        val reportBug = findPreference<Preference>(getString(R.string.key_report))
+        reportBug?.setOnPreferenceClickListener {
+            visitDestination(getString(R.string.link_issue))
+            true
+        }
+
+        val email = findPreference<Preference>(getString(R.string.key_email))
+        email?.setOnPreferenceClickListener {
+            sendEmail()
             true
         }
 
@@ -100,11 +114,40 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     private fun visitDestination(link: String) {
         try {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(link)))
-        } catch (e: Exception) {
+        } catch (e: ActivityNotFoundException) {
             Toast.makeText(context, R.string.toast_no_app, Toast.LENGTH_LONG).show()
             e.printStackTrace()
         }
     }
+
+    private fun sendEmail() {
+        val context = context ?: return
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:")
+
+            val emails = arrayOf("campatten.dev@outlook.com")
+            val subject = "FEEDBACK: (Your suggestion)"
+            putExtra(Intent.EXTRA_EMAIL, emails)
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+
+            val packageName = context.packageName
+            val packageInfo = context.packageManager.getPackageInfo(packageName, 0)
+            val text = """
+                        Device: ${Build.MODEL}
+                        OS Version: ${Build.VERSION.RELEASE}
+                        App Version: ${packageInfo.versionName}  
+                    """.trimIndent()
+            putExtra(Intent.EXTRA_TEXT, text)
+        }
+
+        try {
+            startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(context, R.string.toast_no_app, Toast.LENGTH_LONG).show()
+            e.printStackTrace()
+        }
+    }
+
     private fun setTheme(mode: Int) {
         AppCompatDelegate.setDefaultNightMode(mode)
     }

@@ -114,12 +114,15 @@
     <string name="label_dark">Dark theme</string>
     <!-- Settings: Contact Us -->
     <string name="label_contact">Contact</string>
+    <string name="label_rate">Rate</string>
+    <string name="label_rate_summary">Love us? Hate us? Consider letting the whole world know by
+        leaving us a rating</string>
     <string name="label_feedback">Send Feedback</string>
     <string name="label_feedback_summary">Have a suggestion? We\'d love to hear from you!</string>
     <string name="label_report">Report Bug</string>
-    <string name="label_report_summary">Encountered a problem? Let us know so we can fix it</string>
-    <string name="label_rate">Rate</string>
-    <string name="label_rate_summary">Love us? Hate us? Let the world know</string>
+    <string name="label_report_summary">Encountered a problem? File a report so we can fix it</string>
+    <string name="label_email">Contact Developer</string>
+    <string name="label_email_summary">Have a question or need help? Reach out to us directly</string>
     <!-- Settings: App Information -->
     <string name="label_app_info">App Information</string>
     <string name="label_share">Share Hot Stuff</string>

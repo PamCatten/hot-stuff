@@ -11,13 +11,13 @@
     <string name="key_version" translatable="false">version</string>
     <string name="key_source_code" translatable="false">source_code</string>
     <string name="key_open_source" translatable="false">open_source</string>
+    <string name="key_email" translatable="false">contact</string>
+    <string name="key_feedback" translatable="false">feedback</string>
+    <string name="key_report" translatable="false">report_bug</string>
+    <string name="key_rate" translatable="false">rate</string>
     <!-- Planned -->
     <string name="key_faq" translatable="false">faq</string>
     <string name="key_language" translatable="false">language</string>
-    <string name="key_contact" translatable="false">contact</string>
-    <string name="key_feedback" translatable="false">feedback</string>
-    <string name="key_report_bug" translatable="false">report_bug</string>
-    <string name="key_rate" translatable="false">rate</string>
 
     <!-- Arrays -->
     <string name="theme_system" translatable="false">system</string>

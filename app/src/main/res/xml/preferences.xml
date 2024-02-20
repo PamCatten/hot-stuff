@@ -58,10 +58,20 @@
             android:key="@string/key_rate"
             app:iconSpaceReserved="false" />
         <Preference
+            android:title="@string/label_report"
+            android:summary="@string/label_report_summary"
+            android:key="@string/key_report"
+            app:iconSpaceReserved="false" />
+        <Preference
             android:title="@string/label_feedback"
             android:summary="@string/label_feedback_summary"
             android:key="@string/key_feedback"
             app:iconSpaceReserved="false" />
+        <Preference
+            android:title="@string/label_email"
+            android:summary="@string/label_email_summary"
+            android:key="@string/key_email"
+            app:iconSpaceReserved="false"/>
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/label_app_info" app:iconSpaceReserved="false">
         <Preference
