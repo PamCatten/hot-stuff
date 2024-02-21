@@ -9,7 +9,7 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
     <item
         android:id="@+id/toolbar_main_download"
-        android:icon="@drawable/icon_download"
+        android:icon="@drawable/icon_export"
         android:title="@string/label_download"
         app:showAsAction="always"/>
 </menu>
