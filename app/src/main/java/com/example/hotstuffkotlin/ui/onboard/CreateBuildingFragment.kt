@@ -12,7 +12,7 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentCreateBuildingBinding
 import com.example.hotstuffkotlin.models.Building
 import com.example.hotstuffkotlin.utils.DatabaseHelper
-import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
+import com.example.hotstuffkotlin.utils.PreferenceHelper
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -61,9 +61,9 @@ class CreateBuildingFragment : Fragment() {
                 newBuilding.description = buildingDescriptionText.text.toString().trim()
                 DatabaseHelper(requireContext()).addBuilding(newBuilding)
 
-                SharedPreferenceHelper.getInstance(requireContext()).updateBuildingPrefs(
+                PreferenceHelper.getInstance(requireContext()).updateBuildingPrefs(
                     newBuilding.name, newBuilding.type, newBuilding.description)
-                SharedPreferenceHelper.getInstance(requireContext()).finishOnboarding()
+                PreferenceHelper.getInstance(requireContext()).finishOnboarding()
                 findNavController().navigate(R.id.action_create_building_to_main_activity)
                 requireActivity().finish()
             }

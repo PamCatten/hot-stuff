@@ -14,15 +14,15 @@ import com.example.hotstuffkotlin.BuildConfig
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.models.Building
 import com.example.hotstuffkotlin.utils.DatabaseHelper
-import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
+import com.example.hotstuffkotlin.utils.PreferenceHelper
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
-    private lateinit var preferenceHelper: SharedPreferenceHelper
+    private lateinit var preferenceHelper: PreferenceHelper
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
-        preferenceHelper = SharedPreferenceHelper.getInstance(requireContext())
+        preferenceHelper = PreferenceHelper.getInstance(requireContext())
 
         val rate = findPreference<Preference>(getString(R.string.key_rate))
         rate?.setOnPreferenceClickListener {
@@ -87,7 +87,8 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
         when (key) {
             getString(R.string.key_theme) -> {
-                when (preferenceHelper.getThemePref()) {
+                when (preferenceHelper
+                    .getStringPref(getString(R.string.key_theme), getString(R.string.theme_system))) {
                     getString(R.string.theme_light) -> setTheme(AppCompatDelegate.MODE_NIGHT_NO)
                     getString(R.string.theme_dark) -> setTheme(AppCompatDelegate.MODE_NIGHT_YES)
                     getString(R.string.theme_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
@@ -100,9 +101,9 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             getString(R.string.key_buildingType),
             getString(R.string.key_buildingDesc) -> {
                 val building = Building()
-                building.name = preferenceHelper.getPref(key).toString()
-                building.type = preferenceHelper.getPref(key).toString()
-                building.description = preferenceHelper.getPref(key).toString()
+                building.name = preferenceHelper.getStringPref(key).toString()
+                building.type = preferenceHelper.getStringPref(key).toString()
+                building.description = preferenceHelper.getStringPref(key).toString()
                 DatabaseHelper(requireContext()).updateBuilding(building)
             }
         }

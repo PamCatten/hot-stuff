@@ -6,59 +6,52 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.R
 
-class SharedPreferenceHelper {
+class PreferenceHelper {
 
     companion object {
         private var prefs: SharedPreferences? = null
+        private var instance: PreferenceHelper? = null
 
-        @Volatile
-        private var instance: SharedPreferenceHelper? = null
-
-        fun getInstance(context: Context): SharedPreferenceHelper {
-            synchronized(this) {
-                val _instance = instance
-                if (_instance == null) {
-                    prefs = PreferenceManager.getDefaultSharedPreferences(context)
-                    instance = _instance
-                }
-                return SharedPreferenceHelper()
+        fun getInstance(context: Context): PreferenceHelper {
+            if (instance == null) {
+                prefs = PreferenceManager.getDefaultSharedPreferences(context)
             }
+            return PreferenceHelper()
         }
     }
-    fun getThemePref() = prefs?.getString("theme", "system")
-    fun getOnboardPref(): Boolean {
-        return prefs?.getBoolean("onboard", true) == true
-    }
+
     fun updateBuildingPrefs(name: String, type: String?, description: String?) {
         prefs!!.edit().putString("name", name).apply()
         prefs!!.edit().putString("type", type).apply()
         prefs!!.edit().putString("description", description).apply()
     }
 
-    //TEST DELETE WHEN DONE WITH ONBOARD
+    // TODO: DELETE WHEN DONE WITH ONBOARD TESTING
     fun testOnboard() {
         prefs!!.edit().putBoolean("onboard", true).apply()
     }
-    //END
 
     fun finishOnboarding() {
         prefs!!.edit().putBoolean("onboard", false).apply()
     }
-
-    fun getPref(key: String): String? {
-        return prefs?.getString(key, "")
+    fun getStringPref(key: String, defValue: String? = ""): String? {
+        return prefs!!.getString(key, defValue)
+    }
+    fun getBooleanPref(key: String, defValue: Boolean = true): Boolean {
+        return prefs!!.getBoolean(key, defValue)
     }
 
-    fun applyThemePref(themePreference: String?) {
+    // TODO: UPDATE WITH NON HARDCODED STRINGS
+    fun applyThemePref(context: Context, themePreference: String?) {
         when (themePreference) {
-            "light" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            "dark" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            "system" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            context.getString(R.string.theme_light) -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            context.getString(R.string.theme_dark) -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            context.getString(R.string.theme_system) -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
             else -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
         }
     }
 
-    fun getCurrencyPref(context : Context): String {
+    fun getCurrencyIcon(context : Context): String {
         val icon = when (prefs?.getString("currency", "dollar")) {
             context.getString(R.string.cur_bitcoin) -> R.string.icon_bitcoin
             context.getString(R.string.cur_dollar) -> R.string.icon_dollar

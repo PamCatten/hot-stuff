@@ -13,7 +13,7 @@ import com.example.hotstuffkotlin.databinding.FragmentHomeBinding
 import com.example.hotstuffkotlin.ui.onboard.OnboardActivity
 import com.example.hotstuffkotlin.utils.ChartMarker
 import com.example.hotstuffkotlin.utils.DatabaseHelper
-import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
+import com.example.hotstuffkotlin.utils.PreferenceHelper
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.HorizontalBarChart
 import com.github.mikephil.charting.components.XAxis
@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
         val context = requireContext()
-        if (SharedPreferenceHelper.getInstance(requireContext()).getOnboardPref()) {
+        if (PreferenceHelper.getInstance(context).getBooleanPref(getString(R.string.key_onboard))) {
             startActivity(Intent(context, OnboardActivity::class.java))
         }
 //        DatabaseHelper(context).upgradeTables() // TEMP FUNCTION
@@ -38,13 +38,13 @@ class HomeFragment : Fragment() {
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
         val buildingName = view.findViewById<TextView>(R.id.label_building_name)
         val colorOnPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.RED)
-        val currencyIcon = SharedPreferenceHelper.getInstance(context).getCurrencyPref(context)
+        val currencyIcon = PreferenceHelper.getInstance(context).getCurrencyIcon(context)
         val derivedTotal = DatabaseHelper(context).getTotalValue()
 
         totalValue.text = getString(R.string.label_building_value_builder, currencyIcon, derivedTotal)
         totalItems.text = DatabaseHelper(context).getTotalQuantity()
 
-        val derivedName = SharedPreferenceHelper.getInstance(context).getPref(getString(R.string.key_buildingName))
+        val derivedName = PreferenceHelper.getInstance(context).getStringPref(getString(R.string.key_buildingName))
         buildingName.text = derivedName
 
         val catChart = view.findViewById<BarChart>(R.id.chart_home_one)

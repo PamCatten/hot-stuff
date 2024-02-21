@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentItemDetailBinding
 import com.example.hotstuffkotlin.utils.DatabaseHelper
-import com.example.hotstuffkotlin.utils.SharedPreferenceHelper
+import com.example.hotstuffkotlin.utils.PreferenceHelper
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.imageview.ShapeableImageView
@@ -40,7 +40,7 @@ class ItemDetailFragment : Fragment() {
         }
 
         val valueNumeral = formatValue(bundle.getDouble("value")).toString()
-        val valueCurrency = SharedPreferenceHelper.getInstance(requireContext()).getCurrencyPref(requireContext())
+        val valueCurrency = PreferenceHelper.getInstance(requireContext()).getCurrencyIcon(requireContext())
 
         name.text = bundle.getString("name")
         category.text = bundle.getString("category")
