@@ -30,7 +30,9 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
         val context = requireContext()
-        if (PreferenceHelper.getInstance(context).getBooleanPref(getString(R.string.key_onboard))) {
+        val preferenceHelper = PreferenceHelper(context)
+
+        if (preferenceHelper.getBooleanPref(getString(R.string.key_onboard))) {
             startActivity(Intent(context, OnboardActivity::class.java))
         }
 //        DatabaseHelper(context).upgradeTables() // TEMP FUNCTION
@@ -38,13 +40,14 @@ class HomeFragment : Fragment() {
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
         val buildingName = view.findViewById<TextView>(R.id.label_building_name)
         val colorOnPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.RED)
-        val currencyIcon = getString(PreferenceHelper.getInstance(context).getCurrencyIcon(context))
+        val currency = preferenceHelper.getStringPref(context.getString(R.string.key_currency))
+        val currencyIcon = preferenceHelper.getCurrencyIcon(currency)
         val derivedTotal = DatabaseHelper(context).getTotalValue()
 
         totalValue.text = getString(R.string.label_building_value_builder, currencyIcon, derivedTotal)
         totalItems.text = DatabaseHelper(context).getTotalQuantity()
 
-        val derivedName = PreferenceHelper.getInstance(context).getStringPref(getString(R.string.key_buildingName))
+        val derivedName = PreferenceHelper(context).getStringPref(getString(R.string.key_buildingName))
         buildingName.text = derivedName
 
         val catChart = view.findViewById<BarChart>(R.id.chart_home_one)

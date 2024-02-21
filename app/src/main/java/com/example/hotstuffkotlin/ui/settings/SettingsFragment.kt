@@ -23,7 +23,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
-        preferenceHelper = PreferenceHelper.getInstance(requireContext())
+        preferenceHelper = PreferenceHelper(requireContext())
 
         val rate = findPreference<Preference>(getString(R.string.key_rate))
         rate?.setOnPreferenceClickListener {

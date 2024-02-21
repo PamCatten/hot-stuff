@@ -2,7 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="GIVEN a currency string WHEN getCurrencyIcon is called THEN the correct icon is returned()">
+        <State />
+      </entry>
+      <entry key="GIVEN an invalid string WHEN getCurrencyIcon is called THEN the default icon is returned()">
+        <State />
+      </entry>
+      <entry key="PreferenceHelperTest">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="test getCurrencyIcon()">
         <State />
       </entry>
     </value>

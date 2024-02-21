@@ -1,48 +1,34 @@
 package com.example.hotstuffkotlin.utils
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.R
 
-class PreferenceHelper {
-
-    companion object {
-        private var prefs: SharedPreferences? = null
-        private var instance: PreferenceHelper? = null
-
-        fun getInstance(context: Context): PreferenceHelper {
-            if (instance == null) {
-                prefs = PreferenceManager.getDefaultSharedPreferences(context)
-            }
-            return PreferenceHelper()
-        }
-    }
-
+class PreferenceHelper(val context: Context) {
+    private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
     fun updateBuildingPrefs(name: String, type: String?, description: String?) {
-        prefs!!.edit().putString("name", name).apply()
-        prefs!!.edit().putString("type", type).apply()
-        prefs!!.edit().putString("description", description).apply()
+        prefs!!.edit().putString("buildingName", name).apply()
+        prefs.edit().putString("buildingType", type).apply()
+        prefs.edit().putString("buildingDescription", description).apply()
     }
 
     // TODO: DELETE WHEN DONE WITH ONBOARD TESTING
     fun testOnboard() {
         prefs!!.edit().putBoolean("onboard", true).apply()
     }
-
     fun finishOnboarding() {
         prefs!!.edit().putBoolean("onboard", false).apply()
     }
     fun getStringPref(key: String, defValue: String? = ""): String? {
         return prefs!!.getString(key, defValue)
     }
-    fun getBooleanPref(key: String, defValue: Boolean = true): Boolean {
+    fun getBooleanPref(key: String, defValue: Boolean = false): Boolean {
         return prefs!!.getBoolean(key, defValue)
     }
 
     // TODO: UPDATE WITH NON HARDCODED STRINGS
-    fun applyThemePref(context: Context, themePreference: String?) {
+    fun applyTheme(themePreference: String?) {
         when (themePreference) {
             context.getString(R.string.theme_light) -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             context.getString(R.string.theme_dark) -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
@@ -51,9 +37,8 @@ class PreferenceHelper {
         }
     }
 
-    fun getCurrencyIcon(context : Context): Int {
-        val icon = when (getStringPref(context.getString(R.string.key_currency),
-            context.getString(R.string.cur_dollar))) {
+    fun getCurrencyIcon(currency: String?): String {
+        val icon = when (currency) {
             context.getString(R.string.cur_bitcoin) -> R.string.icon_bitcoin
             context.getString(R.string.cur_dollar) -> R.string.icon_dollar
             context.getString(R.string.cur_dong) -> R.string.icon_dong
@@ -76,7 +61,7 @@ class PreferenceHelper {
             context.getString(R.string.cur_yen_yuan) -> R.string.icon_yen_yuan
             else -> R.string.icon_dollar
         }
-        return icon
+        return context.getString(icon)
     }
 
 }

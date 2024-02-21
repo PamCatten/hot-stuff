@@ -56,11 +56,6 @@ class ArticleFragment : Fragment() {
                 articleTitle.text = getText(R.string.article_likeKind_title)
                 articleText.text = getText(R.string.article_likeKind_text)
             }
-            getText(R.string.article_acknowledgements) -> {
-                articleTitle.text = getText(R.string.article_acknowledgements_title)
-                articleText.text = getText(R.string.article_acknowledgements_text)
-                articleDisclosure.text = ""
-            }
             else -> {} // do nothing
         }
 

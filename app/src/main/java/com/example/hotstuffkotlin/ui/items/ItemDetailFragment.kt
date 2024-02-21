@@ -23,6 +23,8 @@ class ItemDetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentItemDetailBinding.inflate(inflater, container, false)
         val view = binding.root
+        val context = requireContext()
+        val preferenceHelper = PreferenceHelper(requireContext())
 
         val name = view.findViewById<TextView>(R.id.item_detail_name_text)
         val category = view.findViewById<TextView>(R.id.item_detail_category_text)
@@ -40,8 +42,8 @@ class ItemDetailFragment : Fragment() {
         }
 
         val valueNumeral = formatValue(bundle.getDouble("value")).toString()
-        val valueCurrency = getString(PreferenceHelper.getInstance(requireContext())
-            .getCurrencyIcon(requireContext()))
+        val currency = preferenceHelper.getStringPref(context.getString(R.string.key_currency))
+        val currencyIcon = preferenceHelper.getCurrencyIcon(currency)
 
         name.text = bundle.getString("name")
         category.text = bundle.getString("category")
@@ -51,7 +53,7 @@ class ItemDetailFragment : Fragment() {
         if (quantityNumeral == 1) quantity.text = "$quantityNumeral item"
         else quantity.text = "$quantityNumeral items"
 
-        value.text = "$valueCurrency $valueNumeral"
+        value.text = "$currencyIcon $valueNumeral"
         when (bundle.getString("make")) {
             "", null -> make.text = getText(R.string.filler_unspecified)
             else -> make.text = bundle.getString("make")

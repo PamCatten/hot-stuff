@@ -28,6 +28,8 @@ class CreateBuildingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentCreateBuildingBinding.inflate(inflater, container, false)
         val view = binding.root
+        val context = requireContext()
+        val preferenceHelper = PreferenceHelper(context)
 
         // Disable onBack click
         requireActivity().onBackPressedDispatcher.addCallback(this) {}
@@ -40,7 +42,7 @@ class CreateBuildingFragment : Fragment() {
         val buildingDescriptionText = view.findViewById<TextInputEditText>(R.id.create_building_desc_field)
         val createBuildingButton = view.findViewById<MaterialButton>(R.id.create_building_button)
 
-        val adapter = ArrayAdapter(requireContext(), com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
+        val adapter = ArrayAdapter(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
             resources.getStringArray(R.array.building_type))
         buildingTypeText.setAdapter(adapter)
 
@@ -59,11 +61,11 @@ class CreateBuildingFragment : Fragment() {
                 newBuilding.name = buildingNameText.text.toString().trim()
                 newBuilding.type = buildingTypeText.text.toString().trim()
                 newBuilding.description = buildingDescriptionText.text.toString().trim()
-                DatabaseHelper(requireContext()).addBuilding(newBuilding)
+                DatabaseHelper(context).addBuilding(newBuilding)
 
-                PreferenceHelper.getInstance(requireContext()).updateBuildingPrefs(
+                preferenceHelper.updateBuildingPrefs(
                     newBuilding.name, newBuilding.type, newBuilding.description)
-                PreferenceHelper.getInstance(requireContext()).finishOnboarding()
+                preferenceHelper.finishOnboarding()
                 findNavController().navigate(R.id.action_create_building_to_main_activity)
                 requireActivity().finish()
             }
@@ -71,7 +73,7 @@ class CreateBuildingFragment : Fragment() {
                 val nameCheck = (buildingNameText.text == null) || (buildingNameText.text.toString() == "")
                 if (nameCheck) {
                     buildingNameText.error = getText(R.string.label_required_hint)
-                    val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(), R.style.dialog_alert)
+                    val alertDialogBuilder = MaterialAlertDialogBuilder(context, R.style.dialog_alert)
                     alertDialogBuilder.setTitle(R.string.dialog_create_item_title)
                     alertDialogBuilder.setMessage(R.string.dialog_create_building_message)
                     alertDialogBuilder.setPositiveButton(getText(R.string.dialog_positive)) { dialog, _ -> dialog.dismiss() }
