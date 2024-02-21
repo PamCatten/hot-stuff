@@ -2,15 +2,10 @@ package com.example.hotstuffkotlin.ui.learn
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentArticleBinding
 
@@ -68,21 +63,6 @@ class ArticleFragment : Fragment() {
             }
             else -> {} // do nothing
         }
-
-        // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
-        requireActivity().addMenuProvider(object: MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                if (!menu.hasVisibleItems()) menuInflater.inflate(R.menu.menu_toolbar_main, menu)
-            }
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean { return true }
-            override fun onPrepareMenu(menu: Menu) {
-                menu.findItem(R.id.toolbar_main_search).setVisible(false)
-                menu.findItem(R.id.toolbar_main_download).setVisible(false)
-                menu.findItem(R.id.toolbar_main_report).setVisible(false)
-                menu.findItem(R.id.toolbar_main_rate).setVisible(false)
-                menu.findItem(R.id.toolbar_main_feedback).setVisible(false)
-            }
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         return view
     }

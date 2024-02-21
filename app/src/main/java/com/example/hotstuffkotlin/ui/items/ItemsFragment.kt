@@ -1,7 +1,5 @@
 package com.example.hotstuffkotlin.ui.items
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -90,7 +88,6 @@ class ItemsFragment : Fragment() {
             }
         })
 
-        // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
         requireActivity().addMenuProvider(object: MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 if (!menu.hasVisibleItems()) menuInflater.inflate(R.menu.menu_toolbar_main, menu)
@@ -144,26 +141,12 @@ class ItemsFragment : Fragment() {
                         alertDialog.show()
                         return true
                     }
-                    R.id.toolbar_main_report,
-                    R.id.toolbar_main_feedback-> {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_issue))))
-                        return true
-                    }
-                    R.id.toolbar_main_rate -> { return true }
-                    R.id.toolbar_main_feedback,
-                    R.id.toolbar_main_report -> {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_issue))))
-                        return true
-                    }
                     else -> return true
                 }
             }
             override fun onPrepareMenu(menu: Menu) {
                 menu.findItem(R.id.toolbar_main_search).setVisible(true)
                 menu.findItem(R.id.toolbar_main_download).setVisible(true)
-                menu.findItem(R.id.toolbar_main_report).setVisible(true)
-                menu.findItem(R.id.toolbar_main_rate).setVisible(true)
-                menu.findItem(R.id.toolbar_main_feedback).setVisible(true)
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 

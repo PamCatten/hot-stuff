@@ -10,9 +10,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -20,9 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
-import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Lifecycle
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentCreateItemBinding
 import com.example.hotstuffkotlin.models.Item
@@ -221,31 +216,6 @@ class CreateItemFragment : Fragment() {
             }
             checkForm()
         }
-
-        // TODO: Obliterates DRY, cannot customize menu items visibility w/ activity based menu providers, find another workaround
-        requireActivity().addMenuProvider(object: MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                if (!menu.hasVisibleItems()) menuInflater.inflate(R.menu.menu_toolbar_main, menu)
-            }
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                return when (menuItem.itemId) {
-                    R.id.toolbar_main_feedback,
-                    R.id.toolbar_main_report -> {
-                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_issue))))
-                        true
-                    }
-                    R.id.toolbar_main_rate -> { true }
-                    else -> true
-                }
-            }
-            override fun onPrepareMenu(menu: Menu) {
-                menu.findItem(R.id.toolbar_main_search).setVisible(false)
-                menu.findItem(R.id.toolbar_main_download).setVisible(false)
-                menu.findItem(R.id.toolbar_main_report).setVisible(true)
-                menu.findItem(R.id.toolbar_main_rate).setVisible(true)
-                menu.findItem(R.id.toolbar_main_feedback).setVisible(true)
-            }
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
 
         return view
     }

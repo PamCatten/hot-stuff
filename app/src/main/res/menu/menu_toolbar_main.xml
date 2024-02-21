@@ -12,16 +12,4 @@
         android:icon="@drawable/icon_download"
         android:title="@string/label_download"
         app:showAsAction="always"/>
-    <item
-        android:id="@+id/toolbar_main_report"
-        android:title="@string/label_report"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/toolbar_main_rate"
-        android:title="@string/label_rate"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/toolbar_main_feedback"
-        android:title="@string/label_feedback"
-        app:showAsAction="never"/>
 </menu>
