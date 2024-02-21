@@ -72,9 +72,9 @@ class CreateBuildingFragment : Fragment() {
                 if (nameCheck) {
                     buildingNameText.error = getText(R.string.label_required_hint)
                     val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(), R.style.dialog_alert)
-                    alertDialogBuilder.setTitle(R.string.label_dialog_create_title)
-                    alertDialogBuilder.setMessage(R.string.label_dialog_create_building_body)
-                    alertDialogBuilder.setPositiveButton(getText(R.string.label_dialog_positive)) { dialog, _ -> dialog.dismiss() }
+                    alertDialogBuilder.setTitle(R.string.dialog_create_item_title)
+                    alertDialogBuilder.setMessage(R.string.dialog_create_building_message)
+                    alertDialogBuilder.setPositiveButton(getText(R.string.dialog_positive)) { dialog, _ -> dialog.dismiss() }
                     val alertDialog = alertDialogBuilder.create()
                     alertDialog.show()
                 } else confirmForm()

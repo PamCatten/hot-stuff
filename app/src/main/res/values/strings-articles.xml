@@ -747,32 +747,4 @@
     policyholders to carefully consider if the circumstances of their claim are appropriate for the
     cost of professional assistance.
     </string>
-
-    <string name="article_acknowledgements">acknowledgements</string>
-    <string name="article_acknowledgements_title">Acknowledgements</string>
-    <string name="article_acknowledgements_text">
-        We use the following open source libraries, modules, and frameworks to make Hot Stuff:
-
-        \n\nAndroidX modules
-        \nCore KTX
-        \nLifecycle KTX
-        \nLiveData KTX
-        \nNavigation KTX
-
-        \n\nJetpack libraries
-        \nAppCompat
-        \nCardView
-        \nPreference
-        \nRecyclerView
-
-        \n\nTesting
-        \nAndroidX Test
-        \nEspresso
-        \nJUnit4
-
-        \n\nMiscellaneous
-        \nAndroid ConstraintLayout
-        \nMaterial Components for Android
-        \ncom.github.PhilJay:MPAndroidChart
-    </string>
 </resources>

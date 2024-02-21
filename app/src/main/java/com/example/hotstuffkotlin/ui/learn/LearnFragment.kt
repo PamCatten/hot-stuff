@@ -28,7 +28,7 @@ class LearnFragment : Fragment() {
         val groupWalkthrough = view.findViewById<Group>(R.id.learn_walkthrough_group)
 
         dropdownWalkthrough?.setOnClickListener{
-            if(groupWalkthrough?.visibility == View.VISIBLE && cardViewWalkthrough != null) {
+            if (groupWalkthrough?.visibility == View.VISIBLE && cardViewWalkthrough != null) {
                 groupWalkthrough.visibility = View.GONE
                 dropdownIconWalkthrough?.setImageResource(R.drawable.icon_dropdown)
             }
@@ -61,7 +61,7 @@ class LearnFragment : Fragment() {
         val groupResources = view.findViewById<Group>(R.id.learn_resources_group)
 
         dropdownResources?.setOnClickListener{
-            if(groupResources?.visibility == View.VISIBLE && cardViewResources != null) {
+            if (groupResources?.visibility == View.VISIBLE && cardViewResources != null) {
                 groupResources.visibility = View.GONE
                 dropdownIconResources?.setImageResource(R.drawable.icon_dropdown)
             }

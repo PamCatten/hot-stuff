@@ -23,6 +23,7 @@
     <string name="label_room_summary">Room Summary:</string>
     <!-- Items -->
     <string name="label_no_items">No items found!</string>
+    <string name="label_search_prompt">Search Hot Stuff</string>
     <!-- CreateItem / EditItem / ItemDetail / CreateBuilding -->
     <string name="label_name">Name</string>
     <string name="label_quantity">Quantity</string>
@@ -70,12 +71,17 @@
     <string name="label_terms">Terms and Conditions</string>
     <string name="label_required_hint">Required</string>
     <string name="label_quantity_value_hint">Quantity cannot be less than one</string>
-    <string name="label_dialog_positive">OK</string>
-    <string name="label_dialog_create_title">Missing required value</string>
-    <string name="label_dialog_create_body">To continue, make sure your item has all mandatory
+    <!-- Dialogs -->
+    <string name="dialog_positive">OK</string>
+    <string name="dialog_negative">Cancel</string>
+    <string name="dialog_export_title">Export item data?</string>
+    <string name="dialog_export_message">Your records will be saved to your device\'s downloads
+        folder</string>
+    <string name="dialog_create_item_title">Missing required value</string>
+    <string name="dialog_create_item_message">To continue, make sure your item has all mandatory
         information filled out
     </string>
-    <string name="label_dialog_create_building_body">To continue, make sure your building has all
+    <string name="dialog_create_building_message">To continue, make sure your building has all
         mandatory information filled out
     </string>
     <string name="desc_expand_dropdown">Expand dropdown</string>

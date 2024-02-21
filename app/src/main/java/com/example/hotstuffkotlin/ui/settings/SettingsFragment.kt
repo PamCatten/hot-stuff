@@ -1,6 +1,7 @@
 package com.example.hotstuffkotlin.ui.settings
 
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
@@ -44,7 +45,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
 
         val email = findPreference<Preference>(getString(R.string.key_email))
         email?.setOnPreferenceClickListener {
-            sendEmail()
+            sendEmail(requireContext())
             true
         }
 
@@ -121,8 +122,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         }
     }
 
-    private fun sendEmail() {
-        val context = context ?: return
+    private fun sendEmail(context: Context) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
             data = Uri.parse("mailto:")
 

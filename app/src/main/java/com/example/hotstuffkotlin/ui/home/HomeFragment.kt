@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
         val buildingName = view.findViewById<TextView>(R.id.label_building_name)
         val colorOnPrimary = MaterialColors.getColor(context, com.google.android.material.R.attr.colorOnPrimary, Color.RED)
-        val currencyIcon = PreferenceHelper.getInstance(context).getCurrencyIcon(context)
+        val currencyIcon = getString(PreferenceHelper.getInstance(context).getCurrencyIcon(context))
         val derivedTotal = DatabaseHelper(context).getTotalValue()
 
         totalValue.text = getString(R.string.label_building_value_builder, currencyIcon, derivedTotal)

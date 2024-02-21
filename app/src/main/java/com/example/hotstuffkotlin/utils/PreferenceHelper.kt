@@ -51,8 +51,9 @@ class PreferenceHelper {
         }
     }
 
-    fun getCurrencyIcon(context : Context): String {
-        val icon = when (prefs?.getString("currency", "dollar")) {
+    fun getCurrencyIcon(context : Context): Int {
+        val icon = when (getStringPref(context.getString(R.string.key_currency),
+            context.getString(R.string.cur_dollar))) {
             context.getString(R.string.cur_bitcoin) -> R.string.icon_bitcoin
             context.getString(R.string.cur_dollar) -> R.string.icon_dollar
             context.getString(R.string.cur_dong) -> R.string.icon_dong
@@ -75,7 +76,7 @@ class PreferenceHelper {
             context.getString(R.string.cur_yen_yuan) -> R.string.icon_yen_yuan
             else -> R.string.icon_dollar
         }
-        return context.getString(icon)
+        return icon
     }
 
 }

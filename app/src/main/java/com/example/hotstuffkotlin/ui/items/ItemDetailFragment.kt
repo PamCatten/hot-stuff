@@ -40,7 +40,8 @@ class ItemDetailFragment : Fragment() {
         }
 
         val valueNumeral = formatValue(bundle.getDouble("value")).toString()
-        val valueCurrency = PreferenceHelper.getInstance(requireContext()).getCurrencyIcon(requireContext())
+        val valueCurrency = getString(PreferenceHelper.getInstance(requireContext())
+            .getCurrencyIcon(requireContext()))
 
         name.text = bundle.getString("name")
         category.text = bundle.getString("category")

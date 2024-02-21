@@ -206,9 +206,9 @@ class CreateItemFragment : Fragment() {
 
                 if (nameCheck || categoryCheck || roomCheck || quantityNullCheck || quantityValueCheck) {
                     val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(), R.style.dialog_alert)
-                    alertDialogBuilder.setTitle(R.string.label_dialog_create_title)
-                    alertDialogBuilder.setMessage(R.string.label_dialog_create_body)
-                    alertDialogBuilder.setPositiveButton(getText(R.string.label_dialog_positive)) { dialog, _ -> dialog.dismiss() }
+                    alertDialogBuilder.setTitle(R.string.dialog_create_item_title)
+                    alertDialogBuilder.setMessage(R.string.dialog_create_item_message)
+                    alertDialogBuilder.setPositiveButton(getText(R.string.dialog_positive)) { dialog, _ -> dialog.dismiss() }
                     val alertDialog = alertDialogBuilder.create()
                     alertDialog.show()
                 }

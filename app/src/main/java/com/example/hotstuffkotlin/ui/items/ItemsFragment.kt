@@ -98,7 +98,7 @@ class ItemsFragment : Fragment() {
                         val searchView = menuItem.actionView as SearchView
                         // TODO: Find a way to remove auto-generated Search Icon in the query
                         searchView.isIconified = false
-                        searchView.queryHint = "Search Hot Stuff"
+                        searchView.queryHint = getText(R.string.label_search_prompt)
                         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
                             override fun onQueryTextSubmit(query: String?): Boolean {
                                 searchView.clearFocus()
@@ -109,11 +109,13 @@ class ItemsFragment : Fragment() {
                                     items.clear()
                                     adapter.searchClear()
                                     query = null
-                                    for (i in DatabaseHelper(requireContext()).getDataRange()) items.add(i)
+                                    for (i in DatabaseHelper(requireContext())
+                                        .getDataRange()) items.add(i)
                                 } else {
                                     items.clear()
                                     query = "'%$newText%'"
-                                    val retrievedItems = DatabaseHelper(requireContext()).getDataRange(items.size, true, query)
+                                    val retrievedItems = DatabaseHelper(requireContext())
+                                        .getDataRange(items.size, true, query)
                                     for (i in retrievedItems) {
                                         items.add(i)
                                         adapter.searchInsert(retrievedItems.indexOf(i), items)
@@ -127,14 +129,15 @@ class ItemsFragment : Fragment() {
                     R.id.toolbar_main_download -> {
                         val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext(),
                             R.style.dialog_alert)
-                        alertDialogBuilder.setTitle("Export item records?")
-                        alertDialogBuilder.setMessage("Your records will be saved to your " +
-                                "device's downloads folder.")
-                        alertDialogBuilder.setPositiveButton("OK") { dialog, _ ->
+                        alertDialogBuilder.setTitle(getText(R.string.dialog_export_title))
+                        alertDialogBuilder.setMessage(getString(R.string.dialog_export_message))
+                        alertDialogBuilder.setPositiveButton(getText(R.string.dialog_positive)) {
+                            dialog, _ ->
                             DatabaseHelper(requireContext()).exportCSV()
                             dialog.dismiss()
                         }
-                        alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+                        alertDialogBuilder.setNegativeButton(getText(R.string.dialog_negative)) {
+                            dialog, _ ->
                             dialog.dismiss()
                         }
                         val alertDialog = alertDialogBuilder.create()
