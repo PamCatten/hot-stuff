@@ -19,36 +19,27 @@
             android:key="@string/key_currency"
             android:summary="@string/label_currency_summary"
             app:iconSpaceReserved="false"/>
-<!--        <ListPreference-->
-<!--            android:defaultValue="@string/default_scale"-->
-<!--            android:title="@string/label_scale"-->
-<!--            android:dialogTitle="@string/label_scale"-->
-<!--            android:entries="@array/dropdown_scale"-->
-<!--            android:entryValues="@array/dropdown_scale_values"-->
-<!--            android:key="@string/key_scale"-->
-<!--            android:summary="@string/label_scale_summary"-->
-<!--            app:iconSpaceReserved="false"/>-->
     </PreferenceCategory>
     <PreferenceCategory android:title="Building Information" app:iconSpaceReserved="false">
         <EditTextPreference
-            android:title="Name"
-            android:dialogTitle="Building Name"
+            android:title="@string/label_building_name_title"
+            android:dialogTitle="@string/dialog_settings_building_name"
             android:key="@string/key_buildingName"
-            android:summary="Change your building\'s name"
+            android:summary="@string/label_building_name_summary"
             app:iconSpaceReserved="false"/>
         <ListPreference
-            android:title="Type"
-            android:dialogTitle="Building Type"
+            android:title="@string/label_building_type_title"
+            android:dialogTitle="@string/dialog_settings_building_type"
             android:entries="@array/building_type"
             android:entryValues="@array/building_type_values"
             android:key="@string/key_buildingType"
-            android:summary="Change your building\'s type"
+            android:summary="@string/label_building_type_summary"
             app:iconSpaceReserved="false"/>
         <EditTextPreference
-            android:title="Description"
-            android:dialogTitle="Building Description"
+            android:title="@string/label_building_desc_title"
+            android:dialogTitle="@string/dialog_settings_building_desc"
             android:key="@string/key_buildingDesc"
-            android:summary="Change your building\'s description"
+            android:summary="@string/label_building_desc_summary"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>
     <PreferenceCategory app:title="@string/label_contact" app:iconSpaceReserved="false">

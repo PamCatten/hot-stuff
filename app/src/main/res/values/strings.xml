@@ -24,7 +24,7 @@
     <!-- Items -->
     <string name="label_no_items">No items found!</string>
     <string name="label_search_prompt">Search Hot Stuff</string>
-    <!-- CreateItem / EditItem / ItemDetail / CreateBuilding -->
+    <!-- General -->
     <string name="label_name">Name</string>
     <string name="label_quantity">Quantity</string>
     <string name="label_category">Category</string>
@@ -36,6 +36,7 @@
     <string name="label_save_changes">Save changes</string>
     <string name="label_save">Save</string>
     <string name="label_edit">Edit</string>
+    <string name="label_type">Type</string>
     <string name="label_select_photo">Select Photo</string>
     <string name="label_take_photo">Take Photo</string>
     <string name="toast_need_photo_permission">Photos and videos access must be enabled to use this
@@ -84,7 +85,19 @@
     <string name="dialog_create_building_message">To continue, make sure your building has all
         mandatory information filled out
     </string>
+    <string name="dialog_settings_building_name">Building Name</string>
+    <string name="dialog_settings_building_type">Building Type</string>
+    <string name="dialog_settings_building_desc">Building Description</string>
     <string name="desc_expand_dropdown">Expand dropdown</string>
+    <!-- Settings: Building Info -->
+    <string name="label_building_info">Building Details</string>
+    <string name="label_building_name_title">Name</string>
+    <string name="label_building_name_summary">Change your building\'s name</string>
+    <string name="label_building_type_title">Type</string>
+    <string name="label_building_type_summary">Change your building\'s type</string>
+    <string name="label_building_desc_title">Description</string>
+    <string name="label_building_desc_summary">Change your building\'s description</string>
+
     <!-- Settings: Appearance -->
     <string name="label_appearance">Appearance</string>
     <string name="label_currency">Currency</string>
