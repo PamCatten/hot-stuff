@@ -17,9 +17,27 @@ class PreferenceHelperTest {
         context = InstrumentationRegistry.getInstrumentation().targetContext
         prefs = PreferenceManager.getDefaultSharedPreferences(context)
     }
-
     @Test
-    fun updateBuildingPrefs() {
+    fun `GIVEN a valid key AND a value WHEN putBooleanPref is called THEN the preference value is updated`() {
+        val validKey = "onboard"
+        val preferenceValue = true
+        PreferenceHelper(context).putBooleanPref(validKey, preferenceValue)
+        assertEquals(preferenceValue, PreferenceHelper(context).getBooleanPref(validKey))
+    }
+    @Test
+    fun `GIVEN a valid key AND a value WHEN putStringPref is called THEN the preference value is updated`() {
+        val validKey = "buildingName"
+        val preferenceValue = "preference value"
+        PreferenceHelper(context).putStringPref(validKey, preferenceValue)
+        assertEquals(preferenceValue, PreferenceHelper(context).getStringPref(validKey))
+    }
+    @Test
+    fun `GIVEN a valid key AND no value WHEN putStringPref is called THEN the preference value is removed`() {
+        val validKey = "buildingName"
+        val preferenceValue = "preference value"
+        PreferenceHelper(context).putStringPref(validKey, preferenceValue)
+        PreferenceHelper(context).putStringPref(validKey)
+        assert(PreferenceHelper(context).getStringPref(validKey)!!.isEmpty())
     }
     @Test
     fun `GIVEN a valid key WHEN getStringPref is called THEN the corresponding value is returned`() {
@@ -37,7 +55,11 @@ class PreferenceHelperTest {
         val actual = PreferenceHelper(context).getStringPref(invalidKey, defaultValue)
         assertEquals(defaultValue, actual)
     }
-    // TODO: ADD TEST FOR CLASS CAST EXCEPTION
+    @Test(expected = ClassCastException::class)
+    fun `GIVEN an valid key AND a non string return type WHEN getStringPref is called THEN throw class cast exception`() {
+        val validKey = "onboard"
+        PreferenceHelper(context).getStringPref(validKey)
+    }
     @Test
     fun `GIVEN a valid key WHEN getBooleanPref is called THEN the corresponding value is returned`() {
         val validKey = "onboard"
@@ -59,7 +81,11 @@ class PreferenceHelperTest {
         val prefValue = PreferenceHelper(context).getBooleanPref(invalidKey)
         assertEquals(false, prefValue)
     }
-    // TODO: ADD TEST FOR CLASS CAST EXCEPTION
+    @Test(expected = ClassCastException::class)
+    fun `GIVEN an valid key AND a non boolean return type WHEN getBooleanPref is called THEN throw class cast exception`() {
+        val validKey = "theme"
+        PreferenceHelper(context).getBooleanPref(validKey)
+    }
     @Test
     fun `GIVEN a valid string WHEN applyTheme is called THEN the corresponding theme is set`() {
         val validThemeString = "light"
@@ -72,7 +98,7 @@ class PreferenceHelperTest {
         PreferenceHelper(context).applyTheme(invalidThemeString)
         assertEquals(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM, AppCompatDelegate.getDefaultNightMode())
     }
-    @Test
+    @Test // TODO: Much slower than other tests, needs to be investigated when there's time
     fun `GIVEN a valid string WHEN getCurrencyIcon is called THEN the correct icon is returned`() {
         val currencyString = "euro"
         val icon = PreferenceHelper(context).getCurrencyIcon(currencyString)

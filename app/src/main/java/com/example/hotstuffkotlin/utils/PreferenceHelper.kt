@@ -7,18 +7,11 @@ import com.example.hotstuffkotlin.R
 
 class PreferenceHelper(val context: Context) {
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-    fun updateBuildingPrefs(name: String, type: String?, description: String?) {
-        prefs!!.edit().putString("buildingName", name).apply()
-        prefs.edit().putString("buildingType", type).apply()
-        prefs.edit().putString("buildingDescription", description).apply()
+    fun putBooleanPref(key: String, value:Boolean = false) {
+        prefs!!.edit().putBoolean(key, value).apply()
     }
-
-    // TODO: DELETE WHEN DONE WITH ONBOARD TESTING
-    fun testOnboard() {
-        prefs!!.edit().putBoolean("onboard", true).apply()
-    }
-    fun finishOnboarding() {
-        prefs!!.edit().putBoolean("onboard", false).apply()
+    fun putStringPref(key: String, value: String? = null) {
+        prefs!!.edit().putString(key, value).apply()
     }
     fun getStringPref(key: String, defValue: String? = ""): String? {
         return prefs!!.getString(key, defValue)
@@ -26,8 +19,6 @@ class PreferenceHelper(val context: Context) {
     fun getBooleanPref(key: String, defValue: Boolean = false): Boolean {
         return prefs!!.getBoolean(key, defValue)
     }
-
-    // TODO: UPDATE WITH NON HARDCODED STRINGS
     fun applyTheme(themePreference: String?) {
         when (themePreference) {
             context.getString(R.string.theme_light) -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)

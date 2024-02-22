@@ -63,9 +63,13 @@ class CreateBuildingFragment : Fragment() {
                 newBuilding.description = buildingDescriptionText.text.toString().trim()
                 DatabaseHelper(context).addBuilding(newBuilding)
 
-                preferenceHelper.updateBuildingPrefs(
-                    newBuilding.name, newBuilding.type, newBuilding.description)
-                preferenceHelper.finishOnboarding()
+                preferenceHelper
+                    .putStringPref(getString(R.string.key_buildingName), newBuilding.name)
+                preferenceHelper
+                    .putStringPref(getString(R.string.key_buildingType), newBuilding.type!!)
+                preferenceHelper
+                    .putStringPref(getString(R.string.key_buildingDesc), newBuilding.description!!)
+                preferenceHelper.putBooleanPref(getString(R.string.key_onboard), false)
                 findNavController().navigate(R.id.action_create_building_to_main_activity)
                 requireActivity().finish()
             }
