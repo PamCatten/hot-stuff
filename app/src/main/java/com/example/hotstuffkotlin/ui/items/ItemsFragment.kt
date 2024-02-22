@@ -68,7 +68,7 @@ class ItemsFragment : Fragment() {
         })
 
         val bundle = Bundle()
-        adapter.setOnItemClickListener(object : Adapter.OnItemClickListener {
+        adapter.setOnItemClickListener(object: Adapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 bundle.putInt("id", items[position].id)
                 bundle.putInt("buildingId", items[position].buildingId)

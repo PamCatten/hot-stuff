@@ -31,7 +31,6 @@ class Adapter(private var items: MutableList<Item>): RecyclerView.Adapter<Adapte
 
     /**
      * Clear the stored items array in the [Adapter] and notify [ViewHolder].
-     *
      * @author Cam Patten
      */
     fun searchClear() {
@@ -41,7 +40,6 @@ class Adapter(private var items: MutableList<Item>): RecyclerView.Adapter<Adapte
 
     /**
      * Insert search result to the stored items array in the [Adapter] and notify [ViewHolder].
-     *
      * @param insertPosition the position of the item to be added
      * @param updatedItemsArray the updated item array
      * @author Cam Patten

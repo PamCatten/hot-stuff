@@ -20,7 +20,7 @@
             android:summary="@string/label_currency_summary"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>
-    <PreferenceCategory android:title="Building Information" app:iconSpaceReserved="false">
+    <PreferenceCategory android:title="@string/label_building_info" app:iconSpaceReserved="false">
         <EditTextPreference
             android:title="@string/label_building_name_title"
             android:dialogTitle="@string/dialog_settings_building_name"
