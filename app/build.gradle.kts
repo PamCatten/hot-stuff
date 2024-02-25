@@ -40,6 +40,7 @@ android {
     }
 }
 
+
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -60,8 +61,6 @@ dependencies {
 
     // testing
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
-    testImplementation("junit:junit:4.12")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
