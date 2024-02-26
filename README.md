@@ -1,5 +1,6 @@
 ![](https://github.com/PamCatten/hot-stuff/blob/main/assets/banner.png)
 ![Static Badge](https://img.shields.io/badge/Release-1.0.0-%23F83839)
+[![Build CI](https://github.com/PamCatten/hot-stuff/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/PamCatten/hot-stuff/actions/workflows/build.yml)
 ![Static Badge](https://img.shields.io/badge/API-33%2B-%2340B5F0)
 [![License](https://img.shields.io/badge/License-Apache%202.0-%23FFA303)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
