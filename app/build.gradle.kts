@@ -1,3 +1,5 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -40,6 +42,15 @@ android {
     }
 }
 
+tasks.dokkaGfm.configure {
+    outputDirectory.set(file("../documentation/gfm"))
+}
+tasks.dokkaHtml.configure {
+    outputDirectory.set(file("../documentation/html"))
+}
+tasks.withType<DokkaTask>().configureEach {
+    notCompatibleWithConfigurationCache("https://github.com/Kotlin/dokka/issues/2231")
+}
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")

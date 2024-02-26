@@ -1,13 +1,13 @@
 package com.example.hotstuffkotlin.utils
 import android.graphics.Color
 import com.github.mikephil.charting.data.BarDataSet
+
+/**
+ * Create a helper object to holds array of colors in RGB format
+ * @see [BarDataSet.setColors]
+ * @author Cam Patten
+ */
 object ColorTemplate {
-    /**
-     * Contains array of RGB colors used in HomeFragment charts
-     *
-     * @see [BarDataSet.setColors]
-     * @author Cam Patten
-     */
     val CHART_THEME = intArrayOf(
         Color.rgb(255, 187, 167), // #ffbba7
         Color.rgb(255, 173, 153), // #ffad99

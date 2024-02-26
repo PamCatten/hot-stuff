@@ -17,7 +17,6 @@ import java.io.PrintWriter
 
 /**
  * Create a helper object to perform basic CRUD operations with SQL on the database.
- *
  * @param context Used to push to and receive information from the application environment.
  * @author Cam Patten
  */
