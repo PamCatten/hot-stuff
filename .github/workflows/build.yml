@@ -31,9 +31,12 @@ jobs:
       
     - name: Execute Gradle build
       run: ./gradlew build --scan --no-daemon
-      
-    - name: Generate test coverage reports
-      run: ./gradlew connectedCheck
+
+    - name: Generate test coverage reports with emulator
+      uses: ReactiveCircus/android-emulator-runner@v2.30.1
+      with: 
+          api-level: 33
+          script: ./gradlew connectedCheck --no-daemon
 
     - name: Upload coverage reports to GitHub
       uses: actions/upload-artifact@v4
