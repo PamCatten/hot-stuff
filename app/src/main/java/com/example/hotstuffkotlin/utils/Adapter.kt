@@ -7,6 +7,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.models.Item
+
+/**
+ * A bridge class that takes retrieved item views from the database and makes them compatible with
+ * the [RecyclerView.Adapter] interface.
+ * @param items The list of items to be displayed in the RecyclerView.
+ * @author Cam Patten
+ */
 class Adapter(private var items: MutableList<Item>): RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     private lateinit var listener: OnItemClickListener

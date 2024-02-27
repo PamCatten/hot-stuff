@@ -21,6 +21,7 @@
     <string name="label_total_quantity_items_builder">%1$s items</string>
     <string name="label_category_summary">Category Summary:</string>
     <string name="label_room_summary">Room Summary:</string>
+    <string name="label_chart_marker">%1$s: %2$f</string>
     <!-- Items -->
     <string name="label_no_items">No items found!</string>
     <string name="label_search_prompt">Search Hot Stuff</string>

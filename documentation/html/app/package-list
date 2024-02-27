@@ -124,11 +124,9 @@ $dokka.location:com.example.hotstuffkotlin.utils/CSVHelper/CSVHelper/#java.io.Wr
 $dokka.location:com.example.hotstuffkotlin.utils/CSVHelper/close/#/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-c-s-v-helper/close.html
 $dokka.location:com.example.hotstuffkotlin.utils/CSVHelper/separateRow/#kotlin.collections.MutableList[kotlin.String]?/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-c-s-v-helper/separate-row.html
 $dokka.location:com.example.hotstuffkotlin.utils/ChartMarker///PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-chart-marker/index.html
-$dokka.location:com.example.hotstuffkotlin.utils/ChartMarker/ChartMarker/#android.content.Context?#kotlin.Int#java.util.ArrayList[kotlin.String]/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-chart-marker/-chart-marker.html
+$dokka.location:com.example.hotstuffkotlin.utils/ChartMarker/ChartMarker/#android.content.Context#kotlin.Int#java.util.ArrayList[kotlin.String]/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-chart-marker/-chart-marker.html
 $dokka.location:com.example.hotstuffkotlin.utils/ChartMarker/getOffset/#/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-chart-marker/get-offset.html
 $dokka.location:com.example.hotstuffkotlin.utils/ChartMarker/refreshContent/#com.github.mikephil.charting.data.Entry#com.github.mikephil.charting.highlight.Highlight?/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-chart-marker/refresh-content.html
-$dokka.location:com.example.hotstuffkotlin.utils/ColorTemplate///PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-color-template/index.html
-$dokka.location:com.example.hotstuffkotlin.utils/ColorTemplate/CHART_THEME/#/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-color-template/-c-h-a-r-t_-t-h-e-m-e.html
 $dokka.location:com.example.hotstuffkotlin.utils/DatabaseHelper.Companion///PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-database-helper/-companion/index.html
 $dokka.location:com.example.hotstuffkotlin.utils/DatabaseHelper///PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-database-helper/index.html
 $dokka.location:com.example.hotstuffkotlin.utils/DatabaseHelper/DatabaseHelper/#android.content.Context/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-database-helper/-database-helper.html
@@ -161,6 +159,8 @@ $dokka.location:com.example.hotstuffkotlin.utils/PreferenceHelper/getCurrencyIco
 $dokka.location:com.example.hotstuffkotlin.utils/PreferenceHelper/getStringPref/#kotlin.String#kotlin.String?/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-preference-helper/get-string-pref.html
 $dokka.location:com.example.hotstuffkotlin.utils/PreferenceHelper/putBooleanPref/#kotlin.String#kotlin.Boolean/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-preference-helper/put-boolean-pref.html
 $dokka.location:com.example.hotstuffkotlin.utils/PreferenceHelper/putStringPref/#kotlin.String#kotlin.String?/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-preference-helper/put-string-pref.html
+$dokka.location:com.example.hotstuffkotlin.utils/ThemeHelper///PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-theme-helper/index.html
+$dokka.location:com.example.hotstuffkotlin.utils/ThemeHelper/CHART_THEME/#/PointingToDeclaration/app/com.example.hotstuffkotlin.utils/-theme-helper/-c-h-a-r-t_-t-h-e-m-e.html
 com.example.hotstuffkotlin.models
 com.example.hotstuffkotlin.ui
 com.example.hotstuffkotlin.ui.create

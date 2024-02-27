@@ -2,8 +2,7 @@ package com.example.hotstuffkotlin.utils
 import java.io.Writer
 
 /**
- * Create a helper object to convert and format List values to a text-output stream.
- *
+ * A helper object to convert and format List values to a text-output stream.
  * @param printWriter instance of [Writer] created in [DatabaseHelper.exportCSV]
  * @see [DatabaseHelper]
  * @author Cam Patten

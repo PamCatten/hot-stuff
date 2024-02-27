@@ -3,11 +3,11 @@ import android.graphics.Color
 import com.github.mikephil.charting.data.BarDataSet
 
 /**
- * Create a helper object to holds array of colors in RGB format
+ * A helper object to hold an array of colors in RGB format.
  * @see [BarDataSet.setColors]
  * @author Cam Patten
  */
-object ColorTemplate {
+object ThemeHelper {
     val CHART_THEME = intArrayOf(
         Color.rgb(255, 187, 167), // #ffbba7
         Color.rgb(255, 173, 153), // #ffad99

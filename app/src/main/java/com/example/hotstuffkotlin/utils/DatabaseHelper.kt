@@ -16,8 +16,8 @@ import java.io.File
 import java.io.PrintWriter
 
 /**
- * Create a helper object to perform basic CRUD operations with SQL on the database.
- * @param context Used to push to and receive information from the application environment.
+ * A helper class to perform basic CRUD operations with SQL on the database.
+ * @param context Used to push and receive information from the application environment.
  * @author Cam Patten
  */
 class DatabaseHelper(val context: Context):
@@ -77,7 +77,6 @@ class DatabaseHelper(val context: Context):
 
     /**
      * Add the passed item to the database and toast the result (whether success/failure).
-     *
      * @param item the item to be added to database
      * @author Cam Patten
      */
@@ -135,7 +134,6 @@ class DatabaseHelper(val context: Context):
     /**
      * Delete the row of the passed item id in the database and toast the result
      * (whether success/failure).
-     *
      * @param id the id of the item to be deleted
      * @author Cam Patten
      */
@@ -227,7 +225,6 @@ class DatabaseHelper(val context: Context):
     }
     /**
      * Sums the quantity column of the ITEM table and returns the total as a formatted string.
-     *
      * @return The total sum of saved item quantities in the database as a formatted string.
      * @author Cam Patten
      */

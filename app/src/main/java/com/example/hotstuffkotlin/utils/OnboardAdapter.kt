@@ -6,10 +6,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 /**
- * Create a helper object to perform basic CRUD operations with SQL on the database.
- * @param list
- * @param fm
- * @param lifecycle
+ * A bridge class that prepares a list of fragments to be managed by a ViewPager2 interface.
+ * @param list The list of fragments to be displayed in the ViewPager.
+ * @param fm The interface responsible for interacting with the fragment objects.
+ * @param lifecycle The object that holds the status of the ViewPager's state.
  * @author Cam Patten
  */
 class OnboardAdapter(list: ArrayList<Fragment>, fm: FragmentManager, lifecycle: Lifecycle):

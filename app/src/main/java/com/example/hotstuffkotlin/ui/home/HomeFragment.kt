@@ -67,7 +67,7 @@ class HomeFragment : Fragment() {
 
         val catBarDataSet = BarDataSet(catEntries, "Category by Total Item Quantity (in $currencyIcon)")
         catChart.data = BarData(catBarDataSet)
-        catBarDataSet.setColors(com.example.hotstuffkotlin.utils.ColorTemplate.CHART_THEME, 255)
+        catBarDataSet.setColors(com.example.hotstuffkotlin.utils.ThemeHelper.CHART_THEME, 255)
         catChart.setFitBars(true)
         catChart.description.text = ""
         catChart.axisRight.setDrawGridLines(false)
@@ -105,7 +105,7 @@ class HomeFragment : Fragment() {
         val roomBarDataSet = BarDataSet(roomEntries, "Room by Total Item Value (in $currencyIcon)")
         roomChart.data = BarData(roomBarDataSet)
 
-        roomBarDataSet.setColors(com.example.hotstuffkotlin.utils.ColorTemplate.CHART_THEME, 255)
+        roomBarDataSet.setColors(com.example.hotstuffkotlin.utils.ThemeHelper.CHART_THEME, 255)
         roomChart.setFitBars(true)
         roomChart.description.text = ""
         roomChart.axisRight.setDrawGridLines(false)

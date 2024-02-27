@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
 import com.example.hotstuffkotlin.R
 
+/**
+ * A helper class to retrieve stored shared preferences from the [PreferenceManager].
+ * @param context Used to push and receive information from the application environment.
+ * @author Cam Patten
+ */
 class PreferenceHelper(val context: Context) {
     private val prefs = PreferenceManager.getDefaultSharedPreferences(context)
     fun putBooleanPref(key: String, value:Boolean = false) {

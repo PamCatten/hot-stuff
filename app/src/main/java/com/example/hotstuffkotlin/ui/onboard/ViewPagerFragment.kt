@@ -19,7 +19,7 @@ class ViewPagerFragment : Fragment() {
         _binding = FragmentViewPagerBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        val fragmentList = arrayListOf<Fragment>(
+        val fragmentList = arrayListOf(
             FirstScreen(),
             SecondScreen(),
             ThirdScreen(),
