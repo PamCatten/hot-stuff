@@ -30,9 +30,7 @@ import com.google.android.material.textfield.TextInputLayout
 import java.io.File
 import java.io.FileOutputStream
 
-
 class CreateItemFragment : Fragment() {
-
     private var _binding: FragmentCreateItemBinding? = null
     private val binding get() = _binding!!
     private var uri: Uri? = null
@@ -94,18 +92,18 @@ class CreateItemFragment : Fragment() {
         val takePicture = registerForActivityResult(ActivityResultContracts.TakePicture()) {
             isSaved -> if (isSaved) {
                 createImage.setImageURI(uri)
-                    val contentResolver = requireContext().contentResolver
-                    val source = ImageDecoder.createSource(contentResolver, uri!!)
-                    val bitmap = ImageDecoder.decodeBitmap(source) { decoder, _, _ ->
-                        decoder.setTargetSampleSize(1)
-                        decoder.isMutableRequired = true
-                    }
+                val contentResolver = requireContext().contentResolver
+                val source = ImageDecoder.createSource(contentResolver, uri!!)
+                val bitmap = ImageDecoder.decodeBitmap(source) { decoder, _, _ ->
+                    decoder.setTargetSampleSize(1)
+                    decoder.isMutableRequired = true
+                }
 
-                    val fos = FileOutputStream(imageFile)
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
-                    fos.flush()
-                    fos.close()
-                    MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(SELECT_MIME_TYPE), null)
+                val fos = FileOutputStream(imageFile)
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
+                fos.flush()
+                fos.close()
+                MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(SELECT_MIME_TYPE), null)
             }
         }
         takePhotoButton?.setOnClickListener {
@@ -155,14 +153,6 @@ class CreateItemFragment : Fragment() {
 
         createButton?.setOnClickListener {
             fun resetForm() {
-//                val inputName: String = nameText.text.toString().trim()
-//                val inputQuantity: Int = quantityText.text.toString().toInt()
-//                val inputCategory: String = categoryText.text.toString().trim()
-//                val inputRoom: String = roomText.text.toString().trim()
-//                val inputMake: String? = makeText.text?.toString()?.trim()
-//                val inputValue: Double? = valueText.text?.toString()?.toDoubleOrNull()
-//                val inputURI: String? = if (uri != null) uri.toString() else null
-//                val inputDescription: String? = descriptionText.text?.toString()?.trim()
                 val newItem = Item()
 //                newItem.buildingId
                 newItem.name = nameText.text.toString().trim()
@@ -219,12 +209,10 @@ class CreateItemFragment : Fragment() {
 
         return view
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
     companion object {
         const val PERMISSION_REQUEST_CODE = 10
         const val ACCESS_PERMISSION = android.Manifest.permission.READ_MEDIA_IMAGES

@@ -67,8 +67,6 @@
     <string name="icon_won">₩</string>
     <string name="icon_yen_yuan">¥</string>
 
-
-
     <string name="type_apartment" translatable="false">apartment</string>
     <string name="type_condo" translatable="false">condo</string>
     <string name="type_house" translatable="false">house</string>
@@ -77,6 +75,14 @@
     <string name="type_workplace" translatable="false">workplace</string>
     <string name="type_other" translatable="false">other</string>
 
+    <string name="email_data" translatable="false">mailto:</string>
+    <string name="email_address" translatable="false">campatten.dev@outlook.com</string>
+    <string name="email_subject" translatable="false">FEEDBACK: </string>
+    <string name="email_text" translatable="false">
+        Device: %1$s\n
+        OS Version: %2$s\n
+        App Version: %3$s
+    </string>
 
 
 </resources>

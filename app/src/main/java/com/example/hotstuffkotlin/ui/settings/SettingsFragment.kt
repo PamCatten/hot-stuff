@@ -8,7 +8,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.example.hotstuffkotlin.BuildConfig
@@ -88,16 +87,10 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
         when (key) {
             getString(R.string.key_theme) -> {
-                when (preferenceHelper
-                    .getStringPref(getString(R.string.key_theme), getString(R.string.theme_system))) {
-                    getString(R.string.theme_light) -> setTheme(AppCompatDelegate.MODE_NIGHT_NO)
-                    getString(R.string.theme_dark) -> setTheme(AppCompatDelegate.MODE_NIGHT_YES)
-                    getString(R.string.theme_system) -> setTheme(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                }
+                val theme = preferenceHelper.getStringPref(getString(R.string.key_theme), getString(R.string.theme_system))
+                PreferenceHelper(requireContext()).applyTheme(theme)
             }
-            getString(R.string.key_currency) -> {
-                // do nothing for now
-            }
+            getString(R.string.key_currency) -> {}
             getString(R.string.key_buildingName),
             getString(R.string.key_buildingType),
             getString(R.string.key_buildingDesc) -> {
@@ -113,6 +106,13 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     private fun shareApp() {
         // TODO: ADD LINK TO PLAY STORE AND OPEN IN NEW JAVA INTENT
     }
+
+    /**
+     * Creates an intent to open the provided link.
+     * @param link The URL of the intended destination.
+     * @throws ActivityNotFoundException If no app capable of open the link is found on the device.
+     * @author Cam Patten
+     */
     private fun visitDestination(link: String) {
         try {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(link)))
@@ -121,35 +121,30 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             e.printStackTrace()
         }
     }
-
+    /**
+     * Creates an intent to send an email to the developer.
+     * @param context Used to receive information from the application environment.
+     * @throws ActivityNotFoundException If no app capable of sending an email is found on the device.
+     * @author Cam Patten
+     */
     private fun sendEmail(context: Context) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:")
-
-            val emails = arrayOf("campatten.dev@outlook.com")
-            val subject = "FEEDBACK: (Your suggestion)"
+            data = Uri.parse(getString(R.string.email_data))
+            val emails = arrayOf(getString(R.string.email_address))
+            val subject = getString(R.string.email_subject)
             putExtra(Intent.EXTRA_EMAIL, emails)
             putExtra(Intent.EXTRA_SUBJECT, subject)
-
             val packageName = context.packageName
             val packageInfo = context.packageManager.getPackageInfo(packageName, 0)
-            val text = """
-                        Device: ${Build.MODEL}
-                        OS Version: ${Build.VERSION.RELEASE}
-                        App Version: ${packageInfo.versionName}  
-                    """.trimIndent()
+            val text = getString(R.string.email_text, Build.MODEL, Build.VERSION.RELEASE,
+                packageInfo.versionName)
             putExtra(Intent.EXTRA_TEXT, text)
         }
-
         try {
             startActivity(intent)
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(context, R.string.toast_no_app, Toast.LENGTH_LONG).show()
             e.printStackTrace()
         }
-    }
-
-    private fun setTheme(mode: Int) {
-        AppCompatDelegate.setDefaultNightMode(mode)
     }
 }

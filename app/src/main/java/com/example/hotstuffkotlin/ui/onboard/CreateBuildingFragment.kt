@@ -28,11 +28,10 @@ class CreateBuildingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentCreateBuildingBinding.inflate(inflater, container, false)
         val view = binding.root
+
         val context = requireContext()
         val preferenceHelper = PreferenceHelper(context)
-
-        // Disable onBack click
-        requireActivity().onBackPressedDispatcher.addCallback(this) {}
+        requireActivity().onBackPressedDispatcher.addCallback(this) {} // Disable onBack click
 
         val buildingName = view.findViewById<TextInputLayout>(R.id.create_building_name_container)
         val buildingNameText = view.findViewById<TextInputEditText>(R.id.create_building_name_field)
@@ -41,7 +40,6 @@ class CreateBuildingFragment : Fragment() {
 //        val buildingDescription = view.findViewById<TextInputLayout>(R.id.create_building_desc_container)
         val buildingDescriptionText = view.findViewById<TextInputEditText>(R.id.create_building_desc_field)
         val createBuildingButton = view.findViewById<MaterialButton>(R.id.create_building_button)
-
         val adapter = ArrayAdapter(context, com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
             resources.getStringArray(R.array.building_type))
         buildingTypeText.setAdapter(adapter)
@@ -54,7 +52,6 @@ class CreateBuildingFragment : Fragment() {
             }
             if (!focused) buildingName.helperText = validName()
         }
-
         createBuildingButton.setOnClickListener {
             fun confirmForm() {
                 val newBuilding = Building()

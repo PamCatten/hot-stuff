@@ -11,11 +11,9 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.ActivityOnboardBinding
 
 class OnboardActivity : AppCompatActivity() {
-
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityOnboardBinding
     private lateinit var toolbar: Toolbar
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,10 +28,8 @@ class OnboardActivity : AppCompatActivity() {
             R.id.navigation_view_pager))
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_activity_onboard)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

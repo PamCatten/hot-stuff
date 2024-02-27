@@ -133,7 +133,9 @@ class EditItemFragment : Fragment() {
         }
         cameraButton?.setOnClickListener {
             try {
-                val imageAlbum = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "Hot Stuff")
+                val imageAlbum = File(Environment
+                    .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+                    getString(R.string.app_name))
                 if (!imageAlbum.exists()) imageAlbum.mkdirs()
                 imageFile = File(imageAlbum, "HS-${System.currentTimeMillis()}.jpg")
                 if (imageFile!!.createNewFile()) {

@@ -14,37 +14,25 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentOnboardBinding
 import com.google.android.material.button.MaterialButton
 
-
 class OnboardFragment : Fragment() {
-
     private var _binding: FragmentOnboardBinding? = null
     private val binding get() = _binding!!
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentOnboardBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        // Disable onBack click
-        requireActivity().onBackPressedDispatcher.addCallback(this) {}
-
+        requireActivity().onBackPressedDispatcher.addCallback(this) {} // Disable onBack click
         val buttonContinue = view.findViewById<MaterialButton>(R.id.onboard_button)
         buttonContinue.setOnClickListener {
             findNavController().navigate(R.id.action_onboard_to_view_pager)
         }
-
         val disclaimer = view.findViewById<TextView>(R.id.onboard_text_disclaimer)
         disclaimer.setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link_terms))))
         }
-//
-//    private fun onBoardingFinished(): Boolean{
-//        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-//        return sharedPref.getBoolean("Finished", false)
-//    }
 
         return view
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
