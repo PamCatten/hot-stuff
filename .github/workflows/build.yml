@@ -28,12 +28,29 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+      
     - name: Execute Gradle build
       run: ./gradlew build --scan --no-daemon
+      
+    - name: Generate test coverage reports
+      run: ./gradlew connectedCheck
+
+    - name: Upload coverage reports to GitHub
+      uses: actions/upload-artifact@v4
+      with:
+        name: report 
+        path: app/build/reports/coverage/androidTest/debug/connected
+
+    - name: Download coverage reports
+      uses: actions/download-artifact@v4
+      with:
+        name: report
+        path: app/build/reports/coverage/androidTest/debug/connected
 
     - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v4.0.1
+      uses: codecov/codecov-action@v4
       with:
+        files: "app/build/reports/coverage/androidTest/debug/connected/report.xml"
         token: ${{ secrets.CODE_COV }}
         slug: PamCatten/hot-stuff
       env: 
