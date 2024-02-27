@@ -30,3 +30,11 @@ jobs:
       run: chmod +x gradlew
     - name: Execute Gradle build
       run: ./gradlew build --scan --no-daemon
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v4.0.1
+      with:
+        token: ${{ secrets.CODE_COV }}
+        slug: PamCatten/hot-stuff
+      env: 
+        CODECOV_TOKEN: ${{ secrets.CODE_COV }}
