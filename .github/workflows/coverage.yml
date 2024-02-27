@@ -26,7 +26,7 @@ jobs:
       run: chmod +x gradlew
 
     - name: Setup Emulator and generate test coverage reports
-      uses: ReactiveCircus/android-emulator-runner@v2.30.1
+      uses: ReactiveCircus/android-emulator-runner@v2
       with: 
           api-level: 33
           script: ./gradlew connectedCheck --no-daemon
