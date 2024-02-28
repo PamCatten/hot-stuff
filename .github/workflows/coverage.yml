@@ -16,6 +16,9 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: run tests
         uses: reactivecircus/android-emulator-runner@v2.25.0
         with:
