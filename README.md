@@ -20,6 +20,8 @@ See the documentation for descriptions and usage examples of Hot Stuff's functio
 Bug reports, feature requests, questions, and pull requests always welcome! 
 
 Check out our [Contributing Guidelines](https://github.com/PamCatten/hot-stuff/blob/main/CONTRIBUTING.md).
+## Testing
+View the latest test coverage status report on [Codecov](https://app.codecov.io/github/PamCatten/hot-stuff).
 
 ## Design
 ### Roadmap
