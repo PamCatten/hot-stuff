@@ -4,6 +4,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.dokka")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
     jacoco
 }
 
@@ -17,7 +19,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -60,7 +61,6 @@ tasks.withType<DokkaTask>().configureEach {
     notCompatibleWithConfigurationCache("https://github.com/Kotlin/dokka/issues/2231")
 }
 
-
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -73,6 +73,8 @@ dependencies {
     implementation("androidx.preference:preference-ktx:1.2.1")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
 
     // third party
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
