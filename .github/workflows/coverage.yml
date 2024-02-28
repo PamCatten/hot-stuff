@@ -12,7 +12,9 @@ jobs:
       - name: Test with Android Emulator Runner
         uses: ReactiveCircus/android-emulator-runner@v2
         with: 
-            api-level: 34
+            api-level: 33
+            arch: x86_64
+            target: google_apis or playstore
             script: ./gradlew connectedCheck --no-daemon
   
       - name: Upload coverage reports to GitHub
