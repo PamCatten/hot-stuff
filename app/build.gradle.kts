@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.dokka")
+    jacoco
 }
 
 android {
@@ -21,6 +22,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            enableUnitTestCoverage = true
+            enableAndroidTestCoverage = true
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -29,6 +34,9 @@ android {
             )
         }
     }
+    buildTypes {
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -51,6 +59,7 @@ tasks.dokkaHtml.configure {
 tasks.withType<DokkaTask>().configureEach {
     notCompatibleWithConfigurationCache("https://github.com/Kotlin/dokka/issues/2231")
 }
+
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")

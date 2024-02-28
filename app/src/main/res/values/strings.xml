@@ -22,6 +22,8 @@
     <string name="label_category_summary">Category Summary:</string>
     <string name="label_room_summary">Room Summary:</string>
     <string name="label_chart_marker">%1$s: %2$f</string>
+    <string name="label_chart_category_title">Category by Total Item Quantity (in %1$s)</string>
+    <string name="label_chart_room_title">Room by Total Item Value (in %1$s)</string>
     <!-- Items -->
     <string name="label_no_items">No items found!</string>
     <string name="label_search_prompt">Search Hot Stuff</string>

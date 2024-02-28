@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
             catAxisLabels.add(catDatabaseLabels[i])
         }
 
-        val catBarDataSet = BarDataSet(catEntries, "Category by Total Item Quantity (in $currencyIcon)")
+        val catBarDataSet = BarDataSet(catEntries, getString(R.string.label_chart_category_title, currencyIcon))
         catChart.data = BarData(catBarDataSet)
         catBarDataSet.setColors(com.example.hotstuffkotlin.utils.ThemeHelper.CHART_THEME, 255)
         catChart.setFitBars(true)
@@ -84,27 +84,22 @@ class HomeFragment : Fragment() {
         catChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
         catChart.axisRight.isEnabled = false
         catChart.isScaleXEnabled = false
-
         catChart.marker = ChartMarker(context, R.layout.dialog_chart, catAxisLabels)
 
         val roomChart = view.findViewById<HorizontalBarChart>(R.id.chart_home_two)
         val roomDatabaseLabels = DatabaseHelper(context).getRoomValue().first
         val roomDatabaseTotals = DatabaseHelper(context).getRoomValue().second
-
         val roomEntries: ArrayList<BarEntry> = ArrayList()
         val roomAxisLabels: ArrayList<String> = ArrayList()
-
         for (i in 0 until roomDatabaseTotals.size) {
             roomEntries.add(BarEntry(i.toFloat(), roomDatabaseTotals[i]))
         }
-
         for (i in 0 until roomDatabaseLabels.size) {
             roomAxisLabels.add(roomDatabaseLabels[i])
         }
 
-        val roomBarDataSet = BarDataSet(roomEntries, "Room by Total Item Value (in $currencyIcon)")
+        val roomBarDataSet = BarDataSet(roomEntries, getString(R.string.label_chart_room_title, currencyIcon))
         roomChart.data = BarData(roomBarDataSet)
-
         roomBarDataSet.setColors(com.example.hotstuffkotlin.utils.ThemeHelper.CHART_THEME, 255)
         roomChart.setFitBars(true)
         roomChart.description.text = ""
@@ -122,12 +117,10 @@ class HomeFragment : Fragment() {
         roomChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
         roomChart.axisLeft.isEnabled = false
         roomChart.isScaleYEnabled = false
-
         roomChart.marker = ChartMarker(context, R.layout.dialog_chart, roomAxisLabels)
 
         return binding.root
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

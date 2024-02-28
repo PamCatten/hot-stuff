@@ -10,12 +10,10 @@ import com.example.hotstuffkotlin.R
 import com.example.hotstuffkotlin.databinding.FragmentArticleBinding
 
 class ArticleFragment : Fragment() {
-
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View {
         _binding = FragmentArticleBinding.inflate(inflater, container, false)
         val view = binding.root
         val bundle = this.requireArguments()
@@ -25,7 +23,7 @@ class ArticleFragment : Fragment() {
         val articleDisclosure = view.findViewById<TextView>(R.id.article_disclosure)
         articleDisclosure.text = getText(R.string.article_legal_disclosure)
 
-        when (bundle.getString("article")) {
+        when (bundle.getString(getString(R.string.key_article))) {
             getText(R.string.article_whyCare) -> {
                 articleTitle.text = getText(R.string.article_whyCare_title)
                 articleText.text = getText(R.string.article_whyCare_text)
@@ -61,7 +59,6 @@ class ArticleFragment : Fragment() {
 
         return view
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

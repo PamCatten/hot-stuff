@@ -16,6 +16,7 @@
     <string name="key_report" translatable="false">report_bug</string>
     <string name="key_rate" translatable="false">rate</string>
     <string name="key_onboard" translatable="false">onboard</string>
+    <string name="key_article" translatable="false">article</string>
     <!-- Planned -->
     <string name="key_faq" translatable="false">faq</string>
     <string name="key_language" translatable="false">language</string>
