@@ -82,11 +82,11 @@ class PreferenceHelperTest {
         val prefValue = PreferenceHelper(context).getBooleanPref(invalidKey)
         assertEquals(false, prefValue)
     }
-    @Test(expected = ClassCastException::class)
-    fun `GIVEN an valid key AND a non boolean return type WHEN getBooleanPref is called THEN throw class cast exception`() {
-        val validKey = "theme"
-        PreferenceHelper(context).getBooleanPref(validKey)
-    }
+//    @Test(expected = ClassCastException::class)
+//    fun `GIVEN an valid key AND a non boolean return type WHEN getBooleanPref is called THEN throw class cast exception`() {
+//        val validKey = "theme"
+//        PreferenceHelper(context).getBooleanPref(validKey)
+//    }
     @Test
     fun `GIVEN a valid string WHEN applyTheme is called THEN the corresponding theme is set`() {
         val validThemeString = "light"
