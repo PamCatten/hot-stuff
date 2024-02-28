@@ -1,7 +1,7 @@
 name: Update Wiki
 
 on:
-  push:
+  # push:
   #   branches: [ "main" ]
 
   workflow_dispatch:
