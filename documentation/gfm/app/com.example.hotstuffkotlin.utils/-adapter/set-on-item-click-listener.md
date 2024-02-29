@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[Adapter](index.md)/[setOnItemClickListener](set-on-item-click-listener.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[Adapter](index.md)/[setOnItemClickListener](set-on-item-click-listener.md)
 
 # setOnItemClickListener
 

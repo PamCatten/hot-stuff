@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.ui.items](../index.md)/[ItemsFragment](index.md)/[ItemsFragment](-items-fragment.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.ui.items](../index.md)/[ItemsFragment](index.md)/[ItemsFragment](-items-fragment.md)
 
 # ItemsFragment
 

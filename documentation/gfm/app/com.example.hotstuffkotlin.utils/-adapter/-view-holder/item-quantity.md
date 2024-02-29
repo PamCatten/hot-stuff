@@ -1,4 +1,4 @@
-//[app](../../../../index.md)/[com.example.hotstuffkotlin.utils](../../index.md)/[Adapter](../index.md)/[ViewHolder](index.md)/[itemQuantity](item-quantity.md)
+//[app](../../../../index.md)/[com.hotstuffkotlin.utils](../../index.md)/[Adapter](../index.md)/[ViewHolder](index.md)/[itemQuantity](item-quantity.md)
 
 # itemQuantity
 

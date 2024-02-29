@@ -1,9 +1,9 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[addBuilding](add-building.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[addBuilding](add-building.md)
 
 # addBuilding
 
 [androidJvm]\
-fun [addBuilding](add-building.md)(building: [Building](../../com.example.hotstuffkotlin.models/-building/index.md))
+fun [addBuilding](add-building.md)(building: [Building](../../com.hotstuffkotlin.models/-building/index.md))
 
 Add the passed building to the database and toast the result (whether success/failure).
 

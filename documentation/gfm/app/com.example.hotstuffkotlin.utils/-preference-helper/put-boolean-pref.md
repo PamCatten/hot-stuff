@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[PreferenceHelper](index.md)/[putBooleanPref](put-boolean-pref.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[PreferenceHelper](index.md)/[putBooleanPref](put-boolean-pref.md)
 
 # putBooleanPref
 

@@ -1,4 +1,4 @@
-//[app](../../../../index.md)/[com.example.hotstuffkotlin.utils](../../index.md)/[Adapter](../index.md)/[ViewHolder](index.md)/[itemRoom](item-room.md)
+//[app](../../../../index.md)/[com.hotstuffkotlin.utils](../../index.md)/[Adapter](../index.md)/[ViewHolder](index.md)/[itemRoom](item-room.md)
 
 # itemRoom
 

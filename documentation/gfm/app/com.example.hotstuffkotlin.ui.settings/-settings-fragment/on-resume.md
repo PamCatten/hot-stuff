@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.ui.settings](../index.md)/[SettingsFragment](index.md)/[onResume](on-resume.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.ui.settings](../index.md)/[SettingsFragment](index.md)/[onResume](on-resume.md)
 
 # onResume
 

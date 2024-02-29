@@ -24,9 +24,9 @@
             android:label=""
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"
-            android:parentActivityName=".ui.MainActivity"/>
+            android:parentActivityName="com.hotstuffkotlin.ui.MainActivity"/>
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.hotstuffkotlin.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

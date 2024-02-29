@@ -1,4 +1,4 @@
-package com.example.hotstuffkotlin
+package com.hotstuffkotlin
 
 import org.junit.Test
 

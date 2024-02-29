@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[getTotalQuantity](get-total-quantity.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[getTotalQuantity](get-total-quantity.md)
 
 # getTotalQuantity
 

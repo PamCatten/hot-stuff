@@ -1,4 +1,4 @@
-package com.example.hotstuffkotlin.utils
+package com.hotstuffkotlin.utils
 
 class OnboardAdapterTest {
 }

@@ -6,7 +6,7 @@
     app:startDestination="@id/navigation_onboard">
     <fragment
         android:id="@+id/navigation_onboard"
-        android:name="com.example.hotstuffkotlin.ui.onboard.OnboardFragment"
+        android:name="com.hotstuffkotlin.ui.onboard.OnboardFragment"
         android:label=""
         tools:layout="@layout/fragment_onboard">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_view_pager"
-        android:name="com.example.hotstuffkotlin.ui.onboard.ViewPagerFragment"
+        android:name="com.hotstuffkotlin.ui.onboard.ViewPagerFragment"
         android:label=""
         tools:layout="@layout/fragment_view_pager">
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_create_building"
-        android:name="com.example.hotstuffkotlin.ui.onboard.CreateBuildingFragment"
+        android:name="com.hotstuffkotlin.ui.onboard.CreateBuildingFragment"
         android:label=""
         tools:layout="@layout/fragment_create_building">
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <activity
         android:id="@+id/navigation_main_activity"
-        android:name="com.example.hotstuffkotlin.ui.MainActivity"
+        android:name="com.hotstuffkotlin.ui.MainActivity"
         android:label=""
         tools:layout="@layout/activity_main"
     />

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/container_fragment"
-    tools:context=".ui.MainActivity">
+    tools:context="com.hotstuffkotlin.ui.MainActivity">
     <include
         layout="@layout/toolbar_main"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.ui.learn](../index.md)/[LearnFragment](index.md)/[LearnFragment](-learn-fragment.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.ui.learn](../index.md)/[LearnFragment](index.md)/[LearnFragment](-learn-fragment.md)
 
 # LearnFragment
 

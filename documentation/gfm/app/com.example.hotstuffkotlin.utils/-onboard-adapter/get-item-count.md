@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[OnboardAdapter](index.md)/[getItemCount](get-item-count.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[OnboardAdapter](index.md)/[getItemCount](get-item-count.md)
 
 # getItemCount
 

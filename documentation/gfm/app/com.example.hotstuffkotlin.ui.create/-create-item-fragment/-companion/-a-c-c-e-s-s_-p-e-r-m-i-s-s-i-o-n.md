@@ -1,4 +1,4 @@
-//[app](../../../../index.md)/[com.example.hotstuffkotlin.ui.create](../../index.md)/[CreateItemFragment](../index.md)/[Companion](index.md)/[ACCESS_PERMISSION](-a-c-c-e-s-s_-p-e-r-m-i-s-s-i-o-n.md)
+//[app](../../../../index.md)/[com.hotstuffkotlin.ui.create](../../index.md)/[CreateItemFragment](../index.md)/[Companion](index.md)/[ACCESS_PERMISSION](-a-c-c-e-s-s_-p-e-r-m-i-s-s-i-o-n.md)
 
 # ACCESS_PERMISSION
 

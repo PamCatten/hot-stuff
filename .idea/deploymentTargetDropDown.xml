@@ -2,28 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="AdapterTest">
-        <State />
-      </entry>
-      <entry key="GIVEN an invalid string WHEN getCurrencyIcon is called THEN the default icon is returned()">
-        <State />
-      </entry>
-      <entry key="PreferenceHelperTest">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\campa\.android\avd\Medium_Phone_API_33.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-02-22T16:02:35.568166100Z" />
-        </State>
-      </entry>
       <entry key="app">
         <State />
       </entry>

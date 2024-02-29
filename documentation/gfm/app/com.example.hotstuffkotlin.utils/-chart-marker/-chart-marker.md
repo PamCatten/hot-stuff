@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[ChartMarker](index.md)/[ChartMarker](-chart-marker.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[ChartMarker](index.md)/[ChartMarker](-chart-marker.md)
 
 # ChartMarker
 

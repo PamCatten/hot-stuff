@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[PreferenceHelper](index.md)/[applyTheme](apply-theme.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[PreferenceHelper](index.md)/[applyTheme](apply-theme.md)
 
 # applyTheme
 

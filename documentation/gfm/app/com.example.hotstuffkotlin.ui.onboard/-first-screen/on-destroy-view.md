@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.ui.onboard](../index.md)/[FirstScreen](index.md)/[onDestroyView](on-destroy-view.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.ui.onboard](../index.md)/[FirstScreen](index.md)/[onDestroyView](on-destroy-view.md)
 
 # onDestroyView
 

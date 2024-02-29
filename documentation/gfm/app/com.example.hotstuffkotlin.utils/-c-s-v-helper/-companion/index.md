@@ -1,4 +1,4 @@
-//[app](../../../../index.md)/[com.example.hotstuffkotlin.utils](../../index.md)/[CSVHelper](../index.md)/[Companion](index.md)
+//[app](../../../../index.md)/[com.hotstuffkotlin.utils](../../index.md)/[CSVHelper](../index.md)/[Companion](index.md)
 
 # Companion
 

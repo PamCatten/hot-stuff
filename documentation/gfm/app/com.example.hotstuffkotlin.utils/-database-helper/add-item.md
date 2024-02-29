@@ -1,9 +1,9 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[addItem](add-item.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[addItem](add-item.md)
 
 # addItem
 
 [androidJvm]\
-fun [addItem](add-item.md)(item: [Item](../../com.example.hotstuffkotlin.models/-item/index.md))
+fun [addItem](add-item.md)(item: [Item](../../com.hotstuffkotlin.models/-item/index.md))
 
 Add the passed item to the database and toast the result (whether success/failure).
 

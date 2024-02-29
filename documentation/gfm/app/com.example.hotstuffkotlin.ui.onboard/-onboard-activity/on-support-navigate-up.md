@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.ui.onboard](../index.md)/[OnboardActivity](index.md)/[onSupportNavigateUp](on-support-navigate-up.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.ui.onboard](../index.md)/[OnboardActivity](index.md)/[onSupportNavigateUp](on-support-navigate-up.md)
 
 # onSupportNavigateUp
 

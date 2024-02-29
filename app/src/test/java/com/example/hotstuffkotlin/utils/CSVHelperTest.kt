@@ -1,4 +1,4 @@
-package com.example.hotstuffkotlin.utils
+package com.hotstuffkotlin.utils
 
 import org.mockito.Mockito.mock
 import java.io.PrintWriter

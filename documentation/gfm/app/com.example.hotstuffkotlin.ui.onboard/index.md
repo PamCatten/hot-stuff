@@ -1,4 +1,4 @@
-//[app](../../index.md)/[com.example.hotstuffkotlin.ui.onboard](index.md)
+//[app](../../index.md)/[com.hotstuffkotlin.ui.onboard](index.md)
 
 # Package-level declarations
 

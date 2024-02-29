@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[ColorTemplate](index.md)/[CHART_THEME](-c-h-a-r-t_-t-h-e-m-e.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[ColorTemplate](index.md)/[CHART_THEME](-c-h-a-r-t_-t-h-e-m-e.md)
 
 # CHART_THEME
 

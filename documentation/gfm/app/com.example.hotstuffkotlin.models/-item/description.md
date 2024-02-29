@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.models](../index.md)/[Item](index.md)/[description](description.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.models](../index.md)/[Item](index.md)/[description](description.md)
 
 # description
 

@@ -1,31 +1,37 @@
-package com.example.hotstuffkotlin.utils
+package com.hotstuffkotlin.utils
 
 import android.content.Context
 import androidx.test.platform.app.InstrumentationRegistry
-import com.example.hotstuffkotlin.models.Item
+import com.hotstuffkotlin.models.Item
 import junit.framework.TestCase.assertEquals
 import org.junit.Before
 import org.junit.Test
 
 class AdapterTest {
     private lateinit var context: Context
-    private lateinit var items: ArrayList<Item>
+    private lateinit var items: ArrayList<com.hotstuffkotlin.models.Item>
     @Before
     fun initTest() {
         context = InstrumentationRegistry.getInstrumentation().targetContext
         items = ArrayList()
-        items.add(Item(
-            1, 1, "TV", 1, "Electronics", "Living Room",
-            "Brand A", 0.00, null, null
-        ))
-        items.add(Item(
-            2, 1, "Stool", 2, "Furniture", "Kitchen",
-            "Brand B", 0.00, null, null
-        ))
-        items.add(Item(
-            3, 1, "Couch", 2, "Furniture", "Living Room",
-            "Brand C", 0.00, null, null
-        ))
+        items.add(
+            com.hotstuffkotlin.models.Item(
+                1, 1, "TV", 1, "Electronics", "Living Room",
+                "Brand A", 0.00, null, null
+            )
+        )
+        items.add(
+            com.hotstuffkotlin.models.Item(
+                2, 1, "Stool", 2, "Furniture", "Kitchen",
+                "Brand B", 0.00, null, null
+            )
+        )
+        items.add(
+            com.hotstuffkotlin.models.Item(
+                3, 1, "Couch", 2, "Furniture", "Living Room",
+                "Brand C", 0.00, null, null
+            )
+        )
     }
     @Test
     fun `WHEN searchClear is called THEN items is cleared`() {
@@ -40,7 +46,7 @@ class AdapterTest {
         val adapter = Adapter(items)
         assertEquals(3, items.size)
         val updatedItems = items
-        val newItem = Item(
+        val newItem = com.hotstuffkotlin.models.Item(
             4, 1, "Couch", 2, "Furniture",
             "Living Room", "Brand C", 0.00, null, null
         )

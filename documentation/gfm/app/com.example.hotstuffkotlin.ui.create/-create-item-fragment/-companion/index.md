@@ -1,4 +1,4 @@
-//[app](../../../../index.md)/[com.example.hotstuffkotlin.ui.create](../../index.md)/[CreateItemFragment](../index.md)/[Companion](index.md)
+//[app](../../../../index.md)/[com.hotstuffkotlin.ui.create](../../index.md)/[CreateItemFragment](../index.md)/[Companion](index.md)
 
 # Companion
 

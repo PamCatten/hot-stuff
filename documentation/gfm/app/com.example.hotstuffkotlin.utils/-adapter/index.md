@@ -1,15 +1,15 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[Adapter](index.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[Adapter](index.md)
 
 # Adapter
 
 [androidJvm]\
-class [Adapter](index.md)(items: [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[Item](../../com.example.hotstuffkotlin.models/-item/index.md)&gt;) : [RecyclerView.Adapter](https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html)&lt;[Adapter.ViewHolder](-view-holder/index.md)&gt;
+class [Adapter](index.md)(items: [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[Item](../../com.hotstuffkotlin.models/-item/index.md)&gt;) : [RecyclerView.Adapter](https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html)&lt;[Adapter.ViewHolder](-view-holder/index.md)&gt;
 
 ## Constructors
 
 | | |
 |---|---|
-| [Adapter](-adapter.md) | [androidJvm]<br>constructor(items: [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[Item](../../com.example.hotstuffkotlin.models/-item/index.md)&gt;) |
+| [Adapter](-adapter.md) | [androidJvm]<br>constructor(items: [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[Item](../../com.hotstuffkotlin.models/-item/index.md)&gt;) |
 
 ## Types
 
@@ -49,7 +49,7 @@ class [Adapter](index.md)(items: [MutableList](https://kotlinlang.org/api/latest
 | [onViewRecycled](index.md#280579708%2FFunctions%2F-912451524) | [androidJvm]<br>open fun [onViewRecycled](index.md#280579708%2FFunctions%2F-912451524)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [Adapter.ViewHolder](-view-holder/index.md)) |
 | [registerAdapterDataObserver](../-onboard-adapter/index.md#-149943229%2FFunctions%2F-912451524) | [androidJvm]<br>open fun [registerAdapterDataObserver](../-onboard-adapter/index.md#-149943229%2FFunctions%2F-912451524)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [RecyclerView.AdapterDataObserver](https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.AdapterDataObserver.html)) |
 | [searchClear](search-clear.md) | [androidJvm]<br>fun [searchClear](search-clear.md)()<br>Clear the stored items array in the [Adapter](index.md) and notify [ViewHolder](-view-holder/index.md). |
-| [searchInsert](search-insert.md) | [androidJvm]<br>fun [searchInsert](search-insert.md)(insertPosition: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), updatedItemsArray: [ArrayList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html)&lt;[Item](../../com.example.hotstuffkotlin.models/-item/index.md)&gt;)<br>Insert search result to the stored items array in the [Adapter](index.md) and notify [ViewHolder](-view-holder/index.md). |
+| [searchInsert](search-insert.md) | [androidJvm]<br>fun [searchInsert](search-insert.md)(insertPosition: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), updatedItemsArray: [ArrayList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html)&lt;[Item](../../com.hotstuffkotlin.models/-item/index.md)&gt;)<br>Insert search result to the stored items array in the [Adapter](index.md) and notify [ViewHolder](-view-holder/index.md). |
 | [setHasStableIds](index.md#1991189249%2FFunctions%2F-912451524) | [androidJvm]<br>open fun [setHasStableIds](index.md#1991189249%2FFunctions%2F-912451524)(p0: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)) |
 | [setOnItemClickListener](set-on-item-click-listener.md) | [androidJvm]<br>fun [setOnItemClickListener](set-on-item-click-listener.md)(itemListener: [Adapter.OnItemClickListener](-on-item-click-listener/index.md)) |
 | [setStateRestorationPolicy](../-onboard-adapter/index.md#1439711293%2FFunctions%2F-912451524) | [androidJvm]<br>open fun [setStateRestorationPolicy](../-onboard-adapter/index.md#1439711293%2FFunctions%2F-912451524)(@[NonNull](https://developer.android.com/reference/kotlin/androidx/annotation/NonNull.html)p0: [RecyclerView.Adapter.StateRestorationPolicy](https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.StateRestorationPolicy.html)) |

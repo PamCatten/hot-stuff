@@ -7,7 +7,7 @@
     app:startDestination="@+id/navigation_home">
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.hotstuffkotlin.ui.home.HomeFragment"
+        android:name="com.hotstuffkotlin.ui.home.HomeFragment"
         android:label="@string/label_home_fragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_items"
-        android:name="com.example.hotstuffkotlin.ui.items.ItemsFragment"
+        android:name="com.hotstuffkotlin.ui.items.ItemsFragment"
         android:label="@string/label_items_fragment"
         tools:layout="@layout/fragment_items">
         <action
@@ -25,12 +25,12 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_create_item"
-        android:name="com.example.hotstuffkotlin.ui.create.CreateItemFragment"
+        android:name="com.hotstuffkotlin.ui.create.CreateItemFragment"
         android:label="Create"
         tools:layout="@layout/fragment_create_item"/>
     <fragment
         android:id="@+id/navigation_learn"
-        android:name="com.example.hotstuffkotlin.ui.learn.LearnFragment"
+        android:name="com.hotstuffkotlin.ui.learn.LearnFragment"
         android:label="@string/label_learn_fragment"
         tools:layout="@layout/fragment_learn">
         <action
@@ -39,12 +39,12 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.hotstuffkotlin.ui.settings.SettingsContainerFragment"
+        android:name="com.hotstuffkotlin.ui.settings.SettingsContainerFragment"
         android:label="@string/label_settings_fragment"
         tools:layout="@layout/fragment_settings_container"/>
     <fragment
         android:id="@+id/navigation_item_detail"
-        android:name="com.example.hotstuffkotlin.ui.items.ItemDetailFragment"
+        android:name="com.hotstuffkotlin.ui.items.ItemDetailFragment"
         android:label="Item details"
         tools:layout="@layout/fragment_item_detail">
         <action
@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_edit_item"
-        android:name="com.example.hotstuffkotlin.ui.items.EditItemFragment"
+        android:name="com.hotstuffkotlin.ui.items.EditItemFragment"
         android:label="Edit item"
         tools:layout="@layout/fragment_edit_item">
         <action
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_article"
-        android:name="com.example.hotstuffkotlin.ui.learn.ArticleFragment"
+        android:name="com.hotstuffkotlin.ui.learn.ArticleFragment"
         android:label=""
         tools:layout="@layout/fragment_article">
         <action

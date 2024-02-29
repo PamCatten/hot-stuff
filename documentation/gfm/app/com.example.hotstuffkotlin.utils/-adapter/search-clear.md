@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[Adapter](index.md)/[searchClear](search-clear.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[Adapter](index.md)/[searchClear](search-clear.md)
 
 # searchClear
 

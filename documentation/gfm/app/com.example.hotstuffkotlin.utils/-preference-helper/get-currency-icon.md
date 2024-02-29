@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.example.hotstuffkotlin.utils](../index.md)/[PreferenceHelper](index.md)/[getCurrencyIcon](get-currency-icon.md)
+//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[PreferenceHelper](index.md)/[getCurrencyIcon](get-currency-icon.md)
 
 # getCurrencyIcon
 
