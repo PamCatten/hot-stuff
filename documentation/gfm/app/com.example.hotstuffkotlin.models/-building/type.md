@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.models](../index.md)/[Building](index.md)/[type](type.md)
+//[app](../../../index.md)/[com.hotstuff.models](../index.md)/[Building](index.md)/[type](type.md)
 
 # type
 

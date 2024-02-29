@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.onboard](../index.md)/[ViewPagerFragment](index.md)/[ViewPagerFragment](-view-pager-fragment.md)
+//[app](../../../index.md)/[com.hotstuff.ui.onboard](../index.md)/[ViewPagerFragment](index.md)/[ViewPagerFragment](-view-pager-fragment.md)
 
 # ViewPagerFragment
 

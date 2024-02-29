@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.settings](../index.md)/[SettingsFragment](index.md)/[onCreatePreferences](on-create-preferences.md)
+//[app](../../../index.md)/[com.hotstuff.ui.settings](../index.md)/[SettingsFragment](index.md)/[onCreatePreferences](on-create-preferences.md)
 
 # onCreatePreferences
 

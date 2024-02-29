@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.models](../index.md)/[Item](index.md)/[imageUri](image-uri.md)
+//[app](../../../index.md)/[com.hotstuff.models](../index.md)/[Item](index.md)/[imageUri](image-uri.md)
 
 # imageUri
 

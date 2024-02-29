@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.settings](../index.md)/[SettingsContainerFragment](index.md)/[SettingsContainerFragment](-settings-container-fragment.md)
+//[app](../../../index.md)/[com.hotstuff.ui.settings](../index.md)/[SettingsContainerFragment](index.md)/[SettingsContainerFragment](-settings-container-fragment.md)
 
 # SettingsContainerFragment
 

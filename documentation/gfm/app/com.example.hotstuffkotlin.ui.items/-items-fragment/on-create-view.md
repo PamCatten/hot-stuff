@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.items](../index.md)/[ItemsFragment](index.md)/[onCreateView](on-create-view.md)
+//[app](../../../index.md)/[com.hotstuff.ui.items](../index.md)/[ItemsFragment](index.md)/[onCreateView](on-create-view.md)
 
 # onCreateView
 

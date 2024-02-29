@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.onboard](../index.md)/[ThirdScreen](index.md)/[ThirdScreen](-third-screen.md)
+//[app](../../../index.md)/[com.hotstuff.ui.onboard](../index.md)/[ThirdScreen](index.md)/[ThirdScreen](-third-screen.md)
 
 # ThirdScreen
 

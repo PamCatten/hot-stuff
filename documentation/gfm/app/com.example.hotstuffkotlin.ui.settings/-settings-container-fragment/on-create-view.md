@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.settings](../index.md)/[SettingsContainerFragment](index.md)/[onCreateView](on-create-view.md)
+//[app](../../../index.md)/[com.hotstuff.ui.settings](../index.md)/[SettingsContainerFragment](index.md)/[onCreateView](on-create-view.md)
 
 # onCreateView
 

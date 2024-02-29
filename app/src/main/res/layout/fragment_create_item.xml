@@ -11,7 +11,7 @@
     android:id="@+id/layout_create_item"
     android:paddingTop="?attr/actionBarSize"
     android:paddingBottom="?attr/actionBarSize"
-    tools:context="com.hotstuffkotlin.ui.create.CreateItemFragment">
+    tools:context="com.hotstuff.ui.create.CreateItemFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

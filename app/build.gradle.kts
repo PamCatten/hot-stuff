@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace = "com.hotstuffkotlin"
+    namespace = "com.hotstuff"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.hotstuffkotlin"
+        applicationId = "com.hotstuff"
         minSdk = 33
         targetSdk = 34
         versionCode = 1

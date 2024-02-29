@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.items](../index.md)/[EditItemFragment](index.md)/[EditItemFragment](-edit-item-fragment.md)
+//[app](../../../index.md)/[com.hotstuff.ui.items](../index.md)/[EditItemFragment](index.md)/[EditItemFragment](-edit-item-fragment.md)
 
 # EditItemFragment
 

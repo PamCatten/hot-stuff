@@ -6,12 +6,12 @@
 
 | Name |
 |---|
-| [com.hotstuffkotlin.models](app/com.hotstuffkotlin.models/index.md) |
-| [com.hotstuffkotlin.ui](app/com.hotstuffkotlin.ui/index.md) |
-| [com.hotstuffkotlin.ui.create](app/com.hotstuffkotlin.ui.create/index.md) |
-| [com.hotstuffkotlin.ui.home](app/com.hotstuffkotlin.ui.home/index.md) |
-| [com.hotstuffkotlin.ui.items](app/com.hotstuffkotlin.ui.items/index.md) |
-| [com.hotstuffkotlin.ui.learn](app/com.hotstuffkotlin.ui.learn/index.md) |
-| [com.hotstuffkotlin.ui.onboard](app/com.hotstuffkotlin.ui.onboard/index.md) |
-| [com.hotstuffkotlin.ui.settings](app/com.hotstuffkotlin.ui.settings/index.md) |
-| [com.hotstuffkotlin.utils](app/com.hotstuffkotlin.utils/index.md) |
+| [com.hotstuff.models](app/com.hotstuff.models/index.md) |
+| [com.hotstuff.ui](app/com.hotstuff.ui/index.md) |
+| [com.hotstuff.ui.create](app/com.hotstuff.ui.create/index.md) |
+| [com.hotstuff.ui.home](app/com.hotstuff.ui.home/index.md) |
+| [com.hotstuff.ui.items](app/com.hotstuff.ui.items/index.md) |
+| [com.hotstuff.ui.learn](app/com.hotstuff.ui.learn/index.md) |
+| [com.hotstuff.ui.onboard](app/com.hotstuff.ui.onboard/index.md) |
+| [com.hotstuff.ui.settings](app/com.hotstuff.ui.settings/index.md) |
+| [com.hotstuff.utils](app/com.hotstuff.utils/index.md) |

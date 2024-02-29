@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[ChartMarker](index.md)/[getOffset](get-offset.md)
+//[app](../../../index.md)/[com.hotstuff.utils](../index.md)/[ChartMarker](index.md)/[getOffset](get-offset.md)
 
 # getOffset
 

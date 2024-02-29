@@ -2,10 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
-
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
@@ -24,9 +21,9 @@
             android:label=""
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"
-            android:parentActivityName="com.hotstuffkotlin.ui.MainActivity"/>
+            android:parentActivityName="com.hotstuff.ui.MainActivity"/>
         <activity
-            android:name="com.hotstuffkotlin.ui.MainActivity"
+            android:name="com.hotstuff.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

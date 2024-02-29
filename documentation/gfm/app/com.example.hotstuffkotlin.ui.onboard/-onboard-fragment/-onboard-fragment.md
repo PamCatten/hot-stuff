@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.onboard](../index.md)/[OnboardFragment](index.md)/[OnboardFragment](-onboard-fragment.md)
+//[app](../../../index.md)/[com.hotstuff.ui.onboard](../index.md)/[OnboardFragment](index.md)/[OnboardFragment](-onboard-fragment.md)
 
 # OnboardFragment
 

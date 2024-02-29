@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[PreferenceHelper](index.md)/[getStringPref](get-string-pref.md)
+//[app](../../../index.md)/[com.hotstuff.utils](../index.md)/[PreferenceHelper](index.md)/[getStringPref](get-string-pref.md)
 
 # getStringPref
 

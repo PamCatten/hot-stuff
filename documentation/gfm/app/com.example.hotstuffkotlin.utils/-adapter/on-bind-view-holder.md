@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[Adapter](index.md)/[onBindViewHolder](on-bind-view-holder.md)
+//[app](../../../index.md)/[com.hotstuff.utils](../index.md)/[Adapter](index.md)/[onBindViewHolder](on-bind-view-holder.md)
 
 # onBindViewHolder
 

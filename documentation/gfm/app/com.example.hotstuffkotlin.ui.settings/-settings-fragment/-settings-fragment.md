@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.settings](../index.md)/[SettingsFragment](index.md)/[SettingsFragment](-settings-fragment.md)
+//[app](../../../index.md)/[com.hotstuff.ui.settings](../index.md)/[SettingsFragment](index.md)/[SettingsFragment](-settings-fragment.md)
 
 # SettingsFragment
 

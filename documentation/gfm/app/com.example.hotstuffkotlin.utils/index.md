@@ -1,4 +1,4 @@
-//[app](../../index.md)/[com.hotstuffkotlin.utils](index.md)
+//[app](../../index.md)/[com.hotstuff.utils](index.md)
 
 # Package-level declarations
 
@@ -6,7 +6,7 @@
 
 | Name | Summary |
 |---|---|
-| [Adapter](-adapter/index.md) | [androidJvm]<br>class [Adapter](-adapter/index.md)(items: [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[Item](../com.hotstuffkotlin.models/-item/index.md)&gt;) : [RecyclerView.Adapter](https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html)&lt;[Adapter.ViewHolder](-adapter/-view-holder/index.md)&gt; |
+| [Adapter](-adapter/index.md) | [androidJvm]<br>class [Adapter](-adapter/index.md)(items: [MutableList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html)&lt;[Item](../com.hotstuff.models/-item/index.md)&gt;) : [RecyclerView.Adapter](https://developer.android.com/reference/kotlin/androidx/recyclerview/widget/RecyclerView.Adapter.html)&lt;[Adapter.ViewHolder](-adapter/-view-holder/index.md)&gt; |
 | [ChartMarker](-chart-marker/index.md) | [androidJvm]<br>class [ChartMarker](-chart-marker/index.md)(context: [Context](https://developer.android.com/reference/kotlin/android/content/Context.html)?, layoutResource: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), labels: [ArrayList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html)&lt;[String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)&gt;) : MarkerView |
 | [ColorTemplate](-color-template/index.md) | [androidJvm]<br>object [ColorTemplate](-color-template/index.md)<br>Create a helper object to holds array of colors in RGB format |
 | [CSVHelper](-c-s-v-helper/index.md) | [androidJvm]<br>class [CSVHelper](-c-s-v-helper/index.md)(printWriter: [Writer](https://developer.android.com/reference/kotlin/java/io/Writer.html))<br>Create a helper object to convert and format List values to a text-output stream. |

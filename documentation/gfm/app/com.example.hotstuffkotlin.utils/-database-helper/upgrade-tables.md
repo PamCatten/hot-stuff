@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[upgradeTables](upgrade-tables.md)
+//[app](../../../index.md)/[com.hotstuff.utils](../index.md)/[DatabaseHelper](index.md)/[upgradeTables](upgrade-tables.md)
 
 # upgradeTables
 

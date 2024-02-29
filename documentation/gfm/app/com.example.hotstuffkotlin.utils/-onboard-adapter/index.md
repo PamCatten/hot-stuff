@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[OnboardAdapter](index.md)
+//[app](../../../index.md)/[com.hotstuff.utils](../index.md)/[OnboardAdapter](index.md)
 
 # OnboardAdapter
 

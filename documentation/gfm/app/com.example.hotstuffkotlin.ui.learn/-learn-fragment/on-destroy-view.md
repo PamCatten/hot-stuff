@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.learn](../index.md)/[LearnFragment](index.md)/[onDestroyView](on-destroy-view.md)
+//[app](../../../index.md)/[com.hotstuff.ui.learn](../index.md)/[LearnFragment](index.md)/[onDestroyView](on-destroy-view.md)
 
 # onDestroyView
 

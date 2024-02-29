@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[DatabaseHelper](-database-helper.md)
+//[app](../../../index.md)/[com.hotstuff.utils](../index.md)/[DatabaseHelper](index.md)/[DatabaseHelper](-database-helper.md)
 
 # DatabaseHelper
 

@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[getCategoryQuantity](get-category-quantity.md)
+//[app](../../../index.md)/[com.hotstuff.utils](../index.md)/[DatabaseHelper](index.md)/[getCategoryQuantity](get-category-quantity.md)
 
 # getCategoryQuantity
 

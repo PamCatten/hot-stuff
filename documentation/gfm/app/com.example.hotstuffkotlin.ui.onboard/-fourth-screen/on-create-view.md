@@ -1,4 +1,4 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.ui.onboard](../index.md)/[FourthScreen](index.md)/[onCreateView](on-create-view.md)
+//[app](../../../index.md)/[com.hotstuff.ui.onboard](../index.md)/[FourthScreen](index.md)/[onCreateView](on-create-view.md)
 
 # onCreateView
 

@@ -1,9 +1,9 @@
-//[app](../../../index.md)/[com.hotstuffkotlin.utils](../index.md)/[DatabaseHelper](index.md)/[getDataRange](get-data-range.md)
+//[app](../../../index.md)/[com.hotstuff.utils](../index.md)/[DatabaseHelper](index.md)/[getDataRange](get-data-range.md)
 
 # getDataRange
 
 [androidJvm]\
-fun [getDataRange](get-data-range.md)(offset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) = 0, isSearchQuery: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, searchQuery: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null): [ArrayList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html)&lt;[Item](../../com.hotstuffkotlin.models/-item/index.md)&gt;
+fun [getDataRange](get-data-range.md)(offset: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) = 0, isSearchQuery: [Boolean](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) = false, searchQuery: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? = null): [ArrayList](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html)&lt;[Item](../../com.hotstuff.models/-item/index.md)&gt;
 
 Retrieve a limited number of saved items from the database.
 
