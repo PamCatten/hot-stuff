@@ -18,75 +18,75 @@
         android:orientation="vertical"
         android:theme="@style/container_fragment">
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_name_container"
+            android:id="@+id/create_name_container"
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_name_text"
+                android:id="@+id/create_name_text"
                 style="@style/text_input_field"
                 android:inputType="textCapWords"
                 android:hint="@string/label_name"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_quantity_container"
+            android:id="@+id/create_quantity_container"
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_quantity_text"
+                android:id="@+id/create_quantity_text"
                 style="@style/text_input_field"
                 android:inputType="number"
                 android:hint="@string/label_quantity"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_category_container"
+            android:id="@+id/create_category_container"
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_category_text"
+                android:id="@+id/create_category_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_category"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_room_container"
+            android:id="@+id/create_room_container"
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_room_text"
+                android:id="@+id/create_room_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_room"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_make_container"
+            android:id="@+id/create_make_container"
             style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_make_text"
+                android:id="@+id/create_make_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_make"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_value_container"
+            android:id="@+id/create_value_container"
             style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_value_text"
+                android:id="@+id/create_value_text"
                 style="@style/text_input_field"
                 android:inputType="numberDecimal"
                 android:hint="@string/label_value"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_description_container"
+            android:id="@+id/create_description_container"
             style="@style/text_input_layout"
             app:helperTextTextColor="?attr/colorAccent">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_description_text"
+                android:id="@+id/create_description_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
                 android:hint="@string/label_description"/>
@@ -108,7 +108,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginVertical="10dp">
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/itemTakePhotoButton"
+                android:id="@+id/button_create_take_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -118,7 +118,7 @@
                 app:icon="@drawable/icon_camera"
                 app:iconTint="?attr/colorPrimaryVariant" />
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/itemSelectPhotoButton"
+                android:id="@+id/button_create_select_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -129,7 +129,7 @@
                 app:iconTint="?attr/colorPrimaryVariant" />
         </LinearLayout>
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/itemCreateButton"
+            android:id="@+id/button_create_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"

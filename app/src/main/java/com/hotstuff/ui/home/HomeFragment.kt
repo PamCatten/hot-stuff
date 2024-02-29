@@ -8,12 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.hotstuff.R
-import com.hotstuff.databinding.FragmentHomeBinding
-import com.hotstuff.ui.onboard.OnboardActivity
-import com.hotstuff.utils.ChartMarker
-import com.hotstuff.utils.DatabaseHelper
-import com.hotstuff.utils.PreferenceHelper
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.HorizontalBarChart
 import com.github.mikephil.charting.components.XAxis
@@ -22,6 +16,12 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.google.android.material.color.MaterialColors
+import com.hotstuff.R
+import com.hotstuff.databinding.FragmentHomeBinding
+import com.hotstuff.ui.onboard.OnboardActivity
+import com.hotstuff.utils.ChartMarker
+import com.hotstuff.utils.DatabaseHelper
+import com.hotstuff.utils.PreferenceHelper
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null

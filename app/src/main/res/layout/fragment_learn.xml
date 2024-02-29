@@ -35,7 +35,7 @@
                     <TextView
                         android:id="@+id/learn_walkthrough_subtitle"
                         android:layout_width="wrap_content"
-                        android:textColor="?attr/colorSecondary"
+                        android:textColor="?attr/colorOnPrimary"
                         style="@style/card_subtitle"
                         android:text="@string/label_walkthroughs_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_walkthrough_title"
@@ -112,7 +112,7 @@
                     <TextView
                         android:id="@+id/learn_resources_subtitle"
                         android:layout_width="wrap_content"
-                        android:textColor="?attr/colorSecondary"
+                        android:textColor="?attr/colorOnPrimary"
                         style="@style/card_subtitle"
                         android:text="@string/label_resources_subtitle"
                         app:layout_constraintTop_toBottomOf="@id/learn_resources_title"

@@ -14,7 +14,7 @@ import com.hotstuff.models.Item
  * @param items The list of items to be displayed in the RecyclerView.
  * @author Cam Patten
  */
-class Adapter(private var items: MutableList<com.hotstuff.models.Item>): RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(private var items: MutableList<Item>): RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     private lateinit var listener: OnItemClickListener
     interface OnItemClickListener { fun onItemClick(position : Int) }
@@ -51,7 +51,7 @@ class Adapter(private var items: MutableList<com.hotstuff.models.Item>): Recycle
      * @param updatedItemsArray the updated item array
      * @author Cam Patten
      */
-    fun searchInsert(insertPosition: Int, updatedItemsArray: ArrayList<com.hotstuff.models.Item>) {
+    fun searchInsert(insertPosition: Int, updatedItemsArray: ArrayList<Item>) {
         items = updatedItemsArray
         notifyItemInserted(insertPosition)
     }

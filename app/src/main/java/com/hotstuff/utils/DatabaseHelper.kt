@@ -10,8 +10,6 @@ import android.widget.Toast
 import androidx.core.database.getDoubleOrNull
 import androidx.core.database.getStringOrNull
 import com.hotstuff.R
-import com.hotstuff.models.Building
-import com.hotstuff.models.Item
 import java.io.File
 import java.io.PrintWriter
 
@@ -49,31 +47,31 @@ class DatabaseHelper(val context: Context):
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_BUILDING")
         onCreate(db)
     }
-
-    fun upgradeTables() {
-        val db = this.writableDatabase
-        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_ITEM")
-        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_BUILDING")
-        val queryItem = "CREATE TABLE $TABLE_NAME_ITEM (" +
-        "$COLUMN_ITEM_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_ITEM_BUILDING_ID INTEGER, " +
-                "$COLUMN_ITEM_NAME TEXT, " +
-                "$COLUMN_ITEM_QUANTITY INTEGER, " +
-                "$COLUMN_ITEM_CATEGORY TEXT, " +
-                "$COLUMN_ITEM_ROOM TEXT, " +
-                "$COLUMN_ITEM_MAKE TEXT, " +
-                "$COLUMN_ITEM_VALUE MONEY, " +
-                "$COLUMN_ITEM_IMAGE_URI TEXT, " +
-                "$COLUMN_ITEM_DESCRIPTION TEXT);"
-
-        val queryBuilding = "CREATE TABLE $TABLE_NAME_BUILDING (" +
-                "$COLUMN_BUILDING_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_BUILDING_NAME TEXT, " +
-                "$COLUMN_BUILDING_TYPE TEXT, " +
-                "$COLUMN_BUILDING_DESCRIPTION TEXT);"
-        db?.execSQL(queryItem)
-        db?.execSQL(queryBuilding)
-    }
+// TEMP FUNCTION
+//    fun upgradeTables() {
+//        val db = this.writableDatabase
+//        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_ITEM")
+//        db?.execSQL("DROP TABLE IF EXISTS $TABLE_NAME_BUILDING")
+//        val queryItem = "CREATE TABLE $TABLE_NAME_ITEM (" +
+//        "$COLUMN_ITEM_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+//                "$COLUMN_ITEM_BUILDING_ID INTEGER, " +
+//                "$COLUMN_ITEM_NAME TEXT, " +
+//                "$COLUMN_ITEM_QUANTITY INTEGER, " +
+//                "$COLUMN_ITEM_CATEGORY TEXT, " +
+//                "$COLUMN_ITEM_ROOM TEXT, " +
+//                "$COLUMN_ITEM_MAKE TEXT, " +
+//                "$COLUMN_ITEM_VALUE MONEY, " +
+//                "$COLUMN_ITEM_IMAGE_URI TEXT, " +
+//                "$COLUMN_ITEM_DESCRIPTION TEXT);"
+//
+//        val queryBuilding = "CREATE TABLE $TABLE_NAME_BUILDING (" +
+//                "$COLUMN_BUILDING_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+//                "$COLUMN_BUILDING_NAME TEXT, " +
+//                "$COLUMN_BUILDING_TYPE TEXT, " +
+//                "$COLUMN_BUILDING_DESCRIPTION TEXT);"
+//        db?.execSQL(queryItem)
+//        db?.execSQL(queryBuilding)
+//    }
 
     /**
      * Add the passed item to the database and toast the result (whether success/failure).
@@ -105,7 +103,6 @@ class DatabaseHelper(val context: Context):
     }
     /**
      * Update the passed item in the database and toast the result (whether success/failure).
-     *
      * @param item the item in the database to be updated
      * @author Cam Patten
      */
@@ -156,7 +153,6 @@ class DatabaseHelper(val context: Context):
      * As of now, [addBuilding] is only called during the onboarding process, but we plan to support
      * users being able to create multiple buildings in the future, when it would presumably be of
      * greater utility.
-     *
      * @param building the building to be added to database
      * @author Cam Patten
      */
@@ -179,7 +175,6 @@ class DatabaseHelper(val context: Context):
     }
     /**
      * Update the passed building in the database and toast the result (whether success/failure).
-     *
      * @param building the building to be updated in the database
      * @author Cam Patten
      */
@@ -206,7 +201,6 @@ class DatabaseHelper(val context: Context):
      *
      * As of now, [deleteBuilding] is never called, but we plan to support users being able to
      * create multiple buildings in the future, when it would presumably be of greater utility.
-     *
      * @param id the id of the building to be deleted
      * @author Cam Patten
      */
@@ -245,7 +239,6 @@ class DatabaseHelper(val context: Context):
     /**
      * Sum the multiplied product of the quantity and value columns from the ITEM table and return
      * the total as a formatted string.
-     *
      * @return The total sum of saved item values in the database to two decimal places as a string.
      * @author Cam Patten
      */
@@ -263,7 +256,6 @@ class DatabaseHelper(val context: Context):
     /**
      * Retrieve ArrayLists of category names saved in the database and the total
      * item quantity of each category.
-     *
      * @return A pair of ArrayLists: entered category names, and summed totals of the item
      * quantities associated with those categories.
      * @author Cam Patten
@@ -289,7 +281,6 @@ class DatabaseHelper(val context: Context):
     /**
      * Retrieve ArrayLists of room names saved in the database and the total
      * item quantity of each room.
-     *
      * @return A pair of ArrayLists: entered room names, and the summed total value of items
      * within those rooms.
      * @author Cam Patten
@@ -314,7 +305,6 @@ class DatabaseHelper(val context: Context):
     }
     /**
      * Retrieve a limited number of saved items from the database.
-     *
      * @param offset The number of rows to be ignored in a result
      * @param isSearchQuery Determines if the query needs to be modified to search the NAME, ROOM,
      * CATEGORY, and MAKE columns in the database for values similar to a [searchQuery].
@@ -379,16 +369,8 @@ class DatabaseHelper(val context: Context):
     }
 
     /**
-     *
-     *
-     * @author Cam Patten
-     * @return
-     */
-
-    /**
      * Write item records to .CSV file, export to device downloads directory and toast result (whether
      * success/failure).
-     *
      * @see [CSVHelper]
      * @author Cam Patten
      */

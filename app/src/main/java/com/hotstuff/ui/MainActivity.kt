@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun initTheme() {
         val theme = PreferenceHelper(this).getStringPref(getString(R.string.key_theme), getString(R.string.theme_system))
         PreferenceHelper(this).applyTheme(theme)

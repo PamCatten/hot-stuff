@@ -21,8 +21,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.hotstuff.R
 import com.hotstuff.databinding.FragmentEditItemBinding
-import com.hotstuff.models.Item
-import com.hotstuff.ui.create.CreateItemFragment
 import com.hotstuff.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

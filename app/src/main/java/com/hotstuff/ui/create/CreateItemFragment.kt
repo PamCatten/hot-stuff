@@ -18,19 +18,18 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
-import com.hotstuff.R
-import com.hotstuff.databinding.FragmentCreateItemBinding
-import com.hotstuff.models.Item
-import com.hotstuff.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.hotstuff.R
+import com.hotstuff.databinding.FragmentCreateItemBinding
+import com.hotstuff.utils.DatabaseHelper
 import java.io.File
 import java.io.FileOutputStream
 
-class CreateItemFragment : Fragment() {
+class CreateItemFragment: Fragment() {
     private var _binding: FragmentCreateItemBinding? = null
     private val binding get() = _binding!!
     private var uri: Uri? = null
@@ -50,9 +49,9 @@ class CreateItemFragment : Fragment() {
         val valueText = view.findViewById<TextInputEditText>(R.id.edit_value_text)
         val makeText = view.findViewById<TextInputEditText>(R.id.edit_make_text)
         val descriptionText = view.findViewById<TextInputEditText>(R.id.edit_description_text)
-        val takePhotoButton = view.findViewById<MaterialButton>(R.id.itemTakePhotoButton)
-        val selectPhotoButton = view.findViewById<MaterialButton>(R.id.itemSelectPhotoButton)
-        val createButton = view.findViewById<MaterialButton>(R.id.itemCreateButton)
+        val takePhotoButton = view.findViewById<MaterialButton>(R.id.button_create_take_photo)
+        val selectPhotoButton = view.findViewById<MaterialButton>(R.id.button_create_select_photo)
+        val createButton = view.findViewById<MaterialButton>(R.id.button_create_item)
         val createImage = view.findViewById<ShapeableImageView>(R.id.create_image)
 
         nameText.setOnFocusChangeListener { _, focused ->
@@ -103,7 +102,9 @@ class CreateItemFragment : Fragment() {
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
                 fos.flush()
                 fos.close()
-                MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(com.hotstuff.ui.create.CreateItemFragment.Companion.SELECT_MIME_TYPE), null)
+                MediaScannerConnection.scanFile(context, arrayOf(imageFile!!.path), arrayOf(
+                    SELECT_MIME_TYPE
+                ), null)
             }
         }
         takePhotoButton?.setOnClickListener {
@@ -136,19 +137,18 @@ class CreateItemFragment : Fragment() {
             }
         }
         selectPhotoButton?.setOnClickListener {
-            val requestedPermission =
-                com.hotstuff.ui.create.CreateItemFragment.Companion.ACCESS_PERMISSION
+            val requestedPermission = ACCESS_PERMISSION
             val checkSelfPermission = ContextCompat.checkSelfPermission(requireActivity(), requestedPermission)
             if (checkSelfPermission == PackageManager.PERMISSION_GRANTED) {
                 try {
-                    selectPicture.launch(arrayOf(com.hotstuff.ui.create.CreateItemFragment.Companion.SELECT_INPUT_TYPE))
+                    selectPicture.launch(arrayOf(SELECT_INPUT_TYPE))
                 } catch (e: Exception) {
                     e.printStackTrace()
                     Toast.makeText(context, "Error: $e", Toast.LENGTH_SHORT).show()
                 }
             } else if (checkSelfPermission == PackageManager.PERMISSION_DENIED) {
                 ActivityCompat.requestPermissions(requireActivity(), arrayOf(requestedPermission),
-                    com.hotstuff.ui.create.CreateItemFragment.Companion.PERMISSION_REQUEST_CODE
+                    PERMISSION_REQUEST_CODE
                 )
                 Toast.makeText(context, getText(R.string.toast_need_photo_permission), Toast.LENGTH_LONG).show()
             }

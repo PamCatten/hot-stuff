@@ -74,15 +74,18 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.google.dagger:hilt-android:2.44")
+    implementation("androidx.test.uiautomator:uiautomator:2.3.0")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.android.gms:play-services-oss-licenses:17.0.1")
 
     // third party
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
-    implementation("com.google.android.gms:play-services-oss-licenses:17.0.1")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
 
     // testing
+    debugImplementation("androidx.fragment:fragment-testing:1.6.2")
+    testImplementation("com.google.truth:truth:1.4.1")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
 }
