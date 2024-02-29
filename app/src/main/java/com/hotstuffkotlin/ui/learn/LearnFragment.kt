@@ -92,10 +92,6 @@ class LearnFragment : Fragment() {
             findNavController().navigate(R.id.navigation_article, bundle)
         }
 
-        // onboard test DELETE WHEN DONE TESTING
-//        SharedPreferenceHelper.getInstance(requireContext()).testOnboard()
-        // END
-
         return view
     }
     override fun onDestroyView() {
