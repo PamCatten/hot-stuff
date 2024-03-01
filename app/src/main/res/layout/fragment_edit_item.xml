@@ -41,10 +41,13 @@
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/edit_category_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
+                android:paddingHorizontal="16dp"
+                android:textSize="16sp"
+                app:simpleItems="@array/autocomplete_categories"
                 android:hint="@string/label_category"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -52,10 +55,13 @@
             style="@style/text_input_layout"
             app:helperText="Required"
             app:helperTextTextColor="?attr/colorAccent">
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/edit_room_text"
                 style="@style/text_input_field"
                 android:inputType="textAutoCorrect"
+                android:paddingHorizontal="16dp"
+                android:textSize="16sp"
+                app:simpleItems="@array/autocomplete_rooms"
                 android:hint="@string/label_room"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout

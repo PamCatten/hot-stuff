@@ -19,14 +19,15 @@ import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.hotstuff.R
-import com.hotstuff.databinding.FragmentEditItemBinding
-import com.hotstuff.utils.DatabaseHelper
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.imageview.ShapeableImageView
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.hotstuff.R
+import com.hotstuff.databinding.FragmentEditItemBinding
+import com.hotstuff.utils.DatabaseHelper
 import java.io.File
 import java.io.FileOutputStream
 
@@ -43,8 +44,8 @@ class EditItemFragment : Fragment() {
 
         val name = view.findViewById<TextInputEditText>(R.id.edit_name_text)
         val quantity = view.findViewById<TextInputEditText>(R.id.edit_quantity_text)
-        val category = view.findViewById<TextInputEditText>(R.id.edit_category_text)
-        val room = view.findViewById<TextInputEditText>(R.id.edit_room_text)
+        val category = view.findViewById<MaterialAutoCompleteTextView>(R.id.edit_category_text)
+        val room = view.findViewById<MaterialAutoCompleteTextView>(R.id.edit_room_text)
         val value = view.findViewById<TextInputEditText>(R.id.edit_value_text)
         val make = view.findViewById<TextInputEditText>(R.id.edit_make_text)
         val description = view.findViewById<TextInputEditText>(R.id.edit_description_text)

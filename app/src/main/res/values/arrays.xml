@@ -81,7 +81,7 @@
         <item>@string/type_other</item>
     </string-array>
     <!-- Auto complete options for text input fields -->
-    <string-array name="autocomplete_room">
+    <string-array name="autocomplete_rooms">
         <item>Attic</item>
         <item>Barn</item>
         <item>Basement</item>

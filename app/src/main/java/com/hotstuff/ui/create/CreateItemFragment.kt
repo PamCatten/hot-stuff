@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.imageview.ShapeableImageView
+import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.hotstuff.R
@@ -42,9 +43,9 @@ class CreateItemFragment: Fragment() {
         val nameContainer = view.findViewById<TextInputLayout>(R.id.create_name_container)
         val quantityText = view.findViewById<TextInputEditText>(R.id.create_quantity_text)
         val quantityContainer = view.findViewById<TextInputLayout>(R.id.create_quantity_container)
-        val categoryText = view.findViewById<TextInputEditText>(R.id.create_category_text)
+        val categoryText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_category_text)
         val categoryContainer = view.findViewById<TextInputLayout>(R.id.create_category_container)
-        val roomText = view.findViewById<TextInputEditText>(R.id.create_room_text)
+        val roomText = view.findViewById<MaterialAutoCompleteTextView>(R.id.create_room_text)
         val roomContainer = view.findViewById<TextInputLayout>(R.id.create_room_container)
         val valueText = view.findViewById<TextInputEditText>(R.id.create_value_text)
         val makeText = view.findViewById<TextInputEditText>(R.id.create_make_text)
