@@ -15,6 +15,7 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.formatter.ValueFormatter
 import com.google.android.material.color.MaterialColors
 import com.hotstuff.R
 import com.hotstuff.databinding.FragmentHomeBinding
@@ -22,6 +23,8 @@ import com.hotstuff.ui.onboard.OnboardActivity
 import com.hotstuff.utils.ChartMarker
 import com.hotstuff.utils.DatabaseHelper
 import com.hotstuff.utils.PreferenceHelper
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -66,6 +69,7 @@ class HomeFragment : Fragment() {
         }
 
         val catBarDataSet = BarDataSet(catEntries, getString(R.string.label_chart_category_title, currencyIcon))
+        catBarDataSet.valueFormatter = ChartIntValueFormatter()
         catChart.data = BarData(catBarDataSet)
         catBarDataSet.setColors(com.hotstuff.utils.ThemeHelper.CHART_THEME, 255)
         catChart.setFitBars(true)
@@ -99,6 +103,7 @@ class HomeFragment : Fragment() {
         }
 
         val roomBarDataSet = BarDataSet(roomEntries, getString(R.string.label_chart_room_title, currencyIcon))
+        roomBarDataSet.valueFormatter = ChartDecimalValueFormatter()
         roomChart.data = BarData(roomBarDataSet)
         roomBarDataSet.setColors(com.hotstuff.utils.ThemeHelper.CHART_THEME, 255)
         roomChart.setFitBars(true)
@@ -124,5 +129,22 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+}
+
+// TODO: ADD CURRENCY ICON WHEN TIME
+class ChartDecimalValueFormatter: ValueFormatter() {
+    private val df = DecimalFormat("#,###,###.##")
+    override fun getFormattedValue(value: Float): String {
+        df.roundingMode = RoundingMode.CEILING
+        return df.format(value)
+    }
+}
+
+class ChartIntValueFormatter: ValueFormatter() {
+    private val df = DecimalFormat("#,###,###")
+    override fun getFormattedValue(value: Float): String {
+        df.roundingMode = RoundingMode.CEILING
+        return df.format(value)
     }
 }

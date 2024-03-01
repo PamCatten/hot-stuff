@@ -2,11 +2,12 @@ package com.hotstuff.utils
 
 import android.content.Context
 import android.widget.TextView
-import com.hotstuff.R
 import com.github.mikephil.charting.components.MarkerView
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.highlight.Highlight
 import com.github.mikephil.charting.utils.MPPointF
+import com.hotstuff.R
+import java.text.DecimalFormat
 
 /**
  * A class used to specify displayed markers for values in a chart.
@@ -23,12 +24,20 @@ class ChartMarker(context: Context, layoutResource: Int,
 
     override fun refreshContent(entry: Entry, highlight: Highlight?) {
         val xAxis = entry.x.toInt()
-        txtViewData?.text = context.getString(R.string.label_chart_marker, labels[xAxis], entry.y)
+        val df = DecimalFormat("#,###,###.##")
+        txtViewData?.text = context.getString(R.string.label_chart_marker, labels[xAxis], df.format(entry.y))
 
         super.refreshContent(entry, highlight)
     }
+    override fun getOffsetForDrawingAtPoint(posX: Float, posY: Float): MPPointF {
+        val totalWidth = resources.displayMetrics.widthPixels
+        val offset = MPPointF()
 
-    override fun getOffset(): MPPointF {
-        return MPPointF(-(width / 2f), -height.toFloat())
+        if (posX > totalWidth - width) offset.x = (-width).toFloat()
+        else offset.x = (-(width / 2)).toFloat()
+
+        offset.y = -(height / 2).toFloat()
+
+        return offset
     }
 }
