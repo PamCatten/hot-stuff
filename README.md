@@ -102,7 +102,7 @@ Similar software that helps users record, sort, and list their items on Android 
 #### Developers
 This application is FOSS (Free and Open Source Software) licensed under the Apache License, Version 2.0. You can read the license in its entirety either [here](https://github.com/PamCatten/hot-stuff/blob/main/LICENSE) or on the [Apache website](https://www.apache.org/licenses/LICENSE-2.0).
 #### Users
-This app is subject to our [Terms of Use](https://github.com/PamCatten/hot-stuff/blob/main/TERMS).
+This app is subject to our [Terms of Use](https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md).
 
 
 ## Contact
