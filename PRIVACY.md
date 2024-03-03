@@ -1,5 +1,5 @@
-Hot Stuff Privacy Policy
-Last Modified: March 3, 2024
+# Hot Stuff Privacy Policy
+#### Last Modified: March 3, 2024
 
 The terms used in this Privacy Policy (the "policy") have the same meanings as in our [Terms of Use](https://github.com/PamCatten/hot-stuff/blob/main/TERMS), unless 
 otherwise defined in the policy itself.
@@ -12,11 +12,11 @@ contingent upon acceptance of the provisions laid out in this policy. If you do 
 downloaded, delete the App from your mobile device), but please get in touch with us so we can try to help. 
 
 We value the trust you place with us when using our App with your data, and we strive to protect it in any way that we can. We also know that as volunteers we 
-lack the resources needed to ensure that data's security once transmitted out over the internet to a level worthy of that trust. Accordingly, the App operates 
+lack the resources needed to ensure that data's security once transmitted out over the internet to the level worthy of that trust. Accordingly, the App operates 
 offline, its core functionalties require no interent connection to work as intended.
 
 In addition, the App does not collect or require any user information, demographic (age, sex, etc.), personal (name, email, location, etc.), or otherwise. The App 
-does not use any cookies or employ any third-party companies, individuals, or other means of distinguishing users. Lastly, the app does not collect any log data, 
+does not use any cookies or employ any third-party companies, individuals, or other means of distinguishing users. Lastly, the App does not collect any log data, 
 although in the future we plan to add an optional preference for users to opt-in to providing basic device analytics to help us investigate the cause of reported 
 bugs or crashes.
 
