@@ -1,4 +1,4 @@
-# HOT STUFF TERMS OF USE
+# Hot Stuff Terms of Use
 #### Last Modified: January 30, 2024
 
 Welcome to Hot Stuff! These terms of use (these “Terms”) are entered into by and between you and the developers of Hot Stuff ("Developers", “we,” 
