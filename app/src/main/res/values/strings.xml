@@ -168,7 +168,7 @@
     <string name="link_terms">https://github.com/PamCatten/hot-stuff/blob/main/TERMS</string>
     <!-- Onboard -->
     <string name="onboard_disclaimer">By clicking continue you are agreeing to our
-        <a href="https://github.com/PamCatten/hot-stuff/blob/main/TERMS">Terms of Service</a>
+        <a href="https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md">Terms of Service</a>
     </string>
     <string name="onboard_button_skip">SKIP</string>
     <string name="onboard_button_move">NEXT</string>
