@@ -5,6 +5,11 @@
     <string name="label_create_fragment">Create</string>
     <string name="label_learn_fragment">Learn</string>
     <string name="label_settings_fragment">Settings</string>
+    <string name="desc_home">Home tab</string>
+    <string name="desc_items">Items tab</string>
+    <string name="desc_create">Create items tab</string>
+    <string name="desc_learn">Learn tab</string>
+    <string name="desc_settings">Settings tab</string>
     <!-- Toolbar Labels -->
     <string name="label_search">Search</string>
     <string name="label_download">Export</string>
