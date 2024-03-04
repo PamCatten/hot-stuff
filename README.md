@@ -4,8 +4,7 @@
 ![Static Badge](https://img.shields.io/badge/API-33%2B-%2340B5F0)
 [![License](https://img.shields.io/badge/License-Apache%202.0-%23FFA303)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-Hot Stuff is an offline Android app designed to help users quickly record and aggregate belongings for Proof of Loss forms in insurance claims. 
-// TODO: Add more, but not so much that it overwhelms
+An offline Android app designed to help users quickly and accurately document belongings for proof of loss forms in insurance claims. 
 
 ## Getting Started
 // TODO: Installation steps, links to Google Play and anywhere else HS is available on
@@ -97,13 +96,13 @@ Similar software that helps users record, sort, and list their items on Android 
 * [Smart Inventory](https://play.google.com/store/apps/details?id=com.nonzeroapps.android.smartinventory&pcampaignid=web_share)
 * [ZenOwn](https://play.google.com/store/apps/details?id=com.zenown.app&hl=en&gl=US)
 * [My Stuff Organizer](https://play.google.com/store/apps/details?id=com.ebizzapps.mystufforganizer&hl=en&gl=US)
+* [Find My Stuff](https://play.google.com/store/apps/details?id=com.miquelcms.homeorganizer)
 
 ## Legal
 #### Developers
 This application is FOSS (Free and Open Source Software) licensed under the Apache License, Version 2.0. You can read the license in its entirety either [here](https://github.com/PamCatten/hot-stuff/blob/main/LICENSE) or on the [Apache website](https://www.apache.org/licenses/LICENSE-2.0).
 #### Users
-This app is subject to our [Terms of Use](https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md).
-
+This app is subject to our [Terms of Use](https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md) and [Privacy Policy](https://github.com/PamCatten/hot-stuff/blob/main/PRIVACY.md).
 
 ## Contact
 For any inquiries or feedback, feel free to start a [discussion](https://github.com/PamCatten/hot-stuff/discussions), create an [issue](https://github.com/PamCatten/hot-stuff/issues), or reach out over [email](mailto:campatten.dev@outlook.com).
