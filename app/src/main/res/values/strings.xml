@@ -170,8 +170,9 @@
     <string name="link_terms">https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md</string>
     <string name="link_privacy">https://github.com/PamCatten/hot-stuff/blob/main/PRIVACY.md</string>
     <!-- Onboard -->
-    <string name="onboard_disclaimer">By clicking continue you are agreeing to our
-        <a href="https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md">Terms of Service</a>
+    <string name="onboard_disclaimer">By clicking continue you are agreeing to both our
+        <a href="https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md">Terms of Service</a> and
+        <a href="https://github.com/PamCatten/hot-stuff/blob/main/PRIVACY.md">Privacy Policy</a>.
     </string>
     <string name="onboard_button_skip">SKIP</string>
     <string name="onboard_button_move">NEXT</string>
