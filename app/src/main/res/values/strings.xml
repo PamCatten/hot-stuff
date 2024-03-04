@@ -16,7 +16,8 @@
     <string name="label_expand_menu">More</string>
     <!-- Home -->
     <string name="label_building_value">Total Building Value</string>
-    <string name="label_total_value">Total Item Value</string>
+    <string name="label_item_value">Item Value</string>
+    <string name="label_item_quantity">Item Quantity</string>
     <string name="label_building_value_placeholder">$ 0.00</string>
     <string name="label_building_name_placeholder">Sample House</string>
     <string name="label_building_quantity_placeholder">0 items</string>

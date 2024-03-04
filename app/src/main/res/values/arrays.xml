@@ -150,41 +150,67 @@
         <item>Appliances</item>
         <item>Artwork</item>
         <item>Baby</item>
+        <item>Bath</item>
         <item>Beauty</item>
+        <item>Bedding</item>
+        <item>Blinds / Draperies</item>
         <item>Books / Magazines</item>
+        <item>Cameras</item>
+        <item>Carpets / Rugs</item>
+        <item>Cleaning</item>
         <item>Collectibles</item>
+        <item>Cookware</item>
+        <item>Coverings</item>
         <item>Craft Supplies</item>
         <item>Cutlery</item>
         <item>Designer</item>
         <item>Dinnerware</item>
         <item>Electronics</item>
+        <item>Exercise</item>
+        <item>Firearms</item>
         <item>Fixtures</item>
         <item>Footwear</item>
         <item>Furniture</item>
         <item>Games</item>
         <item>Garden</item>
+        <item>Glassware</item>
         <item>Handmade</item>
+        <item>Hand Tools</item>
+        <item>Health</item>
+        <item>Holiday Decorations</item>
         <item>Home Decor</item>
-        <item>Home Improvement Supplies</item>
-        <item>House Plants</item>
-        <item>Kitchen Utensils</item>
+        <item>Home Improvement</item>
+        <item>Kitchen</item>
+        <item>Intimate</item>
         <item>Landscaping</item>
+        <item>Laundry</item>
+        <item>Lawn</item>
         <item>Lighting</item>
         <item>Linens</item>
         <item>Luggage</item>
+        <item>Medications</item>
         <item>Music</item>
         <item>Office Supplies</item>
-        <item>Organization / Storage</item>
+        <item>Organization</item>
+        <item>Patio</item>
         <item>Personal Care</item>
         <item>Pet Supplies</item>
+        <item>Plants</item>
         <item>Plumbing / HVAC</item>
-        <item>Sports / Outdoors Equipment</item>
+        <item>Pool Supplies</item>
+        <item>Power Tools</item>
+        <item>Recreation</item>
+        <item>Safety</item>
+        <item>Sports / Outdoors</item>
+        <item>Storage</item>
+        <item>Tableware</item>
         <item>Tools</item>
         <item>Toys</item>
         <item>Travel</item>
         <item>Vehicles</item>
         <item>Vehicle Supplies</item>
         <item>Other</item>
+        <item>Utensils</item>
     </string-array>
 
 </resources>

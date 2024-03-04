@@ -63,7 +63,7 @@
                 android:id="@+id/button_home_category"
                 style="@style/text_subtitle"
                 android:layout_marginHorizontal="0dp"
-                android:text="@string/label_total_value"
+                android:text="@string/label_item_quantity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -86,7 +86,7 @@
             <TextView
                 android:id="@+id/button_home_room"
                 style="@style/text_subtitle"
-                android:text="@string/label_total_value"
+                android:text="@string/label_item_value"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
