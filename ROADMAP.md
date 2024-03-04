@@ -1,12 +1,11 @@
 # Roadmap
 This roadmap intends to provide transparency about features and fixes we plan to include in future releases of Hot Stuff. 
 
-While we are committed to timely updates, you may have noticed that we neglected to provide ETAs for any version milestones, and that's because we believe keeping to these artifical deadlines 
-while maintaining our standards of quality would likely have been impractical in the long run. If you have any questions or concerns about the content or status of a future release, feel free 
-to start a [discussion](https://github.com/PamCatten/hot-stuff/discussions) or reach out over [email](mailto:campatten.dev@outlook.com).
+While we are committed to timely updates, you may have noticed that we neglected to provide ETAs for any version milestones, and that's because we believe keeping to these artifical deadlines would prove to be detrimental to our standards of quality in the long run. If you have any questions or concerns about the content or status of a future release, please feel free to start a [discussion](https://github.com/PamCatten/hot-stuff/discussions) or reach out over [email](mailto:campatten.dev@outlook.com).
 
 ## 1.1
 Features:
+* Testing, lots and lots of testing
 * Copy item functionality
 * Text size preference
 * Suggestions and autocomplete for Room fields
@@ -40,6 +39,7 @@ These are features that *may* be added (even in the releases above) or possibly 
   * FAQ
   * Additional themes
   * Import from .CSV functionality
+  * Containers
   * Back up user data with Dropbox functionality
   * Collect anonymized app information to diagnose problems
   * Splashscreen / logo rework
