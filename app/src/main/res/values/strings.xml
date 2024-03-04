@@ -72,7 +72,6 @@
     <string name="label_example_form">Example Proof of Loss form</string>
     <string name="label_acknowledgements">Acknowledgements</string>
     <string name="label_sourcecode">View source code</string>
-    <string name="label_terms">Terms and Conditions</string>
     <string name="label_required_hint">Required</string>
     <string name="label_quantity_value_hint">Quantity cannot be less than one</string>
     <!-- Dialogs -->
@@ -149,7 +148,10 @@
     <string name="label_app_info">App Information</string>
     <string name="label_share">Share Hot Stuff</string>
     <string name="label_share_summary">Like Hot Stuff? Share the app with your friends and family</string>
+    <string name="label_terms">Terms of Use</string>
     <string name="label_terms_summary">Read our terms and conditions</string>
+    <string name="label_privacy">Privacy Policy</string>
+    <string name="label_privacy_summary">Read Hot Stuff\'s privacy policy</string>
     <string name="label_source_code">Source Code</string>
     <string name="label_source_code_summary">View or contribute to the app\'s source code on GitHub</string>
     <string name="label_open_source">Open Source Licenses</string>
@@ -165,7 +167,8 @@
     <!-- Web Links -->
     <string name="link_repo">https://github.com/PamCatten/hot-stuff</string>
     <string name="link_issue">https://github.com/PamCatten/hot-stuff/issues/new/choose</string>
-    <string name="link_terms">https://github.com/PamCatten/hot-stuff/blob/main/TERMS</string>
+    <string name="link_terms">https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md</string>
+    <string name="link_privacy">https://github.com/PamCatten/hot-stuff/blob/main/PRIVACY.md</string>
     <!-- Onboard -->
     <string name="onboard_disclaimer">By clicking continue you are agreeing to our
         <a href="https://github.com/PamCatten/hot-stuff/blob/main/TERMS.md">Terms of Service</a>

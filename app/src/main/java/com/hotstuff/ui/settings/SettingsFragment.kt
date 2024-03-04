@@ -10,12 +10,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.hotstuff.BuildConfig
 import com.hotstuff.R
-import com.hotstuff.models.Building
 import com.hotstuff.utils.DatabaseHelper
 import com.hotstuff.utils.PreferenceHelper
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var preferenceHelper: PreferenceHelper
@@ -47,25 +46,26 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
             sendEmail(requireContext())
             true
         }
-
         val share = findPreference<Preference>(getString(R.string.key_share))
         share?.setOnPreferenceClickListener {
             shareApp()
             true
         }
-
         val terms = findPreference<Preference>(getString(R.string.key_terms))
         terms?.setOnPreferenceClickListener {
             visitDestination(getString(R.string.link_terms))
             true
         }
-
+        val privacy = findPreference<Preference>(getString(R.string.key_privacy))
+        privacy?.setOnPreferenceClickListener {
+            visitDestination(getString(R.string.link_privacy))
+            true
+        }
         val sourceCode = findPreference<Preference>(getString(R.string.key_source_code))
         sourceCode?.setOnPreferenceClickListener {
             visitDestination(getString(R.string.link_repo))
             true
         }
-
         val openSource = findPreference<Preference>(getString(R.string.key_open_source))
         openSource?.setOnPreferenceClickListener {
             startActivity(Intent(context, OssLicensesMenuActivity::class.java))

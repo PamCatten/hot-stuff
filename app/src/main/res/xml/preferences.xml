@@ -81,6 +81,11 @@
             android:key="@string/key_terms"
             app:iconSpaceReserved="false" />
         <Preference
+            android:title="@string/label_privacy"
+            android:summary="@string/label_privacy_summary"
+            android:key="@string/key_privacy"
+            app:iconSpaceReserved="false" />
+        <Preference
             android:title="@string/label_open_source"
             android:summary="@string/label_open_source_summary"
             android:key="@string/key_open_source"
