@@ -1,0 +1,22 @@
+name: Close stale issues and PRs
+
+on:
+  schedule:
+  - cron: "0 13 * * 1" # Runs every Monday at 9 am EST
+  workflow_dispatch:
+  
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/stale@v9
+      with:
+        repo-token: ${{ secrets.REPO_MANAGEMENT }}
+        stale-issue-message: "This issue is stale because it has been open 45 days with no activity. Remove stale label or comment or this will be closed in a week."
+        stale-pr-message: "This PR is stale because it has been open 45 days with no activity. Remove stale label or comment or this will be closed in a week."
+        days-before-stale: 45
+        days-before-close: 7
