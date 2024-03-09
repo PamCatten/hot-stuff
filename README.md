@@ -48,7 +48,7 @@ By embracing this lifecycle, users will both mitigate the risks associated with 
 
 When designing Hot Stuff, our hope was to create a companion for our users that could both help safeguard peace of mind in the day-to-day, or help ease the burden that comes in the aftermath of tragedy. If we succeeded, and you have the time to do so, consider getting involved; If we failed, consider giving us some [feedback](https://github.com/PamCatten/hot-stuff/issues/new?assignees=&labels=enhancement&projects=&template=feature.md&title=%5BFEATURE%5D): we've come a long way already, but there's always more we can do.
 ## Accessibility
-We are committed to ensuring accessibility for all users and as such have taken steps with the design of the application to be in compliance with the Web Content Accessibility Guidelines (WCAG) 2.2 Level A standards. You can read more about the standards on the W3's [website](https://www.w3.org/TR/WCAG22/).
+We are committed to ensuring accessibility for all users and as such have taken steps with the design of the application to be in compliance with the Web Content Accessibility Guidelines (WCAG) 2.2 Level A standards. You can read more about the standards on the W3C's [website](https://www.w3.org/TR/WCAG22/).
 
 ### Visual Impairment (VI) Support
 All non-text content within the application, such as images and multimedia, includes text descriptions to ensure that the content remains accessible to users who cannot see the visual elements of the interface. 
