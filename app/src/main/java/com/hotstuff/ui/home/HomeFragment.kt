@@ -35,9 +35,12 @@ class HomeFragment : Fragment() {
         val context = requireContext()
         val preferenceHelper = PreferenceHelper(context)
 
-        if (preferenceHelper.getBooleanPref(getString(R.string.key_onboard))) {
+        if (preferenceHelper.getStringPref(getString(R.string.key_buildingName)).isNullOrEmpty()) {
             startActivity(Intent(context, OnboardActivity::class.java))
         }
+//        if (preferenceHelper.getBooleanPref(getString(R.string.key_onboard)) != false) {
+//            startActivity(Intent(context, OnboardActivity::class.java))
+//        }
 //        DatabaseHelper(context).upgradeTables() // TEMP FUNCTION
         val totalItems = view.findViewById<TextView>(R.id.label_building_quantity)
         val totalValue = view.findViewById<TextView>(R.id.label_value_total)
