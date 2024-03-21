@@ -7,11 +7,24 @@
 An offline Android app designed to help users quickly and accurately document belongings for proof of loss forms in insurance claims. 
 
 ## Getting Started
-// TODO: Installation steps, links to Google Play and anywhere else HS is available on
+// TODO: Links to Google Play and anywhere else HS is available on
 
-#### Supported Versions
-Currently, this app supports a minimum Android SDK version of **33**, and the target SDK version is **34**.
+#### Local Install Prerequisites
+To get started with this project, ensure you have the following:
 
+* Android Studio | [Download Android Studio](https://developer.android.com/studio)
+* Android Software Development Kit (SDK) | [Set up Android 13 SDK](https://developer.android.com/about/versions/13/setup-sdk) 
+* Java Development Kit (JDK) | [Download Java 17 JDK](https://www.oracle.com/java/technologies/downloads/#java17)
+
+Installation steps:
+```
+Clone the repository to your local machine:
+git clone https://github.com/PamCatten/hot-stuff.git
+```
+1. Clone the project
+2. Open the project in Android Studio
+3. Build and run the project on an emulator or a physical device
+   
 ## Documentation
 See the documentation for descriptions and usage examples of Hot Stuff's functions.
 
