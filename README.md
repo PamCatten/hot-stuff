@@ -23,7 +23,7 @@ git clone https://github.com/PamCatten/hot-stuff.git
 ```
 1. Clone the project
 2. Open the project in Android Studio
-3. Build and run the project on an emulator or a physical device
+3. Build and run the project on an emulator or a physical device running at least Android 13, API level 33
    
 ## Documentation
 See the documentation for descriptions and usage examples of Hot Stuff's functions.
